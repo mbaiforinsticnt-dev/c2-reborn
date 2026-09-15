@@ -1,0 +1,147 @@
+[
+  {
+    "name": "home up calendar",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "home down names",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "home left compose",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "home right player",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "goto home screen",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "lock unlock sequence",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "add fourth contact",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "fourth contact arrow reachability",
+    "pass": false,
+    "detail": {
+      "sel": 0,
+      "contacts": 4,
+      "staticRows": 3
+    }
+  },
+  {
+    "name": "fourth contact select",
+    "pass": false,
+    "detail": {
+      "page": "contact",
+      "contactIndex": 3,
+      "shown": "Contact details\nTest\n\u25cf\n\u25a3\n123"
+    }
+  },
+  {
+    "name": "save calendar note",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "view calendar note",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "add todo empty state",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "save todo",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "add note empty state",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "save note",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "alarm valid time",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "alarm invalid time",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "bluetooth toggle",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "theme apply",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "draft open removes source",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "draft END resaves",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "send message",
+    "pass": true,
+    "detail": true
+  },
+  {
+    "name": "calculator 2+3",
+    "pass": false,
+    "detail": {
+      "calc": "5",
+      "calcOp": "",
+      "calcStored": null
+    }
+  },
+  {
+    "name": "CALL stored contact",
+    "pass": false,
+    "detail": {
+      "page": "incall",
+      "activeCall": "+44 7700 900123",
+      "shown": "NOKIA\n+44 7700 900123"
+    }
+  },
+  {
+    "name": "RSK loudspeaker label action",
+    "pass": false,
+    "detail": {
+      "page": "home",
+      "activeCall": null,
+      "notice": "Call ended"
+    }
+  }
+]
