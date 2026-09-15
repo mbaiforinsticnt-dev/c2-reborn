@@ -1,0 +1,1782 @@
+[
+  {
+    "page": "menu",
+    "option": "Main menu view",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "menu",
+    "notice": "Main menu view selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "menu",
+    "option": "Organise",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "menu",
+    "notice": "Organise selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "menu",
+    "option": "Help",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "menu",
+    "notice": "Help opened",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "messaging",
+    "option": "Conversations",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "messaging",
+    "notice": "Conversations selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "messaging",
+    "option": "New message",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "compose",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "messaging",
+    "option": "Inbox view",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "messaging",
+    "notice": "Inbox view selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "messaging",
+    "option": "Message log",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "messaging",
+    "notice": "Message log selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "messaging",
+    "option": "SIM messages",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "messaging",
+    "notice": "SIM messages selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "messaging",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 5,
+    "afterPage": "messaging",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "inbox",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "conversation",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "inbox",
+    "option": "Reply",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "compose",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "inbox",
+    "option": "Forward",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "inbox",
+    "notice": "Forward selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "inbox",
+    "option": "Delete",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "inbox",
+    "notice": "Deleted",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "inbox",
+    "option": "Mark as read",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "inbox",
+    "notice": "Mark as read selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "inbox",
+    "option": "Message details",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "inbox",
+    "notice": "Message details selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "conversation",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "conversation",
+    "notice": "Open selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "conversation",
+    "option": "Reply",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "compose",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "conversation",
+    "option": "Delete",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "conversation",
+    "notice": "Deleted",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "conversation",
+    "option": "Call",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "dial",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "conversation",
+    "option": "Move",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "conversation",
+    "notice": "Move selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "conversation",
+    "option": "Go to drafts",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "conversation",
+    "notice": "Go to drafts selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "conversation",
+    "option": "Conversation details",
+    "status": "notice-only-fallthrough",
+    "os": 6,
+    "afterPage": "conversation",
+    "notice": "Conversation details selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "conversation",
+    "option": "Mark",
+    "status": "notice-only-fallthrough",
+    "os": 7,
+    "afterPage": "conversation",
+    "notice": "Mark selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "conversation",
+    "option": "Mark all",
+    "status": "notice-only-fallthrough",
+    "os": 8,
+    "afterPage": "conversation",
+    "notice": "Mark all selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Send",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "compose",
+    "notice": "Send selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Insert",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "compose",
+    "notice": "Insert selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Add recipient",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "compose",
+    "notice": "Add recipient selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Add subject",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "compose",
+    "notice": "Add subject selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Clear field",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "compose",
+    "notice": "Clear field selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Insert contact detail",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "compose",
+    "notice": "Insert contact detail selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Insert symbol",
+    "status": "notice-only-fallthrough",
+    "os": 6,
+    "afterPage": "compose",
+    "notice": "Insert symbol selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Editing options",
+    "status": "notice-only-fallthrough",
+    "os": 7,
+    "afterPage": "compose",
+    "notice": "Editing options selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Writing language",
+    "status": "notice-only-fallthrough",
+    "os": 8,
+    "afterPage": "compose",
+    "notice": "Writing language selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Prediction options",
+    "status": "notice-only-fallthrough",
+    "os": 9,
+    "afterPage": "compose",
+    "notice": "Prediction options selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Change to multimedia message",
+    "status": "notice-only-fallthrough",
+    "os": 10,
+    "afterPage": "compose",
+    "notice": "Change to multimedia message selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Save message",
+    "status": "explicit-dispatch",
+    "os": 11,
+    "afterPage": "compose",
+    "notice": "",
+    "changed": false,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Sending options",
+    "status": "notice-only-fallthrough",
+    "os": 12,
+    "afterPage": "compose",
+    "notice": "Sending options selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "compose",
+    "option": "Exit editor",
+    "status": "explicit-dispatch",
+    "os": 13,
+    "afterPage": "home",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "contacts",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "names",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "contacts",
+    "option": "Search",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "contacts",
+    "notice": "Search selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "contacts",
+    "option": "Add new",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "contacts",
+    "notice": "Add new selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "contacts",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "contacts",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "names",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "contact",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "names",
+    "option": "Call",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "dial",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "names",
+    "option": "Send message",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "names",
+    "notice": "Send message selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "names",
+    "option": "Add new contact",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "addcontact",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "names",
+    "option": "Delete",
+    "status": "explicit-dispatch",
+    "os": 4,
+    "afterPage": "names",
+    "notice": "Deleted",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "names",
+    "option": "Copy contact",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "names",
+    "notice": "Copy contact selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "names",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 6,
+    "afterPage": "names",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "contact",
+    "option": "Call",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "dial",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "contact",
+    "option": "Send message",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "contact",
+    "notice": "Send message selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "contact",
+    "option": "Edit contact",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "addcontact",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "contact",
+    "option": "Delete contact",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "names",
+    "notice": "Contact deleted",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "contact",
+    "option": "Copy number",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "contact",
+    "notice": "Copy number selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "log",
+    "option": "View",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "log",
+    "notice": "View selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "log",
+    "option": "Call",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "dial",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "log",
+    "option": "Send message",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "log",
+    "notice": "Send message selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "log",
+    "option": "Save",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "log",
+    "notice": "Save selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "log",
+    "option": "Delete",
+    "status": "explicit-dispatch",
+    "os": 4,
+    "afterPage": "log",
+    "notice": "Deleted",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "log",
+    "option": "Clear lists",
+    "status": "explicit-dispatch",
+    "os": 5,
+    "afterPage": "log",
+    "notice": "Call history cleared",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "log",
+    "option": "Call timers",
+    "status": "notice-only-fallthrough",
+    "os": 6,
+    "afterPage": "log",
+    "notice": "Call timers selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "missed",
+    "option": "Call",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "dial",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "missed",
+    "option": "Send message",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "missed",
+    "notice": "Send message selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "missed",
+    "option": "Save to contacts",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "missed",
+    "notice": "Save to contacts selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "missed",
+    "option": "Delete",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "missed",
+    "notice": "Deleted",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "missed",
+    "option": "Clear list",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "missed",
+    "notice": "Clear list selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "settings",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "profiles",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "settings",
+    "option": "Search",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "settings",
+    "notice": "Search selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "settings",
+    "option": "Help",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "settings",
+    "notice": "Help opened",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "profiles",
+    "option": "Activate",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "profiles",
+    "notice": "General activated",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "profiles",
+    "option": "Personalise",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "profiles",
+    "notice": "Personalise selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "profiles",
+    "option": "Timed",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "profiles",
+    "notice": "Timed selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "gallery",
+    "option": "Downloads",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "gallery",
+    "notice": "Downloads selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "gallery",
+    "option": "Mem. card options",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "gallery",
+    "notice": "Mem. card options selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "gallery",
+    "option": "Details",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "gallery",
+    "notice": "Details selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "gallery",
+    "option": "Type of view",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "gallery",
+    "notice": "Type of view selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "gallery",
+    "option": "Sort",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "gallery",
+    "notice": "Sort selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "gallery",
+    "option": "Add folder",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "gallery",
+    "notice": "Add folder selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "gallery",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 6,
+    "afterPage": "gallery",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "media",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "camera",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "media",
+    "option": "View photos",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "media",
+    "notice": "View photos selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "media",
+    "option": "View videos",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "media",
+    "notice": "View videos selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "media",
+    "option": "Settings",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "media",
+    "notice": "Settings selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "media",
+    "option": "Memory in use",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "media",
+    "notice": "Memory in use selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "organiser",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "alarmclock",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "organiser",
+    "option": "Make a note",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "organiser",
+    "notice": "Make a note selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "organiser",
+    "option": "Week view",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "organiser",
+    "notice": "Week view selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "organiser",
+    "option": "Go to date",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "organiser",
+    "notice": "Go to date selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "organiser",
+    "option": "Go to today",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "organiser",
+    "notice": "Go to today selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "organiser",
+    "option": "Settings",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "organiser",
+    "notice": "Settings selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "organiser",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 6,
+    "afterPage": "organiser",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calendar",
+    "option": "View",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "calendar",
+    "notice": "View selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calendar",
+    "option": "Make a note",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "caltypes",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calendar",
+    "option": "Delete",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "calendar",
+    "notice": "Delete selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calendar",
+    "option": "Week view",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "calendar",
+    "notice": "Week view selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calendar",
+    "option": "Go to date",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "calendar",
+    "notice": "Go to date selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calendar",
+    "option": "Go to today",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "calendar",
+    "notice": "Go to today selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calendar",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 6,
+    "afterPage": "calendar",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calendar",
+    "option": "Go to To-do list",
+    "status": "explicit-dispatch",
+    "os": 7,
+    "afterPage": "todolist",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "caltypes",
+    "option": "Select",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "caltypes",
+    "notice": "Select selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "todolist",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "todolist",
+    "notice": "Open selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "todolist",
+    "option": "Add",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "todoedit",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "todolist",
+    "option": "Delete",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "todolist",
+    "notice": "Delete selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "todolist",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "todolist",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "todolist",
+    "option": "Go to calendar",
+    "status": "explicit-dispatch",
+    "os": 4,
+    "afterPage": "calendar",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "notes",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "notes",
+    "notice": "Open selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "notes",
+    "option": "Add",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "textnote",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "notes",
+    "option": "Delete",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "notes",
+    "notice": "Delete selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "notes",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "notes",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "apps",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "apps",
+    "notice": "Open selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "apps",
+    "option": "Move",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "apps",
+    "notice": "Move selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "apps",
+    "option": "Move to folder",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "apps",
+    "notice": "Move to folder selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "apps",
+    "option": "Organise",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "apps",
+    "notice": "Organise selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "apps",
+    "option": "Add folder",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "apps",
+    "notice": "Add folder selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "apps",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 5,
+    "afterPage": "apps",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "store",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "store",
+    "notice": "Open selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "store",
+    "option": "Home",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "store",
+    "notice": "Home selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "store",
+    "option": "Bookmarks",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "store",
+    "notice": "Bookmarks selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "store",
+    "option": "Go to address",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "store",
+    "notice": "Go to address selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "store",
+    "option": "Downloads",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "store",
+    "notice": "Downloads selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "store",
+    "option": "Settings",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "store",
+    "notice": "Settings selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "goto",
+    "option": "Select",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "goto",
+    "notice": "Select selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "goto",
+    "option": "Organise",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "goto",
+    "notice": "Organise selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "goto",
+    "option": "Help",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "goto",
+    "notice": "Help opened",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "dial",
+    "option": "Call",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "dial",
+    "notice": "",
+    "changed": false,
+    "err": ""
+  },
+  {
+    "page": "dial",
+    "option": "Save",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "dial",
+    "notice": "Save selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "dial",
+    "option": "Send message",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "dial",
+    "notice": "Send message selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "dial",
+    "option": "Add to contact",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "dial",
+    "notice": "Add to contact selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "incall",
+    "option": "Loudspeaker",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "incall",
+    "notice": "Loudspeaker selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "incall",
+    "option": "Mute",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "incall",
+    "notice": "Mute selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "incall",
+    "option": "Hold",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "incall",
+    "notice": "Hold selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "incall",
+    "option": "Contacts",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "incall",
+    "notice": "Contacts selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "incall",
+    "option": "Main menu",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "incall",
+    "notice": "Main menu selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "incall",
+    "option": "End call",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "incall",
+    "notice": "End call selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "player",
+    "option": "Music library",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "musiclibrary",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "player",
+    "option": "Now playing",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "player",
+    "notice": "Now playing selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "player",
+    "option": "Shuffle",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "player",
+    "notice": "Shuffle on",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "player",
+    "option": "Repeat",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "player",
+    "notice": "Repeat on",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "player",
+    "option": "Equaliser",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "player",
+    "notice": "Equaliser selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "player",
+    "option": "Settings",
+    "status": "notice-only-fallthrough",
+    "os": 5,
+    "afterPage": "player",
+    "notice": "Settings selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "themes",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "themes",
+    "notice": "Open selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "themes",
+    "option": "Theme downloads",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "themes",
+    "notice": "Theme downloads selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "themes",
+    "option": "Type of view",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "themes",
+    "notice": "Type of view selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "themes",
+    "option": "Sort",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "themes",
+    "notice": "Sort selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "themes",
+    "option": "Search",
+    "status": "notice-only-fallthrough",
+    "os": 4,
+    "afterPage": "themes",
+    "notice": "Search selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "themes",
+    "option": "Memory status",
+    "status": "explicit-dispatch",
+    "os": 5,
+    "afterPage": "themes",
+    "notice": "Phone memory: 42.6 MB free",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "tones",
+    "option": "Change",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "tones",
+    "notice": "Change selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "tones",
+    "option": "Play",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "tones",
+    "notice": "Play selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "tones",
+    "option": "Save",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "tones",
+    "notice": "Save selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "display",
+    "option": "Change",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "display",
+    "notice": "Change selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "display",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "display",
+    "notice": "Open selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "display",
+    "option": "Restore default",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "display",
+    "notice": "Restore default selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "display",
+    "option": "Help",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "display",
+    "notice": "Help opened",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "datetime",
+    "option": "Change",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "datetime",
+    "notice": "Change selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "datetime",
+    "option": "Restore default",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "datetime",
+    "notice": "Restore default selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "datetime",
+    "option": "Help",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "datetime",
+    "notice": "Help opened",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "connectivity",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "bluetooth",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "connectivity",
+    "option": "Help",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "connectivity",
+    "notice": "Help opened",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "bluetooth",
+    "option": "Open",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "bluetooth",
+    "notice": "Open selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "bluetooth",
+    "option": "New search",
+    "status": "notice-only-fallthrough",
+    "os": 1,
+    "afterPage": "bluetooth",
+    "notice": "New search selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "bluetooth",
+    "option": "Details",
+    "status": "notice-only-fallthrough",
+    "os": 2,
+    "afterPage": "bluetooth",
+    "notice": "Details selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "bluetooth",
+    "option": "Delete pairing",
+    "status": "notice-only-fallthrough",
+    "os": 3,
+    "afterPage": "bluetooth",
+    "notice": "Deleted",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "bluetooth",
+    "option": "Help",
+    "status": "explicit-dispatch",
+    "os": 4,
+    "afterPage": "bluetooth",
+    "notice": "Help opened",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "security",
+    "option": "Change",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "security",
+    "notice": "Change selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "security",
+    "option": "Help",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "security",
+    "notice": "Help opened",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calculator",
+    "option": "Scientific calculator",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "scientific",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calculator",
+    "option": "Loan calculator",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "loancalc",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calculator",
+    "option": "Instructions",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "calculator",
+    "notice": "Enter numbers with keypad. Move through functions with navigation key and press Select.",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "calculator",
+    "option": "Exit",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "home",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "scientific",
+    "option": "Standard calculator",
+    "status": "explicit-dispatch",
+    "os": 0,
+    "afterPage": "calculator",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "scientific",
+    "option": "Loan calculator",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "loancalc",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "scientific",
+    "option": "Instructions",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "scientific",
+    "notice": "Enter numbers with keypad. Move through functions with navigation key and press Select.",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "scientific",
+    "option": "Exit",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "home",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "loancalc",
+    "option": "Calculate",
+    "status": "notice-only-fallthrough",
+    "os": 0,
+    "afterPage": "loancalc",
+    "notice": "Calculate selected",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "loancalc",
+    "option": "Standard calculator",
+    "status": "explicit-dispatch",
+    "os": 1,
+    "afterPage": "calculator",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "loancalc",
+    "option": "Scientific calculator",
+    "status": "explicit-dispatch",
+    "os": 2,
+    "afterPage": "scientific",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "loancalc",
+    "option": "Instructions",
+    "status": "explicit-dispatch",
+    "os": 3,
+    "afterPage": "loancalc",
+    "notice": "Enter numbers with keypad. Move through functions with navigation key and press Select.",
+    "changed": true,
+    "err": ""
+  },
+  {
+    "page": "loancalc",
+    "option": "Exit",
+    "status": "explicit-dispatch",
+    "os": 4,
+    "afterPage": "home",
+    "notice": "",
+    "changed": true,
+    "err": ""
+  }
+]
