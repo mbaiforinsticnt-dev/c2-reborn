@@ -1,0 +1,892 @@
+[
+  {
+    "page": "menu",
+    "option": "Main menu view",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "menu",
+    "option": "Organise",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "menu",
+    "option": "Help",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "messaging",
+    "option": "Conversations",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "messaging",
+    "option": "New message",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "messaging",
+    "option": "Inbox view",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "messaging",
+    "option": "Message log",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "messaging",
+    "option": "SIM messages",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "messaging",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "inbox",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "inbox",
+    "option": "Reply",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "inbox",
+    "option": "Forward",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "inbox",
+    "option": "Delete",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "inbox",
+    "option": "Mark as read",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "inbox",
+    "option": "Message details",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "conversation",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "conversation",
+    "option": "Reply",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "conversation",
+    "option": "Delete",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "conversation",
+    "option": "Call",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "conversation",
+    "option": "Move",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "conversation",
+    "option": "Go to drafts",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "conversation",
+    "option": "Conversation details",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "conversation",
+    "option": "Mark",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "conversation",
+    "option": "Mark all",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Send",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Insert",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Add recipient",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Add subject",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Clear field",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Insert contact detail",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Insert symbol",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Editing options",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Writing language",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Prediction options",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Change to multimedia message",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Save message",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "compose",
+    "option": "Sending options",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "compose",
+    "option": "Exit editor",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "contacts",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "contacts",
+    "option": "Search",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "contacts",
+    "option": "Add new",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "contacts",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "names",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "names",
+    "option": "Call",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "names",
+    "option": "Send message",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "names",
+    "option": "Add new contact",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "names",
+    "option": "Delete",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "names",
+    "option": "Copy contact",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "names",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "contact",
+    "option": "Call",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "contact",
+    "option": "Send message",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "contact",
+    "option": "Edit contact",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "contact",
+    "option": "Delete contact",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "contact",
+    "option": "Copy number",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "log",
+    "option": "View",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "log",
+    "option": "Call",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "log",
+    "option": "Send message",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "log",
+    "option": "Save",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "log",
+    "option": "Delete",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "log",
+    "option": "Clear lists",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "log",
+    "option": "Call timers",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "missed",
+    "option": "Call",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "missed",
+    "option": "Send message",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "missed",
+    "option": "Save to contacts",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "missed",
+    "option": "Delete",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "missed",
+    "option": "Clear list",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "settings",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "settings",
+    "option": "Search",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "settings",
+    "option": "Help",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "profiles",
+    "option": "Activate",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "profiles",
+    "option": "Personalise",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "profiles",
+    "option": "Timed",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "gallery",
+    "option": "Downloads",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "gallery",
+    "option": "Mem. card options",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "gallery",
+    "option": "Details",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "gallery",
+    "option": "Type of view",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "gallery",
+    "option": "Sort",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "gallery",
+    "option": "Add folder",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "gallery",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "media",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "media",
+    "option": "View photos",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "media",
+    "option": "View videos",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "media",
+    "option": "Settings",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "media",
+    "option": "Memory in use",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "organiser",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "organiser",
+    "option": "Make a note",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "organiser",
+    "option": "Week view",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "organiser",
+    "option": "Go to date",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "organiser",
+    "option": "Go to today",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "organiser",
+    "option": "Settings",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "organiser",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "calendar",
+    "option": "View",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "calendar",
+    "option": "Make a note",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "calendar",
+    "option": "Delete",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "calendar",
+    "option": "Week view",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "calendar",
+    "option": "Go to date",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "calendar",
+    "option": "Go to today",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "calendar",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "calendar",
+    "option": "Go to To-do list",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "caltypes",
+    "option": "Select",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "todolist",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "todolist",
+    "option": "Add",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "todolist",
+    "option": "Delete",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "todolist",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "todolist",
+    "option": "Go to calendar",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "notes",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "notes",
+    "option": "Add",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "notes",
+    "option": "Delete",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "notes",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "apps",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "apps",
+    "option": "Move",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "apps",
+    "option": "Move to folder",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "apps",
+    "option": "Organise",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "apps",
+    "option": "Add folder",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "apps",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "store",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "store",
+    "option": "Home",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "store",
+    "option": "Bookmarks",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "store",
+    "option": "Go to address",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "store",
+    "option": "Downloads",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "store",
+    "option": "Settings",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "goto",
+    "option": "Select",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "goto",
+    "option": "Organise",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "goto",
+    "option": "Help",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "dial",
+    "option": "Call",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "dial",
+    "option": "Save",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "dial",
+    "option": "Send message",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "dial",
+    "option": "Add to contact",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "incall",
+    "option": "Loudspeaker",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "incall",
+    "option": "Mute",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "incall",
+    "option": "Hold",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "incall",
+    "option": "Contacts",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "incall",
+    "option": "Main menu",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "incall",
+    "option": "End call",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "player",
+    "option": "Music library",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "player",
+    "option": "Now playing",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "player",
+    "option": "Shuffle",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "player",
+    "option": "Repeat",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "player",
+    "option": "Equaliser",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "player",
+    "option": "Settings",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "themes",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "themes",
+    "option": "Theme downloads",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "themes",
+    "option": "Type of view",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "themes",
+    "option": "Sort",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "themes",
+    "option": "Search",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "themes",
+    "option": "Memory status",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "tones",
+    "option": "Change",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "tones",
+    "option": "Play",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "tones",
+    "option": "Save",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "display",
+    "option": "Change",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "display",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "display",
+    "option": "Restore default",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "display",
+    "option": "Help",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "datetime",
+    "option": "Change",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "datetime",
+    "option": "Restore default",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "datetime",
+    "option": "Help",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "connectivity",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "connectivity",
+    "option": "Help",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "bluetooth",
+    "option": "Open",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "bluetooth",
+    "option": "New search",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "bluetooth",
+    "option": "Details",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "bluetooth",
+    "option": "Delete pairing",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "bluetooth",
+    "option": "Help",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "security",
+    "option": "Change",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "security",
+    "option": "Help",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "calculator",
+    "option": "Scientific calculator",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "calculator",
+    "option": "Loan calculator",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "calculator",
+    "option": "Instructions",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "calculator",
+    "option": "Exit",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "scientific",
+    "option": "Standard calculator",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "scientific",
+    "option": "Loan calculator",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "scientific",
+    "option": "Instructions",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "scientific",
+    "option": "Exit",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "loancalc",
+    "option": "Calculate",
+    "status": "notice-only-fallthrough"
+  },
+  {
+    "page": "loancalc",
+    "option": "Standard calculator",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "loancalc",
+    "option": "Scientific calculator",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "loancalc",
+    "option": "Instructions",
+    "status": "explicit-dispatch"
+  },
+  {
+    "page": "loancalc",
+    "option": "Exit",
+    "status": "explicit-dispatch"
+  }
+]

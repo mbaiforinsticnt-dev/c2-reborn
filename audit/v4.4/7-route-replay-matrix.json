@@ -1,0 +1,749 @@
+[
+  {
+    "parent": "createmessage",
+    "index": 0,
+    "label": "Message",
+    "expected": "compose",
+    "to": "compose",
+    "back": "compose",
+    "err": null
+  },
+  {
+    "parent": "createmessage",
+    "index": 1,
+    "label": "E-mail message",
+    "expected": "email",
+    "to": "createmessage",
+    "back": "home",
+    "err": null
+  },
+  {
+    "parent": "createmessage",
+    "index": 2,
+    "label": "Flash message",
+    "expected": "compose",
+    "to": "compose",
+    "back": "compose",
+    "err": null
+  },
+  {
+    "parent": "createmessage",
+    "index": 3,
+    "label": "Audio message",
+    "expected": "compose",
+    "to": "compose",
+    "back": "compose",
+    "err": null
+  },
+  {
+    "parent": "createmessage",
+    "index": 4,
+    "label": "Templates",
+    "expected": "templates",
+    "to": "templates",
+    "back": "createmessage",
+    "err": null
+  },
+  {
+    "parent": "menu",
+    "index": 0,
+    "label": "Messaging",
+    "expected": "messaging",
+    "to": "messaging",
+    "back": "menu",
+    "err": null
+  },
+  {
+    "parent": "menu",
+    "index": 1,
+    "label": "Contacts",
+    "expected": "contacts",
+    "to": "contacts",
+    "back": "menu",
+    "err": null
+  },
+  {
+    "parent": "menu",
+    "index": 2,
+    "label": "Log",
+    "expected": "log",
+    "to": "log",
+    "back": "menu",
+    "err": null
+  },
+  {
+    "parent": "menu",
+    "index": 3,
+    "label": "Settings",
+    "expected": "settings",
+    "to": "settings",
+    "back": "menu",
+    "err": null
+  },
+  {
+    "parent": "menu",
+    "index": 4,
+    "label": "Gallery",
+    "expected": "gallery",
+    "to": "gallery",
+    "back": "menu",
+    "err": null
+  },
+  {
+    "parent": "menu",
+    "index": 5,
+    "label": "Media",
+    "expected": "media",
+    "to": "media",
+    "back": "menu",
+    "err": null
+  },
+  {
+    "parent": "menu",
+    "index": 6,
+    "label": "Organiser",
+    "expected": "organiser",
+    "to": "organiser",
+    "back": "menu",
+    "err": null
+  },
+  {
+    "parent": "menu",
+    "index": 7,
+    "label": "Apps.",
+    "expected": "apps",
+    "to": "apps",
+    "back": "menu",
+    "err": null
+  },
+  {
+    "parent": "menu",
+    "index": 8,
+    "label": "Web",
+    "expected": "store",
+    "to": "store",
+    "back": "menu",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 0,
+    "label": "Create message",
+    "expected": "createmessage",
+    "to": "createmessage",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 1,
+    "label": "Inbox",
+    "expected": "inbox",
+    "to": "inbox",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 2,
+    "label": "E-mail",
+    "expected": "email",
+    "to": "email",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 3,
+    "label": "Drafts",
+    "expected": "drafts",
+    "to": "drafts",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 4,
+    "label": "Outbox",
+    "expected": "outbox",
+    "to": "outbox",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 5,
+    "label": "Sent items",
+    "expected": "sent",
+    "to": "sent",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 6,
+    "label": "Saved items",
+    "expected": "saved",
+    "to": "saved",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 7,
+    "label": "Delivery reports",
+    "expected": "reports",
+    "to": "reports",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 8,
+    "label": "Answer phone msgs",
+    "expected": "answerphone",
+    "to": "answerphone",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 9,
+    "label": "Service commands",
+    "expected": "servicecommands",
+    "to": "servicecommands",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 10,
+    "label": "Delete messages",
+    "expected": "deletemessages",
+    "to": "deletemessages",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "messaging",
+    "index": 11,
+    "label": "Message settings",
+    "expected": "messagesettings",
+    "to": "messagesettings",
+    "back": "messaging",
+    "err": null
+  },
+  {
+    "parent": "conversations",
+    "index": 0,
+    "label": "Alex",
+    "expected": "conversation",
+    "to": "conversation",
+    "back": "conversations",
+    "err": null
+  },
+  {
+    "parent": "conversations",
+    "index": 1,
+    "label": "Nokia service",
+    "expected": "conversation",
+    "to": "conversation",
+    "back": "conversations",
+    "err": null
+  },
+  {
+    "parent": "saved",
+    "index": 0,
+    "label": "Templates",
+    "expected": "templates",
+    "to": "templates",
+    "back": "saved",
+    "err": null
+  },
+  {
+    "parent": "saved",
+    "index": 1,
+    "label": "Saved messages",
+    "expected": "savedmessages",
+    "to": "savedmessages",
+    "back": "saved",
+    "err": null
+  },
+  {
+    "parent": "deletemessages",
+    "index": 0,
+    "label": "By message",
+    "expected": "inbox",
+    "to": "inbox",
+    "back": "deletemessages",
+    "err": null
+  },
+  {
+    "parent": "deletemessages",
+    "index": 1,
+    "label": "By folder",
+    "expected": "folders",
+    "to": "folders",
+    "back": "deletemessages",
+    "err": null
+  },
+  {
+    "parent": "deletemessages",
+    "index": 2,
+    "label": "All messages",
+    "expected": "confirmdelete",
+    "to": "confirmdelete",
+    "back": "deletemessages",
+    "err": null
+  },
+  {
+    "parent": "messagesettings",
+    "index": 0,
+    "label": "General settings",
+    "expected": "generalmsg",
+    "to": "generalmsg",
+    "back": "messagesettings",
+    "err": null
+  },
+  {
+    "parent": "messagesettings",
+    "index": 1,
+    "label": "Text messages",
+    "expected": "textmsg",
+    "to": "textmsg",
+    "back": "messagesettings",
+    "err": null
+  },
+  {
+    "parent": "messagesettings",
+    "index": 2,
+    "label": "Multimedia messages",
+    "expected": "mms",
+    "to": "mms",
+    "back": "messagesettings",
+    "err": null
+  },
+  {
+    "parent": "messagesettings",
+    "index": 3,
+    "label": "Service messages",
+    "expected": "servicemsg",
+    "to": "servicemsg",
+    "back": "messagesettings",
+    "err": null
+  },
+  {
+    "parent": "contacts",
+    "index": 0,
+    "label": "Names",
+    "expected": "names",
+    "to": "names",
+    "back": "contacts",
+    "err": null
+  },
+  {
+    "parent": "contacts",
+    "index": 1,
+    "label": "Add new",
+    "expected": "addcontact",
+    "to": "addcontact",
+    "back": "addcontact",
+    "err": null
+  },
+  {
+    "parent": "contacts",
+    "index": 2,
+    "label": "Synchronise all",
+    "expected": "sync",
+    "to": "sync",
+    "back": "contacts",
+    "err": null
+  },
+  {
+    "parent": "contacts",
+    "index": 3,
+    "label": "Settings",
+    "expected": "contactsettings",
+    "to": "contactsettings",
+    "back": "contacts",
+    "err": null
+  },
+  {
+    "parent": "contacts",
+    "index": 4,
+    "label": "Groups",
+    "expected": "groups",
+    "to": "groups",
+    "back": "contacts",
+    "err": null
+  },
+  {
+    "parent": "contacts",
+    "index": 5,
+    "label": "Speed dials",
+    "expected": "speeddials",
+    "to": "speeddials",
+    "back": "contacts",
+    "err": null
+  },
+  {
+    "parent": "contacts",
+    "index": 6,
+    "label": "Service numbers",
+    "expected": "services",
+    "to": "services",
+    "back": "contacts",
+    "err": null
+  },
+  {
+    "parent": "contacts",
+    "index": 7,
+    "label": "Del. all contacts",
+    "expected": "deletecontacts",
+    "to": "deletecontacts",
+    "back": "contacts",
+    "err": null
+  },
+  {
+    "parent": "log",
+    "index": 0,
+    "label": "All calls",
+    "expected": "allcalls",
+    "to": "allcalls",
+    "back": "log",
+    "err": null
+  },
+  {
+    "parent": "log",
+    "index": 1,
+    "label": "Missed calls",
+    "expected": "missed",
+    "to": "missed",
+    "back": "log",
+    "err": null
+  },
+  {
+    "parent": "log",
+    "index": 2,
+    "label": "Received calls",
+    "expected": "received",
+    "to": "received",
+    "back": "log",
+    "err": null
+  },
+  {
+    "parent": "log",
+    "index": 3,
+    "label": "Dialled numbers",
+    "expected": "dialled",
+    "to": "dialled",
+    "back": "log",
+    "err": null
+  },
+  {
+    "parent": "log",
+    "index": 4,
+    "label": "Message recipients",
+    "expected": "recipients",
+    "to": "recipients",
+    "back": "log",
+    "err": null
+  },
+  {
+    "parent": "log",
+    "index": 5,
+    "label": "Call duration",
+    "expected": "callduration",
+    "to": "callduration",
+    "back": "log",
+    "err": null
+  },
+  {
+    "parent": "log",
+    "index": 6,
+    "label": "Packet data counter",
+    "expected": "packetcounter",
+    "to": "packetcounter",
+    "back": "log",
+    "err": null
+  },
+  {
+    "parent": "log",
+    "index": 7,
+    "label": "Packet data timer",
+    "expected": "packettimer",
+    "to": "packettimer",
+    "back": "log",
+    "err": null
+  },
+  {
+    "parent": "settings",
+    "index": 0,
+    "label": "Profiles",
+    "expected": "profiles",
+    "to": "profiles",
+    "back": "settings",
+    "err": null
+  },
+  {
+    "parent": "settings",
+    "index": 1,
+    "label": "Themes",
+    "expected": "themes",
+    "to": "themes",
+    "back": "settings",
+    "err": null
+  },
+  {
+    "parent": "settings",
+    "index": 2,
+    "label": "Tones",
+    "expected": "tones",
+    "to": "tones",
+    "back": "settings",
+    "err": null
+  },
+  {
+    "parent": "settings",
+    "index": 3,
+    "label": "Lights",
+    "expected": "lights",
+    "to": "lights",
+    "back": "settings",
+    "err": null
+  },
+  {
+    "parent": "settings",
+    "index": 4,
+    "label": "Display",
+    "expected": "display",
+    "to": "display",
+    "back": "settings",
+    "err": null
+  },
+  {
+    "parent": "settings",
+    "index": 5,
+    "label": "Date and time",
+    "expected": "datetime",
+    "to": "datetime",
+    "back": "settings",
+    "err": null
+  },
+  {
+    "parent": "settings",
+    "index": 6,
+    "label": "Phone",
+    "expected": "phone",
+    "to": "phone",
+    "back": "settings",
+    "err": null
+  },
+  {
+    "parent": "settings",
+    "index": 7,
+    "label": "Connectivity",
+    "expected": "connectivity",
+    "to": "connectivity",
+    "back": "settings",
+    "err": null
+  },
+  {
+    "parent": "settings",
+    "index": 8,
+    "label": "Security",
+    "expected": "security",
+    "to": "security",
+    "back": "settings",
+    "err": null
+  },
+  {
+    "parent": "connectivity",
+    "index": 0,
+    "label": "Bluetooth",
+    "expected": "bluetooth",
+    "to": "bluetooth",
+    "back": "connectivity",
+    "err": null
+  },
+  {
+    "parent": "connectivity",
+    "index": 1,
+    "label": "Packet data",
+    "expected": "packetdata",
+    "to": "packetdata",
+    "back": "connectivity",
+    "err": null
+  },
+  {
+    "parent": "inbox",
+    "index": 0,
+    "label": "Alex",
+    "expected": "conversation",
+    "to": "conversation",
+    "back": "inbox",
+    "err": null
+  },
+  {
+    "parent": "inbox",
+    "index": 1,
+    "label": "Nokia service",
+    "expected": "conversation",
+    "to": "conversation",
+    "back": "inbox",
+    "err": null
+  },
+  {
+    "parent": "inbox",
+    "index": 2,
+    "label": "Welcome",
+    "expected": "conversation",
+    "to": "conversation",
+    "back": "inbox",
+    "err": null
+  },
+  {
+    "parent": "names",
+    "index": 0,
+    "label": "Alex Morgan",
+    "expected": "contact",
+    "to": "contact",
+    "back": "names",
+    "err": null
+  },
+  {
+    "parent": "names",
+    "index": 1,
+    "label": "Home",
+    "expected": "contact",
+    "to": "contact",
+    "back": "names",
+    "err": null
+  },
+  {
+    "parent": "names",
+    "index": 2,
+    "label": "Voicemail",
+    "expected": "contact",
+    "to": "contact",
+    "back": "names",
+    "err": null
+  },
+  {
+    "parent": "media",
+    "index": 0,
+    "label": "Camera",
+    "expected": "camera",
+    "to": "camera",
+    "back": "media",
+    "err": null
+  },
+  {
+    "parent": "media",
+    "index": 1,
+    "label": "Video camera",
+    "expected": "videorecorder",
+    "to": "videorecorder",
+    "back": "media",
+    "err": null
+  },
+  {
+    "parent": "media",
+    "index": 2,
+    "label": "Media player",
+    "expected": "musiclibrary",
+    "to": "musiclibrary",
+    "back": "media",
+    "err": null
+  },
+  {
+    "parent": "media",
+    "index": 3,
+    "label": "Radio",
+    "expected": "radio",
+    "to": "radio",
+    "back": "media",
+    "err": null
+  },
+  {
+    "parent": "media",
+    "index": 4,
+    "label": "Voice recorder",
+    "expected": "voicerecorder",
+    "to": "voicerecorder",
+    "back": "media",
+    "err": null
+  },
+  {
+    "parent": "media",
+    "index": 5,
+    "label": "Equaliser",
+    "expected": "equaliser",
+    "to": "equaliser",
+    "back": "media",
+    "err": null
+  },
+  {
+    "parent": "organiser",
+    "index": 0,
+    "label": "Alarm clock",
+    "expected": "alarmclock",
+    "to": "alarmclock",
+    "back": "organiser",
+    "err": null
+  },
+  {
+    "parent": "organiser",
+    "index": 1,
+    "label": "Calendar",
+    "expected": "calendar",
+    "to": "calendar",
+    "back": "organiser",
+    "err": null
+  },
+  {
+    "parent": "organiser",
+    "index": 2,
+    "label": "To-do list",
+    "expected": "todolist",
+    "to": "todolist",
+    "back": "organiser",
+    "err": null
+  },
+  {
+    "parent": "organiser",
+    "index": 3,
+    "label": "Notes",
+    "expected": "notes",
+    "to": "notes",
+    "back": "organiser",
+    "err": null
+  },
+  {
+    "parent": "organiser",
+    "index": 4,
+    "label": "Calculator",
+    "expected": "calculator",
+    "to": "calculator",
+    "back": "calculator",
+    "err": null
+  },
+  {
+    "parent": "organiser",
+    "index": 5,
+    "label": "Countd. timer",
+    "expected": "countdown",
+    "to": "countdown",
+    "back": "organiser",
+    "err": null
+  },
+  {
+    "parent": "organiser",
+    "index": 6,
+    "label": "Stopwatch",
+    "expected": "stopwatch",
+    "to": "stopwatch",
+    "back": "organiser",
+    "err": null
+  }
+]

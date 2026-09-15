@@ -1,0 +1,981 @@
+[
+  {
+    "page": null,
+    "screen": "Add new contact\nName\nMobile",
+    "soft": [
+      "Options",
+      "Save",
+      "Clear"
+    ],
+    "screenClass": "screen addcontact",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Alarm clock\nAlarm Off\nAlarm time 07:00\nRepeat Off\nAlarm tone Nokia tune\nSnooze 10 min",
+    "soft": [
+      "Options",
+      "Change",
+      "Back"
+    ],
+    "screenClass": "screen alarmclock",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Alarm time\n__:__\nEnter time (24-hour)",
+    "soft": [
+      "Options",
+      "Save",
+      "Clear"
+    ],
+    "screenClass": "screen alarmedit",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "All calls\nAlex Morgan Today 22:41\nHome Yesterday",
+    "soft": [
+      "Options",
+      "Call",
+      "Back"
+    ],
+    "screenClass": "screen allcalls",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "All songs\n1\nS40 Test Tone",
+    "soft": [
+      "Options",
+      "Play",
+      "Back"
+    ],
+    "screenClass": "screen allsongs",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Answer phone messages\nAnswer phone messages\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen answerphone",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Apps\nGames\nCollection\nMemory card\nDownloads",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen apps",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Bluetooth\nBluetooth Off\nConnect to audio accessory\nPaired devices\nActive devices\nPhone visibility",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen bluetooth",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Nokia Browser\nNokia start page\n\nBookmarks\nEnter web address\nService inbox",
+    "soft": [
+      "Options",
+      "Open",
+      "Back"
+    ],
+    "screenClass": "screen browser",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Calculator\n23\n\u2731 \u25c8\n+\n\u00d7\n=\n\u00f7\n\u2212\n# \u00b7",
+    "soft": [
+      "Options",
+      "",
+      "Clear"
+    ],
+    "screenClass": "screen calculator",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Calendar\nNo calendar notes",
+    "soft": [
+      "Options",
+      "Make note",
+      "Back"
+    ],
+    "screenClass": "screen calendar",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Call duration\nLast call 00:00:08\nReceived calls 00:03:12\nDialled calls 00:05:47\nAll calls 00:08:59\nClear timers",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen callduration",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Make a note\nReminder",
+    "soft": [
+      "Options",
+      "Save",
+      "Clear"
+    ],
+    "screenClass": "screen calnote",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Make a note\nReminder\nMeeting\nCall\nBirthday\nAnniversary",
+    "soft": [
+      "",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen caltypes",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "14:07\nDemo network\nTue 15-09-2026",
+    "soft": [
+      "Go to",
+      "Menu",
+      "Names"
+    ],
+    "screenClass": "screen calview",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Camera\nCamera\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen camera",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "New text message\n1000/01\nTo:\nAlex\nText:\n\u2039\n\u203a",
+    "soft": [
+      "Options",
+      "Send",
+      "Clear"
+    ],
+    "screenClass": "screen compose",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Confirmdelete\nConfirmdelete\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen confirmdelete",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Connectivity\nBluetooth\nPacket data",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen connectivity",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Contact details\nAlex Morgan\n\u25cf\n\u25a3\n+44 7700 900123",
+    "soft": [
+      "Options",
+      "Call",
+      "Back"
+    ],
+    "screenClass": "screen contact",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Contacts\nNames\nAdd new\nSynchronise all\nSettings\nGroups",
+    "soft": [
+      "",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen contacts",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Contact settings\nContact settings\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen contactsettings",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Alex\nCan you test the web version?\nYes - checking it now.",
+    "soft": [
+      "Options",
+      "Reply",
+      "Back"
+    ],
+    "screenClass": "screen conversation",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Conversations\nAlex\nNokia service",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen conversations",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Countdown\nCountdown\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen countdown",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Create message\n\u2709\nMessage\n\u2301\nE-mail message\n\u2709\nFlash message\n\u2709\nAudio message\n\u25a0\nTemplates",
+    "soft": [
+      "",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen createmessage",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Date and time\nDate & time settings\nDate & time format\nAuto-update of time",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen datetime",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Delete all contacts\nDelete all contacts\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen deletecontacts",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Delete messages\nBy message\nBy folder\nAll messages",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen deletemessages",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "NOKIA\n \n\u2315 123",
+    "soft": [
+      "Options",
+      "Save",
+      "Clear"
+    ],
+    "screenClass": "screen dial",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Dialled numbers\n(empty)",
+    "soft": [
+      "Options",
+      "Call",
+      "Back"
+    ],
+    "screenClass": "screen dialled",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Display\nWallpaper\nHome screen\nHome screen font colour\nNavigation key icons\nNotification details",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen display",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Drafts\n(empty)",
+    "soft": [
+      "Options",
+      "Open",
+      "Back"
+    ],
+    "screenClass": "screen drafts",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "E-mail\nE-mail\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen email",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Equaliser\nEqualiser\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen equaliser",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Folders\nFolders\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen folders",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Gallery\n1\nMemory card\n2.7 MB\nImages\n0.0 kB\nVideo clips\n0.0 kB\nMusic files\n0.0 kB",
+    "soft": [
+      "Options",
+      "Open",
+      "Back"
+    ],
+    "screenClass": "screen gallery",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "General settings\nSave sent messages\nChange message view\nFavourite recipient\nFont size\nGraphical smileys",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen generalmsg",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Goto\nCalculator\nLock keypad\nNokia Browser\nMedia player\nConversations",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen goto",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Groups\nGroups\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen groups",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "14:07\nDemo network\nTue 15-09-2026",
+    "soft": [
+      "Go to",
+      "Menu",
+      "Names"
+    ],
+    "screenClass": "screen home",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Inbox\nAlex\n22:47 1 unread message\nNokia service\nYesterday\nWelcome\n14-09-2026",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen inbox",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "NOKIA\nJane Doe",
+    "soft": [
+      "Options",
+      "Menu",
+      "Loudsp."
+    ],
+    "screenClass": "screen incall",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Lights\nLights\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen lights",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Loan calculator\nLoan amount\n0\nLoan period (months)\n0\nAnnual interest rate (%)\n0",
+    "soft": [
+      "Options",
+      "Calculate",
+      "Clear"
+    ],
+    "screenClass": "screen loancalc",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Log\nAll calls\nMissed calls\nReceived calls\nDialled numbers\nMessage recipients",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen log",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Media\nCamera\nVideo camera\nMedia player\nRadio\nVoice recorder",
+    "soft": [
+      "",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen media",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Menu\nMessaging\nContacts\nLog\nSettings\nGallery\nMedia\nOrganiser\nApps.\nWeb",
+    "soft": [
+      "Options",
+      "Select",
+      "Exit"
+    ],
+    "screenClass": "screen menu",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Message settings\nGeneral settings\nText messages\nMultimedia messages\nService messages",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen messagesettings",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Messaging\nCreate message\nInbox\nE-mail\nDrafts\n1 message\nOutbox",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen messaging",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Missed\nAlex Morgan Today 22:41",
+    "soft": [
+      "Options",
+      "Call",
+      "Back"
+    ],
+    "screenClass": "screen missed",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Multimedia messages\nRequest read reports\nAllow read reports\nMMS creation mode\nImage size in MMS\nDefault slide timing",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen mms",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Media menu\nGo to Media player\nAll songs\nPlaylists\nArtists\nAlbums",
+    "soft": [
+      "Options",
+      "Select",
+      "Exit"
+    ],
+    "screenClass": "screen musiclibrary",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Names\nAlex Morgan\nHome\nVoicemail",
+    "soft": [
+      "Options",
+      "Open",
+      "Back"
+    ],
+    "screenClass": "screen names",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Notes\nNo notes",
+    "soft": [
+      "Options",
+      "Add",
+      "Back"
+    ],
+    "screenClass": "screen notes",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Organiser\n\u2026\nAlarm clock\nOff\nCalendar\nTo-do list\nNotes\nCalculator",
+    "soft": [
+      "",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen organiser",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Outbox\nOutbox\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen outbox",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Packet data counter\nPacket data counter\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen packetcounter",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Packetdata\nPacketdata\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen packetdata",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Packet data timer\nPacket data timer\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen packettimer",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Phone\nPhone\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen phone",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Media player\n1/1\nS40 Test Tone\nUnknown album\nEmulator\n00:00\n01:30\n\u21aa \u2928\n\u25c0|\n\u25b6\n|\u25b6",
+    "soft": [
+      "Options",
+      "",
+      "Back"
+    ],
+    "screenClass": "screen player",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Profiles\nGeneral \u2713\nSilent\nMeeting\nOutdoor\nMy style 1",
+    "soft": [
+      "Options",
+      "Activate",
+      "Back"
+    ],
+    "screenClass": "screen profiles",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Radio\nRadio\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen radio",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Received calls\nHome Yesterday",
+    "soft": [
+      "Options",
+      "Call",
+      "Back"
+    ],
+    "screenClass": "screen received",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Message recipients\nMessage recipients\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen recipients",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Delivery reports\nDelivery reports\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen reports",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Saved items\nTemplates\nSaved messages",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen saved",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Savedmessages\nSavedmessages\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen savedmessages",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Scientific calculator\n0\nsin\ncos\ntan\n\u221a\nx\u00b2\nlog\nln\n\u03c0\n1/x\n%\n\u00f7\n\u00d7\n\u2212\n+\n=",
+    "soft": [
+      "Options",
+      "Select",
+      "Exit"
+    ],
+    "screenClass": "screen scientific",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Security\nPIN code request\nCall barring service\nFixed dialling\nClosed user group\nSecurity level",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen security",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Sent items\nYes - checking it now.",
+    "soft": [
+      "Options",
+      "Open",
+      "Back"
+    ],
+    "screenClass": "screen sent",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Service commands\nService commands\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen servicecommands",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Servicemsg\nServicemsg\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen servicemsg",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Service numbers\nService numbers\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen services",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Settings\n\u2026\nProfiles\nThemes\nBlack.nth\nTones\nLights\nDisplay",
+    "soft": [
+      "",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen settings",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Speed dials\nSpeed dials\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen speeddials",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Stopwatch\nStopwatch\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen stopwatch",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Web\n1\nNokia.com\nHome\nBookmarks\nGo to address\nLast web addr.",
+    "soft": [
+      "",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen store",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Synchronise all\nSynchronise all\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen sync",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Templates\nTemplates\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen templates",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Text messages\nDelivery reports\nMessage centres\nMessage centre in use\nMessage validity\nMessage sent via",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen textmsg",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Add note\nNote",
+    "soft": [
+      "Options",
+      "Save",
+      "Clear"
+    ],
+    "screenClass": "screen textnote",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Themes 1\nAbstract.nth\n720 kB\n18-02-09\nBlack.nth\n564 kB\n18-02-09\nMountains.nth\n1.0 MB\n18-02-09\nSimple.nth\n471 kB\n18-02-09",
+    "soft": [
+      "Options",
+      "Apply",
+      "Back"
+    ],
+    "screenClass": "screen themes",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Add to-do\nTo-do note",
+    "soft": [
+      "Options",
+      "Save",
+      "Clear"
+    ],
+    "screenClass": "screen todoedit",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "To-do list\nNo to-do notes",
+    "soft": [
+      "Options",
+      "Add",
+      "Back"
+    ],
+    "screenClass": "screen todolist",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Tones\nIncoming call alert\nRinging tone\nRing volume\nIncoming call video\nMessage alert tone",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen tones",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Videorecorder\nVideorecorder\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen videorecorder",
+    "error": null
+  },
+  {
+    "page": null,
+    "screen": "Voicerecorder\nVoicerecorder\nNo items",
+    "soft": [
+      "Options",
+      "Select",
+      "Back"
+    ],
+    "screenClass": "screen voicerecorder",
+    "error": null
+  }
+]
