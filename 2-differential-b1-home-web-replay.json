@@ -1,0 +1,50 @@
+[
+  [
+    "LSK",
+    "Goto\nLock keypad\nProfiles\nAlarm clock\nCamera\nVideo recorder|Options\nSelect\nBack"
+  ],
+  [
+    "OK",
+    "Menu\nMessaging\nContacts\nLog\nSettings\nGallery\nMedia\nOrganiser\nApps.\nWeb|Options\nSelect\nExit"
+  ],
+  [
+    "RSK",
+    "Names\nAlex Morgan\nHome\nVoicemail|Options\nDetails\nExit"
+  ],
+  [
+    "Up",
+    "15:47\nDemo network\nTue 15-09-2026|Go to\nMenu\nNames"
+  ],
+  [
+    "Down",
+    "15:47\nDemo network\nTue 15-09-2026|Go to\nMenu\nNames"
+  ],
+  [
+    "Left",
+    "15:47\nDemo network\nTue 15-09-2026\nWeb|Options\nSelect\nExit"
+  ],
+  [
+    "Right",
+    "15:47\nDemo network\nTue 15-09-2026\nWeb|Options\nSelect\nExit"
+  ],
+  [
+    "End idle",
+    "15:47\nDemo network\nTue 15-09-2026|Go to\nMenu\nNames"
+  ],
+  [
+    "Digit",
+    "NOKIA\n \n\u2315 123\n2|Options\nSave\nClear"
+  ],
+  [
+    "End dial",
+    "15:47\nDemo network\nTue 15-09-2026|Go to\nMenu\nNames"
+  ],
+  [
+    "Fresh digit",
+    "NOKIA\n \n\u2315 123\n3|Options\nSave\nClear"
+  ],
+  [
+    "Star",
+    "NOKIA\n \n\u2315 123\n*|Options\nSave\nClear"
+  ]
+]
