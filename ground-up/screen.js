@@ -46,12 +46,14 @@ const endpointModels={
  'Go to address':{kind:'offline',lead:'Enter web address · offline',rows:['Address','Recent addresses','Clear field','Settings']}
 };
 function detailModel(section,item){
+ if(section==='Gallery'&&item==='Gallery')return {kind:'content',lead:'Local gallery',rows:['Photos: '+phoneState.photos.length,'Themes: 4 supplied','Tones: '+firmwareTones.length,'Memory status']};
+ if(section==='Gallery'&&item==='Music and videos')return {kind:'content',lead:'Supplied local media',rows:['Music: 0','Videos: 0','Tones: '+firmwareTones.length,'Memory status']};
  if(item==='Accessories')return {lead:phoneState.accessory,rows:['Default accessory','Headset','Handsfree','TTY']};
  if(item==='Call')return {lead:'Offline call preferences',rows:['Anykey answer: '+(phoneState.anykeyAnswer?'On':'Off'),'Automatic redial: '+(phoneState.autoRedial?'On':'Off'),'Speed dialling: '+(phoneState.speedDial?'On':'Off'),'Call waiting: '+(phoneState.callWaiting?'On':'Off')]};
  if(item==='Caller groups')return {kind:'contacts',lead:'Local caller groups',rows:['Family: '+phoneState.contacts.filter(x=>x.group==='Family').length,'Friends: '+phoneState.contacts.filter(x=>x.group==='Friends').length,'Business: '+phoneState.contacts.filter(x=>x.group==='Business').length,'Other: '+phoneState.contacts.filter(x=>x.group==='Other').length,'Remove group']};
  if(item==='Speed dials')return {kind:'contacts',lead:Object.keys(phoneState.speedDials||{}).length+' assigned',rows:['2','3','4','5','6','7','8','9'].map(k=>k+': '+(phoneState.speedDials?.[k]||'Empty'))};
  if(item==='Phone')return {lead:phoneState.language+' · '+(phoneState.flightMode?'Flight mode':'Normal mode'),rows:['Language','Flight query: '+(phoneState.flightMode?'On':'Off'),'Welcome note: '+(phoneState.welcomeNote||'Off'),'Network mode: '+phoneState.networkMode]};
- if(item==='Memory status')return {lead:'Local records',rows:['Contacts: '+phoneState.contacts.length,'Messages: '+phoneState.messages.length,'Notes: '+phoneState.notes.length,'Calendar: '+phoneState.calendar.length]};
+ if(section==='Applications'&&item==='Memory status')return {lead:'Local records',rows:['Contacts: '+phoneState.contacts.length,'Messages: '+phoneState.messages.length,'Notes: '+phoneState.notes.length,'Calendar: '+phoneState.calendar.length]};
  if(item==='Message counter')return {lead:'Local message counters',rows:['Drafts: '+phoneState.messages.filter(x=>x.status==='draft').length,'Sent: '+phoneState.messages.filter(x=>x.status==='sent').length,'Received: 0','Reset counters']};
  if(item==='Call duration')return {lead:'Offline calls are not connected',rows:['Last call: 00:00','Dialled calls: '+phoneState.callLog.length,'Received calls: 0','All calls: '+phoneState.callLog.length]};
  if(item==='Connectivity')return {lead:'Offline · Bluetooth '+(phoneState.bluetooth?'On':'Off'),rows:['Bluetooth: '+(phoneState.bluetooth?'On':'Off'),'Packet data: '+phoneState.packetData,'USB data cable: '+phoneState.usbMode,'Network status']};

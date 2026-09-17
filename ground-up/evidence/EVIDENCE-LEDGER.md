@@ -467,3 +467,7 @@ Media > Camera > Capture now saves a timestamped local reference-capture record 
 ## v0.93 per-capture delete confirmation
 
 On a stored Gallery > Photos reference-capture row, the left softkey opens a confirmation showing the exact capture name and kind. Select removes only that indexed local record and persists; Back cancels. No image bytes exist or are implied, so deletion concerns only the explicit reference-capture metadata.
+
+## v0.94 Gallery inventory readback
+
+Gallery > Gallery now reports Photos count, four supplied themes and all 57 supplied tones. Gallery > Music and videos reports the supplied-local media inventory without claiming absent music/video files. Applications > Memory status remains the local record counter and is now section-scoped, avoiding an endpoint-name collision. This replaces generic Gallery toggles with source-backed inventory rows.
