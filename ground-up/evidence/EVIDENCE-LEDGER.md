@@ -503,3 +503,11 @@ Messaging > Conversations now groups local draft/sent records by recipient, show
 ## v0.102 local Message settings
 
 Messaging > Message settings now exposes persistent Delivery reports and Save sent messages preferences. Delivery reports remains stored preference only because no transmission occurs. Save sent messages affects the explicit local Draft-to-Sent simulation: On moves the draft to Sent items; Off removes it after the local completion confirmation. Message centres and Character support remain reference rows.
+
+## v0.103 persistent Date format
+
+Settings > Date and time now separates Date format and Time format. Date format selects DMY, MDY or YMD and persists; the offline idle screen applies it immediately. Time format keeps the existing 12/24-hour behavior. The format tokens are explicit Ground-Up choices pending physical wording/ordering capture.
+
+## v0.103 persistent Date format
+
+Settings > Date and time now separates Date format and Time format. Date format selects DMY, MDY or YMD and persists; the offline idle screen applies it immediately. Time format keeps the existing 12/24-hour behavior. The format tokens are explicit Ground-Up choices pending physical wording/ordering capture.
