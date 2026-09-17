@@ -179,3 +179,11 @@ v0.20 replaces the generic toggle on three high-value actions with real stateful
 ## v0.21 offline backend foundation, tones and themes
 
 A local persistent backend now stores profile, selected supplied theme, ringing tone, volume, alarm and future organiser/contact/message/log collections in browser localStorage. This is implemented offline behavior, not claimed original database format. Tones > Ringing tone opens a real selector over all 57 exact AAC files from the supplied firmware; Up/Down selects, Select persists and attempts local audio preview. Themes > Select theme opens the four supplied NTH identities (Black, Dark, Light, Nokia); selection persists. Alarm save now persists in the same phone state. Exact theme visuals beyond Black remain upcoming; selecting a theme records state without yet hot-swapping every asset.
+
+## v0.22 live theme behavior
+
+Theme selection now changes the actual LCD theme asset set immediately and survives reload. The software swaps seven matched assets from each supplied NTH extraction: menu background, status area, grid selector, softkey area and left/center/right softkey pieces. Only the four supplied identities are accepted: Black, Dark, Light and Nokia. This is directly grounded in the supplied theme packages. The Settings > Themes lead reads the persisted active theme; Tones and Alarm leads likewise read their stored backend values.
+
+## v0.23 profiles and ring-volume backend
+
+Profiles is now functional offline state: selecting any displayed profile opens activation, Up/Down traverses all seven frozen-source profile leads, Select persists the active profile and the Profiles screen reads it back. Tones > Ring volume opens a seven-step meter; Up/Down changes the level and Select persists it. The profile names remain unverified frozen-source leads pending independent provenance; persistence and state behavior are Ground-Up implementation, not Nokia database claims.

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE theme PUBLIC "theme" "xml30.dtd" >
+<theme name="Light" version="0.8">
+	<descriptor xml-version="3.0">
+		<toolbox>
+			<message-box>
+				<font color="0x000000"></font>
+				<background source="message_box_background_236x133.png"></background>
+				<wait-anim>
+					<image source="loadingbar_220x28.gif"></image>
+				</wait-anim>
+			</message-box>
+			
+			<list>
+				<background display="main" source="background_240x320.png"></background>
+				<item>
+					<selected>
+						<font color="0xFFFFFF"></font>
+						<background color="0x8DC6F1" source="list_menu_select_224x60.png"></background>
+					</selected>                   
+					<unselected>
+						<font color="0x000000"></font>
+					</unselected>
+				</item>
+				<unavailable-item>     
+					<selected>
+						<font color="0x808080"></font>
+						<background source="list_menu_unavailable_select_224x60.png"></background>
+					</selected>
+					<unselected>
+						<font color="0x808080"></font>
+					</unselected>
+				</unavailable-item>  
+			</list>
+			
+			<choice-list>
+			    <item>
+			        <selected>
+			            <font color="0xFFFFFF"/>
+			                <background source="choice_list_background_224x30.png"/>
+			         </selected>
+			    </item>
+			</choice-list>
+			
+			<forms>
+				<unselected>
+					<font color="0x000000"></font>
+					<background source="form_unselected_224x44.png"></background>
+				</unselected>                
+				<selected>
+					<font color="0xFFFFFF"></font>
+					<background source="form_selected_224x280.png"></background>
+				</selected>
+				<label>
+					<font color="0x000000"></font>
+				</label>
+				<value-field>
+					<unselected>
+						<background source="form_passive_value_bg_215x37.png"></background>
+					</unselected>                
+					<selected>
+						<background source="form_active_value_bg_215x37.png"></background>
+					</selected>
+				</value-field>
+			</forms>
+			
+			<editor>
+				<value-field>
+					<background source="form_editor_bg_215x37.png"> </background>
+				</value-field>
+			</editor>
+			
+			<popup-list>		              
+				<list>
+					<item>
+						<selected>
+							<font color="0xFFFFFF"></font>
+							<background color="0x000000" source="popup_list_select_224x34.png"></background>
+						</selected>
+						<unselected>
+							<font color="0x000000"></font>
+						</unselected>
+					</item>				
+					<unavailable-item>
+						<selected>
+							<font color="0x808080"></font>
+							<background color="0x666666" source="popup_list_unavailable_select_224x34.png"></background>
+						</selected>
+						<unselected>
+							<font color="0x808080"></font>
+						</unselected>
+					</unavailable-item>
+					<background display="main" source="popup_list_background_240x238.png"></background>
+				</list>		  	
+			</popup-list>
+			
+			<virtual-button>
+				<pressed>
+					<background source="grid_menu_select_74x79.png"></background>
+				</pressed>           
+				<selected>
+					<background color="0xff0000" source="grid_menu_select_74x79.png"></background>
+				</selected>               
+				<unavailable-item>
+					<background source=""></background>
+				</unavailable-item>            
+				<unpressed>
+					<background source=""></background>
+				</unpressed> 
+			</virtual-button>  
+			
+			<scrollbar>
+				<vertical>
+					<scrollbar-background position="top">
+						<background source="scrollbar_top.png"></background>
+					</scrollbar-background>
+                
+					<scrollbar-background position="bottom">
+						<background source="scrollbar_bottom.png"></background>
+					</scrollbar-background>
+                
+					<scrollbar-tab position="top">
+						<background source="scroll_tab_top.png"></background>
+					</scrollbar-tab>
+				
+					<scrollbar-tab position="center">
+						<background source="scroll_tab_center.png"></background>
+					</scrollbar-tab>
+                
+					<scrollbar-tab position="bottom">
+						<background source="scroll_tab_bottom.png"></background>
+					</scrollbar-tab>
+				
+				</vertical>
+			</scrollbar>
+			
+		</toolbox>
+		
+		<screens>   
+			<softkey position="left">  
+				<background source="softkey_left_80x38.png"></background>
+			</softkey>        		
+			<softkey position="right">                
+				<background source="softkey_right_80x38.png"></background>
+			</softkey>       
+			<softkey position="center">        
+				<background source="softkey_center_80x38.png"></background>
+			</softkey>
+			
+			<idle>           
+				<active-idle>
+					<font color="0x000000"></font>                 
+					<selected>
+						<background source="active_idle_list_select_240x48.png"></background>
+					</selected>
+					<shortcut-bar>
+						<selected>
+							<background source="active_idle_tab_select_44x50.png"></background>
+						</selected>
+					</shortcut-bar>                                   
+				</active-idle>   
+				<font color="0x000000" outline="0xdddddd"></font> 
+				<status-area>
+					<font color="0x000000"></font>
+					<background source=""></background>
+				</status-area>     
+				<softkey-area>
+					<font color="0xFFFFFF"></font>
+					<background source="softkey_area_240x38.png"></background>               
+				</softkey-area>
+				<wallpaper>
+					<image display="main" source="background_240x320.png"></image>
+				</wallpaper>
+			</idle> 
+			
+			<menu-app>
+				<status-area>
+					<font color="0x000000"></font>
+				</status-area>
+				<header>
+					<font color="0x000000"></font>
+				</header>
+				<softkey-area>
+					<font color="0xFFFFFF"></font>
+				</softkey-area>                
+				<menu>
+					<grid-menu>
+						<background source="background_240x320.png"></background>
+						<unselected>
+							<font color="0x000000"></font>
+						</unselected>
+						<selected>
+							<font color="0xFFFFFF"></font>
+							<background color="0xffffff" source="grid_menu_select_74x79.png"></background>
+						</selected>
+						<reorder>
+							<selected>                                        
+								<background source="reorder_grid_74x79.png"></background>
+							</selected>
+						</reorder>
+					</grid-menu>
+					<tab-menu>      
+						<selected>
+							<background source="tab_menu_select_44x50.png"></background>
+						</selected>
+					</tab-menu>
+					<reorder>
+						<font color="0x3300FF"></font>
+						<list-reorder>
+							<background color="0xffffff" source="reorder_list_224x60.png"></background>
+						</list-reorder>
+					</reorder>
+				</menu>
+				<applications>
+					<calendar>
+						<font color="0x000000"></font>
+						
+						<month-view>
+							<selected>
+								<font color="0xFFFFFF"></font>
+								<background source="calendar_month_highlight_34x24.png"></background>
+							</selected>
+							<month-background month="january">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="february">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="march">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="april">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="may">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="june">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="july">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="august">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="september">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="october">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="november">
+								<background source="background_240x320.png"></background>
+							</month-background>
+							<month-background month="december">
+								<background source="background_240x320.png"></background>
+							</month-background>                          
+							<last-weekday>
+								<font color="0x919191"></font>
+							</last-weekday>               
+							<weekdaybar>
+								<font color="0x000000"></font>
+								<background source="calendar_weekdaybar_240x26.png"></background>
+							</weekdaybar>
+						</month-view>  
+						
+						<week-view>
+							<selected>
+								<background color="0x000000"></background>
+							</selected>						
+							<timebar>
+								<font color="0x000000"></font>
+								<!--<background source="calendar_timebar_51x145.png"></background>-->
+							</timebar>
+							<grid color="0xA1A1AA"></grid>
+							<overlapping-slot>
+								<background color="0xF26226"></background>
+							</overlapping-slot>
+							<reserved-slot>
+								<background color="0xAFD4F0"></background>
+							</reserved-slot>
+						</week-view>
+						<preview-pane>
+							<font color="0x000000"></font>
+							<background source="calendar_preview_pane_240x72.png"></background>
+						</preview-pane>
+					</calendar>
+					
+					<big-clock>
+						<analog-clock>
+							<background source="analog_clock_background_240x320.png"></background>
+							<hand color="0x000000"></hand>
+						</analog-clock>                       
+						<digital-clock>
+							<background source="background_240x320.png"></background>
+						</digital-clock>
+						<font color="0x90909E"></font>
+					</big-clock>                
+				</applications>
+			</menu-app>
+		</screens>
+		
+		<skins>
+			<skin application="mediaplayer" version="1.0">
+				<param name="skin" filename="skin_mpl_Light.nfl"></param>
+				<param name="equalizer" filename="skin_eql_Light.nfl"></param>
+			</skin>
+			<skin application="fmradio" version="1.0">
+				<param name="skin" filename="skin_fmr_Light.nfl"></param>
+			</skin>
+		</skins>
+		
+	</descriptor>
+</theme>
