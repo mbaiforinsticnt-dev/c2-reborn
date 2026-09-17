@@ -543,3 +543,7 @@ On a selected Draft or Sent item, # moves that local message to Saved items and 
 ## v0.111 local Messaging templates
 
 Messaging > Templates now provides three explicit local test templates: Call me, I will be late and Thank you. Selecting one opens the existing draft editor with that body prefilled and recipient active; Select persists the draft. Create message opens a blank body. The template text is Ground-Up local content, not claimed as Nokia firmware strings.
+
+## v0.112 offline Service command composer
+
+Messaging > Service commands > Enter command now opens the shared multi-tap editor. `*` deletes and Select returns an explicit `confirmed service command offline; not sent` result. No command is transmitted or retained, and History remains 0. This replaces a generic toggle while preserving the offline boundary.
