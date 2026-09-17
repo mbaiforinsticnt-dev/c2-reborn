@@ -121,13 +121,13 @@ function detailModel(section,item){
  if(item==='Tones')return {...endpointModels.Tones,lead:'Ringing tone · '+phoneState.ringtone,rows:['Incoming call alert: '+phoneState.incomingAlert,'Ringing tone: '+phoneState.ringtone,'Ring volume: '+phoneState.volume,'Message alert tone: '+phoneState.messageTone]};
  if(item==='Alarm clock')return {...endpointModels['Alarm clock'],lead:phoneState.alarm+' · '+(phoneState.alarmEnabled?'On':'Off'),rows:['Alarm: '+(phoneState.alarmEnabled?'On':'Off'),'Alarm time','Repeat: '+phoneState.alarmRepeat,'Alarm tone: '+phoneState.alarmTone]};
  if(endpointModels[item])return endpointModels[item];
- const low=item.toLowerCase();let lead=`${item} UI reference surface from the ${section} menu.`,rows=['Open','Status','Settings','Help'],kind='generic';
- if(/contact|names|numbers|groups|dial/.test(low)){rows=['List','Add','Search','Options'];lead='Contacts reference surface. No personal records are loaded.';kind='contacts'}
- else if(/message|mailbox|sent|outbox|saved/.test(low)){rows=['Open list','Create','Search','Message settings'];lead='Messaging reference surface. Message content is local test data only.';kind='messages'}
- else if(/setting|shortcut|sync|backup|call|phone|accessor|configuration|restore/.test(low)){rows=['Current value','Change','Open','Restore default'];lead='Settings reference surface. Changes stay inside this offline phone.';kind='settings'}
- else if(/photo|gallery|download|application|memory/.test(low)){rows=['Open folder','Items','Memory status','Options'];lead='Content reference surface generated from the firmware menu route.';kind='content'}
- else if(/call|log|timer|counter|recipient/.test(low)){rows=['View entries','Clear list','Duration','Details'];lead='Log reference surface. No personal call records are used.';kind='log'}
- else if(/browser|ovi|nokia|web|cache|operator/.test(low)){rows=['Open reference','Address','Bookmarks','Settings'];lead='Offline web/service reference. No retired service is contacted.';kind='offline'}
+ const low=item.toLowerCase();let lead=`${item} · labelled firmware route`,rows=['Route available','No deeper local data','No external operation started','Back'],kind='generic';
+ if(/contact|names|numbers|groups|dial/.test(low)){rows=['No local entries','No external query started','Memory status','Back'];lead='Contacts route · local recreation data only.';kind='contacts'}
+ else if(/message|mailbox|sent|outbox|saved/.test(low)){rows=['No received content','No account/session started','Message settings','Back'];lead='Messaging route · local recreation data only.';kind='messages'}
+ else if(/setting|shortcut|sync|backup|call|phone|accessor|configuration|restore/.test(low)){rows=['No additional local setting','No external configuration loaded','Status','Back'];lead='Settings route · no unlabelled effect.';kind='settings'}
+ else if(/photo|gallery|download|application|memory/.test(low)){rows=['No local items','Memory status','No transfer started','Back'];lead='Content route · no external media loaded.';kind='content'}
+ else if(/call|log|timer|counter|recipient/.test(low)){rows=['No local entries','Duration: 00:00','Data: 0 B','Back'];lead='Log route · local recreation records only.';kind='log'}
+ else if(/browser|ovi|nokia|web|cache|operator/.test(low)){rows=['Service unavailable offline','No connection started','Bookmarks','Web settings'];lead='Offline web/service route. No retired service is contacted.';kind='offline'}
  return {lead,rows,kind};
 }
 function phoneNow(){let d=new Date(),z=phoneState.timeZone,minutes=phoneState.autoTime?0:Number(phoneState.manualMinutes||0);if(z==='Local')return new Date(d.getTime()+minutes*60000);let hours=z==='UTC'?0:z==='UTC+1'?1:-5;return new Date(d.getTime()+d.getTimezoneOffset()*60000+hours*3600000+minutes*60000)}
