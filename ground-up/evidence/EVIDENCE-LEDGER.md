@@ -539,3 +539,7 @@ Messaging > Outbox, Delivery reports and Saved items now show explicit empty loc
 ## v0.110 local Saved items workflow
 
 On a selected Draft or Sent item, # moves that local message to Saved items and persists. Saved items now lists records and opens their exact recipient/body; left softkey uses the existing exact-message delete confirmation. This replaces the empty-only Saved items surface. The # shortcut is Ground-Up behavior pending physical options capture, and nothing is transmitted.
+
+## v0.111 local Messaging templates
+
+Messaging > Templates now provides three explicit local test templates: Call me, I will be late and Thank you. Selecting one opens the existing draft editor with that body prefilled and recipient active; Select persists the draft. Create message opens a blank body. The template text is Ground-Up local content, not claimed as Nokia firmware strings.
