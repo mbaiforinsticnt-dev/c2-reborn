@@ -271,3 +271,11 @@ Settings > Lights now exposes a five-step Display light control. Up/Down changes
 ## v0.44 source-integrity repair: action movement dispatcher
 
 Audit found movement statements accidentally concatenated into the action-render chain, creating unreachable duplicate branches for lights, wallpaper, font colour, time format and to-do. Those branches are removed. All directional action changes now live in one named `handleActionArrow(key)` dispatcher; render branches only render and save branches only save. Each ordinary action type now has one render test, one movement test where applicable, and one save test. `node --check` passes and grep counts are recorded during build. No new endpoint behavior is added in this repair release.
+
+## v0.45 source modularization: action renderer
+
+Action markup is removed from the large `draw()` conditional and placed in one named `renderAction()` function with a switch keyed by action type. A shared `box()` template handles editor structure; each case owns only its body and help text. `draw()` now assigns `submenuList.innerHTML=renderAction()` and sets screen chrome. This follows v0.44's separated movement dispatcher and makes render, movement and save logic independently inspectable. No endpoint behavior is added.
+
+## v0.46 source modularization: action save/activation
+
+The action mutation chain is removed from `handleHardwareKey()` and split into `saveAction()`, `activateTimedAction()`, `previewTone()` and the shared `finishAction()` commit/return helper. Key dispatch now calls one action API. Timers remain runtime-only and do not call the persistence helper; settings and collections do. Tone media event handling is separately inspectable. Together with v0.44-v0.45, action rendering, directional movement, activation/persistence and media preview now have distinct boundaries. No endpoint behavior is added.
