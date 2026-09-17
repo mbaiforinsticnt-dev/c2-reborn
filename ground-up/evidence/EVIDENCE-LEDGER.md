@@ -455,3 +455,7 @@ The `*` key now deletes the last character in Dialler, Go to address and Add boo
 ## v0.90 multi-tap address and bookmark entry
 
 Go to address and Add bookmark now use the shared multi-tap composer, allowing letters and punctuation rather than digits only. `*` deletes while preserving the `http://` floor, and # changes case. This improves offline address fidelity without contacting or loading an address. The input clause was also deduplicated during the change. The keypad mapping/timing keeps the v0.53 Ground-Up disclosure pending physical confirmation.
+
+## v0.91 functional offline idle/home screen
+
+The red End key now returns to a distinct offline idle screen rather than the main menu test scaffold. It shows the live time/date, current profile, local Flight/Offline status, persisted Welcome note and Home screen preference. Centre opens Menu, right softkey opens Names, and left opens an Organiser shortcut. This is Ground-Up idle behavior assembled from existing local state; exact physical idle geometry/softkey bindings still need handset capture.
