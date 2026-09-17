@@ -808,3 +808,6 @@ A complete 413-row source-instrumented activation replay found nine rows still f
 
 ## Ground-Up v0.197 · remove stale pending-language fallbacks
 Three reachable generic controller messages that still said deeper behavior or menu geometry was pending have been replaced with accurate current-state guidance. Detail About reports the working offline surface, section activation directs the user to its rows, and Organise states the firmware menu order is fixed rather than implying unfinished behavior.
+
+## Ground-Up v0.198 · remove remaining stale route placeholders
+The remaining reachable generic UI copy has been aligned with the now-complete offline route set: Gallery lists its actual local surfaces, detail cards say Offline phone route, opened rows say offline surface, unavailable submenu fallback says Offline surface, and unsupported options say no additional options. No working-web or Java/game runtime scope was added.
