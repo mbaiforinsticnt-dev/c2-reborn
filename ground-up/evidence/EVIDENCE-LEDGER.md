@@ -841,3 +841,6 @@ A 390x900 pixel mobile render was inspected. The entire handset, 240x320 LCD, ni
 
 ## Ground-Up v0.208 · unreachable duplicate branch cleanup
 Removed the second repeated SoftLeft chain for Voice recorder, Photos, call lists, Bookmarks, and Speed dials. Each SoftLeft route remains once, while distinct Call-key routes remain intact. Behavior is unchanged and the hardware routing source now has one canonical SoftLeft branch for each route.
+
+## Ground-Up v0.209 · Call-key route correction
+Removed duplicated deletion routes from the Call-key chain for Voice recorder, Photos, call lists, and Bookmarks. Those destructive routes remain on SoftLeft with confirmation. Call on those detail rows now follows the phone's non-destructive offline dialler fallback instead of unexpectedly opening delete confirmation; Draft send, speed dial, to-do toggle, and contact dial routes remain distinct.
