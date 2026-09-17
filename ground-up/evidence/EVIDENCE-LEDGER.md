@@ -709,3 +709,6 @@ Settings > Configuration now keeps working local default/access-point selectors 
 
 ## Ground-Up v0.164 · browser landing-route completion
 Every offline browser landing entry now routes its Web settings row to the existing local preferences surface, completing the same navigation set already provided for Go to address, Bookmarks, and Last web address. No live web request is made.
+
+## Ground-Up v0.165 · contact Memory options completion
+Contacts > Memory options now retains its local memory selector, opens Names from the phone-contact count, explains absent SIM memory, and reports local phone/SIM counts. No SIM contents are claimed.
