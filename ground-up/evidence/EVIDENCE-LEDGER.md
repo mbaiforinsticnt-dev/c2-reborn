@@ -823,3 +823,6 @@ A second source-instrumented browser replay instantiated all 79 assigned action 
 
 ## Ground-Up v0.202 · align public build description
 The page description no longer calls the current working phone a Phase 1 visual primitive, and the footer no longer says Phase 0/1. It now identifies an offline phone reconstruction/offline build while preserving the RM-722 asset-inference caveat. A 1000x1100 pixel render was inspected: the handset, nine-cell first menu page, clock, labels, controls, and evidence text are visible and aligned without overlap or clipping.
+
+## Ground-Up v0.203 · end-to-end contact persistence audit
+A real hardware-key browser replay created contact a / 5 through Contacts > Add new contact, reloaded the page, verified the same record in local storage and on the Names card, then opened it in the contact editor. This validates mutation, persistence, redraw, reload, and detail-row activation together. No source behavior changed.
