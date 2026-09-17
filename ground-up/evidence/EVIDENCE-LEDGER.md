@@ -371,3 +371,7 @@ Selecting a stored Contacts > Names row now opens an editor prefilled with that 
 ## v0.69 per-draft editing
 
 Selecting a stored Drafts row now opens an editor prefilled with its exact recipient and message. Up/Down changes field; To uses literal digits and Message uses shared multi-tap; # changes message case and * deletes from the active field. Select updates the original indexed draft and persists; Back cancels. Left-softkey per-draft deletion remains separate.
+
+## v0.70 per-calendar-note editing
+
+Selecting a stored Calendar row opens an editor prefilled with its exact ISO date and note body. Left/Right changes Date/Note field; Up/Down changes date while Date is active; Note uses shared multi-tap, # changes case, and * deletes. Select replaces the indexed calendar note and persists; Back cancels. Left-softkey deletion remains separate.
