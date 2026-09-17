@@ -685,3 +685,6 @@ Applications > Settings now gives exact Java-runtime, network-access, local-memo
 
 ## Ground-Up v0.156 · detail-model scope guard
 The Applications Settings model predicate is restored to its `detailModel(section,item)` argument instead of reading mutable global menu selection. Activation continues to use the selected menu label because it has no local section variable. Static guards now distinguish those scopes, preventing another `window.section` collision or selection-coupled model.
+
+## Ground-Up v0.157 · Outbox and delivery-report empty states
+Messaging > Outbox and Delivery reports now give exact row-specific readbacks for empty queues/reports, message details, deletion, settings, and memory. No network send, queue, or delivery receipt is claimed.
