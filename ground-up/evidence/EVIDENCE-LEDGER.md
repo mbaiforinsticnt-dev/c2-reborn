@@ -820,3 +820,6 @@ A source-instrumented browser replay instantiated every one of the 79 action typ
 
 ## Ground-Up v0.201 · complete action-confirm audit
 A second source-instrumented browser replay instantiated all 79 assigned action types from clean local state and pressed Enter on each. All 79 confirmation paths completed without browser exceptions. This verifies action rendering and primary activation together; no runtime feature scope changed.
+
+## Ground-Up v0.202 · align public build description
+The page description no longer calls the current working phone a Phase 1 visual primitive, and the footer no longer says Phase 0/1. It now identifies an offline phone reconstruction/offline build while preserving the RM-722 asset-inference caveat. A 1000x1100 pixel render was inspected: the handset, nine-cell first menu page, clock, labels, controls, and evidence text are visible and aligned without overlap or clipping.
