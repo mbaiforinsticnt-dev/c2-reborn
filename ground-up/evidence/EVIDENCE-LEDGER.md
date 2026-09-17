@@ -463,3 +463,7 @@ The red End key now returns to a distinct offline idle screen rather than the ma
 ## v0.92 persistent local reference captures
 
 Media > Camera > Capture now saves a timestamped local reference-capture record in `phoneState.photos` (100 max) instead of showing a transient flash only. Gallery > Photos renders each record plus a Camera route; selecting a record shows its exact name, explicit `reference capture` kind and timestamp. No camera pixels or hardware capture is claimed. This is backend/UI behavior for the unavailable-hardware case.
+
+## v0.93 per-capture delete confirmation
+
+On a stored Gallery > Photos reference-capture row, the left softkey opens a confirmation showing the exact capture name and kind. Select removes only that indexed local record and persists; Back cancels. No image bytes exist or are implied, so deletion concerns only the explicit reference-capture metadata.
