@@ -46,6 +46,9 @@ const endpointModels={
  'Go to address':{kind:'offline',lead:'Enter web address · offline',rows:['Address','Recent addresses','Clear field','Settings']}
 };
 function detailModel(section,item){
+ if(item==='Memory status')return {lead:'Local records',rows:['Contacts: '+phoneState.contacts.length,'Messages: '+phoneState.messages.length,'Notes: '+phoneState.notes.length,'Calendar: '+phoneState.calendar.length]};
+ if(item==='Message counter')return {lead:'Local message counters',rows:['Drafts: '+phoneState.messages.filter(x=>x.status==='draft').length,'Sent: '+phoneState.messages.filter(x=>x.status==='sent').length,'Received: 0','Reset counters']};
+ if(item==='Call duration')return {lead:'Offline calls are not connected',rows:['Last call: 00:00','Dialled calls: '+phoneState.callLog.length,'Received calls: 0','All calls: '+phoneState.callLog.length]};
  if(item==='Connectivity')return {lead:'Offline · Bluetooth '+(phoneState.bluetooth?'On':'Off'),rows:['Bluetooth: '+(phoneState.bluetooth?'On':'Off'),'Packet data: '+phoneState.packetData,'USB data cable: '+phoneState.usbMode,'Network status']};
  if(item==='Security')return {lead:'Security · '+phoneState.securityLevel,rows:['PIN code request: '+(phoneState.pinRequest?'On':'Off'),'Security level','Access codes','Certificates']};
  if(item==='Radio')return {...endpointModels.Radio,lead:'FM '+phoneState.radioFrequency+' MHz · offline',rows:['Set frequency','Stations','Search stations','Switch off']};

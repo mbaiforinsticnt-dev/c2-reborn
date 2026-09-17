@@ -379,3 +379,7 @@ Selecting a stored Calendar row opens an editor prefilled with its exact ISO dat
 ## v0.71 per-To-do editing and separate completion
 
 Selecting a stored To-do row now opens a prefilled body editor. Multi-tap edits, # changes case, * deletes, Select persists and Back cancels. Completion is separated from editing: on a stored To-do row, the green Call key toggles Open/Completed and persists. This gives both operations distinct observable routes. The green-key completion shortcut is Ground-Up pending physical options capture.
+
+## v0.72 live local counters
+
+Applications > Memory status, Log > Message counter and Log > Call duration now read the local backend rather than generic Ready/Active rows. Memory status reports stored Contacts, Messages, Notes and Calendar record counts. Message counter reports local Draft/Sent/Received counts. Call duration explicitly says offline calls are not connected, keeps durations at 00:00, and reports dialled/all attempt counts. No byte-accurate storage or network duration is inferred.
