@@ -727,3 +727,6 @@ Contacts > Names now gives explicit List, Search, and Options results when the l
 
 ## Ground-Up v0.170 · Photos empty-state controls
 Gallery > Photos now gives exact Memory status, Options, and Help results around its Camera route. The Help row explicitly says captures store settings metadata only and no camera image is produced; existing local metadata records remain inspectable/deletable.
+
+## Ground-Up v0.171 · Info messages endpoint completion
+Messaging > Info messages now retains its local reception preference and adds exact empty Topics, language, and Read results. No cell-broadcast topic, message, or live network service is claimed.
