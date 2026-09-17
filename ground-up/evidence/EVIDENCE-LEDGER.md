@@ -847,3 +847,6 @@ Removed duplicated deletion routes from the Call-key chain for Voice recorder, P
 
 ## Ground-Up v0.210 · Draft key semantics
 Separated the previously duplicated Drafts controls: SoftLeft now opens delete confirmation for the selected local draft, while Call retains local send confirmation. Removed Drafts from the later Sent/Saved deletion branch because the dedicated Drafts route now owns that behavior.
+
+## Ground-Up v0.211 · cross-browser tone fallback
+Added MP3 derivatives for all 57 supplied AAC firmware tones. Tone preview checks browser AAC support and keeps the original supplied AAC source when supported, falling back to the corresponding local MP3 derivative otherwise. Tone names, selection state, and offline-only behavior are unchanged. The MP3 files are compatibility derivatives, not separate firmware evidence. A Firefox ESR 390x900 render was also inspected after the patch: handset, LCD, menu grid, controls, and responsive one-column layout rendered without clipping or script-failure symptoms.
