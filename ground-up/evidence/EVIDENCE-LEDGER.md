@@ -751,3 +751,6 @@ Settings > My shortcuts now uses one complete branch for left/right selector, re
 
 ## Ground-Up v0.178 · Lights endpoint consolidation
 Settings > Lights now uses one complete branch for display level, keypad, notifications, and reset. Toggle/reset results are visible and persisted as local recreation preferences; no physical keypad lamp or notification LED is claimed.
+
+## Ground-Up v0.179 · canonical Alarm handler
+A source sweep found Alarm clock was still split across four row-specific branches, and the on/off branch drew before setting its visible result. Those four branches were removed and replaced by one canonical Alarm clock handler for on/off, time, repeat, and tone. The toggle now draws state, then preserves visible feedback. No OS-level alarm scheduling is claimed.
