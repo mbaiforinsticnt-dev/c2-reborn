@@ -784,3 +784,6 @@ Eight split activation branches for Photos and Camera were replaced by one canon
 
 ## Ground-Up v0.189 · canonical Gallery inventory routes
 Six duplicate or split Gallery and Music-and-videos activation areas were replaced by one canonical handler per route. Photos, Themes, Tones, and Voice recorder cross-navigation plus local media empty-state details are preserved.
+
+## Ground-Up v0.190 · canonical FM radio route
+Five split Radio activation branches were replaced by one canonical handler. Frequency control, saved-station inventory, local station save, honest offline scan boundary, and local on/off state are preserved.
