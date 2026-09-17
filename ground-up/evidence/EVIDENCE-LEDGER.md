@@ -796,3 +796,6 @@ Eight split activation branches for Inbox, Templates, and Voice recorder were re
 
 ## Ground-Up v0.193 · canonical local call-list routes
 Four repeated All calls and Dialled numbers predicates were replaced by one shared canonical call-list handler. Local call detail inspection, clear confirmation, and honest empty-state feedback are preserved.
+
+## Ground-Up v0.194 · remove dead connection-timer branch
+A later duplicate Connection timer reset predicate was unreachable behind the canonical handler and has been removed. The retained handler provides visible zero-timer feedback for reset and every other row without implying a network session.
