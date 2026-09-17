@@ -407,3 +407,7 @@ Settings > Accessories now selects and persists a Default accessory preference: 
 ## v0.78 persistent Welcome note
 
 Settings > Phone > Welcome note now opens a prefilled multi-tap editor. Number keys compose, # changes case, * deletes, Select persists and Back cancels. An empty note is shown as Off. The note is local state and is not yet rendered in a startup/power-on sequence because power cycling remains a test scaffold.
+
+## v0.79 persistent offline Network mode preference
+
+Settings > Phone > Network mode now selects and persists Dual mode, GSM or 3G. This is a local preference only: Connectivity continues to say Offline, and no modem, operator selection or browser networking is changed. The values follow the RM-722/059F5P7 route context; physical C2-01 wording remains authoritative if later capture disagrees.
