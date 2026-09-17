@@ -315,3 +315,11 @@ Contacts > Add new contact now has distinct Name and Number fields. Up/Down chan
 ## v0.55 multi-tap local message bodies
 
 Messaging > Create message now has distinct To and Message fields. Up/Down changes the active field; number keys enter literal recipient digits in To and use the shared multi-tap composer in Message; # changes message case. Select persists the actual composed draft body rather than the previous fixed test string. Nothing is transmitted.
+
+## v0.56 multi-tap To-do text
+
+Organiser > To-do list > Add now uses the shared multi-tap text engine and persists the composed task body instead of generated `Task N` placeholders. Number keys compose, # changes case, and Select stores `{body, done:false, createdAt}`. To-do completion toggling remains future work; this release improves entry authenticity and backend content.
+
+## v0.57 multi-tap Calendar note text
+
+Calendar > Make a note now has Date and Note fields. Left/Right changes field; Up/Down changes date only while Date is active; number keys compose note text with the shared multi-tap engine while Note is active, and # changes case. Select persists the selected ISO date and actual composed body instead of a fixed placeholder.
