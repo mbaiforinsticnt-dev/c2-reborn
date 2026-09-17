@@ -772,3 +772,6 @@ Ten row-specific branches for Calculator, Countdown timer, and Stopwatch were re
 
 ## Ground-Up v0.185 · canonical backup/web/message settings
 Twelve row-specific branches for Sync and backup, Web settings, and Message settings were replaced by one canonical handler per route. Existing local state operations are preserved; toggles now keep visible feedback after redraw.
+
+## Ground-Up v0.186 · canonical Contacts identity routes
+Five split activation branches for Names and two for Own numbers were replaced by one canonical handler per route. Contact detail editing, add/list/search/options behavior, and own-number add/detail/status behavior remain local and interactive.
