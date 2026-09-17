@@ -664,3 +664,6 @@ Contacts > Synchronise and Network query now have explicit row behavior. Missing
 
 ## Ground-Up v0.149 · service and transfer contact routes
 Contacts > Service numbers, Move contacts, and Copy contacts now have explicit empty/offline row behavior. Service/SIM provisioning is not claimed; transfer rows disclose that no operation ran, and Memory options opens the existing contact-memory surface.
+
+## Ground-Up v0.150 · positioning and sync log empty states
+Log > Positioning and Sync log now have explicit row behavior for empty records, unavailable settings, zero memory, and Back. No GPS/network-positioning hardware, synchronisation account, or external activity is claimed.
