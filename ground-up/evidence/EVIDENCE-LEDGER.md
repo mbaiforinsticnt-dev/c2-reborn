@@ -757,3 +757,6 @@ A source sweep found Alarm clock was still split across four row-specific branch
 
 ## Ground-Up v0.180 · canonical Themes and Tones handlers
 Themes and Tones activation were each split across four row-specific branches. Those eight branches were removed and replaced with one canonical handler per route, preserving supplied theme/tone selectors, view mode, volume/alert controls, and offline download boundary.
+
+## Ground-Up v0.181 · remove dead Display/Time/Shortcut handlers
+After canonicalizing Display, Date and time, and My shortcuts, thirteen older row-specific handlers remained unreachable later in the chain. Those dead branches were removed. Each route now has one activation handler, reducing scope/fallthrough risk without changing behavior.
