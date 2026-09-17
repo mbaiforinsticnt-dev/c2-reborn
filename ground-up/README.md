@@ -8,4 +8,4 @@ Physical C2-01 evidence wins. RM-721-specific evidence is next. RM-722 / product
 
 ## Current release
 
-v0.1 contains the Phase 0 evidence ledger and the Phase 1 exact-pixel Black-theme LCD shell. It is a prototype, not firmware or full emulation. Fallback fonts are not Nokia fonts.
+v0.1 contains the Phase 0 evidence ledger and the Phase 1 native-asset Black-theme LCD shell. It is a prototype, not firmware or full emulation. Fallback fonts are not Nokia fonts.

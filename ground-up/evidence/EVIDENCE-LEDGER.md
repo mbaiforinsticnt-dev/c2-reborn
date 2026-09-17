@@ -59,9 +59,13 @@ Conflicts are recorded. Evidence is never averaged.
 
 ## Phase 1 baseline decision
 
-The first shell uses only exact Black theme artwork for the 240x320 LCD: `menu-screen_240x320.png`, `status_area_240x46.png`, `softkey_area_240x38.png`, `softkey_left/center/right_80x38.png`, `grid_menu_select_74x79.png` for the firmware-configured `labelgrid`, and the native softkey pieces. It does not claim Nokia font fidelity. Behavior is deliberately shallow until direct evidence exists.
+The first shell uses only original Black theme artwork for the native-size 240x320 LCD canvas: `menu-screen_240x320.png`, `status_area_240x46.png`, `softkey_area_240x38.png`, `softkey_left/center/right_80x38.png`, `grid_menu_select_74x79.png` for the firmware-configured `labelgrid`, and the native softkey pieces. It does not claim Nokia font fidelity. Behavior is deliberately shallow until direct evidence exists.
 
 
 ## v0.2 implementation reconciliation
 
 The live main menu now follows the enabled `mainmenu` entries in the supplied `menusettings.xml`, in order: Organiser, Contacts, E-mail, Browser, Messaging, Gallery/content, Store, Media, Applications, Settings, Log. This order remains labelled RM-722/059F5P7 EURO-F inference and will yield to physical RM-721 evidence. Exact original E-mail, Nokia Browser and Store icons are used because those entries have matched firmware app packages. Native system-menu icons are neutral placeholders, not invented Nokia graphics, until MCU/PPM extraction proves them.
+
+## v0.3 native rendering and control audit
+
+Black `theme.xml` names `grid_menu_select_74x79.png` directly for the grid-menu selected background but provides no crop rule. v0.3 therefore renders that selector at its native 74x79 pixels and lets it extend behind the 62-pixel cell while clipping only at the grid viewport. Matched app icons render at their natural dimensions: E-mail 48x48, Nokia Browser 46x48, Store 42x47. The on-screen navigation ring has explicit pointer targets for Up, Down, Left, Right and OK. Six native system entries remain visibly neutral pending MCU/PPM icon extraction; they are not claimed as Nokia icons.
