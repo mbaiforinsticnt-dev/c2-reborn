@@ -763,3 +763,6 @@ After canonicalizing Display, Date and time, and My shortcuts, thirteen older ro
 
 ## Ground-Up v0.182 · remove dead preference handlers
 Twenty older row-specific handlers remained after canonical Lights, Phone, Call, Connectivity, Security, and Accessories branches were added. The dead later branches were removed; each route now has one activation handler.
+
+## Ground-Up v0.183 · remove dead service/media handlers
+Sixteen older row-specific handlers remained after canonical Configuration, Video, Music player, Voice mailbox, Service commands, Info messages, Memory options, and Operator settings branches. Those unreachable branches were removed; each route now has one activation handler.
