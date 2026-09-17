@@ -718,3 +718,6 @@ Settings > Connectivity retains working local Bluetooth, packet-data, and USB pr
 
 ## Ground-Up v0.167 · Accessories endpoint consolidation
 Settings > Accessories now uses one complete row-specific branch: Default accessory opens the local preference selector, while Headset, Handsfree, and TTY report their disconnected hardware state. No physical accessory is claimed.
+
+## Ground-Up v0.168 · no-dead-row global fallback
+Any still-unmodelled detail row now gives a visible selected/ready state and explicitly says no external operation started. This replaces the prior generic toggle whose state only appeared in the tiny row badge/diagnostic, ensuring every residual menu endpoint visibly responds while remaining honest. Explicit row handlers still take precedence.
