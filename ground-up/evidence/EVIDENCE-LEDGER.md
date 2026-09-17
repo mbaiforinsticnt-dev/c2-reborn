@@ -423,3 +423,7 @@ Contacts > Speed dials now exposes keys 2–5 as local assignment rows. Selectin
 ## v0.82 complete Speed dial keys and dialler route
 
 Contacts > Speed dials now exposes all assignable number keys 2–9. Assignment behavior remains contact-backed and persisted. On an assigned row, green Call opens the offline dialler prefilled with that number; Call again records the offline attempt. Empty rows report empty. Long-press from the main screen is not inferred.
+
+## v0.83 local Caller group assignment
+
+Contacts > Caller groups now reports counts for Family, Friends, Business and Other. Selecting a group opens the stored Contacts list; Up/Down selects a contact and Select stores that contact's group and updates counts. This is bounded local organization behavior. Group tones/images, unassignment and physical wording remain future work.
