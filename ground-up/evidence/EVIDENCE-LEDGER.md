@@ -760,3 +760,6 @@ Themes and Tones activation were each split across four row-specific branches. T
 
 ## Ground-Up v0.181 · remove dead Display/Time/Shortcut handlers
 After canonicalizing Display, Date and time, and My shortcuts, thirteen older row-specific handlers remained unreachable later in the chain. Those dead branches were removed. Each route now has one activation handler, reducing scope/fallthrough risk without changing behavior.
+
+## Ground-Up v0.182 · remove dead preference handlers
+Twenty older row-specific handlers remained after canonical Lights, Phone, Call, Connectivity, Security, and Accessories branches were added. The dead later branches were removed; each route now has one activation handler.
