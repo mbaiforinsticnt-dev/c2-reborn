@@ -811,3 +811,6 @@ Three reachable generic controller messages that still said deeper behavior or m
 
 ## Ground-Up v0.198 · remove remaining stale route placeholders
 The remaining reachable generic UI copy has been aligned with the now-complete offline route set: Gallery lists its actual local surfaces, detail cards say Offline phone route, opened rows say offline surface, unavailable submenu fallback says Offline surface, and unsupported options say no additional options. No working-web or Java/game runtime scope was added.
+
+## Ground-Up v0.199 · canonical offline browser hubs
+Four repeated predicates shared by the eight browser hub entries were replaced by one canonical handler. Go to address, Bookmarks, Last web address, and Web settings cross-navigation remains local and working; other rows retain explicit offline feedback. Working web was not started.
