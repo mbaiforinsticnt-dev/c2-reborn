@@ -610,3 +610,6 @@ Settings > Tones now gives all four visible rows functional persistent state: In
 
 ## Ground-Up v0.131 · Security endpoint boundaries
 Settings > Security now labels Access codes Not exposed and Certificates None loaded. Selecting either gives exact readback: this recreation neither shows nor collects PIN/PUK/security credentials and has no certificate inventory. Existing PIN request and Security level remain local preference simulations. No credential, private data, certificate, device secret, or network source is accessed.
+
+## Ground-Up v0.132 · menu exit and submenu Options
+The right softkey Exit on the main menu now returns to the offline idle screen instead of emitting a not-implemented response. Options on a submenu list now opens a real two-row overlay: Open selected enters the highlighted route and Return to Menu goes back to the main menu. Both keyboard/controller and blue softkey bar use the same semantic routes. Labels are reconstruction pending physical per-submenu Options captures.
