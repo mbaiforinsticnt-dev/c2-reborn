@@ -574,3 +574,6 @@ Browser > Content upload, Upload to blog and Download links now state unavailabl
 
 ## Ground-Up v0.119 · offline web preferences
 Browser > Web settings now has a local backend instead of generic reference controls: an editable home-page value, persistent Show images and Cookies preferences, and a confirmation route that clears only local address history. These settings do not enable network access; retired web services remain unavailable. Evidence level remains labelled RM-722 menu inference for the route, with offline behavior chosen for this recreation.
+
+## Ground-Up v0.120 · honest network-app endpoints
+The top-level E-mail and Ovi Store nlink entries now open dedicated offline detail surfaces, and Messaging's Instant messaging, E-mail client, and Mailbox 1-5 routes report no account/session/connection rather than falling through to generic active-looking controls. This is an offline recreation boundary, not evidence that the retired services operated this way. No account, message, download, network connection, Java runtime, or working-web behavior was added.
