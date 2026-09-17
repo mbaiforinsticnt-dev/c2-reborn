@@ -103,3 +103,15 @@ The GSMArena physical review unit's grid order is Calendar, Contacts, Mail, Inte
 Physical screenshot 009 shows the Main menu Options overlay extending through the normal softkey zone and drawing its own blue Select/Back strip. v0.8 follows that overlay structure and renders the physically visible radio-button choices: Single, List, Grid, Grid with labels. The physical review unit's green selector belongs to its default theme; this build intentionally uses the supplied Black theme selector. That colour difference is not treated as a parity defect.
 
 The physical grid top band shows Menu and time but no positional `1/11` counter, so v0.8 removes the counter.
+
+## v0.9 software and hardware separation contract
+
+Owner architecture direction: the 240x320 LCD software is a self-contained module; the outer phone shell and full keypad are a separate hardware/controller module. The controller emits semantic key events and the screen reacts. v0.9 implements this separation as `screen.js` and `controller.js`, with a complete test keypad: left/right softkeys, navigation directions, OK, call/end, and 1-9/*/0/#. The hardware geometry is an initial testing scaffold pending direct front-on RM-721 keypad measurements; its behavior and module boundary are the current milestone.
+
+## v0.10 front-face keypad geometry
+
+The v0.10 controller geometry is redrawn against a front-on physical C2-01 photograph hosted by Wikimedia Commons and corroborated by independent TechRadar, PhoneArena, GSMArena and CNET review/product imagery. The physical face uses a compact three-part control panel: softkey bars at the upper outer corners; a tall, silver-edged rounded-square navigation/OK assembly at center; call/end keys below the softkeys and beside the navigation key. The twelve number keys form a tight, nearly gapless 3x4 deck rather than floating pill buttons. v0.10 follows those proportions while retaining separate hit targets for testability.
+
+The strongest front-on reference is https://commons.wikimedia.org/wiki/File:Nokia_C2-01.JPG (original 1920x2560). Corroborating pages: https://www.techradar.com/reviews/phones/mobile-phones/nokia-c2-01-936316/review/10 ; https://www.phonearena.com/reviews/Nokia-C2-01-Review_id2723 ; https://www.gsmarena.com/nokia_c2_01-3638.php ; https://www.cnet.com/reviews/nokia-c2-01-review/ . Moti's own handset photo will override this review/reference geometry when supplied.
+
+Numeric direct-selection shortcuts, star/hash page movement, call-to-Log and End-to-home are test-scaffold behavior only. They are not asserted as physical C2-01/S40 semantics. The on-page trace is visibly prefixed `TEST SCAFFOLD` to maintain that boundary.

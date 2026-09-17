@@ -2,7 +2,7 @@ const controller=document.querySelector('.controller');
 const trace=document.querySelector('#keyTrace');
 function sendKey(key,button){
  document.dispatchEvent(new CustomEvent('c2-key',{detail:{key,source:'hardware-controller'}}));
- trace.value=`Controller → software: ${key}`;
+ trace.value=`TEST SCAFFOLD · controller → software: ${key}`;
  button?.classList.add('active');
  setTimeout(()=>button?.classList.remove('active'),120);
 }
