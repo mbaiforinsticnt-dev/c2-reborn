@@ -775,3 +775,6 @@ Twelve row-specific branches for Sync and backup, Web settings, and Message sett
 
 ## Ground-Up v0.186 · canonical Contacts identity routes
 Five split activation branches for Names and two for Own numbers were replaced by one canonical handler per route. Contact detail editing, add/list/search/options behavior, and own-number add/detail/status behavior remain local and interactive.
+
+## Ground-Up v0.187 · canonical organiser collections
+Fifteen split activation branches for Calendar, To-do list, and Notes were replaced by one canonical handler per route. Existing local editors, empty-state feedback, calendar week/date controls, and collection navigation are preserved.
