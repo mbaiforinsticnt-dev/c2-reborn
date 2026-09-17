@@ -255,7 +255,7 @@ function moveCatalog(delta){
 let responseSequence=0;
 function showKeyResponse(key,response){
  responseSequence+=1;
- keyFeedback.textContent=`TEST ${responseSequence} · ${key}: ${response}`;
+ keyFeedback.textContent=`${responseSequence} · ${key}: ${response}`;
  keyFeedback.classList.remove('pulse');
  void keyFeedback.offsetWidth;
  keyFeedback.classList.add('pulse');
