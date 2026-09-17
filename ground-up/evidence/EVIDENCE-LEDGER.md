@@ -667,3 +667,6 @@ Contacts > Service numbers, Move contacts, and Copy contacts now have explicit e
 
 ## Ground-Up v0.150 · positioning and sync log empty states
 Log > Positioning and Sync log now have explicit row behavior for empty records, unavailable settings, zero memory, and Back. No GPS/network-positioning hardware, synchronisation account, or external activity is claimed.
+
+## Ground-Up v0.151 · complete offline e-mail boundaries
+E-mail client and Mailbox 1-5 rows now give exact account, connection, local-draft, client, and settings readbacks. They do not configure an account, connect, retrieve, or send mail. This completes the labelled firmware routes while working web and network mail remain deferred.
