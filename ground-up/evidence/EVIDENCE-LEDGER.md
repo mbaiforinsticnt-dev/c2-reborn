@@ -682,3 +682,6 @@ Data counters, Connection timer, Call duration, Missed calls, and Received calls
 
 ## Ground-Up v0.155 · Applications settings boundary
 Applications > Settings now gives exact Java-runtime, network-access, local-memory, and Back readbacks. Java runtime remains unstarted and explicitly deferred pending owner approval; no application connection or executable is launched.
+
+## Ground-Up v0.156 · detail-model scope guard
+The Applications Settings model predicate is restored to its `detailModel(section,item)` argument instead of reading mutable global menu selection. Activation continues to use the selected menu label because it has no local section variable. Static guards now distinguish those scopes, preventing another `window.section` collision or selection-coupled model.
