@@ -331,3 +331,7 @@ Notes, To-do list, Calendar and Drafts now render their locally stored content i
 ## v0.59 selectable local Notes and To-do lists
 
 Notes and To-do list now render each stored record as its own selectable detail row rather than joining all content into one lead line. Up/Down uses existing detail navigation. Selecting a note identifies and displays that exact local note; selecting any to-do toggles that row's done state, not only the newest. Make a note/Add remain appended action rows. This removes the first-record-only limitation; edit/delete per item and pagination remain.
+
+## v0.60 selectable Calendar and Draft lists
+
+Calendar and Drafts now render each local record as an individual selectable detail row with Make a note/Create message appended. Selecting a calendar row displays its exact date/body; selecting a draft displays its recipient/body. Selecting the appended row opens the existing editor. This replaces joined lead text and makes persisted records auditable from the handset UI. Per-record edit/delete and pagination remain.
