@@ -479,3 +479,7 @@ The source-backed Gallery inventory rows now lead to their functional surfaces i
 ## v0.96 persistent Voice recorder reference metadata
 
 Media > Voice recorder > Record now opens a live local duration timer. First Select starts; second Select stops and stores name, duration, explicit `reference recording` kind and timestamp in `phoneState.recordings`. Reopening lists each record and its duration. No microphone permission, audio bytes or real recording is claimed; this is unavailable-hardware backend/UI behavior matching the Camera reference-capture pattern.
+
+## v0.97 per-reference-recording deletion
+
+On a stored Voice recorder row, the left softkey opens a confirmation showing the exact reference recording name and duration. Select removes only that indexed metadata record and persists; Back cancels. As in v0.96, no audio bytes exist or are implied.
