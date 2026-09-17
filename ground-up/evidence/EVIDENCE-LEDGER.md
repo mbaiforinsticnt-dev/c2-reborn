@@ -838,3 +838,6 @@ Numeric and page shortcut feedback no longer labels those inputs as test shortcu
 
 ## Ground-Up v0.207 · mobile viewport visual audit
 A 390x900 pixel mobile render was inspected. The entire handset, 240x320 LCD, nine-cell first menu page, softkeys, d-pad, call/end keys, number pad, neutral feedback labels, and the beginning of the evidence section are visible in one-column layout without horizontal clipping or overlap. No source behavior changed.
+
+## Ground-Up v0.208 · unreachable duplicate branch cleanup
+Removed the second repeated SoftLeft chain for Voice recorder, Photos, call lists, Bookmarks, and Speed dials. Each SoftLeft route remains once, while distinct Call-key routes remain intact. Behavior is unchanged and the hardware routing source now has one canonical SoftLeft branch for each route.
