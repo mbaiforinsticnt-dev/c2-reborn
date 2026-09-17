@@ -431,3 +431,7 @@ Contacts > Caller groups now reports counts for Family, Friends, Business and Ot
 ## v0.84 caller-group readback and removal
 
 Contacts > Names rows now show each stored contact's assigned caller group. Caller groups adds Remove group: select it, choose a contact and Select to delete that contact's local group assignment. Existing group assignment remains single-group per contact and moving a contact between groups updates counts. Group membership is now directly auditable and reversible from the handset.
+
+## v0.85 reversible Speed dial assignments
+
+On an assigned Contacts > Speed dials row, the left softkey opens a Clear speed dial confirmation showing the exact key and number. Select deletes only that key's local assignment and persists; Back cancels. Empty rows report already empty. Speed dial assignment and offline dialing now have a matching reversible path.
