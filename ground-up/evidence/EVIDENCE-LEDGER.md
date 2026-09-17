@@ -123,3 +123,7 @@ Owner rule: no dead keys. Every controller key in every software state must crea
 ## v0.12 menu coverage priority
 
 Owner scope: Ground-Up is a full UI reference for future projects, with menu coverage as the first priority. Dead Ovi/web services and executable Java apps are not blockers; their visible surfaces remain honest reference stubs. v0.12 converts every enabled main-menu entry into a navigable list. Organiser, Contacts, Browser, Messaging, Gallery, Media, Applications, Settings and Log lists are transcribed in order from the supplied RM-722/059F5P7 `menusettings.xml`. E-mail and Store are native-link Java/service entries in that firmware and are labelled reference-only. List selection works with Up/Down; Open visibly names the selected route as not yet implemented, maintaining the no-dead-keys rule.
+
+## v0.13 evidenced main-menu views
+
+Physical screenshot 009 exposes the Main menu view choices Single, List, Grid, and Grid with labels. v0.13 implements all four as actual menu presentations rather than placeholder app screens. Single shows one large icon and label; List shows eight compact icon/label rows; Grid uses the 3x3 icon geometry without labels; Grid with labels preserves the original 3x3 label grid. The same menu data, selector, open route, no-dead-key feedback and hardware controller drive every view. Long first-submenu lists now scroll the selected row into view.
