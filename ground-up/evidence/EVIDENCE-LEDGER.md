@@ -655,3 +655,6 @@ Organiser > Countdown timer and Stopwatch now route by the highlighted row inste
 
 ## Ground-Up v0.146 · explicit offline Maps boundary
 Organiser > Maps now gives row-specific results for absent map data, unavailable route guidance, empty positioning records, and Back to Organiser. It does not claim a map package, GPS fix, network position, or route engine. The route stays interactive while preserving the offline/no-data boundary.
+
+## Ground-Up v0.147 · global detail activation-chain repair
+The shared detail activation path contained three standalone message/calendar fragments between else-if runs. Earlier row-specific results could fall through and be overwritten by generic activation. Duplicate model-return fragments were removed, valid Sent/Drafts handlers were joined into the shared chain, and the generic fallback is global again. Replays cover Maps, Calculator Scientific, Countdown Interval, and Names.
