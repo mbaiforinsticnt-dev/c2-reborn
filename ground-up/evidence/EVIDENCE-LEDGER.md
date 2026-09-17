@@ -631,3 +631,6 @@ Settings > Profiles now exposes all seven locally supported profiles in its deta
 
 ## Ground-Up v0.138 · honest residual-route fallback
 Any remaining menu label without a dedicated local model now opens an honest four-row fallback rather than generic Open/Active controls. Each class reports its actual boundary: no local data, no account/query/configuration, no external operation or transfer, zero log state, or unavailable offline service. Selecting a fallback row may mark it ready for UI navigation but cannot imply a completed external action. This is a safety/completeness fallback, below physical route evidence, and does not replace dedicated models as evidence arrives.
+
+## Ground-Up v0.139 · complete Video reference settings and capture readback
+Media > Video keeps its honest no-camera/no-recording state and adds persistent local Video quality and Video length selectors. It still cannot record or store video. Photo inventory detail now reads back each reference capture's saved effect, quality and timer alongside its timestamp. No media pixels, camera/microphone, permission, upload, or network source is used. Selector values are disclosed reconstruction pending physical video-setting capture.
