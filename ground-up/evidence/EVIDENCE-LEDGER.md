@@ -829,3 +829,6 @@ A real hardware-key browser replay created contact a / 5 through Contacts > Add 
 
 ## Ground-Up v0.204 · remove visible test-scaffold labels
 The key-response instrumentation remains available for direct feedback and audit, but the visible LCD and keypad labels no longer say TEST or TEST SCAFFOLD. Responses now use a neutral sequence number, key, and result, which keeps every-key feedback without presenting the offline phone as a test fixture.
+
+## Ground-Up v0.205 · user-facing product labels
+The remaining user-facing test/prototype labels are removed: detail Options now says Reset local state, and the footer identifies OFFLINE PHONE v0.205 rather than PROTOTYPE. The diagnostic behavior and evidence caveat remain unchanged.
