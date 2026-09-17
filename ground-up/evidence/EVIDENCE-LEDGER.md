@@ -343,3 +343,7 @@ Contacts > Names now renders each local contact as its own row with Add appended
 ## v0.62 selectable local Call log
 
 Log > All calls and Dialled numbers now render each local offline call attempt as its own row with Clear list appended. Selecting a call displays its number, offline-attempt status and local timestamp. Clear list opens the existing confirmation rather than a generic toggle. This makes call-log persistence and timestamps auditable from the handset; callback/edit-number flows remain.
+
+## v0.63 selectable offline address history
+
+Browser > Last web address now renders each locally confirmed offline address as a selectable row with Clear history appended. Selecting a row displays the exact stored address without contacting it; Clear history uses the existing confirmation. This makes Go to address persistence handset-auditable while working web remains intentionally deferred until the owner gate.
