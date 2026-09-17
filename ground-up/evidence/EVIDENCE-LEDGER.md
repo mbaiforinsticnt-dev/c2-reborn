@@ -793,3 +793,6 @@ Seven split activation branches for Dictionary, Bookmarks, and Last web address 
 
 ## Ground-Up v0.192 · canonical local message and recording routes
 Eight split activation branches for Inbox, Templates, and Voice recorder were replaced by one canonical handler per route. Local search, template composition, recording inspection/start, and explicit empty/settings feedback are preserved.
+
+## Ground-Up v0.193 · canonical local call-list routes
+Four repeated All calls and Dialled numbers predicates were replaced by one shared canonical call-list handler. Local call detail inspection, clear confirmation, and honest empty-state feedback are preserved.
