@@ -409,7 +409,7 @@ function saveAction(){
  return finishAction('saved '+label+' locally')
 }
 function previewTone(setRingtone=true){
- let tone=firmwareTones[Number(actionValue)];if(setRingtone)phoneState.ringtone=tone;let audio=new Audio('assets/tones/'+encodeURIComponent(tone)+'.aac');actionStatus='Preview loading';
+ let tone=firmwareTones[Number(actionValue)];if(setRingtone)phoneState.ringtone=tone;let probe=document.createElement('audio'),aac=probe.canPlayType('audio/aac'),source=(aac?'assets/tones/':'assets/tones-mp3/')+encodeURIComponent(tone)+(aac?'.aac':'.mp3'),audio=new Audio(source);actionStatus='Preview loading';
  audio.addEventListener('playing',()=>{actionStatus='Preview playing';showKeyResponse('Audio',actionStatus)},{once:true});
  audio.addEventListener('error',()=>{actionStatus='Preview unavailable in this browser';showKeyResponse('Audio',actionStatus)},{once:true});
  audio.play().catch(()=>{actionStatus='Preview blocked: press Select again';showKeyResponse('Audio',actionStatus)})
