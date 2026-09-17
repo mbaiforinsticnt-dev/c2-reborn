@@ -211,3 +211,15 @@ Organiser > Notes > Make a note now opens a functional offline note editor. Numb
 ## v0.29 working offline calculator
 
 Organiser > Calculator now opens a real local arithmetic surface rather than toggling Ready/Active. Hardware digits build operands, `*` inserts addition, and centre Select computes the sum without `eval`. Repeated use stays in the calculator and its screen state is exposed through the existing diagnostic state. Addition is deliberately the first bounded operation; scientific/loan calculator rows remain UI-reference endpoints pending deeper evidence.
+
+## v0.30 working offline stopwatch
+
+Organiser > Stopwatch now opens a live local stopwatch. Centre Select starts and stops a 100 ms display refresh, `*` resets while stopped, and Back safely stops the interval while retaining elapsed time in the current runtime. Time formatting is calculated from elapsed milliseconds. No generic Ready/Active state stands in for timing behavior. Persistence across reload is not claimed.
+
+## v0.31 working offline countdown timer
+
+Organiser > Countdown timer now opens a real local countdown. While stopped, Up/Down adjusts the duration in one-minute steps; Select starts/stops, `*` resets to one minute, and completion emits a visible Timer result. Back stops the running interval and retains the remaining runtime duration. The timer is runtime-local and reload persistence is not claimed.
+
+## v0.32 persistent local Calendar notes
+
+Organiser > Calendar > Make a note now opens a functional local date editor. Up/Down changes the day relative to today; Select stores an ISO-date record with an explicit offline test note in `phoneState.calendar`, capped at 100 and persisted. Calendar reads the saved count after reload. The fixed note text is prototype behavior; authentic Nokia note-type and text-entry flows remain to be built.
