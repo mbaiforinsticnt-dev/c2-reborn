@@ -299,3 +299,7 @@ Settings > Connectivity now reports explicit offline state and a local Bluetooth
 ## v0.51 persistent offline Packet data preference
 
 Connectivity > Packet data now selects and persists When needed, Always online or Off, while the Connectivity lead remains explicit that this recreation is offline. The preference does not open a network socket, contact an operator, or claim cellular data behavior. This replaces a generic toggle with bounded local settings behavior.
+
+## v0.52 persistent offline USB data cable mode
+
+Connectivity > USB data cable now selects and persists Ask on connection, PC Suite or Mass storage as a local preference. No USB device API, mount, PC Suite session or file transfer is invoked or claimed. The endpoint now has bounded phone-settings behavior while Connectivity remains explicitly offline.
