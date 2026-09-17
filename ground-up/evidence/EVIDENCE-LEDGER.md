@@ -646,3 +646,6 @@ Organiser > Calendar now keeps Week view and Go to date functional alongside loc
 
 ## Ground-Up v0.143 · Organiser empty states and cross-navigation
 Notes > Memory status now reports local slots used; empty Edit/Delete give exact no-local-note results. To-do > Go to calendar opens Calendar; empty Delete gives an exact no-local-to-do result. Empty Calendar View reports no local notes for the selected date. These remove generic Active toggles without adding external data, account access, notification, invite, or network behavior.
+
+## Ground-Up v0.144 · honest Calculator modes
+Organiser > Calculator now opens the working integer add/subtract backend only from Standard calculator. Scientific and Loan calculator rows explicitly say Reference only and explain that unsupported scientific functions or financial results are not implied. Instructions gives the exact hardware mapping. This removes the prior behavior where every row silently opened the same standard calculator. No financial advice, rate data, account, or network source is used.
