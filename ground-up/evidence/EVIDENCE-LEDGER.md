@@ -515,3 +515,7 @@ Settings > Date and time now separates Date format and Time format. Date format 
 ## v0.104 persistent Time zone display preference
 
 Settings > Date and time > Time zone now selects and persists Local, UTC, UTC+1 or UTC-5. This is explicitly a stored display preference only: the live clock remains the browser/local clock until a separate safe clock-conversion model is implemented. No network time or carrier zone is inferred.
+
+## v0.105 Time zone applies to phone clock
+
+The stored Time zone preference now drives a bounded local clock model: Local uses the browser clock; UTC, UTC+1 and UTC-5 convert from the current instant using the browser offset. Status time, Date and time lead, and idle time/date use the same `phoneNow()` source and refresh. No network/carrier time is used. Day rollover follows the selected offset.
