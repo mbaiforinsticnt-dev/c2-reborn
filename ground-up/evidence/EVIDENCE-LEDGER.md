@@ -628,3 +628,6 @@ Settings > Accessories now shows the persistent default accessory on its first r
 
 ## Ground-Up v0.137 · complete Profiles list
 Settings > Profiles now exposes all seven locally supported profiles in its detail list: General, Silent, Meeting, Outdoor, My style 1, My style 2 and Flight. Each row enters the existing persistent activation selector. Activating Flight also updates the recreation's flight-mode idle state; any other profile clears it. These are local preference simulations with no radio/network operation. Profile names combine menu/firmware evidence with disclosed reconstruction pending physical full-list capture.
+
+## Ground-Up v0.138 · honest residual-route fallback
+Any remaining menu label without a dedicated local model now opens an honest four-row fallback rather than generic Open/Active controls. Each class reports its actual boundary: no local data, no account/query/configuration, no external operation or transfer, zero log state, or unavailable offline service. Selecting a fallback row may mark it ready for UI navigation but cannot imply a completed external action. This is a safety/completeness fallback, below physical route evidence, and does not replace dedicated models as evidence arrives.
