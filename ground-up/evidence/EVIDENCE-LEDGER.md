@@ -157,3 +157,15 @@ Owner feedback set the frozen C2 Reborn root as the visual quality bar while Gro
 ## v0.18 first-submenu depth surfaces
 
 Owner clarified that a diagnostic acknowledgement is still a dead option. v0.18 replaces the 93 first-submenu `not implemented` endpoints with functional UI-reference surfaces. Every first-submenu row now opens a bounded screen with a route-specific description and four navigable controls chosen by grounded category (organiser, contacts, messaging, settings, media, gallery/apps, logs, browser/services). Up/Down changes control selection; Select toggles a visible Ready/Active state; Back returns to the exact parent list; Options opens About/Reset and Reset clears local test state. These are explicitly UI-reference surfaces, not claims that backend services, personal data, Java execution, media hardware, or physical per-screen geometry are implemented.
+
+## Offline backend target
+
+Owner direction: recreate backend behavior too, aiming for a proper Nokia phone that is simply not connected to the network. Hardware-dependent technology may remain unavailable until after the entire phone/UI is set up. Backend work follows menu coverage: local persistence and Nokia-like state transitions for profiles/settings, time/alarm, organiser data, contacts, messaging, call logs, gallery/media metadata and UI state. Network-backed and hardware-backed features must show honest offline/unavailable states, not silently fail. This expands the target beyond UI reference while preserving evidence labels: implemented behavior must still be distinguished from physical/Nokia-verified behavior and scaffolding.
+
+## Owner scope ordering: experience assets before optional runtimes
+
+The complete offline-phone target includes sounds, tones, wallpapers, themes and behavior. Working web access is not important. Java game/runtime support is explicitly optional and unimportant relative to phone setup; leave web and games until last and ask the owner before starting that part. The 57 AAC tones, four supplied themes and their wallpapers/assets are therefore first-class upcoming implementation sources. JAD/JAR packages remain catalogued evidence, not an instruction to build a runtime.
+
+## v0.19 endpoint-specific Nokia reference surfaces
+
+The 12 PM audit correctly distinguished category templates from authentic endpoint depth. v0.19 replaces generic content on priority Organiser, Settings, Messaging, Media, Log and Browser endpoints with per-screen models mined from the frozen root, which itself was built from physical/SDK evidence. Examples: Alarm 07:00/Off/Repeat/Tone; Calendar Today/Make note/Week/Date; Calculator Standard/Scientific/Loan; Profiles General/Silent/Meeting/Outdoor; Tones and Display setting rows; Create message types; camera Capture/Self-timer/Effects; radio station controls; stopwatch/countdown time faces; and explicit offline browser/address states. Visual kinds add time faces, media-preview surfaces, message rows and offline panels. Remaining non-priority endpoints use category models and stay identified as UI-reference behavior rather than physically verified geometry.
