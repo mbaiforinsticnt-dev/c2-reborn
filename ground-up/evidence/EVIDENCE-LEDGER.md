@@ -119,3 +119,7 @@ Numeric direct-selection shortcuts, star/hash page movement, call-to-Log and End
 ## v0.11 no-dead-keys contract
 
 Owner rule: no dead keys. Every controller key in every software state must create a visible response. An evidenced route executes normally. A test shortcut stays explicitly labelled as such. Where physical/S40 behavior or screen depth is not yet evidenced, the software shows an honest visible `not evidenced` response rather than silently doing nothing. v0.11 implements this in the software module with a numbered `TEST` key-response strip, distinct from the hardware controller trace. Repeated presses increment the response number and visibly pulse, so a repeated key cannot masquerade as a dead press.
+
+## v0.12 menu coverage priority
+
+Owner scope: Ground-Up is a full UI reference for future projects, with menu coverage as the first priority. Dead Ovi/web services and executable Java apps are not blockers; their visible surfaces remain honest reference stubs. v0.12 converts every enabled main-menu entry into a navigable list. Organiser, Contacts, Browser, Messaging, Gallery, Media, Applications, Settings and Log lists are transcribed in order from the supplied RM-722/059F5P7 `menusettings.xml`. E-mail and Store are native-link Java/service entries in that firmware and are labelled reference-only. List selection works with Up/Down; Open visibly names the selected route as not yet implemented, maintaining the no-dead-keys rule.
