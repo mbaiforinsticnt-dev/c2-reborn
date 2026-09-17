@@ -607,3 +607,6 @@ Applications > Applications now opens a four-row identity summary and routes to 
 
 ## Ground-Up v0.130 · complete tone preferences
 Settings > Tones now gives all four visible rows functional persistent state: Incoming call alert selects Ringing/Ascending/Ring once/Beep once/Off; Ringing tone and Message alert tone independently select from the 57 supplied firmware AAC names and request browser preview; Ring volume retains its 1-7 control. The route and tone files come from labelled RM-722 firmware. Alert-mode choices are disclosed reconstruction pending physical submenu capture. Audio reports the browser's real play outcome.
+
+## Ground-Up v0.131 · Security endpoint boundaries
+Settings > Security now labels Access codes Not exposed and Certificates None loaded. Selecting either gives exact readback: this recreation neither shows nor collects PIN/PUK/security credentials and has no certificate inventory. Existing PIN request and Security level remain local preference simulations. No credential, private data, certificate, device secret, or network source is accessed.
