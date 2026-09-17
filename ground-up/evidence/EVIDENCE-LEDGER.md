@@ -367,3 +367,7 @@ Selecting a stored Notes row now opens an editor prefilled with that exact note.
 ## v0.68 per-contact editing
 
 Selecting a stored Contacts > Names row now opens an editor prefilled with that exact name and number. Up/Down changes field; Name uses the shared multi-tap engine and Number uses literal digits; # changes name case and * deletes from the active field. Select replaces the indexed contact and persists; Back cancels. Green Call from the list and left-softkey Delete remain separate routes.
+
+## v0.69 per-draft editing
+
+Selecting a stored Drafts row now opens an editor prefilled with its exact recipient and message. Up/Down changes field; To uses literal digits and Message uses shared multi-tap; # changes message case and * deletes from the active field. Select updates the original indexed draft and persists; Back cancels. Left-softkey per-draft deletion remains separate.
