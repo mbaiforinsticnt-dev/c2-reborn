@@ -601,3 +601,6 @@ Settings > Operator settings now reports no operator provisioning or network con
 
 ## Ground-Up v0.128 · remaining Log counters
 Log > Message recipients now derives a local recipient list and message counts from the recreation's stored messages, with recipient detail and a Create message route when empty. Data counters and Connection timer now explicitly report zero bytes/zero time and no offline network sessions rather than generic active controls. No device history, network counter, carrier data, or external message is read or sent.
+
+## Ground-Up v0.129 · Applications metadata route
+Applications > Applications now opens a four-row identity summary and routes to the existing 19-entry JAD metadata catalogue. It labels the supplied game and utility identity counts and continues to say Java runtime Deferred. This improves navigation to supplied descriptor evidence only; it does not start Java/game runtime work, execute a MIDlet, or access a network. The supplied JAD files and parsed apps.json remain the source.
