@@ -787,3 +787,6 @@ Six duplicate or split Gallery and Music-and-videos activation areas were replac
 
 ## Ground-Up v0.190 · canonical FM radio route
 Five split Radio activation branches were replaced by one canonical handler. Frequency control, saved-station inventory, local station save, honest offline scan boundary, and local on/off state are preserved.
+
+## Ground-Up v0.191 · canonical offline reference collections
+Seven split activation branches for Dictionary, Bookmarks, and Last web address were replaced by one canonical handler per route. Lookup/history actions, local bookmark/address inspection, creation, clear confirmations, and explicit empty states are preserved.
