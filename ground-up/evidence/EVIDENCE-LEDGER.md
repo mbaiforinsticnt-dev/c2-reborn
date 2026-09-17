@@ -706,3 +706,6 @@ Settings > Operator settings now provides exact operator, provisioning, and netw
 
 ## Ground-Up v0.163 · Configuration endpoint completion
 Settings > Configuration now keeps working local default/access-point selectors and adds exact empty personal-settings and absent-provisioning readbacks. No operator profile, provisioning document, or live access point is claimed.
+
+## Ground-Up v0.164 · browser landing-route completion
+Every offline browser landing entry now routes its Web settings row to the existing local preferences surface, completing the same navigation set already provided for Go to address, Bookmarks, and Last web address. No live web request is made.
