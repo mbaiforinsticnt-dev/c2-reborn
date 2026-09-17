@@ -279,3 +279,7 @@ Action markup is removed from the large `draw()` conditional and placed in one n
 ## v0.46 source modularization: action save/activation
 
 The action mutation chain is removed from `handleHardwareKey()` and split into `saveAction()`, `activateTimedAction()`, `previewTone()` and the shared `finishAction()` commit/return helper. Key dispatch now calls one action API. Timers remain runtime-only and do not call the persistence helper; settings and collections do. Tone media event handling is separately inspectable. Together with v0.44-v0.45, action rendering, directional movement, activation/persistence and media preview now have distinct boundaries. No endpoint behavior is added.
+
+## v0.47 persistent Equaliser presets
+
+Media > Equaliser now exposes a working local preset selector instead of Ready/Active toggles. Up/Down cycles Normal, Pop, Rock and Jazz; Select stores the active preset in `phoneState.equaliser`, and reopening/reloading reads it back. The preset is stateful UI/backend behavior only: audio frequency processing is not claimed.
