@@ -395,3 +395,7 @@ Sent items rows now open their exact recipient, body and local sent timestamp. L
 ## v0.75 persistent Phone preferences
 
 Settings > Phone now reads local Language and Flight query state. Language selects English, French, German or Spanish and persists; only the preference/lead changes, and full UI localization is not claimed. Flight query toggles and persists a local mode label but does not control radios. Welcome note and Network mode remain reference rows.
+
+## v0.76 persistent Call preferences
+
+Settings > Call now exposes bounded local Anykey answer and Automatic redial toggles, both persisted and reflected in the rows. Because the recreation never receives or connects a network call, the settings do not trigger call behavior and the lead says Offline call preferences. Speed dialling and Call waiting remain reference rows.
