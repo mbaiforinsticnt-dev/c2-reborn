@@ -77,3 +77,11 @@ Six menu icons recovered byte-for-byte from `rm721__11.40.ppm_f` now replace neu
 ## v0.5 Settings and Log binding
 
 Settings and Log use byte-exact 43x43 RGBA PNGs recovered from the v11.40 EURO-F PPM. Settings is the wrench at PPM offset `0x00297462`; Log is the green-down/blue-up arrows at `0x00296e52`. The semantic binding is supported by their coherent main-menu icon-table run (Contacts -> Log -> Settings -> Applications), the emulator visuals, and `menusettings.xml` entities. This is strong firmware/emulator evidence, still subordinate to a conflicting physical RM-721 capture.
+
+## v0.6 selector geometry and Phase 2 entry
+
+Neither Black `theme.xml` nor the supplied configs declare an offset or crop for `grid_menu_select_74x79.png`. Its 79-pixel height is fully opaque across that height. The menu content band between the 45/46-pixel status area and 38-pixel softkey area is 237 pixels, exactly three 79-pixel cells. v0.6 therefore removes the separate 24-pixel HTML menu title, places Menu/count in the status line, and uses three native 79-pixel rows. This fits the native selector without overlap or scaling. This is firmware/theme geometry evidence, subject to physical RM-721 correction.
+
+The `softkey_left/center/right_80x38.png` filenames describe their slot, but the decoded members are 80x37. `theme.xml` binds them to each softkey position without a stretch rule. v0.6 renders the pieces at 80x37 over the 240x38 softkey-area background, leaving one background pixel rather than stretching.
+
+Phase 2 navigation begins with D-pad/keyboard movement, page-aware status/count, OK/Select opening a visible evidence-labelled shallow screen for every main-menu entry, and Back returning to the selected grid item. These are navigation scaffolds, not claims about deep physical behavior.
