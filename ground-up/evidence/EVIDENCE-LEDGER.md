@@ -547,3 +547,7 @@ Messaging > Templates now provides three explicit local test templates: Call me,
 ## v0.112 offline Service command composer
 
 Messaging > Service commands > Enter command now opens the shared multi-tap editor. `*` deletes and Select returns an explicit `confirmed service command offline; not sent` result. No command is transmitted or retained, and History remains 0. This replaces a generic toggle while preserving the offline boundary.
+
+## v0.113 local Voice mailbox number
+
+Messaging > Voice mailbox now stores a local mailbox number. Mailbox number opens a digit editor with `*` deletion; Select persists. Call mailbox offline opens the existing offline dialler prefilled with the stored number, and Clear number removes it. No voicemail service or network call is contacted.
