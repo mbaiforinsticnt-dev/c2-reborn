@@ -383,3 +383,7 @@ Selecting a stored To-do row now opens a prefilled body editor. Multi-tap edits,
 ## v0.72 live local counters
 
 Applications > Memory status, Log > Message counter and Log > Call duration now read the local backend rather than generic Ready/Active rows. Memory status reports stored Contacts, Messages, Notes and Calendar record counts. Message counter reports local Draft/Sent/Received counts. Call duration explicitly says offline calls are not connected, keeps durations at 00:00, and reports dialled/all attempt counts. No byte-accurate storage or network duration is inferred.
+
+## v0.73 local Draft-to-Sent transition
+
+On a selected Draft row, the green Call key opens a confirmation displaying its exact recipient/body. Select changes only the local message status from draft to sent, adds `sentAt`, persists, and makes the record appear under Sent items; Back cancels. The screen says `Send message offline?` and `moves to Sent items locally`: no SMS/network transmission is performed or implied. This is a backend state simulation pending real radio/service work.
