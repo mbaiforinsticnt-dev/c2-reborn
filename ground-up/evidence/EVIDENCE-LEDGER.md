@@ -551,3 +551,7 @@ Messaging > Service commands > Enter command now opens the shared multi-tap edit
 ## v0.113 local Voice mailbox number
 
 Messaging > Voice mailbox now stores a local mailbox number. Mailbox number opens a digit editor with `*` deletion; Select persists. Call mailbox offline opens the existing offline dialler prefilled with the stored number, and Clear number removes it. No voicemail service or network call is contacted.
+
+## v0.114 honest offline Info messages
+
+Messaging > Info messages now states Cell broadcast unavailable/offline. Reception toggles a persisted local preference, Topics remains 0, and Language reads the phone-language preference. The switch does not receive broadcasts or invent messages; Read remains an empty reference action.
