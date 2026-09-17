@@ -427,3 +427,7 @@ Contacts > Speed dials now exposes all assignable number keys 2–9. Assignment 
 ## v0.83 local Caller group assignment
 
 Contacts > Caller groups now reports counts for Family, Friends, Business and Other. Selecting a group opens the stored Contacts list; Up/Down selects a contact and Select stores that contact's group and updates counts. This is bounded local organization behavior. Group tones/images, unassignment and physical wording remain future work.
+
+## v0.84 caller-group readback and removal
+
+Contacts > Names rows now show each stored contact's assigned caller group. Caller groups adds Remove group: select it, choose a contact and Select to delete that contact's local group assignment. Existing group assignment remains single-group per contact and moving a contact between groups updates counts. Group membership is now directly auditable and reversible from the handset.
