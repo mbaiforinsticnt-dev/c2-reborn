@@ -745,3 +745,6 @@ Settings > Date and time now uses one complete branch for clock offset, date for
 
 ## Ground-Up v0.176 · Display endpoint consolidation
 Settings > Display now uses one branch for supplied wallpaper, Home screen, font colour, and main-menu view. Local preferences apply visibly; no downloaded wallpaper or external display resource is claimed.
+
+## Ground-Up v0.177 · My shortcuts consolidation
+Settings > My shortcuts now uses one complete branch for left/right selector, reset, and idle preview. The two local idle softkeys remain independently configurable; reset visibly restores Organiser/Names.
