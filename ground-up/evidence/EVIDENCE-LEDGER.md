@@ -637,3 +637,6 @@ Media > Video keeps its honest no-camera/no-recording state and adds persistent 
 
 ## Ground-Up v0.140 · complete offline Radio rows
 Media > Radio now has persistent local on/off state, 87.5-108.0 MHz tuning, Save current station, and saved-station inventory. Search explicitly says unavailable offline and no scan started because browser recreation has no FM hardware. Tuning switches the local radio state on but produces no audio or hardware operation. No headset antenna, device radio, station scan, stream, upload, or network source is used.
+
+## Ground-Up v0.141 · local Inbox search
+Messaging > Inbox now says no received messages and local drafts/sent only. Search local messages opens a multi-tap query composer, searches only the recreation's stored To/body fields, reports match count, and renders matching local status/recipient/body summaries. Inbox view gives exact List/no received messages readback. No device inbox, account, carrier, contact, email, or external message source is read.
