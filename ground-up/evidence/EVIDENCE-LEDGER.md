@@ -203,3 +203,7 @@ Messaging > Create message and any endpoint control labelled Create message now 
 ## v0.27 offline dialler and call-log backend
 
 The green Call key now opens a functional offline dialler from any non-dialler state. Number keys enter a number; Call or the centre Call softkey records an `{number, status: offline attempt, createdAt}` entry in local `phoneState.callLog`, capped at 100. All calls and Dialled numbers read the stored log back, including after reload. No network call is placed and the UI says offline attempt. This replaces the prior generic Call-key shortcut to Log with an actual local state transition.
+
+## v0.28 persistent local Notes slice
+
+Organiser > Notes > Make a note now opens a functional offline note editor. Number keys supply temporary test text; Select stores a timestamped record in `phoneState.notes`, capped at 100 and persisted. Reopening Notes reads the local note count. This removes another generic Ready/Active toggle, while clearly avoiding a false claim of Nokia T9 fidelity: proper multi-tap/T9 composition remains required before authentic free-text behavior can be claimed.
