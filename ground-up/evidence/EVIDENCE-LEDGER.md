@@ -255,3 +255,7 @@ The local calculator now supports chained subtraction through `#` as well as cha
 ## v0.40 confirmed Restore factory settings
 
 Settings > Restore factory settings now opens an explicit confirmation and restores only phone preferences to Ground-Up defaults: profile, theme, tone/volume, alarm, clock, display and main-menu view. Locally stored contacts, notes, to-dos, drafts, calendar notes, call log and address history are retained and the UI says so before confirmation. Select applies/persists the reset; Back cancels. A separate delete-personal-data flow is not inferred.
+
+## v0.41 visible font-colour application
+
+The v0.37 Display > Font colour preference now changes the rendered LCD text palette immediately and after reload. White, Black and Blue apply explicit colour tokens; Automatic leaves theme CSS in control. Restore factory settings reapplies Automatic. This closes the prior stored-only caveat without changing theme assets.
