@@ -323,3 +323,7 @@ Organiser > To-do list > Add now uses the shared multi-tap text engine and persi
 ## v0.57 multi-tap Calendar note text
 
 Calendar > Make a note now has Date and Note fields. Left/Right changes field; Up/Down changes date only while Date is active; number keys compose note text with the shared multi-tap engine while Note is active, and # changes case. Select persists the selected ISO date and actual composed body instead of a fixed placeholder.
+
+## v0.58 local collection readback and To-do completion
+
+Notes, To-do list, Calendar and Drafts now render their locally stored content in the endpoint lead instead of count-only summaries, allowing replay to verify what was persisted from the screen. To-do list > Open toggles the newest task's `done` state and persists it when a task exists; the lead marks open/completed with ○/✓. Add still opens multi-tap entry. Large-collection pagination remains future work.
