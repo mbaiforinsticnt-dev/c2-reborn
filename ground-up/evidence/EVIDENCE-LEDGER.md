@@ -835,3 +835,6 @@ The remaining user-facing test/prototype labels are removed: detail Options now 
 
 ## Ground-Up v0.206 · neutralise menu shortcut feedback
 Numeric and page shortcut feedback no longer labels those inputs as test shortcuts. The same navigation behavior remains, but user-visible responses now simply report the selected menu item.
+
+## Ground-Up v0.207 · mobile viewport visual audit
+A 390x900 pixel mobile render was inspected. The entire handset, 240x320 LCD, nine-cell first menu page, softkeys, d-pad, call/end keys, number pad, neutral feedback labels, and the beginning of the evidence section are visible in one-column layout without horizontal clipping or overlap. No source behavior changed.
