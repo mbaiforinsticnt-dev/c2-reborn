@@ -724,3 +724,6 @@ Any still-unmodelled detail row now gives a visible selected/ready state and exp
 
 ## Ground-Up v0.169 · Names empty-state controls
 Contacts > Names now gives explicit List, Search, and Options results when the local contact collection is empty, while Add retains the working local editor. Search does not invent filtering mechanics without physical route evidence; saved contact rows remain directly editable.
+
+## Ground-Up v0.170 · Photos empty-state controls
+Gallery > Photos now gives exact Memory status, Options, and Help results around its Camera route. The Help row explicitly says captures store settings metadata only and no camera image is produced; existing local metadata records remain inspectable/deletable.
