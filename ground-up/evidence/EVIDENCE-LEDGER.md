@@ -411,3 +411,7 @@ Settings > Phone > Welcome note now opens a prefilled multi-tap editor. Number k
 ## v0.79 persistent offline Network mode preference
 
 Settings > Phone > Network mode now selects and persists Dual mode, GSM or 3G. This is a local preference only: Connectivity continues to say Offline, and no modem, operator selection or browser networking is changed. The values follow the RM-722/059F5P7 route context; physical C2-01 wording remains authoritative if later capture disagrees.
+
+## v0.80 complete bounded Call preference rows
+
+Settings > Call now gives Speed dialling and Call waiting the same local persisted On/Off behavior as Anykey answer and Automatic redial. The lead remains Offline call preferences: these switches do not affect a modem or connected call. All four visible Call rows are now stateful rather than generic toggles.
