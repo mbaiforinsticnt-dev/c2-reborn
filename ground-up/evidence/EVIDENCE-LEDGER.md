@@ -311,3 +311,7 @@ Organiser > Notes now uses a local multi-tap text composer rather than storing l
 ## v0.54 multi-tap contact names
 
 Contacts > Add new contact now has distinct Name and Number fields. Up/Down changes the active field. Number keys use the v0.53 multi-tap composer in Name and literal digits in Number; # changes name case. Select stores the entered name/number pair, using a neutral Contact N fallback only when name is empty. This replaces the forced placeholder-name editor and reuses one keypad text engine.
+
+## v0.55 multi-tap local message bodies
+
+Messaging > Create message now has distinct To and Message fields. Up/Down changes the active field; number keys enter literal recipient digits in To and use the shared multi-tap composer in Message; # changes message case. Select persists the actual composed draft body rather than the previous fixed test string. Nothing is transmitted.
