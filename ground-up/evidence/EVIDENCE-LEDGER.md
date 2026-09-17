@@ -652,3 +652,6 @@ Organiser > Calculator now opens the working integer add/subtract backend only f
 
 ## Ground-Up v0.145 · timer mode fidelity
 Organiser > Countdown timer and Stopwatch now route by the highlighted row instead of opening the same timer from every option. Normal countdown and split stopwatch retain their working local controls. Interval timer and lap timing are explicit Reference only boundaries; instructions, Start/Continue, and Reset have coherent row-specific behavior. This preserves labelled menu coverage without claiming unimplemented interval or lap capture.
+
+## Ground-Up v0.146 · explicit offline Maps boundary
+Organiser > Maps now gives row-specific results for absent map data, unavailable route guidance, empty positioning records, and Back to Organiser. It does not claim a map package, GPS fix, network position, or route engine. The route stays interactive while preserving the offline/no-data boundary.
