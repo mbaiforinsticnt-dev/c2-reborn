@@ -748,3 +748,6 @@ Settings > Display now uses one branch for supplied wallpaper, Home screen, font
 
 ## Ground-Up v0.177 · My shortcuts consolidation
 Settings > My shortcuts now uses one complete branch for left/right selector, reset, and idle preview. The two local idle softkeys remain independently configurable; reset visibly restores Organiser/Names.
+
+## Ground-Up v0.178 · Lights endpoint consolidation
+Settings > Lights now uses one complete branch for display level, keypad, notifications, and reset. Toggle/reset results are visible and persisted as local recreation preferences; no physical keypad lamp or notification LED is claimed.
