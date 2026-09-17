@@ -583,3 +583,6 @@ Organiser > Maps now gives an explicit unavailable/no-map/no-route/no-positionin
 
 ## Ground-Up v0.122 · local backup backend
 Settings > Sync and backup now creates, describes, restores, and clears one local phone-state snapshot with confirmation surfaces. The snapshot remains in this browser's local storage and excludes itself to prevent recursive growth. Restore reapplies menu mode, theme, font colour, light level, and wallpaper as well as local collections and preferences. No sync server, account, network, file export, or external data is used. This backend is a disclosed recreation choice beneath the labelled RM-722 firmware menu route.
+
+## Ground-Up v0.123 · message settings backend
+Messaging > Message settings now gives Message centre and Character support the same persistent local backend already used by Delivery reports and Save sent messages. Message centre accepts a local number value; Character support switches between Full and Reduced. These preferences do not contact a carrier or send a message. The route labels come from the labelled RM-722 firmware menu; the browser persistence is a disclosed recreation choice.
