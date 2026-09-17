@@ -116,7 +116,7 @@ function detailModel(section,item){
  if(item==='Sent items'){let a=phoneState.messages.filter(x=>x.status==='sent');return {kind:'messages',lead:a.length===1?'1 local sent item':a.length+' local sent items',rows:a.length?a.map(x=>'To '+(x.to||'(none)')+' · '+(x.body||'(blank)')):['No sent messages','Create message','Search','Message settings']}};
  if(item==='Drafts'){let a=phoneState.messages.filter(x=>x.status==='draft');return {kind:'messages',lead:a.length===1?'1 local draft':a.length+' local drafts',rows:a.length?a.map(x=>'To '+(x.to||'(none)')+' · '+(x.body||'(blank)')).concat(['Create message']):endpointModels.Drafts.rows}};
  if(item==='Names')return {kind:'contacts',lead:phoneState.contacts.length?phoneState.contacts.length+' local contact(s)':'No contacts saved',rows:phoneState.contacts.length?phoneState.contacts.map(c=>c.name+' · '+c.number+(c.group?' · '+c.group:'')).concat(['Add']):['List','Add','Search','Options']};
- if(item==='Profiles')return {...endpointModels.Profiles,lead:phoneState.profile+' · active'};
+ if(item==='Profiles')return {kind:'settings',lead:phoneState.profile+' · active',rows:['General','Silent','Meeting','Outdoor','My style 1','My style 2','Flight']};
  if(item==='Themes')return {...endpointModels.Themes,lead:phoneState.theme+' · active',rows:['Select theme','Theme downloads: Offline','Type of view: '+phoneState.menuMode,'Theme memory: 4 supplied']};
  if(item==='Tones')return {...endpointModels.Tones,lead:'Ringing tone · '+phoneState.ringtone,rows:['Incoming call alert: '+phoneState.incomingAlert,'Ringing tone: '+phoneState.ringtone,'Ring volume: '+phoneState.volume,'Message alert tone: '+phoneState.messageTone]};
  if(item==='Alarm clock')return {...endpointModels['Alarm clock'],lead:phoneState.alarm+' · '+(phoneState.alarmEnabled?'On':'Off'),rows:['Alarm: '+(phoneState.alarmEnabled?'On':'Off'),'Alarm time','Repeat: '+phoneState.alarmRepeat,'Alarm tone: '+phoneState.alarmTone]};
@@ -378,7 +378,7 @@ function saveAction(){
  if(actionType==='note'&&actionValue){phoneState.notes.unshift({body:actionValue,createdAt:new Date().toISOString()});phoneState.notes=phoneState.notes.slice(0,100)}
  if(actionType==='dial'&&actionValue){phoneState.callLog.unshift({number:actionValue,status:'offline attempt',createdAt:new Date().toISOString()});phoneState.callLog=phoneState.callLog.slice(0,100)}
  if(actionType==='alarm')phoneState.alarm=actionValue;
- if(actionType==='profile')phoneState.profile=choices.profile[Number(actionValue)];
+ if(actionType==='profile'){phoneState.profile=choices.profile[Number(actionValue)];phoneState.flightMode=phoneState.profile==='Flight'}
  if(actionType==='volume')phoneState.volume=Number(actionValue);
  if(actionType==='alarmrepeat'){phoneState.alarmRepeat=['Off','Daily','Weekdays'][Number(actionValue)];return finishAction('saved alarm repeat '+phoneState.alarmRepeat)}
  if(actionType==='alarmtone'){phoneState.alarmTone=firmwareTones[Number(actionValue)];previewTone(false)}
