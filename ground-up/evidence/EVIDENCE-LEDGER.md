@@ -235,3 +235,23 @@ Four destructive menu endpoints now operate on the matching local backend collec
 ## v0.35 complete local Alarm clock state
 
 Alarm clock now exposes and persists separate enabled state and time. Selecting `Alarm: Off/On` toggles it immediately and updates the live lead. Alarm time opens with the stored value instead of resetting to 07:00; Up/Down adjust hours and Left/Right adjust minutes in five-minute steps. Select persists the edited time. No real-time notification firing is claimed yet.
+
+## v0.36 persistent Date and time preferences
+
+Settings > Date and time now renders the live local clock in the selected 12/24-hour format. Date & time format opens a real choice and persists it; Auto-update toggles and persists an explicit local preference. No carrier/network time synchronization is performed or claimed. Time zone and manual date editing remain reference rows pending deeper implementation.
+
+## v0.37 persistent Display settings
+
+Settings > Display now reads local display state. Home screen toggles and persists; Font colour opens and persists Automatic/White/Black/Blue choices; Main menu view opens the already working four-mode view dialog directly. Wallpaper remains a reference endpoint because applying supplied wallpaper evidence still needs its own provenance pass. Font-colour state is stored and shown, but full palette application is not yet claimed.
+
+## v0.38 persistent Main menu view
+
+The existing physical-reference four-mode Main menu view selector now stores its selection in `phoneState.menuMode` and restores it on reload. This closes the state gap between Display > Main menu view and the top-level Options route: both mutate the same persisted setting. Menu content and geometry are unchanged.
+
+## v0.39 calculator subtraction
+
+The local calculator now supports chained subtraction through `#` as well as chained addition through `*`. Select tokenizes signed integer terms and reduces them without `eval`. Invalid trailing operators are prevented. This deepens the bounded standard calculator while scientific and loan modes remain reference rows.
+
+## v0.40 confirmed Restore factory settings
+
+Settings > Restore factory settings now opens an explicit confirmation and restores only phone preferences to Ground-Up defaults: profile, theme, tone/volume, alarm, clock, display and main-menu view. Locally stored contacts, notes, to-dos, drafts, calendar notes, call log and address history are retained and the UI says so before confirmation. Select applies/persists the reset; Back cancels. A separate delete-personal-data flow is not inferred.
