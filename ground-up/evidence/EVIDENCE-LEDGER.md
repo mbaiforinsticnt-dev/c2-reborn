@@ -778,3 +778,6 @@ Five split activation branches for Names and two for Own numbers were replaced b
 
 ## Ground-Up v0.187 · canonical organiser collections
 Fifteen split activation branches for Calendar, To-do list, and Notes were replaced by one canonical handler per route. Existing local editors, empty-state feedback, calendar week/date controls, and collection navigation are preserved.
+
+## Ground-Up v0.188 · canonical local imaging routes
+Eight split activation branches for Photos and Camera were replaced by one canonical handler per route. Capture metadata inspection, camera navigation, local memory/options/help feedback, reference capture, timer, effect, and quality actions are preserved.
