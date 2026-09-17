@@ -483,3 +483,11 @@ Media > Voice recorder > Record now opens a live local duration timer. First Sel
 ## v0.97 per-reference-recording deletion
 
 On a stored Voice recorder row, the left softkey opens a confirmation showing the exact reference recording name and duration. Select removes only that indexed metadata record and persists; Back cancels. As in v0.96, no audio bytes exist or are implied.
+
+## v0.98 persistent Alarm tone with preview
+
+Alarm clock > Alarm tone now displays the stored alarm tone and opens the full supplied 57-tone selector. Up/Down chooses, Select stores `phoneState.alarmTone`, and preview uses the existing observable loading/playing/blocked/unavailable media-event path without changing the ringing tone. Alarm firing itself remains unimplemented and unclaimed.
+
+## v0.99 STOP-SHIP load repair
+
+The static `endpointModels.Connectivity` object no longer evaluates `phoneState.usbMode` during module initialization. That label remains correctly computed lazily inside `detailModel()` after state initialization. A build guard scans for any `phoneState` token before `detailModel()` and fails if found. This fixes the TDZ `ReferenceError` that broke script load in published v0.94–v0.98. Prior helper-only “OK” results are retracted; future handoff requires a real page load plus rendered DOM/state assertions.
