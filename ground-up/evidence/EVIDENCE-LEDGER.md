@@ -303,3 +303,11 @@ Connectivity > Packet data now selects and persists When needed, Always online o
 ## v0.52 persistent offline USB data cable mode
 
 Connectivity > USB data cable now selects and persists Ask on connection, PC Suite or Mass storage as a local preference. No USB device API, mount, PC Suite session or file transfer is invoked or claimed. The endpoint now has bounded phone-settings behavior while Connectivity remains explicitly offline.
+
+## v0.53 shared-keypad multi-tap text entry begins
+
+Organiser > Notes now uses a local multi-tap text composer rather than storing literal test digits. Keys follow the labels printed on the supplied controller: 2=abc, 3=def, through 9=wxyz; 1 cycles punctuation, 0 inserts a space, and # changes case. Repeating a key within 900 ms cycles its character; a different key commits and begins the next. Select persists the resulting note. This timing and mapping are Ground-Up keypad behavior pending physical C2-01 timing confirmation, not a T9 dictionary claim.
+
+## v0.54 multi-tap contact names
+
+Contacts > Add new contact now has distinct Name and Number fields. Up/Down changes the active field. Number keys use the v0.53 multi-tap composer in Name and literal digits in Number; # changes name case. Select stores the entered name/number pair, using a neutral Contact N fallback only when name is empty. This replaces the forced placeholder-name editor and reuses one keypad text engine.
