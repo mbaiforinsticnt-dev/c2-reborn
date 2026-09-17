@@ -643,3 +643,6 @@ Messaging > Inbox now says no received messages and local drafts/sent only. Sear
 
 ## Ground-Up v0.142 · Calendar week/date navigation
 Organiser > Calendar now keeps Week view and Go to date functional alongside local note create/edit/delete. Week view summarizes the next seven local dates and note counts. Go to date changes by hardware Up/Down, stores a local date filter, and shows matching-note count; Clear date filter returns to the full local list. No external calendar, account, timezone service, invite, notification, or network source is used.
+
+## Ground-Up v0.143 · Organiser empty states and cross-navigation
+Notes > Memory status now reports local slots used; empty Edit/Delete give exact no-local-note results. To-do > Go to calendar opens Calendar; empty Delete gives an exact no-local-to-do result. Empty Calendar View reports no local notes for the selected date. These remove generic Active toggles without adding external data, account access, notification, invite, or network behavior.
