@@ -805,3 +805,6 @@ Two split Applications activation branches were replaced by one canonical handle
 
 ## Ground-Up v0.196 · close final generic endpoint rows
 A complete 413-row source-instrumented activation replay found nine rows still falling through to the generic selector: all six Applications memory-status rows and the first three Message counter rows. Dedicated handlers now provide visible local-storage and local-message-state feedback; Reset counters keeps its confirmation flow. The same replay now has zero generic endpoint rows.
+
+## Ground-Up v0.197 · remove stale pending-language fallbacks
+Three reachable generic controller messages that still said deeper behavior or menu geometry was pending have been replaced with accurate current-state guidance. Detail About reports the working offline surface, section activation directs the user to its rows, and Organise states the firmware menu order is fixed rather than implying unfinished behavior.
