@@ -742,3 +742,6 @@ Settings > Phone now uses one branch for language, Flight query, welcome note, a
 
 ## Ground-Up v0.175 · Date and time consolidation
 Settings > Date and time now uses one complete branch for clock offset, date format, time format, automatic-time preference, and time zone. Automatic time explicitly remains a preference with no network time source connected.
+
+## Ground-Up v0.176 · Display endpoint consolidation
+Settings > Display now uses one branch for supplied wallpaper, Home screen, font colour, and main-menu view. Local preferences apply visibly; no downloaded wallpaper or external display resource is claimed.
