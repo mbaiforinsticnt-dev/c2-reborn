@@ -563,3 +563,7 @@ Applications > Memory status now also reports local Photos and reference Recordi
 ## v0.116 honest Applications support endpoints
 
 Applications > Downloads now reports No local downloads instead of generic folder rows. Applications > Settings states Java runtime Not started, Network access Off and Memory Local only. This preserves the owner's explicit Java/game and working-web gate while replacing generic Ready/Active controls with honest status. The 19 JAD identities remain metadata-only.
+
+## v0.117 explicit offline Browser service endpoints
+
+Ovi, Nokia, Home, Web search, Browser and Operator link 1–3 now state unavailable/offline instead of generic Open reference. Their local controls route to Go to address, Bookmarks and Last web address, preserving useful offline phone behavior without contacting retired/current services. Working web remains owner-gated.
