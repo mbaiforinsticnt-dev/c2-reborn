@@ -598,3 +598,6 @@ Media > Video now explicitly reports no camera hardware, recording, or stored vi
 
 ## Ground-Up v0.127 · operator/configuration boundaries
 Settings > Operator settings now reports no operator provisioning or network connection. Configuration now has persistent local Default configuration and Preferred access point selectors plus explicit zero personal settings/no provisioning. These values do not create an account, access point, carrier configuration, or network connection. Route labels come from RM-722 firmware menu evidence; selector values and persistence are disclosed recreation choices pending physical capture.
+
+## Ground-Up v0.128 · remaining Log counters
+Log > Message recipients now derives a local recipient list and message counts from the recreation's stored messages, with recipient detail and a Create message route when empty. Data counters and Connection timer now explicitly report zero bytes/zero time and no offline network sessions rather than generic active controls. No device history, network counter, carrier data, or external message is read or sent.
