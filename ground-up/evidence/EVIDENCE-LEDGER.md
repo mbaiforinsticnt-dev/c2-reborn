@@ -826,3 +826,6 @@ The page description no longer calls the current working phone a Phase 1 visual 
 
 ## Ground-Up v0.203 · end-to-end contact persistence audit
 A real hardware-key browser replay created contact a / 5 through Contacts > Add new contact, reloaded the page, verified the same record in local storage and on the Names card, then opened it in the contact editor. This validates mutation, persistence, redraw, reload, and detail-row activation together. No source behavior changed.
+
+## Ground-Up v0.204 · remove visible test-scaffold labels
+The key-response instrumentation remains available for direct feedback and audit, but the visible LCD and keypad labels no longer say TEST or TEST SCAFFOLD. Responses now use a neutral sequence number, key, and result, which keeps every-key feedback without presenting the offline phone as a test fixture.
