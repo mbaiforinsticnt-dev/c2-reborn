@@ -739,3 +739,6 @@ Settings > Security now uses one complete branch for the local PIN-request prefe
 
 ## Ground-Up v0.174 · Phone and Call preference consolidation
 Settings > Phone now uses one branch for language, Flight query, welcome note, and network-mode preferences. Call uses one branch for its four local preferences. These are local preference simulations: no network registration, call, or hardware mode change is claimed.
+
+## Ground-Up v0.175 · Date and time consolidation
+Settings > Date and time now uses one complete branch for clock offset, date format, time format, automatic-time preference, and time zone. Automatic time explicitly remains a preference with no network time source connected.
