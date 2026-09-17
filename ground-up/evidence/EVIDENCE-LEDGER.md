@@ -658,3 +658,6 @@ Organiser > Maps now gives row-specific results for absent map data, unavailable
 
 ## Ground-Up v0.147 · global detail activation-chain repair
 The shared detail activation path contained three standalone message/calendar fragments between else-if runs. Earlier row-specific results could fall through and be overwritten by generic activation. Duplicate model-return fragments were removed, valid Sent/Drafts handlers were joined into the shared chain, and the generic fallback is global again. Replays cover Maps, Calculator Scientific, Countdown Interval, and Names.
+
+## Ground-Up v0.148 · Contacts offline query routes
+Contacts > Synchronise and Network query now have explicit row behavior. Missing accounts, sync history, network service, and query history read back honestly; Local contacts/Search local Names open Names; Back returns to Contacts. No account, network, remote directory, or synchronisation is claimed.
