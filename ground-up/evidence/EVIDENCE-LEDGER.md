@@ -327,3 +327,7 @@ Calendar > Make a note now has Date and Note fields. Left/Right changes field; U
 ## v0.58 local collection readback and To-do completion
 
 Notes, To-do list, Calendar and Drafts now render their locally stored content in the endpoint lead instead of count-only summaries, allowing replay to verify what was persisted from the screen. To-do list > Open toggles the newest task's `done` state and persists it when a task exists; the lead marks open/completed with ○/✓. Add still opens multi-tap entry. Large-collection pagination remains future work.
+
+## v0.59 selectable local Notes and To-do lists
+
+Notes and To-do list now render each stored record as its own selectable detail row rather than joining all content into one lead line. Up/Down uses existing detail navigation. Selecting a note identifies and displays that exact local note; selecting any to-do toggles that row's done state, not only the newest. Make a note/Add remain appended action rows. This removes the first-record-only limitation; edit/delete per item and pagination remain.
