@@ -604,3 +604,6 @@ Log > Message recipients now derives a local recipient list and message counts f
 
 ## Ground-Up v0.129 · Applications metadata route
 Applications > Applications now opens a four-row identity summary and routes to the existing 19-entry JAD metadata catalogue. It labels the supplied game and utility identity counts and continues to say Java runtime Deferred. This improves navigation to supplied descriptor evidence only; it does not start Java/game runtime work, execute a MIDlet, or access a network. The supplied JAD files and parsed apps.json remain the source.
+
+## Ground-Up v0.130 · complete tone preferences
+Settings > Tones now gives all four visible rows functional persistent state: Incoming call alert selects Ringing/Ascending/Ring once/Beep once/Off; Ringing tone and Message alert tone independently select from the 57 supplied firmware AAC names and request browser preview; Ring volume retains its 1-7 control. The route and tone files come from labelled RM-722 firmware. Alert-mode choices are disclosed reconstruction pending physical submenu capture. Audio reports the browser's real play outcome.
