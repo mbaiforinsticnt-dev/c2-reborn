@@ -625,3 +625,6 @@ Media > Camera now explicitly states camera hardware unavailable and treats Capt
 
 ## Ground-Up v0.136 · complete Accessories rows
 Settings > Accessories now shows the persistent default accessory on its first row and exact Not connected states for Headset, Handsfree and TTY. Selecting a disconnected row explains that no hardware accessory is connected to the browser recreation. The default selector remains local preference state only. No USB, Bluetooth, audio device, serial interface, microphone, or system hardware is queried. Route labels come from RM-722 menu evidence; state wording is an honest recreation boundary.
+
+## Ground-Up v0.137 · complete Profiles list
+Settings > Profiles now exposes all seven locally supported profiles in its detail list: General, Silent, Meeting, Outdoor, My style 1, My style 2 and Flight. Each row enters the existing persistent activation selector. Activating Flight also updates the recreation's flight-mode idle state; any other profile clears it. These are local preference simulations with no radio/network operation. Profile names combine menu/firmware evidence with disclosed reconstruction pending physical full-list capture.
