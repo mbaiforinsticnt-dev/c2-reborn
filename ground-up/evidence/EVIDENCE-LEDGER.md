@@ -139,3 +139,7 @@ Only Grid with labels has measured physical C2-01 geometry. Single/List/Grid exi
 ## v0.14 JAD application identity UI
 
 Applications > Applications now opens a navigable 19-entry installed-application reference generated from the preserved JAD descriptors. Each row shows exact MIDlet name and version; Details shows vendor and descriptor filename and explicitly states that executable Java UI is outside current scope. This supplies firmware-grounded identity coverage without pretending to run Java. It includes E-mail 1.3.53, Ovi Store 2.4.0, OviBrowser 1.0.1, Operette 4.2.55, Nokia apps and supplied games. Back returns to the Applications first submenu. Diagnostic acknowledgement and functional state transitions remain separately auditable.
+
+## v0.15 catalog transition correction and replay rule
+
+The 10 AM audit identified that a visible diagnostic can mask a missing functional state transition. v0.15 makes catalog movement a dedicated `moveCatalog(delta)` state transition, records before/after indices in the visible response, gives every catalog row a stable audit index, and constrains the catalog list to a scrolling region above the softkey bar. Selected rows scroll into that region. Acceptance tests must assert `catalogSel` and the selected row actually change and that the selected row's bounds remain inside the list viewport; a changing diagnostic strip alone does not pass.
