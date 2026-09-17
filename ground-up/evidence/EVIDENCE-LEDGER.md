@@ -495,3 +495,7 @@ The static `endpointModels.Connectivity` object no longer evaluates `phoneState.
 ## v0.100 persistent Alarm repeat preference
 
 Alarm clock > Repeat now selects and persists Off, Daily or Weekdays and shows the stored value in the row. This completes the visible local Alarm settings rows for enabled state, time, repeat and tone. Alarm firing/scheduling remains unimplemented and unclaimed.
+
+## v0.101 local Conversations and honest Inbox semantics
+
+Messaging > Conversations now groups local draft/sent records by recipient, shows per-recipient counts, and selecting a row displays each local status/body in that conversation. New message remains appended. Inbox now honestly reports No received messages instead of counting local drafts/sent as inbox mail. No received-message simulation is invented.
