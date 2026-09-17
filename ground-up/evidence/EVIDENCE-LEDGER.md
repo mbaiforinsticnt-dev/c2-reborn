@@ -766,3 +766,6 @@ Twenty older row-specific handlers remained after canonical Lights, Phone, Call,
 
 ## Ground-Up v0.183 · remove dead service/media handlers
 Sixteen older row-specific handlers remained after canonical Configuration, Video, Music player, Voice mailbox, Service commands, Info messages, Memory options, and Operator settings branches. Those unreachable branches were removed; each route now has one activation handler.
+
+## Ground-Up v0.184 · canonical Calculator and timer handlers
+Ten row-specific branches for Calculator, Countdown timer, and Stopwatch were replaced with one canonical handler per route. Working standard/split/countdown actions and honest Scientific/Loan/Interval/Lap boundaries are retained.
