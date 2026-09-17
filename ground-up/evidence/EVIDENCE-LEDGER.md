@@ -577,3 +577,6 @@ Browser > Web settings now has a local backend instead of generic reference cont
 
 ## Ground-Up v0.120 · honest network-app endpoints
 The top-level E-mail and Ovi Store nlink entries now open dedicated offline detail surfaces, and Messaging's Instant messaging, E-mail client, and Mailbox 1-5 routes report no account/session/connection rather than falling through to generic active-looking controls. This is an offline recreation boundary, not evidence that the retired services operated this way. No account, message, download, network connection, Java runtime, or working-web behavior was added.
+
+## Ground-Up v0.121 · Organiser offline endpoints
+Organiser > Maps now gives an explicit unavailable/no-map/no-route/no-positioning surface. Organiser > Dictionary now has a small offline lookup composer with multi-tap entry, five labelled local definitions, unknown-word feedback, recent lookup readback, and confirmation-backed local history clearing. The Dictionary route comes from the labelled RM-722 firmware menu; the five definitions and offline backend are recreation choices, not extracted handset dictionary data. No network, GPS, map download, or Java runtime is used.
