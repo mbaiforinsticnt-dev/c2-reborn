@@ -535,3 +535,7 @@ Log > Missed calls and Received calls now report explicit empty offline lists ra
 ## v0.109 honest empty Messaging categories
 
 Messaging > Outbox, Delivery reports and Saved items now show explicit empty local/offline states instead of generic list controls implying records. Outbox has no queued messages because the local send simulation completes immediately; Delivery reports has no reports because no transmission occurs; Saved items has no records because no save-to-folder action exists yet.
+
+## v0.110 local Saved items workflow
+
+On a selected Draft or Sent item, # moves that local message to Saved items and persists. Saved items now lists records and opens their exact recipient/body; left softkey uses the existing exact-message delete confirmation. This replaces the empty-only Saved items surface. The # shortcut is Ground-Up behavior pending physical options capture, and nothing is transmitted.
