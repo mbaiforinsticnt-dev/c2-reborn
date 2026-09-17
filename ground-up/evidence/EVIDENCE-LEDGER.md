@@ -712,3 +712,6 @@ Every offline browser landing entry now routes its Web settings row to the exist
 
 ## Ground-Up v0.165 · contact Memory options completion
 Contacts > Memory options now retains its local memory selector, opens Names from the phone-contact count, explains absent SIM memory, and reports local phone/SIM counts. No SIM contents are claimed.
+
+## Ground-Up v0.166 · Connectivity status completion
+Settings > Connectivity retains working local Bluetooth, packet-data, and USB preferences and now gives an exact Network status readback. Preference state is distinct from connection state: no peer, packet session, USB host, or mobile network is claimed.
