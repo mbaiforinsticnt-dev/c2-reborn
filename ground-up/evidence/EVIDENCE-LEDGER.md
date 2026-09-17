@@ -673,3 +673,6 @@ E-mail client and Mailbox 1-5 rows now give exact account, connection, local-dra
 
 ## Ground-Up v0.152 · instant-messaging boundaries
 Both labelled Instant messaging routes now provide exact session, account, network, and settings readbacks. No account, live session, network access, message retrieval, or send is claimed.
+
+## Ground-Up v0.153 · store and application-download boundaries
+Ovi Store and Applications > Downloads now give exact connection, download, inventory, settings, and memory readbacks. No retired service connection, download, install, or Java runtime is claimed or started.
