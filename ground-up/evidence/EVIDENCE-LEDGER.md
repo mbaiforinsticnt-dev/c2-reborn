@@ -207,3 +207,7 @@ The green Call key now opens a functional offline dialler from any non-dialler s
 ## v0.28 persistent local Notes slice
 
 Organiser > Notes > Make a note now opens a functional offline note editor. Number keys supply temporary test text; Select stores a timestamped record in `phoneState.notes`, capped at 100 and persisted. Reopening Notes reads the local note count. This removes another generic Ready/Active toggle, while clearly avoiding a false claim of Nokia T9 fidelity: proper multi-tap/T9 composition remains required before authentic free-text behavior can be claimed.
+
+## v0.29 working offline calculator
+
+Organiser > Calculator now opens a real local arithmetic surface rather than toggling Ready/Active. Hardware digits build operands, `*` inserts addition, and centre Select computes the sum without `eval`. Repeated use stays in the calculator and its screen state is exposed through the existing diagnostic state. Addition is deliberately the first bounded operation; scientific/loan calculator rows remain UI-reference endpoints pending deeper evidence.
