@@ -143,3 +143,9 @@ Applications > Applications now opens a navigable 19-entry installed-application
 ## v0.15 catalog transition correction and replay rule
 
 The 10 AM audit identified that a visible diagnostic can mask a missing functional state transition. v0.15 makes catalog movement a dedicated `moveCatalog(delta)` state transition, records before/after indices in the visible response, gives every catalog row a stable audit index, and constrains the catalog list to a scrolling region above the softkey bar. Selected rows scroll into that region. Acceptance tests must assert `catalogSel` and the selected row actually change and that the selected row's bounds remain inside the list viewport; a changing diagnostic strip alone does not pass.
+
+## v0.16 catalog Options, metadata bounds and observable state
+
+Catalog Options is now a functional three-row reference menu: Application details, Descriptor source, and Java scope. Each selection closes Options and changes the fixed metadata panel using the selected JAD record. These are UI-reference actions, not a claim about original S40 catalog Options wording. The metadata panel is fixed at 46px with anywhere-wrapping and hidden overflow, so long vendor/descriptor strings cannot steal list viewport height or overlap softkeys.
+
+For transition-bound auditing, every render writes a machine-readable snapshot to `lcd.dataset.uiState`: view, main selection, submenu selection, catalog selection, menu mode, Options open state, and Options selection. This is diagnostic observability only and does not change product behavior. Tests can now bind a verified pre-state to the expected post-state instead of inferring state from a diagnostic message.
