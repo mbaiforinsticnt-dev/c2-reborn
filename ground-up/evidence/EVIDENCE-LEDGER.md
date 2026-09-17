@@ -676,3 +676,6 @@ Both labelled Instant messaging routes now provide exact session, account, netwo
 
 ## Ground-Up v0.153 · store and application-download boundaries
 Ovi Store and Applications > Downloads now give exact connection, download, inventory, settings, and memory readbacks. No retired service connection, download, install, or Java runtime is claimed or started.
+
+## Ground-Up v0.154 · complete zero-state log readbacks
+Data counters, Connection timer, Call duration, Missed calls, and Received calls now provide row-specific zero/offline results. No packet transfer, network session, connected call, or received call record is claimed.
