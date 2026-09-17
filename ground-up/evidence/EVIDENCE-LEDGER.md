@@ -703,3 +703,6 @@ Video now distinguishes missing camera hardware and empty captures from working 
 
 ## Ground-Up v0.162 · Operator settings completion
 Settings > Operator settings now provides exact operator, provisioning, and network empty-state readbacks, while Configuration opens the existing local configuration surface. No operator identity, provisioning message, or network connection is claimed.
+
+## Ground-Up v0.163 · Configuration endpoint completion
+Settings > Configuration now keeps working local default/access-point selectors and adds exact empty personal-settings and absent-provisioning readbacks. No operator profile, provisioning document, or live access point is claimed.
