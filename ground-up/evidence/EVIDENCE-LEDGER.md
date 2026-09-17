@@ -387,3 +387,7 @@ Applications > Memory status, Log > Message counter and Log > Call duration now 
 ## v0.73 local Draft-to-Sent transition
 
 On a selected Draft row, the green Call key opens a confirmation displaying its exact recipient/body. Select changes only the local message status from draft to sent, adds `sentAt`, persists, and makes the record appear under Sent items; Back cancels. The screen says `Send message offline?` and `moves to Sent items locally`: no SMS/network transmission is performed or implied. This is a backend state simulation pending real radio/service work.
+
+## v0.74 selectable and deletable Sent items
+
+Sent items rows now open their exact recipient, body and local sent timestamp. Left softkey opens exact-message deletion for both Drafts and Sent items. The deletion mapping now resolves each filtered row back to its original `phoneState.messages` index before mutation, fixing a latent wrong-record risk when draft and sent statuses are interleaved. Select/Back confirmation behavior is unchanged.
