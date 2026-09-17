@@ -697,3 +697,6 @@ Gallery > Music and videos now gives exact empty music/video and local memory re
 
 ## Ground-Up v0.160 · Gallery hub routing
 Gallery > Gallery now routes Photos, Themes, Tones, and Recordings inventory rows to their existing local surfaces. Counts remain derived from local state and the supplied 4 themes/57 tone identities; no personal media or hardware capture is claimed.
+
+## Ground-Up v0.161 · Video and Music player endpoint completion
+Video now distinguishes missing camera hardware and empty captures from working local quality/length preferences. Music player distinguishes empty library/now-playing state while retaining local Repeat and Shuffle preferences. No hardware recording, personal media, or playback is claimed.
