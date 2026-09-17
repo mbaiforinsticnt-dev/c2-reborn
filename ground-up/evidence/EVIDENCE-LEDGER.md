@@ -471,3 +471,7 @@ On a stored Gallery > Photos reference-capture row, the left softkey opens a con
 ## v0.94 Gallery inventory readback
 
 Gallery > Gallery now reports Photos count, four supplied themes and all 57 supplied tones. Gallery > Music and videos reports the supplied-local media inventory without claiming absent music/video files. Applications > Memory status remains the local record counter and is now section-scoped, avoiding an endpoint-name collision. This replaces generic Gallery toggles with source-backed inventory rows.
+
+## v0.95 Gallery inventory cross-navigation
+
+The source-backed Gallery inventory rows now lead to their functional surfaces instead of toggling Ready/Active: Photos opens the local Photos list, Themes opens the supplied theme selector endpoint, and Tones opens the supplied 57-tone endpoint. Music and videos > Tones uses the same route. This links the inventory without duplicating backend state or inventing media.
