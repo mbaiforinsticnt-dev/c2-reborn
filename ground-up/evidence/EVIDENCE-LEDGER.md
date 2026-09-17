@@ -491,3 +491,7 @@ Alarm clock > Alarm tone now displays the stored alarm tone and opens the full s
 ## v0.99 STOP-SHIP load repair
 
 The static `endpointModels.Connectivity` object no longer evaluates `phoneState.usbMode` during module initialization. That label remains correctly computed lazily inside `detailModel()` after state initialization. A build guard scans for any `phoneState` token before `detailModel()` and fails if found. This fixes the TDZ `ReferenceError` that broke script load in published v0.94–v0.98. Prior helper-only “OK” results are retracted; future handoff requires a real page load plus rendered DOM/state assertions.
+
+## v0.100 persistent Alarm repeat preference
+
+Alarm clock > Repeat now selects and persists Off, Daily or Weekdays and shows the stored value in the row. This completes the visible local Alarm settings rows for enabled state, time, repeat and tone. Alarm firing/scheduling remains unimplemented and unclaimed.
