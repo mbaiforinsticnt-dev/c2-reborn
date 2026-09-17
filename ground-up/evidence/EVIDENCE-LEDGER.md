@@ -832,3 +832,6 @@ The key-response instrumentation remains available for direct feedback and audit
 
 ## Ground-Up v0.205 · user-facing product labels
 The remaining user-facing test/prototype labels are removed: detail Options now says Reset local state, and the footer identifies OFFLINE PHONE v0.205 rather than PROTOTYPE. The diagnostic behavior and evidence caveat remain unchanged.
+
+## Ground-Up v0.206 · neutralise menu shortcut feedback
+Numeric and page shortcut feedback no longer labels those inputs as test shortcuts. The same navigation behavior remains, but user-visible responses now simply report the selected menu item.
