@@ -730,3 +730,6 @@ Gallery > Photos now gives exact Memory status, Options, and Help results around
 
 ## Ground-Up v0.171 · Info messages endpoint completion
 Messaging > Info messages now retains its local reception preference and adds exact empty Topics, language, and Read results. No cell-broadcast topic, message, or live network service is claimed.
+
+## Ground-Up v0.172 · Voice mailbox and Service commands completion
+Voice mailbox now has explicit number, offline dial attempt, clear, and Help behavior. Service commands now has local entry plus exact empty History/Clear/Help boundaries. No call or network command is transmitted.
