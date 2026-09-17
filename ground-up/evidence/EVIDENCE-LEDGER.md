@@ -187,3 +187,19 @@ Theme selection now changes the actual LCD theme asset set immediately and survi
 ## v0.23 profiles and ring-volume backend
 
 Profiles is now functional offline state: selecting any displayed profile opens activation, Up/Down traverses all seven frozen-source profile leads, Select persists the active profile and the Profiles screen reads it back. Tones > Ring volume opens a seven-step meter; Up/Down changes the level and Select persists it. The profile names remain unverified frozen-source leads pending independent provenance; persistence and state behavior are Ground-Up implementation, not Nokia database claims.
+
+## v0.24 address persistence and observable audio preview
+
+Address Save now writes to `phoneState.addressHistory` (deduplicated, newest first, capped at 20) before localStorage persistence; the confirmation explicitly says offline address. The action editor no longer repeats the page heading, preventing the address field/help from clipping under the TEST strip. Tone preview now has visible states: not started, loading, playing, blocked (press Select again), or unavailable. Browser playback compatibility is reported from `playing`, `error`, and rejected `play()` signals instead of failing silently. The exact supplied AAC is retained; no transcoding is claimed yet.
+
+## v0.25 local contacts backend
+
+Contacts > Add new contact and Names > Add now open a real two-field local editor. The prototype generates a neutral local name (`Contact N`) and accepts a number from hardware number keys; Select stores `{name, number}` in `phoneState.contacts` (capped at 100) and persists it. Names reads the stored contact list back. No personal or synced records are used. This is a functional offline backend slice, but automatic placeholder naming is Ground-Up test behavior, not a Nokia-authentic text-entry claim; T9/name editing remains future work.
+
+## v0.26 local message drafts backend
+
+Messaging > Create message and any endpoint control labelled Create message now open a working offline draft editor. Number keys enter a recipient number; Select stores a timestamped local draft with a fixed test body in `phoneState.messages`, capped at 100, and persists it. Inbox and Drafts report the stored local counts. Nothing is transmitted. Recipient digit entry and persistence are functional, while the fixed body and lack of S40 text composition are explicitly prototype behavior pending a proper text-entry engine.
+
+## v0.27 offline dialler and call-log backend
+
+The green Call key now opens a functional offline dialler from any non-dialler state. Number keys enter a number; Call or the centre Call softkey records an `{number, status: offline attempt, createdAt}` entry in local `phoneState.callLog`, capped at 100. All calls and Dialled numbers read the stored log back, including after reload. No network call is placed and the UI says offline attempt. This replaces the prior generic Call-key shortcut to Log with an actual local state transition.
