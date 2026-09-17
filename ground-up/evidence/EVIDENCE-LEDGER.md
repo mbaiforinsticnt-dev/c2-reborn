@@ -459,3 +459,7 @@ Go to address and Add bookmark now use the shared multi-tap composer, allowing l
 ## v0.91 functional offline idle/home screen
 
 The red End key now returns to a distinct offline idle screen rather than the main menu test scaffold. It shows the live time/date, current profile, local Flight/Offline status, persisted Welcome note and Home screen preference. Centre opens Menu, right softkey opens Names, and left opens an Organiser shortcut. This is Ground-Up idle behavior assembled from existing local state; exact physical idle geometry/softkey bindings still need handset capture.
+
+## v0.92 persistent local reference captures
+
+Media > Camera > Capture now saves a timestamped local reference-capture record in `phoneState.photos` (100 max) instead of showing a transient flash only. Gallery > Photos renders each record plus a Camera route; selecting a record shows its exact name, explicit `reference capture` kind and timestamp. No camera pixels or hardware capture is claimed. This is backend/UI behavior for the unavailable-hardware case.
