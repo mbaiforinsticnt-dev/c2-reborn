@@ -619,3 +619,6 @@ Settings > Themes now gives every visible row an exact result. Select theme reta
 
 ## Ground-Up v0.134 · complete Lights rows
 Settings > Lights now gives each row persistent local behavior: Display light retains its 1-5 level; Keypad light and Notifications toggle independently; Restore default resets level 3 and both toggles On. The body light-level attribute continues to reflect the selected display level. These browser-side controls simulate preferences only and do not claim physical LED/backlight output. Route labels come from RM-722 menu evidence; values are reconstruction pending handset captures.
+
+## Ground-Up v0.135 · complete Camera reference rows
+Media > Camera now explicitly states camera hardware unavailable and treats Capture as reference metadata only. Self-timer, Effect and Quality each have persistent local selectors; new reference captures record those values alongside name/time. No camera, image pixels, microphone, permission prompt, upload, or external source is used. Route labels come from RM-722 menu evidence; selector values and metadata backend are disclosed recreation choices.
