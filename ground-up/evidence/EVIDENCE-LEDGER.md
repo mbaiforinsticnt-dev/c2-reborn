@@ -613,3 +613,6 @@ Settings > Security now labels Access codes Not exposed and Certificates None lo
 
 ## Ground-Up v0.132 · menu exit and submenu Options
 The right softkey Exit on the main menu now returns to the offline idle screen instead of emitting a not-implemented response. Options on a submenu list now opens a real two-row overlay: Open selected enters the highlighted route and Return to Menu goes back to the main menu. Both keyboard/controller and blue softkey bar use the same semantic routes. Labels are reconstruction pending physical per-submenu Options captures.
+
+## Ground-Up v0.133 · complete Themes rows
+Settings > Themes now gives every visible row an exact result. Select theme retains the four supplied package selector; Theme downloads explicitly says offline/no transfer; Type of view opens the working four-mode main-menu dialog; Theme memory lists Black, Dark, Light and Nokia as supplied firmware packages. No download or network operation occurs. Real-page theme pixel checks cover each package's status/menu/softkey artwork.
