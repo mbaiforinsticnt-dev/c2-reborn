@@ -355,3 +355,7 @@ While a stored Contacts > Names row is selected, the green Call key now opens th
 ## v0.65 per-contact delete confirmation
 
 On a stored Contacts > Names row, the left softkey now opens a Delete contact confirmation showing the exact selected name and number. Centre Select removes that indexed local contact and persists; Back cancels. This replaces generic screen Options for the selected-record state and gives the local Contacts backend per-record deletion. The shortcut and wording are Ground-Up choices pending physical menu capture.
+
+## v0.66 per-record delete confirmations
+
+Stored Notes, To-do list, Calendar and Draft rows now use the selected-row left softkey for an exact-item delete confirmation. The confirmation displays the selected content; Select removes the indexed local record and persists, while Back cancels. This extends v0.65's bounded delete model across the local organiser and messaging collections. Shortcut wording remains Ground-Up pending physical capture.

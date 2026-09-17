@@ -107,6 +107,7 @@ function renderAction(){
   case 'packetdata': return box('Packet data',`<div class="actionValue">${['When needed','Always online','Off'][Number(actionValue)]}</div>`,'Up/Down changes · Select saves offline preference');
   case 'securitylevel': return box('Security level',`<div class="actionValue">${['None','Memory','Phone'][Number(actionValue)]}</div>`,'Up/Down changes · Select saves');
   case 'radio': return box('Set frequency',`<div class="actionValue">${actionValue} MHz</div>`,'Up/Down tunes 0.1 · Select saves');
+  case 'deleterecord': {let a=phoneState[actionStatus]||[],r=a[Number(actionValue)],label=actionStatus==='notes'?r?.body:actionStatus==='todos'?r?.body:actionStatus==='calendar'?(r?.date+' · '+r?.body):actionStatus==='messages'?('To '+r?.to+' · '+r?.body):'';return box('Delete item',`<div class="contactField">${label||'Item unavailable'}</div>`,'Select deletes · Back cancels')};
   case 'deletecontact': {let c=phoneState.contacts[Number(actionValue)];return box('Delete contact',`<div class="contactField">${c?c.name+' · '+c.number:'Contact unavailable'}</div>`,'Select deletes · Back cancels')};
   case 'equaliser': return box('Equaliser',`<div class="actionValue">${['Normal','Pop','Rock','Jazz'][Number(actionValue)]}</div>`,'Up/Down changes · Select activates');
   case 'lights': return box('Display light',`<div class="volumeBars">${[1,2,3,4,5].map(i=>`<i style="height:${i*7}px;opacity:${i<=Number(actionValue)?1:.2}"></i>`).join('')}</div>`,'Up/Down changes · Select applies');
@@ -198,6 +199,7 @@ function saveAction(){
  if(actionType==='packetdata'){phoneState.packetData=['When needed','Always online','Off'][Number(actionValue)];return finishAction('saved packet data preference '+phoneState.packetData)}
  if(actionType==='securitylevel'){phoneState.securityLevel=['None','Memory','Phone'][Number(actionValue)];return finishAction('saved security level '+phoneState.securityLevel)}
  if(actionType==='radio'){phoneState.radioFrequency=actionValue;return finishAction('saved radio frequency '+phoneState.radioFrequency)}
+ if(actionType==='deleterecord'){let r=(phoneState[actionStatus]||[]).splice(Number(actionValue),1)[0];return finishAction('deleted local '+actionStatus+' item')}
  if(actionType==='deletecontact'){let c=phoneState.contacts.splice(Number(actionValue),1)[0];return finishAction('deleted contact '+(c?.name||''))}
  if(actionType==='equaliser'){phoneState.equaliser=['Normal','Pop','Rock','Jazz'][Number(actionValue)];return finishAction('activated equaliser '+phoneState.equaliser)}
  if(actionType==='lights'){phoneState.lightLevel=Number(actionValue);applyLightLevel(phoneState.lightLevel);return finishAction('applied display light '+phoneState.lightLevel)}
@@ -252,7 +254,7 @@ function handleHardwareKey(key){
  else if(key==='SoftLeft'){
   if(view==='menu'){openOptions();response='opened Options'}
   else if(view==='catalog'){optionsOpen=true;optionSel=0;draw();response='opened application reference Options'}
-  else if(view==='detail'&&submenus[menu[selected][0]][submenuSel]==='Names'&&detailSel<phoneState.contacts.length){view='action';actionType='deletecontact';actionValue=String(detailSel);draw();response='opened contact delete confirmation'}else if(view==='detail'){optionsOpen=true;optionSel=0;draw();response='opened screen Options'}
+  else if(view==='detail'&&submenus[menu[selected][0]][submenuSel]==='Notes'&&detailSel<phoneState.notes.length){view='action';actionType='deleterecord';actionStatus='notes';actionValue=String(detailSel);draw();response='opened note delete confirmation'}else if(view==='detail'&&submenus[menu[selected][0]][submenuSel]==='To-do list'&&detailSel<(phoneState.todos||[]).length){view='action';actionType='deleterecord';actionStatus='todos';actionValue=String(detailSel);draw();response='opened to-do delete confirmation'}else if(view==='detail'&&submenus[menu[selected][0]][submenuSel]==='Calendar'&&detailSel<phoneState.calendar.length){view='action';actionType='deleterecord';actionStatus='calendar';actionValue=String(detailSel);draw();response='opened calendar delete confirmation'}else if(view==='detail'&&submenus[menu[selected][0]][submenuSel]==='Drafts'&&detailSel<phoneState.messages.length){view='action';actionType='deleterecord';actionStatus='messages';actionValue=String(detailSel);draw();response='opened draft delete confirmation'}else if(view==='detail'&&submenus[menu[selected][0]][submenuSel]==='Names'&&detailSel<phoneState.contacts.length){view='action';actionType='deletecontact';actionValue=String(detailSel);draw();response='opened contact delete confirmation'}else if(view==='detail'){optionsOpen=true;optionSel=0;draw();response='opened screen Options'}
   else {openOptions();response='Options route pending direct evidence on this screen'};
  }
  else if(key==='SoftRight'||key==='Escape'){
