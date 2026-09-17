@@ -519,3 +519,7 @@ Settings > Date and time > Time zone now selects and persists Local, UTC, UTC+1 
 ## v0.105 Time zone applies to phone clock
 
 The stored Time zone preference now drives a bounded local clock model: Local uses the browser clock; UTC, UTC+1 and UTC-5 convert from the current instant using the browser offset. Status time, Date and time lead, and idle time/date use the same `phoneNow()` source and refresh. No network/carrier time is used. Day rollover follows the selected offset.
+
+## v0.106 manual Clock offset
+
+Date and time adds a persisted Clock offset from -720 to +720 minutes in five-minute steps. When Auto-update is Off, the offset applies to the selected zone clock across status/idle/date-time lead; when Auto-update is On, the offset is ignored and the current zone time wins. This is a safe local manual-time model rather than changing the host clock.
