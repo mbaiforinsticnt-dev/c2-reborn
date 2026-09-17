@@ -754,3 +754,6 @@ Settings > Lights now uses one complete branch for display level, keypad, notifi
 
 ## Ground-Up v0.179 · canonical Alarm handler
 A source sweep found Alarm clock was still split across four row-specific branches, and the on/off branch drew before setting its visible result. Those four branches were removed and replaced by one canonical Alarm clock handler for on/off, time, repeat, and tone. The toggle now draws state, then preserves visible feedback. No OS-level alarm scheduling is claimed.
+
+## Ground-Up v0.180 · canonical Themes and Tones handlers
+Themes and Tones activation were each split across four row-specific branches. Those eight branches were removed and replaced with one canonical handler per route, preserving supplied theme/tone selectors, view mode, volume/alert controls, and offline download boundary.
