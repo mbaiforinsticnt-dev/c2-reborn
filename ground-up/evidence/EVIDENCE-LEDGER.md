@@ -733,3 +733,6 @@ Messaging > Info messages now retains its local reception preference and adds ex
 
 ## Ground-Up v0.172 · Voice mailbox and Service commands completion
 Voice mailbox now has explicit number, offline dial attempt, clear, and Help behavior. Service commands now has local entry plus exact empty History/Clear/Help boundaries. No call or network command is transmitted.
+
+## Ground-Up v0.173 · Security endpoint consolidation
+Settings > Security now uses one complete branch for the local PIN-request preference, security-level selector, no-secret access-code boundary, and empty certificate inventory. No PIN, PUK, password, security code, credential, or certificate is exposed or collected.
