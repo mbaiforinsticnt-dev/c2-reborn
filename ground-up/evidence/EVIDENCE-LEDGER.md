@@ -721,3 +721,6 @@ Settings > Accessories now uses one complete row-specific branch: Default access
 
 ## Ground-Up v0.168 · no-dead-row global fallback
 Any still-unmodelled detail row now gives a visible selected/ready state and explicitly says no external operation started. This replaces the prior generic toggle whose state only appeared in the tiny row badge/diagnostic, ensuring every residual menu endpoint visibly responds while remaining honest. Explicit row handlers still take precedence.
+
+## Ground-Up v0.169 · Names empty-state controls
+Contacts > Names now gives explicit List, Search, and Options results when the local contact collection is empty, while Add retains the working local editor. Search does not invent filtering mechanics without physical route evidence; saved contact rows remain directly editable.
