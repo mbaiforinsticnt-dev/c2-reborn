@@ -802,3 +802,6 @@ A later duplicate Connection timer reset predicate was unreachable behind the ca
 
 ## Ground-Up v0.195 · canonical application metadata route
 Two split Applications activation branches were replaced by one canonical handler. The 19-entry JAD identity catalogue still opens locally, while all other rows retain the explicit descriptor-only, Java-runtime-deferred boundary.
+
+## Ground-Up v0.196 · close final generic endpoint rows
+A complete 413-row source-instrumented activation replay found nine rows still falling through to the generic selector: all six Applications memory-status rows and the first three Message counter rows. Dedicated handlers now provide visible local-storage and local-message-state feedback; Reset counters keeps its confirmation flow. The same replay now has zero generic endpoint rows.
