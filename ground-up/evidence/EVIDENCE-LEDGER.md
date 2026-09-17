@@ -347,3 +347,11 @@ Log > All calls and Dialled numbers now render each local offline call attempt a
 ## v0.63 selectable offline address history
 
 Browser > Last web address now renders each locally confirmed offline address as a selectable row with Clear history appended. Selecting a row displays the exact stored address without contacting it; Clear history uses the existing confirmation. This makes Go to address persistence handset-auditable while working web remains intentionally deferred until the owner gate.
+
+## v0.64 contact-to-dialler route
+
+While a stored Contacts > Names row is selected, the green Call key now opens the offline dialler prefilled with that contact's number. Pressing Call again records the existing offline call attempt. Contacts without a number fall back to the blank dialler. This connects two existing local backend surfaces without placing a network call or claiming a handset-exact shortcut.
+
+## v0.65 per-contact delete confirmation
+
+On a stored Contacts > Names row, the left softkey now opens a Delete contact confirmation showing the exact selected name and number. Centre Select removes that indexed local contact and persists; Back cancels. This replaces generic screen Options for the selected-record state and gives the local Contacts backend per-record deletion. The shortcut and wording are Ground-Up choices pending physical menu capture.
