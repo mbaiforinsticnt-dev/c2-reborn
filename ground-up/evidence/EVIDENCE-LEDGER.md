@@ -527,3 +527,7 @@ Date and time adds a persisted Clock offset from -720 to +720 minutes in five-mi
 ## v0.107 confirmed Message counter reset
 
 Log > Message counter > Reset counters now opens a confirmation showing the number of local message records. Because counters are derived from those records, Select explicitly clears local drafts/sent messages and their counters; Back cancels. It does not claim a counter-only reset that would leave inconsistent data.
+
+## v0.108 honest empty Log categories
+
+Log > Missed calls and Received calls now report explicit empty offline lists rather than generic actionable rows. Positioning and Sync log likewise report no records. Only All calls/Dialled numbers show the locally created offline attempts. This prevents generic Ready/Active controls from implying inbound, positioning or synchronization history that does not exist.
