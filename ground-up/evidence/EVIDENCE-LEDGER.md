@@ -790,3 +790,6 @@ Five split Radio activation branches were replaced by one canonical handler. Fre
 
 ## Ground-Up v0.191 · canonical offline reference collections
 Seven split activation branches for Dictionary, Bookmarks, and Last web address were replaced by one canonical handler per route. Lookup/history actions, local bookmark/address inspection, creation, clear confirmations, and explicit empty states are preserved.
+
+## Ground-Up v0.192 · canonical local message and recording routes
+Eight split activation branches for Inbox, Templates, and Voice recorder were replaced by one canonical handler per route. Local search, template composition, recording inspection/start, and explicit empty/settings feedback are preserved.
