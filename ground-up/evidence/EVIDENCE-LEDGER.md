@@ -399,3 +399,7 @@ Settings > Phone now reads local Language and Flight query state. Language selec
 ## v0.76 persistent Call preferences
 
 Settings > Call now exposes bounded local Anykey answer and Automatic redial toggles, both persisted and reflected in the rows. Because the recreation never receives or connects a network call, the settings do not trigger call behavior and the lead says Offline call preferences. Speed dialling and Call waiting remain reference rows.
+
+## v0.77 persistent Accessories preference
+
+Settings > Accessories now selects and persists a Default accessory preference: No accessory, Headset, Handsfree or TTY. This is explicit local configuration only; no browser device detection, audio routing or hardware attachment is claimed. Individual Headset/Handsfree/TTY configuration rows remain reference surfaces.
