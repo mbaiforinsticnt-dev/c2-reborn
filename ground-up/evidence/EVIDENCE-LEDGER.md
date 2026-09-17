@@ -375,3 +375,7 @@ Selecting a stored Drafts row now opens an editor prefilled with its exact recip
 ## v0.70 per-calendar-note editing
 
 Selecting a stored Calendar row opens an editor prefilled with its exact ISO date and note body. Left/Right changes Date/Note field; Up/Down changes date while Date is active; Note uses shared multi-tap, # changes case, and * deletes. Select replaces the indexed calendar note and persists; Back cancels. Left-softkey deletion remains separate.
+
+## v0.71 per-To-do editing and separate completion
+
+Selecting a stored To-do row now opens a prefilled body editor. Multi-tap edits, # changes case, * deletes, Select persists and Back cancels. Completion is separated from editing: on a stored To-do row, the green Call key toggles Open/Completed and persists. This gives both operations distinct observable routes. The green-key completion shortcut is Ground-Up pending physical options capture.
