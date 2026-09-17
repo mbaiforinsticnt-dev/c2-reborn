@@ -555,3 +555,7 @@ Messaging > Voice mailbox now stores a local mailbox number. Mailbox number open
 ## v0.114 honest offline Info messages
 
 Messaging > Info messages now states Cell broadcast unavailable/offline. Reception toggles a persisted local preference, Topics remains 0, and Language reads the phone-language preference. The switch does not receive broadcasts or invent messages; Read remains an empty reference action.
+
+## v0.115 unified local media counters
+
+Applications > Memory status now also reports local Photos and reference Recordings counts. Gallery > Gallery replaces its generic Memory status row with a live Recordings count that opens Voice recorder. Gallery inventory therefore cross-navigates Photos, Themes, Tones and Recordings, all sourced from the same local backend or supplied asset inventory.
