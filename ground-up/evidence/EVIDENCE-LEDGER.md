@@ -670,3 +670,6 @@ Log > Positioning and Sync log now have explicit row behavior for empty records,
 
 ## Ground-Up v0.151 · complete offline e-mail boundaries
 E-mail client and Mailbox 1-5 rows now give exact account, connection, local-draft, client, and settings readbacks. They do not configure an account, connect, retrieve, or send mail. This completes the labelled firmware routes while working web and network mail remain deferred.
+
+## Ground-Up v0.152 · instant-messaging boundaries
+Both labelled Instant messaging routes now provide exact session, account, network, and settings readbacks. No account, live session, network access, message retrieval, or send is claimed.
