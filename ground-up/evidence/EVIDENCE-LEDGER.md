@@ -814,3 +814,6 @@ The remaining reachable generic UI copy has been aligned with the now-complete o
 
 ## Ground-Up v0.199 · canonical offline browser hubs
 Four repeated predicates shared by the eight browser hub entries were replaced by one canonical handler. Go to address, Bookmarks, Last web address, and Web settings cross-navigation remains local and working; other rows retain explicit offline feedback. Working web was not started.
+
+## Ground-Up v0.200 · complete action-render audit
+A source-instrumented browser replay instantiated every one of the 79 action types currently assigned by the controller. Every action rendered non-empty UI with zero browser exceptions. This complements the 413-row endpoint replay; no runtime feature scope changed.
