@@ -523,3 +523,7 @@ The stored Time zone preference now drives a bounded local clock model: Local us
 ## v0.106 manual Clock offset
 
 Date and time adds a persisted Clock offset from -720 to +720 minutes in five-minute steps. When Auto-update is Off, the offset applies to the selected zone clock across status/idle/date-time lead; when Auto-update is On, the offset is ignored and the current zone time wins. This is a safe local manual-time model rather than changing the host clock.
+
+## v0.107 confirmed Message counter reset
+
+Log > Message counter > Reset counters now opens a confirmation showing the number of local message records. Because counters are derived from those records, Select explicitly clears local drafts/sent messages and their counters; Back cancels. It does not claim a counter-only reset that would leave inconsistent data.
