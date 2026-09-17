@@ -335,3 +335,11 @@ Notes and To-do list now render each stored record as its own selectable detail 
 ## v0.60 selectable Calendar and Draft lists
 
 Calendar and Drafts now render each local record as an individual selectable detail row with Make a note/Create message appended. Selecting a calendar row displays its exact date/body; selecting a draft displays its recipient/body. Selecting the appended row opens the existing editor. This replaces joined lead text and makes persisted records auditable from the handset UI. Per-record edit/delete and pagination remain.
+
+## v0.61 selectable Contacts list
+
+Contacts > Names now renders each local contact as its own row with Add appended. Selecting a contact displays its exact name and number; selecting Add opens the existing multi-tap contact editor. This replaces joined lead text and makes contact persistence auditable from the handset. Per-contact call/edit/delete and pagination remain.
+
+## v0.62 selectable local Call log
+
+Log > All calls and Dialled numbers now render each local offline call attempt as its own row with Clear list appended. Selecting a call displays its number, offline-attempt status and local timestamp. Clear list opens the existing confirmation rather than a generic toggle. This makes call-log persistence and timestamps auditable from the handset; callback/edit-number flows remain.
