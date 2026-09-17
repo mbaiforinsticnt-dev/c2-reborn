@@ -439,3 +439,7 @@ On an assigned Contacts > Speed dials row, the left softkey opens a Clear speed 
 ## v0.86 persistent offline Bookmarks
 
 Browser > Bookmarks now renders local saved bookmark rows with Add bookmark appended. Add opens address entry, number keys append to the offline address and Select stores a deduplicated bookmark (50 max). Selecting a bookmark displays it without contact. Working web remains deferred; full alphanumeric URL entry will reuse the text engine later.
+
+## v0.87 per-bookmark delete confirmation
+
+On a stored Browser > Bookmarks row, the left softkey opens a confirmation showing the exact offline bookmark. Select removes only that indexed local bookmark and persists; Back cancels. This makes the v0.86 bookmark collection reversible without contacting any address.
