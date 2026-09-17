@@ -419,3 +419,7 @@ Settings > Call now gives Speed dialling and Call waiting the same local persist
 ## v0.81 local Speed dial assignments
 
 Contacts > Speed dials now exposes keys 2–5 as local assignment rows. Selecting a key opens the stored Contacts list; Up/Down chooses a contact and Select stores that contact's number in `phoneState.speedDials`. Reopening/reloading shows the assignment. Long-press dialing and keys 6–9 remain to be added; no network call is made.
+
+## v0.82 complete Speed dial keys and dialler route
+
+Contacts > Speed dials now exposes all assignable number keys 2–9. Assignment behavior remains contact-backed and persisted. On an assigned row, green Call opens the offline dialler prefilled with that number; Call again records the offline attempt. Empty rows report empty. Long-press from the main screen is not inferred.
