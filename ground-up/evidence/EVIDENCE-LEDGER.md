@@ -267,3 +267,7 @@ Settings > Display > Wallpaper now selects and persists Theme default, Analog cl
 ## v0.43 functional local Lights control
 
 Settings > Lights now exposes a five-step Display light control. Up/Down changes the level, Select persists it and applies bounded LCD brightness filters; Restore default returns level 3. This is explicit Ground-Up local behavior because the firmware route provides the endpoint but no physical brightness scale has yet been captured. Keypad light and notifications remain reference rows.
+
+## v0.44 source-integrity repair: action movement dispatcher
+
+Audit found movement statements accidentally concatenated into the action-render chain, creating unreachable duplicate branches for lights, wallpaper, font colour, time format and to-do. Those branches are removed. All directional action changes now live in one named `handleActionArrow(key)` dispatcher; render branches only render and save branches only save. Each ordinary action type now has one render test, one movement test where applicable, and one save test. `node --check` passes and grep counts are recorded during build. No new endpoint behavior is added in this repair release.
