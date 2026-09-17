@@ -231,3 +231,7 @@ Organiser > To-do list > Add now opens a local task editor. Up/Down changes the 
 ## v0.34 confirmed local clear/delete actions
 
 Four destructive menu endpoints now operate on the matching local backend collections instead of toggling: Contacts > Delete all contacts, Messaging > Delete messages, Browser > Clear cache (local address history), and Log > Clear log lists. Each opens a confirmation surface showing the local record count; centre Select clears and persists, while Back cancels. No external or personal source is touched.
+
+## v0.35 complete local Alarm clock state
+
+Alarm clock now exposes and persists separate enabled state and time. Selecting `Alarm: Off/On` toggles it immediately and updates the live lead. Alarm time opens with the stored value instead of resetting to 07:00; Up/Down adjust hours and Left/Right adjust minutes in five-minute steps. Select persists the edited time. No real-time notification firing is claimed yet.
