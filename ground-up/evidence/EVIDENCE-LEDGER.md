@@ -571,3 +571,6 @@ Ovi, Nokia, Home, Web search, Browser and Operator link 1–3 now state unavaila
 ## v0.118 honest Browser transfer endpoints
 
 Browser > Content upload, Upload to blog and Download links now state unavailable/offline and No transfer started rather than presenting generic Open/Active controls. Bookmarks, Last web address and Web settings remain local/reference navigation. No upload, download, file disclosure or network transfer is attempted.
+
+## Ground-Up v0.119 · offline web preferences
+Browser > Web settings now has a local backend instead of generic reference controls: an editable home-page value, persistent Show images and Cookies preferences, and a confirmation route that clears only local address history. These settings do not enable network access; retired web services remain unavailable. Evidence level remains labelled RM-722 menu inference for the route, with offline behavior chosen for this recreation.
