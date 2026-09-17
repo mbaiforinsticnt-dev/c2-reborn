@@ -817,3 +817,6 @@ Four repeated predicates shared by the eight browser hub entries were replaced b
 
 ## Ground-Up v0.200 · complete action-render audit
 A source-instrumented browser replay instantiated every one of the 79 action types currently assigned by the controller. Every action rendered non-empty UI with zero browser exceptions. This complements the 413-row endpoint replay; no runtime feature scope changed.
+
+## Ground-Up v0.201 · complete action-confirm audit
+A second source-instrumented browser replay instantiated all 79 assigned action types from clean local state and pressed Enter on each. All 79 confirmation paths completed without browser exceptions. This verifies action rendering and primary activation together; no runtime feature scope changed.
