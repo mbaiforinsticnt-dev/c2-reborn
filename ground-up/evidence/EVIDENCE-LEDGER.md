@@ -694,3 +694,6 @@ Content upload, Upload to blog, and Download links now give exact no-transfer, b
 
 ## Ground-Up v0.159 · Gallery media inventory
 Gallery > Music and videos now gives exact empty music/video and local memory readbacks, while its supplied Tones row opens the existing firmware-tone surface. No personal media, playback, download, or capture is claimed.
+
+## Ground-Up v0.160 · Gallery hub routing
+Gallery > Gallery now routes Photos, Themes, Tones, and Recordings inventory rows to their existing local surfaces. Counts remain derived from local state and the supplied 4 themes/57 tone identities; no personal media or hardware capture is claimed.
