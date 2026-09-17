@@ -443,3 +443,7 @@ Browser > Bookmarks now renders local saved bookmark rows with Add bookmark appe
 ## v0.87 per-bookmark delete confirmation
 
 On a stored Browser > Bookmarks row, the left softkey opens a confirmation showing the exact offline bookmark. Select removes only that indexed local bookmark and persists; Back cancels. This makes the v0.86 bookmark collection reversible without contacting any address.
+
+## v0.88 per-call-entry delete confirmation
+
+On a stored Log > All calls or Dialled numbers row, the left softkey opens a confirmation showing the exact number and offline-attempt status. Select deletes only that indexed local call entry and persists; Back cancels. Clear list remains the bulk-delete route.
