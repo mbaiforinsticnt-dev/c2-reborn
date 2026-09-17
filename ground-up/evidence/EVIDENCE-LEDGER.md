@@ -391,3 +391,7 @@ On a selected Draft row, the green Call key opens a confirmation displaying its 
 ## v0.74 selectable and deletable Sent items
 
 Sent items rows now open their exact recipient, body and local sent timestamp. Left softkey opens exact-message deletion for both Drafts and Sent items. The deletion mapping now resolves each filtered row back to its original `phoneState.messages` index before mutation, fixing a latent wrong-record risk when draft and sent statuses are interleaved. Select/Back confirmation behavior is unchanged.
+
+## v0.75 persistent Phone preferences
+
+Settings > Phone now reads local Language and Flight query state. Language selects English, French, German or Spanish and persists; only the preference/lead changes, and full UI localization is not claimed. Flight query toggles and persists a local mode label but does not control radios. Welcome note and Network mode remain reference rows.
