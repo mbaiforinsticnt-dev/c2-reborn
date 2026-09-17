@@ -616,3 +616,6 @@ The right softkey Exit on the main menu now returns to the offline idle screen i
 
 ## Ground-Up v0.133 · complete Themes rows
 Settings > Themes now gives every visible row an exact result. Select theme retains the four supplied package selector; Theme downloads explicitly says offline/no transfer; Type of view opens the working four-mode main-menu dialog; Theme memory lists Black, Dark, Light and Nokia as supplied firmware packages. No download or network operation occurs. Real-page theme pixel checks cover each package's status/menu/softkey artwork.
+
+## Ground-Up v0.134 · complete Lights rows
+Settings > Lights now gives each row persistent local behavior: Display light retains its 1-5 level; Keypad light and Notifications toggle independently; Restore default resets level 3 and both toggles On. The body light-level attribute continues to reflect the selected display level. These browser-side controls simulate preferences only and do not claim physical LED/backlight output. Route labels come from RM-722 menu evidence; values are reconstruction pending handset captures.
