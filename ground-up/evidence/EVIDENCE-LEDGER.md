@@ -359,3 +359,7 @@ On a stored Contacts > Names row, the left softkey now opens a Delete contact co
 ## v0.66 per-record delete confirmations
 
 Stored Notes, To-do list, Calendar and Draft rows now use the selected-row left softkey for an exact-item delete confirmation. The confirmation displays the selected content; Select removes the indexed local record and persists, while Back cancels. This extends v0.65's bounded delete model across the local organiser and messaging collections. Shortcut wording remains Ground-Up pending physical capture.
+
+## v0.67 per-note editing
+
+Selecting a stored Notes row now opens an editor prefilled with that exact note. Multi-tap number keys append or cycle text, # changes case, and * deletes the last character. Select replaces the indexed local note body and persists it; Back cancels by leaving stored state untouched. Left softkey on the row still opens delete confirmation.
