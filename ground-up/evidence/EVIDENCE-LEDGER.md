@@ -291,3 +291,7 @@ Media > Radio now shows a locally stored FM frequency and an explicit offline st
 ## v0.49 persistent Security preferences
 
 Settings > Security now reads local security state. PIN code request toggles and persists; Security level selects None, Memory or Phone and persists. These are explicit offline preference models only: no secret PIN is requested or stored, no lock screen is enforced, and no SIM/security hardware behavior is claimed. Access codes and Certificates remain reference rows.
+
+## v0.50 persistent offline Bluetooth preference
+
+Settings > Connectivity now reports explicit offline state and a local Bluetooth On/Off preference. Selecting the Bluetooth row toggles/persists it and updates the lead. No browser Bluetooth permission, radio discovery, pairing, file transfer, or network state is claimed. Packet data, USB data cable and Network status remain reference rows until real offline simulations can be bounded.
