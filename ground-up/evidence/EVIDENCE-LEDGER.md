@@ -363,3 +363,7 @@ Stored Notes, To-do list, Calendar and Draft rows now use the selected-row left 
 ## v0.67 per-note editing
 
 Selecting a stored Notes row now opens an editor prefilled with that exact note. Multi-tap number keys append or cycle text, # changes case, and * deletes the last character. Select replaces the indexed local note body and persists it; Back cancels by leaving stored state untouched. Left softkey on the row still opens delete confirmation.
+
+## v0.68 per-contact editing
+
+Selecting a stored Contacts > Names row now opens an editor prefilled with that exact name and number. Up/Down changes field; Name uses the shared multi-tap engine and Number uses literal digits; # changes name case and * deletes from the active field. Select replaces the indexed contact and persists; Back cancels. Green Call from the list and left-softkey Delete remain separate routes.
