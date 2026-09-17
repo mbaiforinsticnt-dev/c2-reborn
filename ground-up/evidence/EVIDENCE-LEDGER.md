@@ -95,3 +95,11 @@ The same screenshot's Options menu proves `Main menu view >` and `Organise`; v0.
 Sparse page navigation is not visible in available physical captures. v0.7 removes modulo-11 jumps and clamps/toggles within the two-item sparse page as a conservative scaffold pending physical evidence. This behavior is labelled pending, not parity.
 
 OrganizerMenu in supplied `menusettings.xml` contains Alarm clock, Calendar, Maps, To-do list, Notes, Java Calculator, Countdown timer, Stopwatch and Dictionary. v0.7 shows all nine in the shallow evidence screen.
+
+## v0.8 review-variant and overlay evidence
+
+The GSMArena physical review unit's grid order is Calendar, Contacts, Mail, Internet, Messaging, Photos, Store, Music, Games. The supplied RM-722/059F5P7 `menusettings.xml` target is Organiser, Contacts, E-mail, Browser, Messaging, Gallery/content, Store, Media, Applications, Settings, Log. This is recorded as a product-code/theme/variant disagreement, not averaged: the build continues to follow its labelled supplied firmware target until Moti's RM-721 handset arbitrates.
+
+Physical screenshot 009 shows the Main menu Options overlay extending through the normal softkey zone and drawing its own blue Select/Back strip. v0.8 follows that overlay structure and renders the physically visible radio-button choices: Single, List, Grid, Grid with labels. The physical review unit's green selector belongs to its default theme; this build intentionally uses the supplied Black theme selector. That colour difference is not treated as a parity defect.
+
+The physical grid top band shows Menu and time but no positional `1/11` counter, so v0.8 removes the counter.
