@@ -127,3 +127,15 @@ Owner scope: Ground-Up is a full UI reference for future projects, with menu cov
 ## v0.13 evidenced main-menu views
 
 Physical screenshot 009 exposes the Main menu view choices Single, List, Grid, and Grid with labels. v0.13 implements all four as actual menu presentations rather than placeholder app screens. Single shows one large icon and label; List shows eight compact icon/label rows; Grid uses the 3x3 icon geometry without labels; Grid with labels preserves the original 3x3 label grid. The same menu data, selector, open route, no-dead-key feedback and hardware controller drive every view. Long first-submenu lists now scroll the selected row into view.
+
+## 9 AM audit interpretation and end state
+
+A visible diagnostic response is not evidence of a correct functional route. Replay reports must count these separately: `functional route` means the requested state/navigation change occurred; `diagnostic-only` means the numbered test strip acknowledged a key whose real behavior remains unbuilt or unevidenced. Zero dead presses therefore establishes input observability, not full UI fidelity.
+
+The TEST strip is temporary instrumentation. Release end state: it moves outside the 240x320 product LCD or is hidden behind an explicit diagnostic mode once all routes are implemented and audited. It stays visible during this construction phase.
+
+Only Grid with labels has measured physical C2-01 geometry. Single/List/Grid exist physically as choices in screenshot 009, but their v0.13 presentation geometry remains unverified pending physical captures. Numeric, star/hash, Call and End routes remain test shortcuts. E-mail/Store are reference-only and their JAD/application details UI is unbuilt.
+
+## v0.14 JAD application identity UI
+
+Applications > Applications now opens a navigable 19-entry installed-application reference generated from the preserved JAD descriptors. Each row shows exact MIDlet name and version; Details shows vendor and descriptor filename and explicitly states that executable Java UI is outside current scope. This supplies firmware-grounded identity coverage without pretending to run Java. It includes E-mail 1.3.53, Ovi Store 2.4.0, OviBrowser 1.0.1, Operette 4.2.55, Nokia apps and supplied games. Back returns to the Applications first submenu. Diagnostic acknowledgement and functional state transitions remain separately auditable.
