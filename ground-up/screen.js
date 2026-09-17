@@ -74,6 +74,9 @@ function detailModel(section,item){
  if(item==='All calls'||item==='Dialled numbers')return {kind:'log',lead:phoneState.callLog.length?phoneState.callLog.length+' local call(s)':'No personal call records loaded',rows:phoneState.callLog.length?phoneState.callLog.map(x=>x.number+' · '+x.status).concat(['Clear list']):['View entries','Clear list','Call duration','Details']};
  if(item==='Positioning')return {kind:'log',lead:'No positioning records',rows:['No entries','Settings','Memory status','Back']};
  if(item==='Sync log')return {kind:'log',lead:'No synchronization records',rows:['No entries','Settings','Memory status','Back']};
+ if(item==='Outbox')return {kind:'messages',lead:'No queued messages · offline',rows:['Create message','Message details','Delete','Settings']};
+ if(item==='Delivery reports')return {kind:'messages',lead:'No delivery reports · offline',rows:['No reports','Settings','Memory status','Back']};
+ if(item==='Saved items')return {kind:'messages',lead:'No saved messages',rows:['Create message','Memory status','Settings','Back']};
  if(item==='Inbox')return {...endpointModels.Inbox,lead:'No received messages',rows:['Create message','Search','Inbox view','Message settings']};
  if(item==='Message settings')return {lead:'Local message preferences',rows:['Delivery reports: '+(phoneState.deliveryReports?'On':'Off'),'Save sent messages: '+(phoneState.saveSent?'On':'Off'),'Message centres','Character support']};
  if(item==='Conversations'){let groups=[...new Set(phoneState.messages.map(x=>x.to||'(none)'))];return {kind:'messages',lead:groups.length?groups.length+' local conversation(s)':'No local conversations',rows:groups.length?groups.map(to=>to+' · '+phoneState.messages.filter(x=>(x.to||'(none)')===to).length+' message(s)').concat(['New message']):endpointModels.Conversations.rows}};

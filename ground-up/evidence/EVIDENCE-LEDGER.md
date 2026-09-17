@@ -531,3 +531,7 @@ Log > Message counter > Reset counters now opens a confirmation showing the numb
 ## v0.108 honest empty Log categories
 
 Log > Missed calls and Received calls now report explicit empty offline lists rather than generic actionable rows. Positioning and Sync log likewise report no records. Only All calls/Dialled numbers show the locally created offline attempts. This prevents generic Ready/Active controls from implying inbound, positioning or synchronization history that does not exist.
+
+## v0.109 honest empty Messaging categories
+
+Messaging > Outbox, Delivery reports and Saved items now show explicit empty local/offline states instead of generic list controls implying records. Outbox has no queued messages because the local send simulation completes immediately; Delivery reports has no reports because no transmission occurs; Saved items has no records because no save-to-folder action exists yet.
