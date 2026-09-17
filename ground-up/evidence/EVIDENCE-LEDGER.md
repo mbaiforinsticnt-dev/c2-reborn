@@ -295,3 +295,7 @@ Settings > Security now reads local security state. PIN code request toggles and
 ## v0.50 persistent offline Bluetooth preference
 
 Settings > Connectivity now reports explicit offline state and a local Bluetooth On/Off preference. Selecting the Bluetooth row toggles/persists it and updates the lead. No browser Bluetooth permission, radio discovery, pairing, file transfer, or network state is claimed. Packet data, USB data cable and Network status remain reference rows until real offline simulations can be bounded.
+
+## v0.51 persistent offline Packet data preference
+
+Connectivity > Packet data now selects and persists When needed, Always online or Off, while the Connectivity lead remains explicit that this recreation is offline. The preference does not open a network socket, contact an operator, or claim cellular data behavior. This replaces a generic toggle with bounded local settings behavior.
