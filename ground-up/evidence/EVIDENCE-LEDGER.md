@@ -287,3 +287,7 @@ Media > Equaliser now exposes a working local preset selector instead of Ready/A
 ## v0.48 persistent offline FM frequency control
 
 Media > Radio now shows a locally stored FM frequency and an explicit offline state. Set frequency opens a tuner; Up/Down changes by 0.1 MHz and wraps inside the common 87.5–108.0 MHz range; Select persists it. No tuner hardware, audio stream, headset antenna detection, or station scan is claimed. Those rows remain UI references.
+
+## v0.49 persistent Security preferences
+
+Settings > Security now reads local security state. PIN code request toggles and persists; Security level selects None, Memory or Phone and persists. These are explicit offline preference models only: no secret PIN is requested or stored, no lock screen is enforced, and no SIM/security hardware behavior is claimed. Access codes and Certificates remain reference rows.
