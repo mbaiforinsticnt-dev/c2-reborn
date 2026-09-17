@@ -595,3 +595,6 @@ Contacts > Synchronise and Network query now state unavailable/offline with no o
 
 ## Ground-Up v0.126 · honest local media state
 Media > Video now explicitly reports no camera hardware, recording, or stored videos instead of generic capture controls. Media > Music player reports a zero-track local library and no current track, with persistent local Repeat and Shuffle preferences. No camera, microphone, media upload, stream, download, or network operation occurs. Route labels come from RM-722 firmware menu evidence; the preference backend is a disclosed recreation choice.
+
+## Ground-Up v0.127 · operator/configuration boundaries
+Settings > Operator settings now reports no operator provisioning or network connection. Configuration now has persistent local Default configuration and Preferred access point selectors plus explicit zero personal settings/no provisioning. These values do not create an account, access point, carrier configuration, or network connection. Route labels come from RM-722 firmware menu evidence; selector values and persistence are disclosed recreation choices pending physical capture.
