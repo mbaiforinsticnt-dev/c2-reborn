@@ -844,3 +844,6 @@ Removed the second repeated SoftLeft chain for Voice recorder, Photos, call list
 
 ## Ground-Up v0.209 · Call-key route correction
 Removed duplicated deletion routes from the Call-key chain for Voice recorder, Photos, call lists, and Bookmarks. Those destructive routes remain on SoftLeft with confirmation. Call on those detail rows now follows the phone's non-destructive offline dialler fallback instead of unexpectedly opening delete confirmation; Draft send, speed dial, to-do toggle, and contact dial routes remain distinct.
+
+## Ground-Up v0.210 · Draft key semantics
+Separated the previously duplicated Drafts controls: SoftLeft now opens delete confirmation for the selected local draft, while Call retains local send confirmation. Removed Drafts from the later Sent/Saved deletion branch because the dedicated Drafts route now owns that behavior.
