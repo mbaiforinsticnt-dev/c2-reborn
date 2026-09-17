@@ -85,3 +85,13 @@ Neither Black `theme.xml` nor the supplied configs declare an offset or crop for
 The `softkey_left/center/right_80x38.png` filenames describe their slot, but the decoded members are 80x37. `theme.xml` binds them to each softkey position without a stretch rule. v0.6 renders the pieces at 80x37 over the 240x38 softkey-area background, leaving one background pixel rather than stretching.
 
 Phase 2 navigation begins with D-pad/keyboard movement, page-aware status/count, OK/Select opening a visible evidence-labelled shallow screen for every main-menu entry, and Back returning to the selected grid item. These are navigation scaffolds, not claims about deep physical behavior.
+
+## v0.7 physical grid correction
+
+Physical Nokia C2-01 screenshots published in GSMArena's 18 March 2011 review supersede the v0.6 arithmetic-only interpretation: https://www.gsmarena.com/nokia_c2_01-review-579p3.php and direct screenshot https://fdn.gsmarena.com/vv/reviewsimg/nokia-c2-01/sshots/gsmarena_008.jpg. The 360x480 physical capture (1.5x the 240x320 LCD) shows Menu in the top/status band and a 3x3 labelled grid. Its selected Messaging background occupies about 89-93 captured pixels vertically, about 59-62 logical pixels, and does not overlap the row below. Black `theme.xml` supplies a 74x79 selector without runtime geometry. v0.7 uses 62-pixel cells and clips the native selector inside each cell without rescaling it. This is a measurement from review imagery, not a claim of pixel-exact physical calibration; Moti's own capture wins if it differs.
+
+The same screenshot's Options menu proves `Main menu view >` and `Organise`; v0.7 adds that shallow list. Screenshot 009 proves the Main menu view choices Single, List, Grid, Grid with labels.
+
+Sparse page navigation is not visible in available physical captures. v0.7 removes modulo-11 jumps and clamps/toggles within the two-item sparse page as a conservative scaffold pending physical evidence. This behavior is labelled pending, not parity.
+
+OrganizerMenu in supplied `menusettings.xml` contains Alarm clock, Calendar, Maps, To-do list, Notes, Java Calculator, Countdown timer, Stopwatch and Dictionary. v0.7 shows all nine in the shallow evidence screen.
