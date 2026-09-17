@@ -622,3 +622,6 @@ Settings > Lights now gives each row persistent local behavior: Display light re
 
 ## Ground-Up v0.135 · complete Camera reference rows
 Media > Camera now explicitly states camera hardware unavailable and treats Capture as reference metadata only. Self-timer, Effect and Quality each have persistent local selectors; new reference captures record those values alongside name/time. No camera, image pixels, microphone, permission prompt, upload, or external source is used. Route labels come from RM-722 menu evidence; selector values and metadata backend are disclosed recreation choices.
+
+## Ground-Up v0.136 · complete Accessories rows
+Settings > Accessories now shows the persistent default accessory on its first row and exact Not connected states for Headset, Handsfree and TTY. Selecting a disconnected row explains that no hardware accessory is connected to the browser recreation. The default selector remains local preference state only. No USB, Bluetooth, audio device, serial interface, microphone, or system hardware is queried. Route labels come from RM-722 menu evidence; state wording is an honest recreation boundary.
