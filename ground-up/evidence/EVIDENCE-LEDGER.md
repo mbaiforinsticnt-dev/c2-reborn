@@ -499,3 +499,7 @@ Alarm clock > Repeat now selects and persists Off, Daily or Weekdays and shows t
 ## v0.101 local Conversations and honest Inbox semantics
 
 Messaging > Conversations now groups local draft/sent records by recipient, shows per-recipient counts, and selecting a row displays each local status/body in that conversation. New message remains appended. Inbox now honestly reports No received messages instead of counting local drafts/sent as inbox mail. No received-message simulation is invented.
+
+## v0.102 local Message settings
+
+Messaging > Message settings now exposes persistent Delivery reports and Save sent messages preferences. Delivery reports remains stored preference only because no transmission occurs. Save sent messages affects the explicit local Draft-to-Sent simulation: On moves the draft to Sent items; Off removes it after the local completion confirmation. Message centres and Character support remain reference rows.
