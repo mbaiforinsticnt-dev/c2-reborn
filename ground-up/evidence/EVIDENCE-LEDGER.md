@@ -586,3 +586,6 @@ Settings > Sync and backup now creates, describes, restores, and clears one loca
 
 ## Ground-Up v0.123 · message settings backend
 Messaging > Message settings now gives Message centre and Character support the same persistent local backend already used by Delivery reports and Save sent messages. Message centre accepts a local number value; Character support switches between Full and Reduced. These preferences do not contact a carrier or send a message. The route labels come from the labelled RM-722 firmware menu; the browser persistence is a disclosed recreation choice.
+
+## Ground-Up v0.124 · idle-screen shortcuts
+Settings > My shortcuts now configures persistent left and right idle-screen softkeys from Organiser, Names, Calendar, Notes, and Messages. Reset restores Organiser/Names; Preview opens idle. Idle labels and both hardware softkeys read the saved choices and open the matching local surface. The menu route is labelled RM-722 firmware evidence; these five assignments and browser persistence are disclosed recreation choices pending physical shortcut-list capture.
