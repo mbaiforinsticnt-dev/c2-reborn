@@ -736,3 +736,6 @@ Voice mailbox now has explicit number, offline dial attempt, clear, and Help beh
 
 ## Ground-Up v0.173 · Security endpoint consolidation
 Settings > Security now uses one complete branch for the local PIN-request preference, security-level selector, no-secret access-code boundary, and empty certificate inventory. No PIN, PUK, password, security code, credential, or certificate is exposed or collected.
+
+## Ground-Up v0.174 · Phone and Call preference consolidation
+Settings > Phone now uses one branch for language, Flight query, welcome note, and network-mode preferences. Call uses one branch for its four local preferences. These are local preference simulations: no network registration, call, or hardware mode change is claimed.
