@@ -283,3 +283,7 @@ The action mutation chain is removed from `handleHardwareKey()` and split into `
 ## v0.47 persistent Equaliser presets
 
 Media > Equaliser now exposes a working local preset selector instead of Ready/Active toggles. Up/Down cycles Normal, Pop, Rock and Jazz; Select stores the active preset in `phoneState.equaliser`, and reopening/reloading reads it back. The preset is stateful UI/backend behavior only: audio frequency processing is not claimed.
+
+## v0.48 persistent offline FM frequency control
+
+Media > Radio now shows a locally stored FM frequency and an explicit offline state. Set frequency opens a tuner; Up/Down changes by 0.1 MHz and wraps inside the common 87.5–108.0 MHz range; Select persists it. No tuner hardware, audio stream, headset antenna detection, or station scan is claimed. Those rows remain UI references.
