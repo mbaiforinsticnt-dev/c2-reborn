@@ -403,3 +403,7 @@ Settings > Call now exposes bounded local Anykey answer and Automatic redial tog
 ## v0.77 persistent Accessories preference
 
 Settings > Accessories now selects and persists a Default accessory preference: No accessory, Headset, Handsfree or TTY. This is explicit local configuration only; no browser device detection, audio routing or hardware attachment is claimed. Individual Headset/Handsfree/TTY configuration rows remain reference surfaces.
+
+## v0.78 persistent Welcome note
+
+Settings > Phone > Welcome note now opens a prefilled multi-tap editor. Number keys compose, # changes case, * deletes, Select persists and Back cancels. An empty note is shown as Off. The note is local state and is not yet rendered in a startup/power-on sequence because power cycling remains a test scaffold.
