@@ -640,3 +640,6 @@ Media > Radio now has persistent local on/off state, 87.5-108.0 MHz tuning, Save
 
 ## Ground-Up v0.141 · local Inbox search
 Messaging > Inbox now says no received messages and local drafts/sent only. Search local messages opens a multi-tap query composer, searches only the recreation's stored To/body fields, reports match count, and renders matching local status/recipient/body summaries. Inbox view gives exact List/no received messages readback. No device inbox, account, carrier, contact, email, or external message source is read.
+
+## Ground-Up v0.142 · Calendar week/date navigation
+Organiser > Calendar now keeps Week view and Go to date functional alongside local note create/edit/delete. Week view summarizes the next seven local dates and note counts. Go to date changes by hardware Up/Down, stores a local date filter, and shows matching-note count; Clear date filter returns to the full local list. No external calendar, account, timezone service, invite, notification, or network source is used.
