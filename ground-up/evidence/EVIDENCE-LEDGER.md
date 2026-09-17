@@ -700,3 +700,6 @@ Gallery > Gallery now routes Photos, Themes, Tones, and Recordings inventory row
 
 ## Ground-Up v0.161 · Video and Music player endpoint completion
 Video now distinguishes missing camera hardware and empty captures from working local quality/length preferences. Music player distinguishes empty library/now-playing state while retaining local Repeat and Shuffle preferences. No hardware recording, personal media, or playback is claimed.
+
+## Ground-Up v0.162 · Operator settings completion
+Settings > Operator settings now provides exact operator, provisioning, and network empty-state readbacks, while Configuration opens the existing local configuration surface. No operator identity, provisioning message, or network connection is claimed.
