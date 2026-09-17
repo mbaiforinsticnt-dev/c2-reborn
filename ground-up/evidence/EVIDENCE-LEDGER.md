@@ -769,3 +769,6 @@ Sixteen older row-specific handlers remained after canonical Configuration, Vide
 
 ## Ground-Up v0.184 · canonical Calculator and timer handlers
 Ten row-specific branches for Calculator, Countdown timer, and Stopwatch were replaced with one canonical handler per route. Working standard/split/countdown actions and honest Scientific/Loan/Interval/Lap boundaries are retained.
+
+## Ground-Up v0.185 · canonical backup/web/message settings
+Twelve row-specific branches for Sync and backup, Web settings, and Message settings were replaced by one canonical handler per route. Existing local state operations are preserved; toggles now keep visible feedback after redraw.
