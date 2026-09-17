@@ -592,3 +592,6 @@ Settings > My shortcuts now configures persistent left and right idle-screen sof
 
 ## Ground-Up v0.125 · remaining Contacts endpoints
 Contacts > Synchronise and Network query now state unavailable/offline with no operation started. Memory options has a persistent Phone/Phone and SIM preference while honestly reporting zero SIM contacts. Own numbers accepts local number entries. Service numbers reports none loaded, and Move/Copy report SIM memory unavailable and No transfer started. No account, network, SIM data, contact disclosure, or transfer is used. Route labels come from the RM-722 menu; local own-number storage and memory preference are disclosed recreation choices.
+
+## Ground-Up v0.126 · honest local media state
+Media > Video now explicitly reports no camera hardware, recording, or stored videos instead of generic capture controls. Media > Music player reports a zero-track local library and no current track, with persistent local Repeat and Shuffle preferences. No camera, microphone, media upload, stream, download, or network operation occurs. Route labels come from RM-722 firmware menu evidence; the preference backend is a disclosed recreation choice.
