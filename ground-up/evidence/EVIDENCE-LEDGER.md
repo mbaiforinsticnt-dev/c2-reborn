@@ -634,3 +634,6 @@ Any remaining menu label without a dedicated local model now opens an honest fou
 
 ## Ground-Up v0.139 · complete Video reference settings and capture readback
 Media > Video keeps its honest no-camera/no-recording state and adds persistent local Video quality and Video length selectors. It still cannot record or store video. Photo inventory detail now reads back each reference capture's saved effect, quality and timer alongside its timestamp. No media pixels, camera/microphone, permission, upload, or network source is used. Selector values are disclosed reconstruction pending physical video-setting capture.
+
+## Ground-Up v0.140 · complete offline Radio rows
+Media > Radio now has persistent local on/off state, 87.5-108.0 MHz tuning, Save current station, and saved-station inventory. Search explicitly says unavailable offline and no scan started because browser recreation has no FM hardware. Tuning switches the local radio state on but produces no audio or hardware operation. No headset antenna, device radio, station scan, stream, upload, or network source is used.
