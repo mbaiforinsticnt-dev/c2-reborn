@@ -589,3 +589,6 @@ Messaging > Message settings now gives Message centre and Character support the 
 
 ## Ground-Up v0.124 · idle-screen shortcuts
 Settings > My shortcuts now configures persistent left and right idle-screen softkeys from Organiser, Names, Calendar, Notes, and Messages. Reset restores Organiser/Names; Preview opens idle. Idle labels and both hardware softkeys read the saved choices and open the matching local surface. The menu route is labelled RM-722 firmware evidence; these five assignments and browser persistence are disclosed recreation choices pending physical shortcut-list capture.
+
+## Ground-Up v0.125 · remaining Contacts endpoints
+Contacts > Synchronise and Network query now state unavailable/offline with no operation started. Memory options has a persistent Phone/Phone and SIM preference while honestly reporting zero SIM contacts. Own numbers accepts local number entries. Service numbers reports none loaded, and Move/Copy report SIM memory unavailable and No transfer started. No account, network, SIM data, contact disclosure, or transfer is used. Route labels come from the RM-722 menu; local own-number storage and memory preference are disclosed recreation choices.
