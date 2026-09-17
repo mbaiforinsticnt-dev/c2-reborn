@@ -781,3 +781,6 @@ Fifteen split activation branches for Calendar, To-do list, and Notes were repla
 
 ## Ground-Up v0.188 · canonical local imaging routes
 Eight split activation branches for Photos and Camera were replaced by one canonical handler per route. Capture metadata inspection, camera navigation, local memory/options/help feedback, reference capture, timer, effect, and quality actions are preserved.
+
+## Ground-Up v0.189 · canonical Gallery inventory routes
+Six duplicate or split Gallery and Music-and-videos activation areas were replaced by one canonical handler per route. Photos, Themes, Tones, and Voice recorder cross-navigation plus local media empty-state details are preserved.
