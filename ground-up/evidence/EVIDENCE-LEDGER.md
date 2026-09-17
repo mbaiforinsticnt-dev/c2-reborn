@@ -511,3 +511,7 @@ Settings > Date and time now separates Date format and Time format. Date format 
 ## v0.103 persistent Date format
 
 Settings > Date and time now separates Date format and Time format. Date format selects DMY, MDY or YMD and persists; the offline idle screen applies it immediately. Time format keeps the existing 12/24-hour behavior. The format tokens are explicit Ground-Up choices pending physical wording/ordering capture.
+
+## v0.104 persistent Time zone display preference
+
+Settings > Date and time > Time zone now selects and persists Local, UTC, UTC+1 or UTC-5. This is explicitly a stored display preference only: the live clock remains the browser/local clock until a separate safe clock-conversion model is implemented. No network time or carrier zone is inferred.
