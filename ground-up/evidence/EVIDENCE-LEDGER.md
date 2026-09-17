@@ -259,3 +259,11 @@ Settings > Restore factory settings now opens an explicit confirmation and resto
 ## v0.41 visible font-colour application
 
 The v0.37 Display > Font colour preference now changes the rendered LCD text palette immediately and after reload. White, Black and Blue apply explicit colour tokens; Automatic leaves theme CSS in control. Restore factory settings reapplies Automatic. This closes the prior stored-only caveat without changing theme assets.
+
+## v0.42 supplied wallpaper selector
+
+Settings > Display > Wallpaper now selects and persists Theme default, Analog clock, or Menu background. The latter two use images from the active supplied `.nth` theme extraction (`analog_clock_background_240x320.png` and the theme-specific menu/background file); changing theme refreshes the wallpaper path. The selection applies to the LCD layer and factory reset returns Theme default. No external artwork is introduced.
+
+## v0.43 functional local Lights control
+
+Settings > Lights now exposes a five-step Display light control. Up/Down changes the level, Select persists it and applies bounded LCD brightness filters; Restore default returns level 3. This is explicit Ground-Up local behavior because the firmware route provides the endpoint but no physical brightness scale has yet been captured. Keypad light and notifications remain reference rows.
