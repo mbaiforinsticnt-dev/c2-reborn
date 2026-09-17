@@ -475,3 +475,7 @@ Gallery > Gallery now reports Photos count, four supplied themes and all 57 supp
 ## v0.95 Gallery inventory cross-navigation
 
 The source-backed Gallery inventory rows now lead to their functional surfaces instead of toggling Ready/Active: Photos opens the local Photos list, Themes opens the supplied theme selector endpoint, and Tones opens the supplied 57-tone endpoint. Music and videos > Tones uses the same route. This links the inventory without duplicating backend state or inventing media.
+
+## v0.96 persistent Voice recorder reference metadata
+
+Media > Voice recorder > Record now opens a live local duration timer. First Select starts; second Select stops and stores name, duration, explicit `reference recording` kind and timestamp in `phoneState.recordings`. Reopening lists each record and its duration. No microphone permission, audio bytes or real recording is claimed; this is unavailable-hardware backend/UI behavior matching the Camera reference-capture pattern.
