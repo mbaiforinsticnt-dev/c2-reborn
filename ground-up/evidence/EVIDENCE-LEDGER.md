@@ -68,8 +68,12 @@ The live main menu now follows the enabled `mainmenu` entries in the supplied `m
 
 ## v0.3 native rendering and control audit
 
-Black `theme.xml` names `grid_menu_select_74x79.png` directly for the grid-menu selected background but provides no crop rule. v0.3 therefore renders that selector at its native 74x79 pixels and lets it extend behind the 62-pixel cell while clipping only at the grid viewport. Matched app icons render at their natural dimensions: E-mail 48x48, Nokia Browser 46x48, Store 42x47. The on-screen navigation ring has explicit pointer targets for Up, Down, Left, Right and OK. Six native system-menu icons (Organiser, Contacts, Messaging, Gallery, Media, Applications) were recovered byte-for-byte from `rm721__11.40.ppm_f` and render at their native 43x43 pixels. They are exact for v11.40 EURO-F; physical handset evidence remains authoritative. Settings and Log remain neutral until positively identified.
+Black `theme.xml` names `grid_menu_select_74x79.png` directly for the grid-menu selected background but provides no crop rule. v0.3 therefore renders that selector at its native 74x79 pixels and lets it extend behind the 62-pixel cell while clipping only at the grid viewport. Matched app icons render at their natural dimensions: E-mail 48x48, Nokia Browser 46x48, Store 42x47. The on-screen navigation ring has explicit pointer targets for Up, Down, Left, Right and OK. Six native system-menu icons (Organiser, Contacts, Messaging, Gallery, Media, Applications) were recovered byte-for-byte from `rm721__11.40.ppm_f` and render at their native 43x43 pixels. They are exact for v11.40 EURO-F; physical handset evidence remains authoritative. Settings and Log use positively identified 43x43 PPM icons.
 
 ## v0.4 PPM native menu icons
 
 Six menu icons recovered byte-for-byte from `rm721__11.40.ppm_f` now replace neutral letters: Organiser, Contacts, Messaging, Gallery, Media and Applications. All are RGBA PNG, 43x43, rendered at native dimensions. Their authority is v11.40 EURO-F firmware evidence; a conflicting physical RM-721 capture wins. Candidate alternates in the extraction package were not used. Settings and Log remain neutral pending a positive icon-to-menu binding.
+
+## v0.5 Settings and Log binding
+
+Settings and Log use byte-exact 43x43 RGBA PNGs recovered from the v11.40 EURO-F PPM. Settings is the wrench at PPM offset `0x00297462`; Log is the green-down/blue-up arrows at `0x00296e52`. The semantic binding is supported by their coherent main-menu icon-table run (Contacts -> Log -> Settings -> Applications), the emulator visuals, and `menusettings.xml` entities. This is strong firmware/emulator evidence, still subordinate to a conflicting physical RM-721 capture.
