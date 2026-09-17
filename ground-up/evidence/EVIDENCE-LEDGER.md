@@ -435,3 +435,7 @@ Contacts > Names rows now show each stored contact's assigned caller group. Call
 ## v0.85 reversible Speed dial assignments
 
 On an assigned Contacts > Speed dials row, the left softkey opens a Clear speed dial confirmation showing the exact key and number. Select deletes only that key's local assignment and persists; Back cancels. Empty rows report already empty. Speed dial assignment and offline dialing now have a matching reversible path.
+
+## v0.86 persistent offline Bookmarks
+
+Browser > Bookmarks now renders local saved bookmark rows with Add bookmark appended. Add opens address entry, number keys append to the offline address and Select stores a deduplicated bookmark (50 max). Selecting a bookmark displays it without contact. Working web remains deferred; full alphanumeric URL entry will reuse the text engine later.
