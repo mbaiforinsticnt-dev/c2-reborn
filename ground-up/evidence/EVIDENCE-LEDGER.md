@@ -580,3 +580,6 @@ The top-level E-mail and Ovi Store nlink entries now open dedicated offline deta
 
 ## Ground-Up v0.121 · Organiser offline endpoints
 Organiser > Maps now gives an explicit unavailable/no-map/no-route/no-positioning surface. Organiser > Dictionary now has a small offline lookup composer with multi-tap entry, five labelled local definitions, unknown-word feedback, recent lookup readback, and confirmation-backed local history clearing. The Dictionary route comes from the labelled RM-722 firmware menu; the five definitions and offline backend are recreation choices, not extracted handset dictionary data. No network, GPS, map download, or Java runtime is used.
+
+## Ground-Up v0.122 · local backup backend
+Settings > Sync and backup now creates, describes, restores, and clears one local phone-state snapshot with confirmation surfaces. The snapshot remains in this browser's local storage and excludes itself to prevent recursive growth. Restore reapplies menu mode, theme, font colour, light level, and wallpaper as well as local collections and preferences. No sync server, account, network, file export, or external data is used. This backend is a disclosed recreation choice beneath the labelled RM-722 firmware menu route.
