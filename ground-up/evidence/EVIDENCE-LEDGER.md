@@ -715,3 +715,6 @@ Contacts > Memory options now retains its local memory selector, opens Names fro
 
 ## Ground-Up v0.166 · Connectivity status completion
 Settings > Connectivity retains working local Bluetooth, packet-data, and USB preferences and now gives an exact Network status readback. Preference state is distinct from connection state: no peer, packet session, USB host, or mobile network is claimed.
+
+## Ground-Up v0.167 · Accessories endpoint consolidation
+Settings > Accessories now uses one complete row-specific branch: Default accessory opens the local preference selector, while Headset, Handsfree, and TTY report their disconnected hardware state. No physical accessory is claimed.
