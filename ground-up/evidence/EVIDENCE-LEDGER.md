@@ -223,3 +223,11 @@ Organiser > Countdown timer now opens a real local countdown. While stopped, Up/
 ## v0.32 persistent local Calendar notes
 
 Organiser > Calendar > Make a note now opens a functional local date editor. Up/Down changes the day relative to today; Select stores an ISO-date record with an explicit offline test note in `phoneState.calendar`, capped at 100 and persisted. Calendar reads the saved count after reload. The fixed note text is prototype behavior; authentic Nokia note-type and text-entry flows remain to be built.
+
+## v0.33 persistent local To-do notes
+
+Organiser > To-do list > Add now opens a local task editor. Up/Down changes the explicit test task number; Select stores `{body, done:false, createdAt}` in `phoneState.todos`, capped at 100 and persisted. To-do list reads the saved count after reload. Placeholder task naming is Ground-Up test behavior pending the common text-entry engine.
+
+## v0.34 confirmed local clear/delete actions
+
+Four destructive menu endpoints now operate on the matching local backend collections instead of toggling: Contacts > Delete all contacts, Messaging > Delete messages, Browser > Clear cache (local address history), and Log > Clear log lists. Each opens a confirmation surface showing the local record count; centre Select clears and persists, while Back cancels. No external or personal source is touched.
