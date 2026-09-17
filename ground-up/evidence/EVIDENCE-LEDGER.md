@@ -451,3 +451,7 @@ On a stored Log > All calls or Dialled numbers row, the left softkey opens a con
 ## v0.89 keypad deletion in numeric/address editors
 
 The `*` key now deletes the last character in Dialler, Go to address and Add bookmark editors. Address and bookmark fields retain the `http://` floor rather than deleting the scheme scaffold. This closes a correction-path gap in those input surfaces. Calculator retains its separate `*` addition behavior, and text editors retain their existing delete behavior where documented.
+
+## v0.90 multi-tap address and bookmark entry
+
+Go to address and Add bookmark now use the shared multi-tap composer, allowing letters and punctuation rather than digits only. `*` deletes while preserving the `http://` floor, and # changes case. This improves offline address fidelity without contacting or loading an address. The input clause was also deduplicated during the change. The keypad mapping/timing keeps the v0.53 Ground-Up disclosure pending physical confirmation.
