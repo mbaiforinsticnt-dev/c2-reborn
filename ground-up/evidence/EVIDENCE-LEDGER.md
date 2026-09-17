@@ -691,3 +691,6 @@ Messaging > Outbox and Delivery reports now give exact row-specific readbacks fo
 
 ## Ground-Up v0.158 · browser transfer boundaries
 Content upload, Upload to blog, and Download links now give exact no-transfer, bookmarks, address-history, and settings readbacks. No working web request, upload, download, blog publish, or remote transfer is started or claimed.
+
+## Ground-Up v0.159 · Gallery media inventory
+Gallery > Music and videos now gives exact empty music/video and local memory readbacks, while its supplied Tones row opens the existing firmware-tone surface. No personal media, playback, download, or capture is claimed.
