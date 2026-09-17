@@ -415,3 +415,7 @@ Settings > Phone > Network mode now selects and persists Dual mode, GSM or 3G. T
 ## v0.80 complete bounded Call preference rows
 
 Settings > Call now gives Speed dialling and Call waiting the same local persisted On/Off behavior as Anykey answer and Automatic redial. The lead remains Offline call preferences: these switches do not affect a modem or connected call. All four visible Call rows are now stateful rather than generic toggles.
+
+## v0.81 local Speed dial assignments
+
+Contacts > Speed dials now exposes keys 2–5 as local assignment rows. Selecting a key opens the stored Contacts list; Up/Down chooses a contact and Select stores that contact's number in `phoneState.speedDials`. Reopening/reloading shows the assignment. Long-press dialing and keys 6–9 remain to be added; no network call is made.
