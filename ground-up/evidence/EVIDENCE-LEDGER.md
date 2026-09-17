@@ -567,3 +567,7 @@ Applications > Downloads now reports No local downloads instead of generic folde
 ## v0.117 explicit offline Browser service endpoints
 
 Ovi, Nokia, Home, Web search, Browser and Operator link 1–3 now state unavailable/offline instead of generic Open reference. Their local controls route to Go to address, Bookmarks and Last web address, preserving useful offline phone behavior without contacting retired/current services. Working web remains owner-gated.
+
+## v0.118 honest Browser transfer endpoints
+
+Browser > Content upload, Upload to blog and Download links now state unavailable/offline and No transfer started rather than presenting generic Open/Active controls. Bookmarks, Last web address and Web settings remain local/reference navigation. No upload, download, file disclosure or network transfer is attempted.
