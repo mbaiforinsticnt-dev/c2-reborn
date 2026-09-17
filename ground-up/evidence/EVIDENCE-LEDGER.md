@@ -559,3 +559,7 @@ Messaging > Info messages now states Cell broadcast unavailable/offline. Recepti
 ## v0.115 unified local media counters
 
 Applications > Memory status now also reports local Photos and reference Recordings counts. Gallery > Gallery replaces its generic Memory status row with a live Recordings count that opens Voice recorder. Gallery inventory therefore cross-navigates Photos, Themes, Tones and Recordings, all sourced from the same local backend or supplied asset inventory.
+
+## v0.116 honest Applications support endpoints
+
+Applications > Downloads now reports No local downloads instead of generic folder rows. Applications > Settings states Java runtime Not started, Network access Off and Memory Local only. This preserves the owner's explicit Java/game and working-web gate while replacing generic Ready/Active controls with honest status. The 19 JAD identities remain metadata-only.
