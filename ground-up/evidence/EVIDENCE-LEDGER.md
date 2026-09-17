@@ -661,3 +661,6 @@ The shared detail activation path contained three standalone message/calendar fr
 
 ## Ground-Up v0.148 · Contacts offline query routes
 Contacts > Synchronise and Network query now have explicit row behavior. Missing accounts, sync history, network service, and query history read back honestly; Local contacts/Search local Names open Names; Back returns to Contacts. No account, network, remote directory, or synchronisation is claimed.
+
+## Ground-Up v0.149 · service and transfer contact routes
+Contacts > Service numbers, Move contacts, and Copy contacts now have explicit empty/offline row behavior. Service/SIM provisioning is not claimed; transfer rows disclose that no operation ran, and Memory options opens the existing contact-memory surface.
