@@ -115,3 +115,7 @@ The v0.10 controller geometry is redrawn against a front-on physical C2-01 photo
 The strongest front-on reference is https://commons.wikimedia.org/wiki/File:Nokia_C2-01.JPG (original 1920x2560). Corroborating pages: https://www.techradar.com/reviews/phones/mobile-phones/nokia-c2-01-936316/review/10 ; https://www.phonearena.com/reviews/Nokia-C2-01-Review_id2723 ; https://www.gsmarena.com/nokia_c2_01-3638.php ; https://www.cnet.com/reviews/nokia-c2-01-review/ . Moti's own handset photo will override this review/reference geometry when supplied.
 
 Numeric direct-selection shortcuts, star/hash page movement, call-to-Log and End-to-home are test-scaffold behavior only. They are not asserted as physical C2-01/S40 semantics. The on-page trace is visibly prefixed `TEST SCAFFOLD` to maintain that boundary.
+
+## v0.11 no-dead-keys contract
+
+Owner rule: no dead keys. Every controller key in every software state must create a visible response. An evidenced route executes normally. A test shortcut stays explicitly labelled as such. Where physical/S40 behavior or screen depth is not yet evidenced, the software shows an honest visible `not evidenced` response rather than silently doing nothing. v0.11 implements this in the software module with a numbered `TEST` key-response strip, distinct from the hardware controller trace. Repeated presses increment the response number and visibly pulse, so a repeated key cannot masquerade as a dead press.

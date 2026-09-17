@@ -7,17 +7,57 @@ function draw(){optionsBox.classList.toggle('hidden',!optionsOpen);if(optionsOpe
 function move(key){if(optionsOpen){let n=view==='viewDialog'?4:2;if(key==='ArrowUp')optionSel=(optionSel+n-1)%n;if(key==='ArrowDown')optionSel=(optionSel+1)%n;draw();return}if(view!=='menu')return;let pageStart=Math.floor(selected/9)*9,pageEnd=Math.min(menu.length-1,pageStart+8),col=(selected-pageStart)%3,row=Math.floor((selected-pageStart)/3);if(pageStart===9){if(key==='ArrowLeft')selected=Math.max(9,selected-1);if(key==='ArrowRight')selected=Math.min(10,selected+1);if(key==='ArrowUp'||key==='ArrowDown')selected=Math.min(pageEnd,pageStart+col);draw();return}if(key==='ArrowRight')selected=row*3+(col+1)%3;if(key==='ArrowLeft')selected=row*3+(col+2)%3;if(key==='ArrowDown')selected=((row+1)%3)*3+col;if(key==='ArrowUp')selected=((row+2)%3)*3+col;draw()}
 function activate(){if(optionsOpen){if(view==='viewDialog'){if(optionSel===3){optionsOpen=false;view='menu';draw()}else{let chosen=['Single','List','Grid'][optionSel];optionsOpen=false;view='app';draw();screenTitle.textContent='Main menu view';appTitle.textContent=chosen;appText.textContent=chosen+' view is evidenced as an option; rendering that layout is pending.'}return}if(optionSel===0){view='viewDialog';optionSel=3;draw()}else{optionsOpen=false;view='app';draw();screenTitle.textContent='Organise';appTitle.textContent='Organise';appText.textContent='Menu reorder mode waits for physical key-by-key evidence.'}return}if(view==='menu'){view='app';draw();let c=document.querySelector('.cell.selected');c?.classList.add('pressed');setTimeout(()=>c?.classList.remove('pressed'),120)}else{appText.textContent=shallow[menu[selected][0]]+' · Deeper behavior waits for route evidence.'}}
 function back(){if(optionsOpen&&view==='viewDialog'){view='menu';optionSel=0;draw();return}if(optionsOpen){optionsOpen=false;draw();return}if(view==='app'){view='menu';draw()}}function openOptions(){if(view==='menu'){optionsOpen=true;optionSel=0;draw()}else{appText.textContent+=' · Options behavior pending direct evidence.'}}
+let responseSequence=0;
+function showKeyResponse(key,response){
+ responseSequence+=1;
+ keyFeedback.textContent=`TEST ${responseSequence} · ${key}: ${response}`;
+ keyFeedback.classList.remove('pulse');
+ void keyFeedback.offsetWidth;
+ keyFeedback.classList.add('pulse');
+ setTimeout(()=>keyFeedback.classList.remove('pulse'),140);
+}
 function handleHardwareKey(key){
- if(key.startsWith('Arrow'))move(key);
- else if(key==='Enter'||key==='SoftCenter')activate();
- else if(key==='SoftLeft')openOptions();
- else if(key==='SoftRight'||key==='Escape')back();
- else if(key==='End'){optionsOpen=false;view='menu';draw()}
- else if(key==='Call'){selected=10;view='app';draw()}
- else if(/^[1-9]$/.test(key)&&view==='menu'&&!optionsOpen){selected=Math.min(menu.length-1,Number(key)-1);draw()}
- else if(key==='0'&&view==='menu'&&!optionsOpen){selected=9;draw()}
- else if(key==='Star'&&view==='menu'&&!optionsOpen){selected=Math.max(0,selected-9);draw()}
- else if(key==='Hash'&&view==='menu'&&!optionsOpen){selected=Math.min(menu.length-1,selected+9);draw()}
+ let response='';
+ if(key.startsWith('Arrow')){
+  if(optionsOpen){move(key);response=(key==='ArrowUp'||key==='ArrowDown')?'moved option selection':'no horizontal option route evidenced'}
+  else if(view==='menu'){move(key);response=`selected ${menu[selected][0]}`}
+  else response='no directional route evidenced on this shallow screen';
+ }
+ else if(key==='Enter'||key==='SoftCenter'){
+  if(optionsOpen){activate();response=view==='viewDialog'?'opened Main menu view choices':optionsOpen?'selected option':'confirmed selection'}
+  else if(view==='menu'){let label=menu[selected][0];activate();response=`opened ${label}`}
+  else {activate();response='deeper route is not yet evidenced'};
+ }
+ else if(key==='SoftLeft'){
+  if(view==='menu'){openOptions();response='opened Options'}
+  else {openOptions();response='Options route pending direct evidence on this screen'};
+ }
+ else if(key==='SoftRight'||key==='Escape'){
+  if(optionsOpen&&view==='viewDialog'){back();response='returned to Options'}
+  else if(optionsOpen){back();response='closed Options'}
+  else if(view==='app'){back();response='returned to Menu'}
+  else response='Exit route is not implemented in this browser test';
+ }
+ else if(key==='End'){optionsOpen=false;view='menu';draw();response='returned to Menu (test scaffold)'}
+ else if(key==='Call'){selected=10;view='app';draw();response='opened Log (test scaffold)'}
+ else if(/^[1-9]$/.test(key)){
+  if(view==='menu'&&!optionsOpen){selected=Math.min(menu.length-1,Number(key)-1);draw();response=`selected ${menu[selected][0]} (test shortcut)`}
+  else response='numeric action not evidenced in this state';
+ }
+ else if(key==='0'){
+  if(view==='menu'&&!optionsOpen){selected=9;draw();response='selected Settings (test shortcut)'}
+  else response='numeric action not evidenced in this state';
+ }
+ else if(key==='Star'){
+  if(view==='menu'&&!optionsOpen){selected=Math.max(0,selected-9);draw();response=`selected ${menu[selected][0]} (test page shortcut)`}
+  else response='star action not evidenced in this state';
+ }
+ else if(key==='Hash'){
+  if(view==='menu'&&!optionsOpen){selected=Math.min(menu.length-1,selected+9);draw();response=`selected ${menu[selected][0]} (test page shortcut)`}
+  else response='hash action not evidenced in this state';
+ }
+ else response='key route not yet evidenced';
+ showKeyResponse(key,response);
 }
 document.addEventListener('c2-key',e=>handleHardwareKey(e.detail.key));
 addEventListener('keydown',e=>{let k=e.key;if(k==='*')k='Star';if(k==='#')k='Hash';if(k.startsWith('Arrow')||k==='Enter'||k==='Escape'||/^[0-9]$/.test(k)||k==='Star'||k==='Hash'){e.preventDefault();handleHardwareKey(k)}});
