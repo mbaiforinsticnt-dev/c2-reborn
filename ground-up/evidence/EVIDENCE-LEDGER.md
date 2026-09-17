@@ -688,3 +688,6 @@ The Applications Settings model predicate is restored to its `detailModel(sectio
 
 ## Ground-Up v0.157 · Outbox and delivery-report empty states
 Messaging > Outbox and Delivery reports now give exact row-specific readbacks for empty queues/reports, message details, deletion, settings, and memory. No network send, queue, or delivery receipt is claimed.
+
+## Ground-Up v0.158 · browser transfer boundaries
+Content upload, Upload to blog, and Download links now give exact no-transfer, bookmarks, address-history, and settings readbacks. No working web request, upload, download, blog publish, or remote transfer is started or claimed.
