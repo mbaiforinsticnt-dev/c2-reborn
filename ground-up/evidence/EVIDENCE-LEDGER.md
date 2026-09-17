@@ -447,3 +447,7 @@ On a stored Browser > Bookmarks row, the left softkey opens a confirmation showi
 ## v0.88 per-call-entry delete confirmation
 
 On a stored Log > All calls or Dialled numbers row, the left softkey opens a confirmation showing the exact number and offline-attempt status. Select deletes only that indexed local call entry and persists; Back cancels. Clear list remains the bulk-delete route.
+
+## v0.89 keypad deletion in numeric/address editors
+
+The `*` key now deletes the last character in Dialler, Go to address and Add bookmark editors. Address and bookmark fields retain the `http://` floor rather than deleting the scheme scaffold. This closes a correction-path gap in those input surfaces. Calculator retains its separate `*` addition behavior, and text editors retain their existing delete behavior where documented.
