@@ -679,3 +679,6 @@ Ovi Store and Applications > Downloads now give exact connection, download, inve
 
 ## Ground-Up v0.154 · complete zero-state log readbacks
 Data counters, Connection timer, Call duration, Missed calls, and Received calls now provide row-specific zero/offline results. No packet transfer, network session, connected call, or received call record is claimed.
+
+## Ground-Up v0.155 · Applications settings boundary
+Applications > Settings now gives exact Java-runtime, network-access, local-memory, and Back readbacks. Java runtime remains unstarted and explicitly deferred pending owner approval; no application connection or executable is launched.
