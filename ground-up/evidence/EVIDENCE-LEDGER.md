@@ -910,3 +910,6 @@ Audit finding 3 is closed by verified existing behavior. Menu labels the right s
 
 ## Ground-Up v0.226 · alarm firing and snooze runtime
 Deep-audit new findings 85 and 88 are closed for the in-page offline runtime. An enabled alarm now fires when the phone clock reaches its saved time, respecting Off, Daily, and Weekdays repeat modes. The alarm replaces the screen with tone identity and Stop / Snooze labels. Stop (or End) dismisses it and disables one-time alarms; Snooze dismisses and schedules a five-minute repeat. Reloading the browser is equivalent to powering down this transient ringing/snooze runtime; the saved alarm configuration persists. Selected-day repeat and alarm-while-powered-off behavior remain unclaimed.
+
+## Ground-Up v0.227 · automatic keyguard
+Deep-audit new finding 40 is closed. Settings > Phone exposes persistent Automatic keyguard choices Off, 30 seconds, and 1 minute. When enabled, inactivity locks after the configured standby delay; hardware events reset inactivity. Automatic locking reuses the verified locked screen and Unlock+* route. Security-code keyguard remains unclaimed.
