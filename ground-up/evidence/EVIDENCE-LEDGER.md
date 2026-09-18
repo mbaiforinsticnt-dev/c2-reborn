@@ -886,3 +886,6 @@ Audit finding 9 is closed. The hardware controller now distinguishes a press rel
 
 ## Ground-Up v0.217 · held digits in letter entry
 Audit finding 8 is closed. In multi-tap letter fields, holding 2–9 inserts that digit directly without switching the global writing mode. The route covers note, to-do, dictionary, message search, service command, welcome note, message body, contact-name, draft-body, and calendar-body editors while preserving numeric-field behavior and standby speed-dial holds.
+
+## Ground-Up v0.218 · short and held # text behavior
+Audit finding 5 is closed for the implemented traditional input path. In a letter field, short # changes character case only. Held # switches explicitly between abc and 123 input modes; in 123 mode ordinary number keys insert digits, and holding # returns to letters. Standby held # remains the separate Silent-profile shortcut. Writing-language selection remains tied to the existing Phone language setting rather than fabricated inside this bounded mode chooser.
