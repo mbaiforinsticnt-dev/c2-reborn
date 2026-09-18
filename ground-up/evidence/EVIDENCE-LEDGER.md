@@ -883,3 +883,6 @@ Audit finding 4 is closed for the ordinary keyguard. From standby, Menu arms the
 
 ## Ground-Up v0.216 · hardware hold events and standby shortcuts
 Audit finding 9 is closed. The hardware controller now distinguishes a press released before 650 ms from a held key; it emits one semantic event on release rather than firing both short and long actions. In standby, held 0 opens the local offline Browser Home route, held # toggles Silent/General and persists the profile, and held 2–9 opens the assigned number in the offline dialler only when speed dialling is enabled. The same keys retain their ordinary short-press meanings outside these held standby routes.
+
+## Ground-Up v0.217 · held digits in letter entry
+Audit finding 8 is closed. In multi-tap letter fields, holding 2–9 inserts that digit directly without switching the global writing mode. The route covers note, to-do, dictionary, message search, service command, welcome note, message body, contact-name, draft-body, and calendar-body editors while preserving numeric-field behavior and standby speed-dial holds.
