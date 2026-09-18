@@ -523,6 +523,9 @@ function activateOwnNumbers(control){
 }
 function handleHardwareKey(key){
  let response='';
+ if(key==='LongHash'&&view==='idle'){phoneState.profile=phoneState.profile==='Silent'?'General':'Silent';savePhoneState();draw();showKeyResponse(key,'profile '+phoneState.profile);return}
+ if(key==='Long0'&&view==='idle'){selected=3;submenuSel=submenus.Browser.indexOf('Home');view='detail';detailSel=0;draw();showKeyResponse(key,'opened offline browser home');return}
+ if(/^Long[2-9]$/.test(key)&&view==='idle'){let digit=key.slice(4),number=phoneState.speedDials?.[digit];if(phoneState.speedDial&&number){view='action';selected=1;submenuSel=submenus.Contacts.indexOf('Speed dials');actionType='dial';actionValue=number;actionStatus='';draw();response='opened speed dial '+digit+' in offline dialler'}else response='speed dial '+digit+' unavailable';showKeyResponse(key,response);return}
  if(keyguardLocked){if(key==='SoftLeft'){unlockAt=Date.now();response='unlock armed'}else if(key==='Star'&&Date.now()-unlockAt<=1500){keyguardLocked=false;unlockAt=0;view='idle';draw();response='keypad unlocked'}else{unlockAt=0;response='keypad locked'}showKeyResponse(key,response);return}
  if(key==='Star'&&view==='menu'&&Date.now()-lockMenuAt<=3500){keyguardLocked=true;lockMenuAt=0;optionsOpen=false;draw();showKeyResponse(key,'keypad locked');return}
  if(key.startsWith('Arrow')){
