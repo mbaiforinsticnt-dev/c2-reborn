@@ -936,3 +936,6 @@ This disposition does not mark the deep audit wholly complete. It extracts its g
 
 ## Ground-Up v0.229 · FM headset antenna dependency
 Deep-audit new finding 82 is closed. Radio detail now shows whether the selected accessory provides a Headset antenna. Switching FM on is blocked with a compatible-headset prompt unless Settings > Accessories selects Headset; switching off remains available. Frequency and saved-station metadata stay local, and station scan remains unavailable without FM hardware.
+
+## Ground-Up v0.230 · editor-buffer refactor hold
+Deep-audit new findings 52 (cursor movement) and 61 (SMS segment count) are explicitly held together. Both narrow attempts failed mandatory hardware-route replay and were reverted before commit. The current editor stores composite fields inside one tab-delimited `actionValue`; adding a single cursor or body counter independently risks corrupting field switching in messages, contacts, drafts, and calendar entries. The honest resumption unit is a staged editor-buffer refactor with typed per-field state, followed by field navigation, cursor insertion/deletion, then segment counting. No user-visible behavior is changed in this release.
