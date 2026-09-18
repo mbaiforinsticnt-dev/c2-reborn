@@ -901,3 +901,6 @@ Audit finding 16 is closed for the camera/video capture contexts. The centre nav
 
 ## Ground-Up v0.222 · state-driven standby indicators
 Audit finding 14 is closed for states the offline recreation can honestly know. Standby now derives an indicator row from live local state: Silent profile, enabled alarm, Bluetooth preference, always-online packet-data preference, and selected accessory. It shows `No active indicators` when none apply and refreshes after state changes. Signal strength, battery level, operator service, 3G activity, diversion, and network delivery states are not fabricated because the browser recreation has no such hardware/service evidence.
+
+## Ground-Up v0.223 · assignable standby navigation shortcuts
+Audit finding 13 is closed. My shortcuts now exposes persistent assignments for navigation Up, Down, Left, and Right in addition to the two selection keys. Standby D-pad directions immediately open their configured local route. Reset restores Calendar / Names / Messages / Notes for navigation and Organiser / Names for selection keys.
