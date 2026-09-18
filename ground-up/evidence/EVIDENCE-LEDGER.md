@@ -850,3 +850,27 @@ Separated the previously duplicated Drafts controls: SoftLeft now opens delete c
 
 ## Ground-Up v0.211 · cross-browser tone fallback
 Added MP3 derivatives for all 57 supplied AAC firmware tones. Tone preview checks browser AAC support and keeps the original supplied AAC source when supported, falling back to the corresponding local MP3 derivative otherwise. Tone names, selection state, and offline-only behavior are unchanged. The MP3 files are compatibility derivatives, not separate firmware evidence. A Firefox ESR 390x900 render was also inspected after the patch: handset, LCD, menu grid, controls, and responsive one-column layout rendered without clipping or script-failure symptoms.
+
+## Ground-Up v0.213 · external audit dispositions and presentation cleanup
+Reviewed the 20-item 2026-09-18 external audit against the build and evidence hierarchy. Current dispositions:
+
+1. **Retained / already correct:** RM-722/059F5P7 menu order remains explicitly labelled inference below physical RM-721 evidence; it is not claimed as definitive RM-721 order.
+2. **Accepted, open:** standby softkey labels need configured functions rather than menu labels.
+3. **Partly implemented, open:** End already jumps directly to idle; Back versus Exit labels need a full context pass.
+4. **Accepted, open:** timed Menu+* lock and Unlock+* unlock are not yet implemented.
+5. **Accepted, open:** short-# case and long-# mode choice need distinct handling.
+6. **Accepted, open:** text-entry * needs punctuation/symbol behavior rather than generic handling.
+7. **Accepted, parked behind higher-confidence interaction work:** predictive input is not implemented.
+8. **Accepted, open:** held numeric keys in text entry need direct digit insertion.
+9. **Accepted, open:** standby holds for 0, #, and assigned speed dials need context-specific routes.
+10. **Accepted, partly implemented:** camera and media directional behavior needs a complete per-app pass.
+11. **Accepted, open:** media background/close distinction needs playable-media state before it can be faithfully represented.
+12. **Already implemented:** Options > Main menu view provides and persists single, list, grid, and labelled-grid modes.
+13. **Partly implemented, open:** left/right idle shortcuts are assignable and persistent; navigation-direction assignment is missing.
+14. **Accepted, open:** idle status needs a fuller state-driven indicator model; fabricated carrier or signal data will not be added without evidence.
+15. **Retained:** names follow the supplied firmware/menu evidence; physical RM-721 evidence remains able to override them.
+16. **Accepted, partly implemented:** centre Enter is independent in the event model, but labels/actions need a screen-context pass.
+17. **Accepted, open:** camera Capture/Record and directional semantics need a focused pass.
+18. **Disputed for this variant:** `Music player` is the supplied firmware menu string. Generic-guide `Media player` does not override variant firmware evidence.
+19. **Confirmed and retained:** LCD internal geometry remains 240×320.
+20. **Fixed:** visible `key response ready`, `controller ready`, and controller scaffold traces were removed from the phone presentation. Key response text remains in clipped live regions for accessibility and automated verification, not Series 40 UI.
