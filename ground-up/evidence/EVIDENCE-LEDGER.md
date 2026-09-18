@@ -880,3 +880,6 @@ Audit findings 2 and the cold-start portion of 14 are closed. A fresh page now s
 
 ## Ground-Up v0.215 · timed keyguard sequence
 Audit finding 4 is closed for the ordinary keyguard. From standby, Menu arms the lock sequence and * locks only within 3.5 seconds. The locked screen ignores ordinary keys, labels the left softkey Unlock, and unlocks only when * follows Unlock within 1.5 seconds. A failed or late second key clears the arm. Security-keyguard code entry is not claimed; Security level remains a separate local preference with no secret collection.
+
+## Ground-Up v0.216 · hardware hold events and standby shortcuts
+Audit finding 9 is closed. The hardware controller now distinguishes a press released before 650 ms from a held key; it emits one semantic event on release rather than firing both short and long actions. In standby, held 0 opens the local offline Browser Home route, held # toggles Silent/General and persists the profile, and held 2–9 opens the assigned number in the offline dialler only when speed dialling is enabled. The same keys retain their ordinary short-press meanings outside these held standby routes.
