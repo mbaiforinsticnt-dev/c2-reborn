@@ -898,3 +898,6 @@ Audit findings 10 and 17 are closed for the camera/video detail screens. The cam
 
 ## Ground-Up v0.221 · camera and video centre labels
 Audit finding 16 is closed for the camera/video capture contexts. The centre navigation-key label is now Capture throughout the camera screen and Record throughout the video screen, rather than the generic Select label. The physical centre button remains an independent Enter event, not a left/right softkey alias.
+
+## Ground-Up v0.222 · state-driven standby indicators
+Audit finding 14 is closed for states the offline recreation can honestly know. Standby now derives an indicator row from live local state: Silent profile, enabled alarm, Bluetooth preference, always-online packet-data preference, and selected accessory. It shows `No active indicators` when none apply and refreshes after state changes. Signal strength, battery level, operator service, 3G activity, diversion, and network delivery states are not fabricated because the browser recreation has no such hardware/service evidence.
