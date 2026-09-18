@@ -895,3 +895,6 @@ Audit finding 6 is closed for traditional input. In a letter field, short * open
 
 ## Ground-Up v0.220 · camera directional semantics
 Audit findings 10 and 17 are closed for the camera/video detail screens. The camera centre route is labelled Capture; Up/Down changes and persists a bounded 1×–4× zoom state; Left/Right switches to Video; and Video Left/Right switches back to Camera. The screen continues to state that camera hardware is unavailable, so Capture stores reference settings metadata only rather than fabricating an image. Video Record remains an explicit unavailable-hardware boundary.
+
+## Ground-Up v0.221 · camera and video centre labels
+Audit finding 16 is closed for the camera/video capture contexts. The centre navigation-key label is now Capture throughout the camera screen and Record throughout the video screen, rather than the generic Select label. The physical centre button remains an independent Enter event, not a left/right softkey alias.
