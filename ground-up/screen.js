@@ -159,7 +159,7 @@ let textKey='',textKeyAt=0,textKeyIndex=0,textUpper=false;
 const multiTap={'1':'.,?!1','2':'abc2','3':'def3','4':'ghi4','5':'jkl5','6':'mno6','7':'pqrs7','8':'tuv8','9':'wxyz9','0':' '};
 function enterMultiTap(key){let now=Date.now(),chars=multiTap[key];if(!chars)return;if(textUpper)chars=chars.toUpperCase();if(key===textKey&&now-textKeyAt<900){textKeyIndex=(textKeyIndex+1)%chars.length;actionValue=actionValue.slice(0,-1)+chars[textKeyIndex]}else{textKey=key;textKeyIndex=0;actionValue+=chars[0]}textKeyAt=now}
 let collectionIndex=0;
-let selected=0,view='menu',optionsOpen=false,optionSel=0,submenuSel=0,menuMode=phoneState.menuMode||'labelgrid',catalogSel=0,detailSel=0,detailActivated=false,actionType='',actionValue='',actionStatus='';
+let selected=0,view='idle',optionsOpen=false,optionSel=0,submenuSel=0,menuMode=phoneState.menuMode||'labelgrid',catalogSel=0,detailSel=0,detailActivated=false,actionType='',actionValue='',actionStatus='';
 function renderAction(){
  const box=(title,body,help,status='')=>`<div class="actionEditor">${title?`<h3>${title}</h3>`:''}${body}<div class="actionHelp">${help}</div>${status?`<div class="actionStatus">${status}</div>`:''}</div>`;
  switch(actionType){
