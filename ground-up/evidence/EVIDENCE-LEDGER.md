@@ -877,3 +877,6 @@ Reviewed the 20-item 2026-09-18 external audit against the build and evidence hi
 
 ## Ground-Up v0.214 · cold-start standby and context softkeys
 Audit findings 2 and the cold-start portion of 14 are closed. A fresh page now starts on the offline standby screen rather than the main menu. Standby reads the persistent left and right selection-key assignments and labels the centre key Menu; the menu's Options / Select / Exit labels appear only after opening Menu. No operator, signal, or carrier state is fabricated. The red End route continues to jump directly to standby from nested screens.
+
+## Ground-Up v0.215 · timed keyguard sequence
+Audit finding 4 is closed for the ordinary keyguard. From standby, Menu arms the lock sequence and * locks only within 3.5 seconds. The locked screen ignores ordinary keys, labels the left softkey Unlock, and unlocks only when * follows Unlock within 1.5 seconds. A failed or late second key clears the arm. Security-keyguard code entry is not claimed; Security level remains a separate local preference with no secret collection.
