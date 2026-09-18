@@ -933,3 +933,6 @@ The deep audit explicitly targets live v0.212, so its repeated claims were check
 - **Visual/wrapper 110–118:** native assets, clipped accessibility feedback, and ARIA key names are retained. Active-home visual blocks, exact transition timing, larger invisible touch targets, and documented desktop keyboard mapping are new open polish units. Claims tied to “common stock” light themes do not override the supplied Black theme target.
 
 This disposition does not mark the deep audit wholly complete. It extracts its genuine delta and preserves explicit resumption conditions without reopening findings already closed after v0.212.
+
+## Ground-Up v0.229 · FM headset antenna dependency
+Deep-audit new finding 82 is closed. Radio detail now shows whether the selected accessory provides a Headset antenna. Switching FM on is blocked with a compatible-headset prompt unless Settings > Accessories selects Headset; switching off remains available. Frequency and saved-station metadata stay local, and station scan remains unavailable without FM hardware.
