@@ -904,3 +904,6 @@ Audit finding 14 is closed for states the offline recreation can honestly know. 
 
 ## Ground-Up v0.223 · assignable standby navigation shortcuts
 Audit finding 13 is closed. My shortcuts now exposes persistent assignments for navigation Up, Down, Left, and Right in addition to the two selection keys. Standby D-pad directions immediately open their configured local route. Reset restores Calendar / Names / Messages / Notes for navigation and Organiser / Names for selection keys.
+
+## Ground-Up v0.224 · Back, Exit, and End route verification
+Audit finding 3 is closed by verified existing behavior. Menu labels the right selection key Exit and returns directly to standby. App, detail, catalog, and action levels label it Back and unwind exactly one level. The red End key clears open options and jumps directly to standby from menu, app, detail, catalog, or editor state. This release records the depth replay; no routing source change was needed.
