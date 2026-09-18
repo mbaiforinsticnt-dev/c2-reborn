@@ -155,7 +155,8 @@ let countdownRemaining=60,countdownEndAt=0,countdownTimer=0;
 function countdownText(){let sec=Math.max(0,Math.ceil((countdownEndAt?countdownEndAt-Date.now():countdownRemaining*1000)/1000));return '00:'+String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')}
 let stopwatchStartedAt=0,stopwatchElapsed=0,stopwatchTimer=0;
 function stopwatchText(ms){let t=Math.floor(ms/100),d=t%10,sec=Math.floor(t/10)%60,min=Math.floor(t/600)%60,h=Math.floor(t/36000);return String(h).padStart(2,'0')+':'+String(min).padStart(2,'0')+':'+String(sec).padStart(2,'0')+'.'+d}
-let textKey='',textKeyAt=0,textKeyIndex=0,textUpper=false,inputMode='abc';
+let textKey='',textKeyAt=0,textKeyIndex=0,textUpper=false,inputMode='abc',symbolReturn=null;
+const textSymbols=['.',',','?','!','@','-','_','(',')',':',';'];
 const multiTap={'1':'.,?!1','2':'abc2','3':'def3','4':'ghi4','5':'jkl5','6':'mno6','7':'pqrs7','8':'tuv8','9':'wxyz9','0':' '};
 function enterMultiTap(key){let now=Date.now(),chars=multiTap[key];if(!chars)return;if(textUpper)chars=chars.toUpperCase();if(key===textKey&&now-textKeyAt<900){textKeyIndex=(textKeyIndex+1)%chars.length;actionValue=actionValue.slice(0,-1)+chars[textKeyIndex]}else{textKey=key;textKeyIndex=0;actionValue+=chars[0]}textKeyAt=now}
 let collectionIndex=0;
@@ -163,6 +164,7 @@ let selected=0,view='idle',optionsOpen=false,optionSel=0,submenuSel=0,menuMode=p
 function renderAction(){
  const box=(title,body,help,status='')=>`<div class="actionEditor">${title?`<h3>${title}</h3>`:''}${body}<div class="actionHelp">${help}</div>${status?`<div class="actionStatus">${status}</div>`:''}</div>`;
  switch(actionType){
+  case 'symbols': return box('Special characters',`<div class="actionValue">${textSymbols[Number(actionValue)]}</div>`,'Up/Down changes · Select inserts · Back cancels');
   case 'usbmode': return box('USB data cable',`<div class="actionValue">${['Ask on connection','PC Suite','Mass storage'][Number(actionValue)]}</div>`,'Up/Down changes · Select saves offline preference');
   case 'packetdata': return box('Packet data',`<div class="actionValue">${['When needed','Always online','Off'][Number(actionValue)]}</div>`,'Up/Down changes · Select saves offline preference');
   case 'accessory': return box('Default accessory',`<div class="actionValue">${['No accessory','Headset','Handsfree','TTY'][Number(actionValue)]}</div>`,'Up/Down changes · Select saves offline preference');
@@ -263,6 +265,7 @@ function showKeyResponse(key,response){
 }
 function handleActionArrow(key){
  const step=key==='ArrowDown'?1:-1;
+ if(actionType==='symbols'){actionValue=String((Number(actionValue)+(key==='ArrowDown'?1:textSymbols.length-1))%textSymbols.length);return 'special character '+textSymbols[Number(actionValue)]}
  if(actionType==='defaultconfig'){actionValue=actionValue==='0'?'1':'0';return 'default configuration '+['None','Personal configuration'][Number(actionValue)]}
  if(actionType==='accesspoint'){actionValue=actionValue==='0'?'1':'0';return 'preferred access point '+['None','Packet data'][Number(actionValue)]}
  if(actionType==='contactmemory'){actionValue=actionValue==='0'?'1':'0';return 'contact memory '+['Phone','Phone and SIM'][Number(actionValue)]}
@@ -331,6 +334,7 @@ function activateTimedAction(){
  }
 }
 function saveAction(){
+ if(actionType==='symbols'&&symbolReturn){let picked=textSymbols[Number(actionValue)],r=symbolReturn;actionType=r.type;actionStatus=r.status;actionValue=r.value+picked;symbolReturn=null;textKey='';view='action';return 'inserted special character '+picked}
  const choices={wallpaper:['Theme default','Analog clock','Menu background'],fontcolour:['Automatic','White','Black','Blue'],profile:['General','Silent','Meeting','Outdoor','My style 1','My style 2','Flight'],theme:['Black','Dark','Light','Nokia']};
  if(actionType==='gotodate'){let d=new Date();d.setDate(d.getDate()+Number(actionValue||0));phoneState.calendarFocus=d.toISOString().slice(0,10);return finishAction('opened calendar date '+phoneState.calendarFocus)}
  if(actionType==='defaultconfig'){phoneState.defaultConfig=['None','Personal configuration'][Number(actionValue)];return finishAction('saved default configuration '+phoneState.defaultConfig)}
@@ -573,7 +577,7 @@ function handleHardwareKey(key){
   else if(optionsOpen&&view==='viewDialog'){back();response='returned to Options'}
   else if(optionsOpen){back();response='closed Options'}
   else if(view==='catalog'){view='app';draw();response='returned to Applications'}
-  else if(view==='action'){if(actionType==='countdown'&&countdownEndAt){countdownRemaining=Math.max(0,Math.ceil((countdownEndAt-Date.now())/1000));countdownEndAt=0;clearInterval(countdownTimer);countdownTimer=0}if(actionType==='stopwatch'&&stopwatchStartedAt){stopwatchElapsed+=Date.now()-stopwatchStartedAt;stopwatchStartedAt=0;clearInterval(stopwatchTimer);stopwatchTimer=0}view='detail';draw();response='returned to '+submenus[menu[selected][0]][submenuSel]}
+  else if(view==='action'){if(actionType==='symbols'&&symbolReturn){let r=symbolReturn;actionType=r.type;actionStatus=r.status;actionValue=r.value;symbolReturn=null;textKey='';draw();response='closed special characters';showKeyResponse(key,response);return}if(actionType==='countdown'&&countdownEndAt){countdownRemaining=Math.max(0,Math.ceil((countdownEndAt-Date.now())/1000));countdownEndAt=0;clearInterval(countdownTimer);countdownTimer=0}if(actionType==='stopwatch'&&stopwatchStartedAt){stopwatchElapsed+=Date.now()-stopwatchStartedAt;stopwatchStartedAt=0;clearInterval(stopwatchTimer);stopwatchTimer=0}view='detail';draw();response='returned to '+submenus[menu[selected][0]][submenuSel]}
   else if(view==='detail'){view='app';draw();response='returned to '+menu[selected][0]}
   else if(view==='app'){back();response='returned to Menu'}
   else if(view==='menu'){view='idle';draw();response='exited Menu to offline idle screen'}
@@ -591,7 +595,8 @@ function handleHardwareKey(key){
   else response='numeric action not evidenced in this state';
  }
  else if(key==='Star'){
-  if(view==='action'&&(actionType==='dial'||actionType==='voicemail'||actionType==='messagecentre'||actionType==='ownnumber'||actionType==='address'||actionType==='bookmark'||actionType==='browserhome'||actionType==='servicecommand')){actionValue=actionValue.slice(0,-1);if((actionType==='address'||actionType==='bookmark')&&actionValue.length<7)actionValue='http://';draw();response='deleted '+actionType+' character'}
+  if(isLetterEntry()){symbolReturn={type:actionType,status:actionStatus,value:actionValue};actionType='symbols';actionStatus='';actionValue='0';textKey='';draw();response='opened special characters'}
+  else if(view==='action'&&(actionType==='dial'||actionType==='voicemail'||actionType==='messagecentre'||actionType==='ownnumber'||actionType==='address'||actionType==='bookmark'||actionType==='browserhome'||actionType==='servicecommand')){actionValue=actionValue.slice(0,-1);if((actionType==='address'||actionType==='bookmark')&&actionValue.length<7)actionValue='http://';draw();response='deleted '+actionType+' character'}
   else if(view==='action'&&actionType==='welcomenote'){actionValue=actionValue.slice(0,-1);textKey='';draw();response='deleted welcome-note character'}
   else if(view==='action'&&actionType==='edittodo'){actionValue=actionValue.slice(0,-1);textKey='';draw();response='deleted to-do character'}
   else if(view==='action'&&actionType==='editcalendar'&&actionStatus.startsWith('body:')){let [date,body='']=actionValue.split('\t');actionValue=date+'\t'+body.slice(0,-1);textKey='';draw();response='deleted calendar character'}
