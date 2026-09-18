@@ -874,3 +874,6 @@ Reviewed the 20-item 2026-09-18 external audit against the build and evidence hi
 18. **Disputed for this variant:** `Music player` is the supplied firmware menu string. Generic-guide `Media player` does not override variant firmware evidence.
 19. **Confirmed and retained:** LCD internal geometry remains 240×320.
 20. **Fixed:** visible `key response ready`, `controller ready`, and controller scaffold traces were removed from the phone presentation. Key response text remains in clipped live regions for accessibility and automated verification, not Series 40 UI.
+
+## Ground-Up v0.214 · cold-start standby and context softkeys
+Audit findings 2 and the cold-start portion of 14 are closed. A fresh page now starts on the offline standby screen rather than the main menu. Standby reads the persistent left and right selection-key assignments and labels the centre key Menu; the menu's Options / Select / Exit labels appear only after opening Menu. No operator, signal, or carrier state is fabricated. The red End route continues to jump directly to standby from nested screens.
