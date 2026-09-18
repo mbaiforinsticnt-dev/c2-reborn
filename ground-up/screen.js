@@ -155,7 +155,7 @@ let countdownRemaining=60,countdownEndAt=0,countdownTimer=0;
 function countdownText(){let sec=Math.max(0,Math.ceil((countdownEndAt?countdownEndAt-Date.now():countdownRemaining*1000)/1000));return '00:'+String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')}
 let stopwatchStartedAt=0,stopwatchElapsed=0,stopwatchTimer=0;
 function stopwatchText(ms){let t=Math.floor(ms/100),d=t%10,sec=Math.floor(t/10)%60,min=Math.floor(t/600)%60,h=Math.floor(t/36000);return String(h).padStart(2,'0')+':'+String(min).padStart(2,'0')+':'+String(sec).padStart(2,'0')+'.'+d}
-let textKey='',textKeyAt=0,textKeyIndex=0,textUpper=false;
+let textKey='',textKeyAt=0,textKeyIndex=0,textUpper=false,inputMode='abc';
 const multiTap={'1':'.,?!1','2':'abc2','3':'def3','4':'ghi4','5':'jkl5','6':'mno6','7':'pqrs7','8':'tuv8','9':'wxyz9','0':' '};
 function enterMultiTap(key){let now=Date.now(),chars=multiTap[key];if(!chars)return;if(textUpper)chars=chars.toUpperCase();if(key===textKey&&now-textKeyAt<900){textKeyIndex=(textKeyIndex+1)%chars.length;actionValue=actionValue.slice(0,-1)+chars[textKeyIndex]}else{textKey=key;textKeyIndex=0;actionValue+=chars[0]}textKeyAt=now}
 let collectionIndex=0;
@@ -521,6 +521,7 @@ function activateOwnNumbers(control){
  if(detailSel<phoneState.ownNumbers.length){appText.textContent='Own number: '+phoneState.ownNumbers[detailSel];return 'opened own number '+(detailSel+1)}
  appText.textContent=control==='Memory status'?phoneState.ownNumbers.length+' own number(s) stored locally':'No own numbers stored';return 'showed own numbers '+control.toLowerCase()
 }
+function isLetterEntry(){return view==='action'&&(['dictionary','messagesearch','servicecommand','note','todo','editnote','edittodo','welcomenote'].includes(actionType)||(actionType==='contact'&&actionStatus==='name')||(actionType==='editcontact'&&actionStatus.startsWith('name:'))||(actionType==='editdraft'&&actionStatus.startsWith('body:'))||(actionType==='editcalendar'&&actionStatus.startsWith('body:'))||(actionType==='message'&&actionStatus==='body')||(actionType==='calendar'&&actionStatus==='body'))}
 function insertHeldDigit(d){
  if(actionType==='message'){let [to,body='']=actionValue.split('\t');if(actionStatus==='body')body+=d;else to+=d;actionValue=to+'\t'+body}
  else if(actionType==='contact'){let [name,number='']=actionValue.split('\t');if(actionStatus==='name')name+=d;else number+=d;actionValue=name+'\t'+number}
@@ -535,6 +536,8 @@ function insertHeldDigit(d){
 function handleHardwareKey(key){
  let response='';
  if(/^Long[2-9]$/.test(key)&&view==='action'&&insertHeldDigit(key.slice(4))){showKeyResponse(key,'inserted digit '+key.slice(4));return}
+ if(/^[0-9]$/.test(key)&&inputMode==='123'&&view==='action'&&insertHeldDigit(key)){showKeyResponse(key,'number mode digit '+key);return}
+ if(key==='LongHash'&&isLetterEntry()){inputMode=inputMode==='abc'?'123':'abc';textUpper=false;textKey='';draw();showKeyResponse(key,'input mode '+inputMode);return}
  if(key==='LongHash'&&view==='idle'){phoneState.profile=phoneState.profile==='Silent'?'General':'Silent';savePhoneState();draw();showKeyResponse(key,'profile '+phoneState.profile);return}
  if(key==='Long0'&&view==='idle'){selected=3;submenuSel=submenus.Browser.indexOf('Home');view='detail';detailSel=0;draw();showKeyResponse(key,'opened offline browser home');return}
  if(/^Long[2-9]$/.test(key)&&view==='idle'){let digit=key.slice(4),number=phoneState.speedDials?.[digit];if(phoneState.speedDial&&number){view='action';selected=1;submenuSel=submenus.Contacts.indexOf('Speed dials');actionType='dial';actionValue=number;actionStatus='';draw();response='opened speed dial '+digit+' in offline dialler'}else response='speed dial '+digit+' unavailable';showKeyResponse(key,response);return}
@@ -604,7 +607,7 @@ function handleHardwareKey(key){
  }
  else if(key==='Hash'){
   if(view==='detail'&&(submenus[menu[selected][0]][submenuSel]==='Drafts'||submenus[menu[selected][0]][submenuSel]==='Sent items'||submenus[menu[selected][0]][submenuSel]==='Saved items')){let status=submenus[menu[selected][0]][submenuSel]==='Drafts'?'draft':'sent',a=phoneState.messages.filter(x=>x.status===status);if(detailSel<a.length){a[detailSel].status='saved';savePhoneState();draw();response='moved message to Saved items locally'}else response='no message selected'}
-  else if(view==='action'&&(actionType==='note'||actionType==='todo'||actionType==='editnote'||actionType==='edittodo'||actionType==='welcomenote'||(actionType==='contact'&&actionStatus==='name')||(actionType==='editcontact'&&actionStatus.startsWith('name:'))||(actionType==='editdraft'&&actionStatus.startsWith('body:'))||(actionType==='editcalendar'&&actionStatus.startsWith('body:'))||(actionType==='message'&&actionStatus==='body')||(actionType==='calendar'&&actionStatus==='body'))){textUpper=!textUpper;textKey='';draw();response='note case '+(textUpper?'upper':'lower')}
+  else if(isLetterEntry()){inputMode='abc';textUpper=!textUpper;textKey='';draw();response='letter case '+(textUpper?'upper':'lower')}
   else if(view==='action'&&actionType==='calculator'&&actionValue&&!/[+-]$/.test(actionValue)){actionValue+='-';draw();response='calculator subtract'}
   else if(view==='menu'&&!optionsOpen){selected=Math.min(menu.length-1,selected+9);draw();response=`selected ${menu[selected][0]}`}
   else response='hash action not evidenced in this state';
