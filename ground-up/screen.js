@@ -67,7 +67,7 @@ function detailModel(section,item){
  if(item==='Call duration')return {lead:'Offline calls are not connected',rows:['Last call: 00:00','Dialled calls: '+phoneState.callLog.length,'Received calls: 0','All calls: '+phoneState.callLog.length]};
  if(item==='Connectivity')return {lead:'Offline · Bluetooth '+(phoneState.bluetooth?'On':'Off'),rows:['Bluetooth: '+(phoneState.bluetooth?'On':'Off'),'Packet data: '+phoneState.packetData,'USB data cable: '+phoneState.usbMode,'Network status']};
  if(item==='Security')return {lead:'Security · '+phoneState.securityLevel,rows:['PIN code request: '+(phoneState.pinRequest?'On':'Off'),'Security level','Access codes: Not exposed','Certificates: None loaded']};
- if(item==='Radio')return {kind:'offline',lead:(phoneState.radioOn?'FM '+phoneState.radioFrequency+' MHz':'Radio off')+' · offline',rows:['Set frequency','Saved stations: '+phoneState.radioStations.length,'Save current station','Search unavailable offline',phoneState.radioOn?'Switch off':'Switch on']};
+ if(item==='Radio')return {kind:'offline',lead:(phoneState.radioOn?'FM '+phoneState.radioFrequency+' MHz':'Radio off')+' · '+(phoneState.accessory==='Headset'?'Headset antenna':'No headset antenna'),rows:['Set frequency','Saved stations: '+phoneState.radioStations.length,'Save current station','Search unavailable offline',phoneState.radioOn?'Switch off':'Switch on']};
  if(item==='Equaliser')return {...endpointModels.Equaliser,lead:phoneState.equaliser+' · active',rows:['Normal','Pop','Rock','Jazz']};
  if(item==='Lights')return {lead:'Display light · level '+phoneState.lightLevel,rows:['Display light: '+phoneState.lightLevel,'Keypad light: '+(phoneState.keypadLight?'On':'Off'),'Notifications: '+(phoneState.notificationLight?'On':'Off'),'Restore default']};
  if(item==='Display')return {lead:phoneState.theme+' · '+phoneState.fontColour,rows:['Wallpaper: '+phoneState.wallpaper,'Home screen: '+(phoneState.homeScreen?'On':'Off'),'Font colour','Main menu view']};
@@ -470,7 +470,7 @@ function activateRadio(control){
  if(control.startsWith('Saved stations:')){appText.textContent=phoneState.radioStations.length?phoneState.radioStations.map((x,i)=>(i+1)+'. '+x+' MHz').join(' · '):'No local radio stations saved';return 'showed saved radio stations'}
  if(control==='Save current station'){if(!phoneState.radioStations.includes(phoneState.radioFrequency))phoneState.radioStations.unshift(phoneState.radioFrequency);phoneState.radioStations=phoneState.radioStations.slice(0,20);savePhoneState();draw();return 'saved current radio station '+phoneState.radioFrequency}
  if(control==='Search unavailable offline'){appText.textContent='Station search needs FM radio hardware · no scan started';return 'showed radio search boundary'}
- phoneState.radioOn=!phoneState.radioOn;savePhoneState();draw();return 'radio '+(phoneState.radioOn?'on':'off')+' locally'
+ if(!phoneState.radioOn&&phoneState.accessory!=='Headset'){appText.textContent='Connect a compatible headset to use its FM antenna.';return 'radio blocked without headset antenna'}phoneState.radioOn=!phoneState.radioOn;savePhoneState();draw();return 'radio '+(phoneState.radioOn?'on':'off')+' locally'
 }
 function activateGallery(control){
  if(control.startsWith('Photos:')){submenuSel=0;detailSel=0;draw();return 'opened Photos inventory'}
