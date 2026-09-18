@@ -892,3 +892,6 @@ Audit finding 5 is closed for the implemented traditional input path. In a lette
 
 ## Ground-Up v0.219 · special-character picker
 Audit finding 6 is closed for traditional input. In a letter field, short * opens a local special-character picker instead of deleting text, changing case, or typing a literal asterisk. Up/Down chooses punctuation, Select inserts it into the original field, and Back cancels without changing the field. Key 1 retains its traditional punctuation cycle. Predictive-mode candidate cycling remains part of the separate predictive-input finding, not claimed here.
+
+## Ground-Up v0.220 · camera directional semantics
+Audit findings 10 and 17 are closed for the camera/video detail screens. The camera centre route is labelled Capture; Up/Down changes and persists a bounded 1×–4× zoom state; Left/Right switches to Video; and Video Left/Right switches back to Camera. The screen continues to state that camera hardware is unavailable, so Capture stores reference settings metadata only rather than fabricating an image. Video Record remains an explicit unavailable-hardware boundary.
