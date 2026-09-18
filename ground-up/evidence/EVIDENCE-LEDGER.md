@@ -913,3 +913,23 @@ Deep-audit new findings 85 and 88 are closed for the in-page offline runtime. An
 
 ## Ground-Up v0.227 · automatic keyguard
 Deep-audit new finding 40 is closed. Settings > Phone exposes persistent Automatic keyguard choices Off, 30 seconds, and 1 minute. When enabled, inactivity locks after the configured standby delay; hardware events reset inactivity. Automatic locking reuses the verified locked screen and Unlock+* route. Security-code keyguard remains unclaimed.
+
+## Ground-Up v0.228 · 118-point deep-audit delta disposition
+The deep audit explicitly targets live v0.212, so its repeated claims were checked against current v0.227 rather than accepted as current defects. New or materially expanded findings are disposed as follows:
+
+- **Geometry/typography 11–16:** native theme assets already own LCD/status/softkey/focus geometry; exact Nokia font is not present in supplied evidence. Narrow list scrollbar and positional counters remain open for a visual evidence pass. Generic audit measurements do not override extracted theme geometry.
+- **Menu 28–30:** all 11 firmware-derived entries remain reachable over two pages and parent selection persists. Exact cursor edge wrap is parked for physical RM-721 evidence rather than invented.
+- **Softkey/dialog 34–36:** contextual labels and screen-level action confirmations are implemented; floating Options styling remains a visual refinement, not a dead route.
+- **Keyguard/power 39–42:** automatic keyguard closed in v0.227. Security-code keyguard, locked incoming-call behavior, and power-off/on need security/call/power state models and remain open. Long End currently has no power-state model.
+- **Traditional text 43–52:** multi-tap, timeout, 0, 1, symbols, short/held #, and held digits are implemented. Writing-language key maps and cursor movement remain open; cursor movement requires a multi-field editor-buffer refactor, and the first narrow attempt was reverted before commit.
+- **Predictive 53–60:** remains held pending target dictionary/candidate evidence, as already disclosed.
+- **Messaging 61–66:** character/segment count, richer editor Options, distinct flash/audio message types, and settings subtrees are genuinely new open depth. Existing folder records and local conversations are retained. Carrier-specific option lists are benchmarks, not target proof.
+- **Calls 67–72:** offline dialing/logging, speed dial, settings, and history exist. Connected-call timing/volume/end state and additional network-service settings remain open; no live call is fabricated.
+- **Media 73–84:** camera direction/labels are closed in v0.220–v0.221. Video recording, player backgrounding, and track controls remain unavailable without playable media/camera sources. Radio headset dependency/search/background controls and deeper recorder playback are new open depth.
+- **Organiser 85–90:** alarm fire/snooze closed in v0.226. Selected repeat days and radio-as-alarm remain open. Existing countdown/stopwatch advance; lap/interval depth remains openly bounded.
+- **Settings 91–100:** persistent profiles/themes/display/shortcuts/backup exist. Timed profiles, richer Bluetooth device state, global translated language strings, and two reset scopes are new open depth. Network/hardware state will not be fabricated.
+- **Web/network 101–104:** existing variant labels are retained; held 0 and authentic offline boundaries are implemented; working web remains owner-deferred.
+- **Persistence/input 105–109:** durable settings and local collections persist while transient view state does not. One controller owns 650 ms hold classification. Exact key-repeat and multi-tap timing remain parked for physical evidence.
+- **Visual/wrapper 110–118:** native assets, clipped accessibility feedback, and ARIA key names are retained. Active-home visual blocks, exact transition timing, larger invisible touch targets, and documented desktop keyboard mapping are new open polish units. Claims tied to “common stock” light themes do not override the supplied Black theme target.
+
+This disposition does not mark the deep audit wholly complete. It extracts its genuine delta and preserves explicit resumption conditions without reopening findings already closed after v0.212.
