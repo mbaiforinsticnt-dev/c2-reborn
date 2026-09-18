@@ -855,22 +855,22 @@ Added MP3 derivatives for all 57 supplied AAC firmware tones. Tone preview check
 Reviewed the 20-item 2026-09-18 external audit against the build and evidence hierarchy. Current dispositions:
 
 1. **Retained / already correct:** RM-722/059F5P7 menu order remains explicitly labelled inference below physical RM-721 evidence; it is not claimed as definitive RM-721 order.
-2. **Accepted, open:** standby softkey labels need configured functions rather than menu labels.
-3. **Partly implemented, open:** End already jumps directly to idle; Back versus Exit labels need a full context pass.
-4. **Accepted, open:** timed Menu+* lock and Unlock+* unlock are not yet implemented.
-5. **Accepted, open:** short-# case and long-# mode choice need distinct handling.
-6. **Accepted, open:** text-entry * needs punctuation/symbol behavior rather than generic handling.
+2. **Closed in v0.214:** standby uses configured selection-key labels and Menu.
+3. **Closed in v0.224:** depth replay verifies Back, Exit, and End semantics.
+4. **Closed in v0.215:** timed ordinary keyguard implemented; security-code keyguard not claimed.
+5. **Closed in v0.218:** short case and held mode selection are distinct.
+6. **Closed in v0.219 for traditional input:** * opens the special-character picker.
 7. **Accepted, parked behind higher-confidence interaction work:** predictive input is not implemented.
-8. **Accepted, open:** held numeric keys in text entry need direct digit insertion.
-9. **Accepted, open:** standby holds for 0, #, and assigned speed dials need context-specific routes.
-10. **Accepted, partly implemented:** camera and media directional behavior needs a complete per-app pass.
+8. **Closed in v0.217:** held digits insert directly in letter fields.
+9. **Closed in v0.216:** standby hold routes implemented.
+10. **Camera closed in v0.220; playable media remains unavailable:** no track controls are fabricated.
 11. **Accepted, open:** media background/close distinction needs playable-media state before it can be faithfully represented.
 12. **Already implemented:** Options > Main menu view provides and persists single, list, grid, and labelled-grid modes.
-13. **Partly implemented, open:** left/right idle shortcuts are assignable and persistent; navigation-direction assignment is missing.
-14. **Accepted, open:** idle status needs a fuller state-driven indicator model; fabricated carrier or signal data will not be added without evidence.
+13. **Closed in v0.223:** selection and navigation-direction assignments persist.
+14. **Closed for knowable offline state in v0.222:** unsupported network/hardware indicators remain unclaimed.
 15. **Retained:** names follow the supplied firmware/menu evidence; physical RM-721 evidence remains able to override them.
-16. **Accepted, partly implemented:** centre Enter is independent in the event model, but labels/actions need a screen-context pass.
-17. **Accepted, open:** camera Capture/Record and directional semantics need a focused pass.
+16. **Camera/video context closed in v0.221; other implemented screens retain their action labels.**
+17. **Closed in v0.220-v0.221:** Capture/Record and directional semantics implemented.
 18. **Disputed for this variant:** `Music player` is the supplied firmware menu string. Generic-guide `Media player` does not override variant firmware evidence.
 19. **Confirmed and retained:** LCD internal geometry remains 240×320.
 20. **Fixed:** visible `key response ready`, `controller ready`, and controller scaffold traces were removed from the phone presentation. Key response text remains in clipped live regions for accessibility and automated verification, not Series 40 UI.
