@@ -889,3 +889,6 @@ Audit finding 8 is closed. In multi-tap letter fields, holding 2–9 inserts tha
 
 ## Ground-Up v0.218 · short and held # text behavior
 Audit finding 5 is closed for the implemented traditional input path. In a letter field, short # changes character case only. Held # switches explicitly between abc and 123 input modes; in 123 mode ordinary number keys insert digits, and holding # returns to letters. Standby held # remains the separate Silent-profile shortcut. Writing-language selection remains tied to the existing Phone language setting rather than fabricated inside this bounded mode chooser.
+
+## Ground-Up v0.219 · special-character picker
+Audit finding 6 is closed for traditional input. In a letter field, short * opens a local special-character picker instead of deleting text, changing case, or typing a literal asterisk. Up/Down chooses punctuation, Select inserts it into the original field, and Back cancels without changing the field. Key 1 retains its traditional punctuation cycle. Predictive-mode candidate cycling remains part of the separate predictive-input finding, not claimed here.
