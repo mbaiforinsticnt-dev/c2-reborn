@@ -907,3 +907,6 @@ Audit finding 13 is closed. My shortcuts now exposes persistent assignments for 
 
 ## Ground-Up v0.224 · Back, Exit, and End route verification
 Audit finding 3 is closed by verified existing behavior. Menu labels the right selection key Exit and returns directly to standby. App, detail, catalog, and action levels label it Back and unwind exactly one level. The red End key clears open options and jumps directly to standby from menu, app, detail, catalog, or editor state. This release records the depth replay; no routing source change was needed.
+
+## Ground-Up v0.226 · alarm firing and snooze runtime
+Deep-audit new findings 85 and 88 are closed for the in-page offline runtime. An enabled alarm now fires when the phone clock reaches its saved time, respecting Off, Daily, and Weekdays repeat modes. The alarm replaces the screen with tone identity and Stop / Snooze labels. Stop (or End) dismisses it and disables one-time alarms; Snooze dismisses and schedules a five-minute repeat. Reloading the browser is equivalent to powering down this transient ringing/snooze runtime; the saved alarm configuration persists. Selected-day repeat and alarm-while-powered-off behavior remain unclaimed.
