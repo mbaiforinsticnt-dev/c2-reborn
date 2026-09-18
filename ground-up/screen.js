@@ -521,8 +521,20 @@ function activateOwnNumbers(control){
  if(detailSel<phoneState.ownNumbers.length){appText.textContent='Own number: '+phoneState.ownNumbers[detailSel];return 'opened own number '+(detailSel+1)}
  appText.textContent=control==='Memory status'?phoneState.ownNumbers.length+' own number(s) stored locally':'No own numbers stored';return 'showed own numbers '+control.toLowerCase()
 }
+function insertHeldDigit(d){
+ if(actionType==='message'){let [to,body='']=actionValue.split('\t');if(actionStatus==='body')body+=d;else to+=d;actionValue=to+'\t'+body}
+ else if(actionType==='contact'){let [name,number='']=actionValue.split('\t');if(actionStatus==='name')name+=d;else number+=d;actionValue=name+'\t'+number}
+ else if(actionType==='editdraft'){let [to,body='']=actionValue.split('\t');if(actionStatus.startsWith('body:'))body+=d;else to+=d;actionValue=to+'\t'+body}
+ else if(actionType==='editcontact'){let [name,number='']=actionValue.split('\t');if(actionStatus.startsWith('name:'))name+=d;else number+=d;actionValue=name+'\t'+number}
+ else if(actionType==='calendar'){let [offset,body='']=actionValue.split('\t');if(actionStatus==='body')body+=d;else return false;actionValue=offset+'\t'+body}
+ else if(actionType==='editcalendar'){let [date,body='']=actionValue.split('\t');if(actionStatus.startsWith('body:'))body+=d;else return false;actionValue=date+'\t'+body}
+ else if(['dictionary','messagesearch','servicecommand','note','todo','editnote','edittodo','welcomenote'].includes(actionType))actionValue+=d;
+ else return false;
+ textKey='';draw();return true
+}
 function handleHardwareKey(key){
  let response='';
+ if(/^Long[2-9]$/.test(key)&&view==='action'&&insertHeldDigit(key.slice(4))){showKeyResponse(key,'inserted digit '+key.slice(4));return}
  if(key==='LongHash'&&view==='idle'){phoneState.profile=phoneState.profile==='Silent'?'General':'Silent';savePhoneState();draw();showKeyResponse(key,'profile '+phoneState.profile);return}
  if(key==='Long0'&&view==='idle'){selected=3;submenuSel=submenus.Browser.indexOf('Home');view='detail';detailSel=0;draw();showKeyResponse(key,'opened offline browser home');return}
  if(/^Long[2-9]$/.test(key)&&view==='idle'){let digit=key.slice(4),number=phoneState.speedDials?.[digit];if(phoneState.speedDial&&number){view='action';selected=1;submenuSel=submenus.Contacts.indexOf('Speed dials');actionType='dial';actionValue=number;actionStatus='';draw();response='opened speed dial '+digit+' in offline dialler'}else response='speed dial '+digit+' unavailable';showKeyResponse(key,response);return}
