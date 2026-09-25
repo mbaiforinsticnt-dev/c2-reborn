@@ -46,7 +46,7 @@ App icons in build (firmware PNGs from early passes; pack numbers not yet record
 | Pack # | Size | Identified as | Potential build slot | Status / blocker |
 |---|---|---|---|---|
 | p1058 / p1061 / p1062 | 56×56 | Green check marks — SQUARE badges | cbOk slot CLOSED 25 Sep: the build's cb/cbOk check badge is dead CSS - defined once, never rendered anywhere. No badge on screen to match. If a check badge is ever added, these are the candidates (verify shape against a firmware screen first) |
-| p0456–p0463 | 30×30 | Radio-button states: hollow ring (unselected), ring+dot (selected); white variants for dark highlight rows | radioDot CSS circles | VERIFIED on firmware (Menu→Options→Main menu view); build CSS already structurally identical — swap deferred as low-value chrome |
+| p0456–p0463 | 30×30 | TWO families: p0456–p0459 = checkboxes (empty / green-check, plain + grey-border), p0460–p0463 = radios (ring+pale center unselected / white ring+black core selected, + glow variants) | multi-mark lists (p0456/p0457) + ALL single-select radio pickers (p0460/p0461) | BOTH SWAPPED into build: radios passes 144+146, checkboxes pass 145 [LCD s144k/s144l + s145o/s145p] |
 | p1043 | 56×56 | Memory card + transfer arrows | future "card busy/transfer" state | VERIFIED family member |
 | p0464–p0467 | 56×56 | Memory card + hourglass / warning / lock / "?" | future card-state icons | VERIFIED family members |
 | p0900 | — | Floppy disk | SYNCcreate (Create backup) | CANDIDATE (montage-verified) |
@@ -164,3 +164,9 @@ Stale entries corrected this pass: p0771 (was SYNCdata), p0898/p0746 (were copyi
 - p0456 (30x30, flat grey empty box) = checkbox UNMARKED; p0457 (30x30, grey box + green check) = checkbox MARKED [LCD s145p, green-cluster carve + alpha-masked MSE + visual montage]. p0458/p0459 = grey-border variants (heavier frame, not what the LCD shows).
 - Build swapped off drawn art in all three multi-mark lists: contentoptions ("Content options", was CSS radioDot circles), gotocheck (Go to > Select options, was CSS box + &#10003;), gotoapps (Go to > Application list picker, same CSS box). All now use CHECK_OFF=p0456 / CHECK_ON=p0457 (28px in shortcutRows, 18px in plain rows). gotocheck keeps GDfold for the greyed "Application list" row - matches the firmware gold glyph.
 - Build's contentoptions radioDot CSS class now unused by that page (left in place; other .opt radio dots remain for single-select semantics - future pass candidates for p0460/p0461).
+
+## Pass 146 — radios into the remaining single-select pickers (HEAD 7ac4994)
+- Swept the last drawn radio dots: Menu > Options > Main menu view radioPanel (List/Grid/Grid with labels/Tab) and the generic submenuPanel radios (Gallery "Type of view" + gallery sort Ascending/Descending). All single-select semantics - same pattern as the pass-144 On/Off radio lists [LCD s144k/s144l] and the earlier Main-menu-view firmware verification.
+- Both render sites now use RADIO_ON=p0461 / RADIO_OFF=p0460 at 18px (.opt .optDot), replacing the 8px CSS radioDot circles. Proof: shot146_menu.png, shot146_gal.png.
+- After this pass the CSS .radioDot class has no render sites left (dead CSS, left in place per removals rule). All mark indicators in the build are now firmware assets: radios p0460/p0461, checkboxes p0456/p0457.
+- Also fixes pass 145's lost edit: the p0456–p0463 family line above is now actually corrected (the pass-145 write only appended its section and dropped the line edit).
