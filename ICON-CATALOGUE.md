@@ -228,3 +228,21 @@ Personal info, lcd_s151_5 Multimedia, lcd_s151_6/7 Internet).
 All 11 carved from firmware LCD evidence (/tmp/sweep150/ds/), replacing degraded
 early-pass crops; build slots verified to match the firmware submenu rows exactly.
 All render in the fixed 13x13 .cfIcon box (unchanged layout).
+
+## Pass 152 — Video-detail picker parity (Add detail > Multimedia > Video)
+
+Firmware evidence: lcd_s152vid.png (picker), lcd_s152opengal2.png (Open Gallery target).
+
+- **ICONDSCAM — VERIFIED GENUINE.** Webcam glyph used on the "New video clip" row of the video-detail picker. Firmware lcd_s152vid shows the identical webcam motif on that row; build's 24x24 asset matches the LCD carve (MSE search + visual confirm). Usage check CLOSED.
+- **ICONDSFILM** — reused on the "Open Gallery" row (same filmstrip glyph as the Video menu entry; firmware row icon identical).
+- **videopick page now has 2 rows** (was 1): "Open Gallery" (sel=0, filmstrip) + "New video clip" (sel=1, webcam), matching firmware lcd_s152vid exactly (header on firmware: "New contact" + counter).
+- OK wiring: sel=0 → gallery page with Video clips pre-highlighted (sel=2, counter "3" — matches firmware picker position); sel=1 → videorecorder (unchanged).
+- Injected explicit UP/DOWN toggle for videopick (page missing from navRows chain).
+
+## Pass 153 — Gallery page title fix
+
+Firmware evidence: lcd_s152opengal2.png — header reads "Gallery" with counter "3" (Video clips highlighted).
+
+- Gallery page title rendered `a.length` (row count "9") instead of "Gallery". Fixed: title "Gallery" + counter (sel+1). Verified live: title element "Gallery" + counter, raw+live byte-exact.
+- **Gallery folder badges confirmed against firmware** (lcd_s152opengal2): Images = folder+mountain badge (0619) ✓; Video clips = folder+filmstrip badge (0625) ✓; Music files = folder+PINK note badge (0624) ✓; Memory card row icon 1080; Themes = GALth (firmware: folder+palette badge; row below fold in both shots — queued for visual confirm).
+- Open observation (not a defect without more evidence): firmware picker shows "0 files" subtitles (emulator folders empty); build shows sizes (galFolderSizes). Picker-vs-browser context may differ — left as-is pending firmware evidence of the main Gallery view.
