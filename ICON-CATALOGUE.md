@@ -32,7 +32,7 @@ Living document. Moti via WhatsApp, 25 Sep 2026, 2:08 PM: "all along I hope you 
 | p0621 | 56×56 | Gallery folder: Received files | Gallery Received row | gallery family montage | 126-era |
 | p0617 | 56×56 | Gallery folder: Applications (dice) | Gallery Apps row | gallery family montage | 126-era |
 | p0616 | 56×56 | Boxes / collection | (gallery family member) | gallery family montage | 126-era |
-| 16 smiley faces | ~24×24 | The real C2-01 smiley picker faces, 4×4 grid, firmware order; typed ASCII converts inline | Smiley picker + inline conversion (compose, notes, to-do, cal-note) | emulator Options→Insert symbol→Smiley LCD | 129 |
+| 16 smiley faces | 24×24 | The real C2-01 smiley picker faces, 4×4 grid, EXACT firmware order (pass 156: emulator picker LCD evidence, p0193/0208/0205/0196/0220/0202/0211/0217/0199/0214/0232/0187/0226/0190/0223/0229); typed ASCII converts inline (;-)→wink idx 2) | Smiley picker + inline conversion (compose, notes, to-do, cal-note) | emulator Options→Insert symbol→Smiley LCD (lcd_lcd_smile1/2, 4×4 wrap verified) | 156 |
 | DICT icon | — | Dictionary organiser row icon | Organiser Dictionary row | carved from emulator LCD (`icon_dict.png`) | 109 |
 | RADIO icon | — | Radio app icon | Radio app | carved from emulator LCD (`icon_radio.png`) | 109 |
 
