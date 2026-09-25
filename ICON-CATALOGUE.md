@@ -202,3 +202,15 @@ downscales of genuine firmware pack art:
 
 All 40 assets verified clean in gt149_montage.png and rendering in the Shortcut bar
 links list (shot149_goto.png). Map: /tmp/reborn/gt_map_name.json.
+
+## Pass 150 - contact-field icons restored to genuine firmware art
+
+Evidence: emulator New contact editor + Options > Change type picker (lcd_s150_5/6/9).
+- ICONCFGENERAL/MOBILE/HOME/WORK/VIDEO/INET/FAX: carved from the firmware type-picker
+  rows (borderless), replacing degraded early-pass LCD crops. MOBILE glyph isolated
+  from the framed editor variant (firmware picker draws it borderless).
+- ICONCFPERSON (First/Last name labels): carved from the editor WITH its genuine
+  firmware frame tile.
+- ICONEMAIL (E-mail address label): carved from the editor @ icon.
+All render in the build's fixed 13x13 .cfIcon box (unchanged layout); sources are the
+native LCD carves in /tmp/sweep150/fw/.
