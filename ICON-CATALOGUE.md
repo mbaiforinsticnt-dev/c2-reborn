@@ -39,7 +39,7 @@ Living document. Moti via WhatsApp, 25 Sep 2026, 2:08 PM: "all along I hope you 
 Build slots already keyed by pack number (firmware PNGs in the build from earlier passes; precise firmware meaning recorded where known — to be enriched as passes touch them):
 `0971 0972 0973(pencil) 0806 0879 0909 0571 0692 0915 0568 0661 0570 0614 0622 0724 0415 1056 1066 0557 0715 0703 0528 0558 0569 0580 0521 0599 0562 0589 0572`
 
-App icons in build (firmware PNGs from early passes; pack numbers not yet recorded — backfill pending): Flickr, Calculator, Sudoku, Store, Converter, Facebook, IMs, WARN, TVcab, CHG, sent_items, saved_items, ims, info_messages, serv_commands, 9001–9004, theme GIFs (black/dark/light/nokia).
+App-icon pack-number backfill: DONE 25 Sep pass-160 (see the backfill section below). 11 listIcons slots pixel-exact, 3 app icons visually confirmed as Photoshop carves of pack assets, the rest NAMED (pack yields nothing). Theme GIFs (black/dark/light/nokia) still pending.
 
 ## 2. Verified in pack — candidates awaiting placement or screen evidence
 
@@ -260,3 +260,29 @@ Swaps in index.html (vs pass 153):
 INCIDENT (reported honestly): first 154 publish (commit 6cdec6e4) shipped a partial file (edit script never wrote) - broken images on library rows ~21:18-21:22, caught by live render check, corrected (0adb8a99). Second fix commit (~21:26): MEDarrow p0301 -> p0302 after render check showed left-pointing arrow; p0301=LEFT triangle, p0302=RIGHT triangle, firmware shows RIGHT. Lesson: visually verify montage reads at scale; MSE on cropped carves can mislead on direction.
 Render-verified live ~21:28: Media menu rows match firmware lcd_s154mp exactly; Media submenu Media player row shows p0588 badge icon matching lcd_s154media.
 Live: https://mbaiforinsticnt-dev.github.io/c2-reborn/
+
+## Pass 160 (25 Sep 2026, ~23:00) - app-icon pack-number backfill
+Method: decoded every named build asset, scanned all 1,319 pack PNGs by pixel hash (exact) and masked-MSE at icon size (carves); every non-zero match visually confirmed at full scale (MSE false-positives on sparse assets - p0621/p0169/p1133/p1058 rejected that way).
+
+PIXEL-EXACT listIcons (byte-identical to pack asset, no montage needed):
+- TVcab -> p0939 (30x30)
+- CHG -> p0938 (30x30)
+- sent_items -> p0603 (56x56)
+- saved_items -> p0602 (56x56)
+- ims -> p0582 (56x56)
+- info_messages -> p0584 (56x56)
+- serv_commands -> p0598 (56x56)
+- 9001 -> p0955 (56x56, two gold speech bubbles - same asset as Messaging Conversations row)
+- 9002 -> p0591 (56x56, blue up arrow in grey tray - same asset as Outbox row)
+- 9003 -> p0611 = p0694 (56x56, duplicate assets in pack, identical pixels)
+- 9004 -> p0515 (56x56)
+
+originalAppIcons (Photoshop carves w/ ICC chunk, confirmed against pack at full scale):
+- Calculator -> p0558 (calculator "12" display; MSE 42 vs next-best 200, montage decisive)
+- IMs -> p0582 (orange IM bubble; corroborated by ims listIcons pixel-exact match to same asset)
+- E-mail -> p0575 (blue @ on white)
+
+NAMED - pack yields nothing (build keeps Moti's early-pass assets; games/app-store art lives in JARs/theme resources, not package_c):
+- WARN (red octagon !), Block'd, Flickr, My Nokia, Bounce Tales, Opera Mini, Size converter, Sudoku, Nokia Browser, Snake III, Store, Converter, Brain Champ., Diamond Rush, Web Search (globe+magnifier composite; plain globe = p0639/p0487 but no magnifier variant in pack), Facebook, City Bloxx, World clock (globe+clock; pack globes with wrench p0561 / letter p0871 / upload p0983 / plain p0639 rejected on montage)
+
+Also verified this pass: contentoptions multi-mark CHECK_OFF/CHECK_ON are byte-identical to p0456/p0457 (catalogue pass-145 question fully closed).
