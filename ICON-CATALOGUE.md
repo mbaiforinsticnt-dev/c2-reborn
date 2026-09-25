@@ -214,3 +214,17 @@ Evidence: emulator New contact editor + Options > Change type picker (lcd_s150_5
 - ICONEMAIL (E-mail address label): carved from the editor @ icon.
 All render in the build's fixed 13x13 .cfIcon box (unchanged layout); sources are the
 native LCD carves in /tmp/sweep150/fw/.
+
+## Pass 151 - Add-detail icons restored to genuine firmware art
+
+Evidence: emulator New contact editor > Options > Add detail submenus (lcd_s151_4
+Personal info, lcd_s151_5 Multimedia, lcd_s151_6/7 Internet).
+- Personal info: ICONDSPOSTAL (envelope, bright-component cleaned), ICONDSBDAY
+  (gift), ICONDSNOTE (notepad), ICONDSFORMAL (bowtie), ICONDSNICK (smiley),
+  ICONDSCOMPANY (factory), ICONDSJOB (ID card).
+- Multimedia: ICONDSTONE (red music note, bright-component cleaned), ICONIMAGE
+  (light-blue rectangle), ICONDSFILM (filmstrip).
+- Internet: ICONDSWEB (document + globe). ICONEMAIL already genuine from pass 150.
+All 11 carved from firmware LCD evidence (/tmp/sweep150/ds/), replacing degraded
+early-pass crops; build slots verified to match the firmware submenu rows exactly.
+All render in the fixed 13x13 .cfIcon box (unchanged layout).
