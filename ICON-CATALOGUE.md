@@ -152,3 +152,9 @@ Stale entries corrected this pass: p0771 (was SYNCdata), p0898/p0746 (were copyi
 - Re-carved from Moti's handset Messaging-menu photo (image-d9d099c6.jpg): its status bar shows signal, battery, white outline envelope, bluetooth rune. Envelope asset now a 28x21 white glyph from that photo.
 - Order corrected to match handset: battery, then envelope (build had envelope left of battery).
 - Pack re-swept (all assets 12-60 x 10-50 px, alpha-shape IoU vs the photo carve): no monochrome status envelope in package_c; only color 30x30 list envelopes (p0536/p0727/p0764/p0766/p0769 + badged p0789/p0544/p0733/p0734). Status envelope stays a NAMED carve from firmware screen evidence.
+
+## Pass 144 — radio-button family resolved (HEAD d4139be)
+- Firmware LCD evidence: Settings > Display > Navig. key icons picker IS a radio list (lcd_s144k/s144l): unselected = ring + pale interior, selected = white ring + black core (same glyph focused or not).
+- p0460 (30x30, bright ring + pale center) = radio UNSELECTED; p0461 (30x30, white ring + black core) = radio SELECTED [LCD s144k/s144l]. p0462/p0463 = glow variants of the same pair (unselected/selected). p0456-p0459 = checkbox family (empty / green-check, plain + grey-border) - NOT radios.
+- Build's radiolist picker (Screen saver / Cell info display On-Off etc.) swapped off CSS-drawn circles onto p0460/p0461 at 28px.
+- OPEN question flagged: build's "Content options" (Personalise view) multi-mark list uses the same drawn radio dots, but a multi-mark list on firmware likely uses the p0456/p0457 CHECKBOX pair - needs firmware evidence of that screen before any swap.
