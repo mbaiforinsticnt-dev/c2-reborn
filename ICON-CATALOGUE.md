@@ -142,7 +142,13 @@ Stale entries corrected this pass: p0771 (was SYNCdata), p0898/p0746 (were copyi
 - p1066 (56x56, closed env + green down arrow) = conversation view unread/focused incoming icon @18px [photo 8027f2d8]
 - p0759 (30x30, env + green check) = conversation view sent icon @18px [LCD cn141_sent]
 - p0786 (30x30, env + blue i) = conversation view sent-info icon @18px [LCD]
-- Status bar unread envelope = CARVED from emulator LCD status bar (lcd_s141y.png, 19x10 white glyph); pack has no standalone status envelope asset (NAMED); toggled on unread>0
+- Status bar unread envelope = CARVED from Moti's handset photo (image-d9d099c6.jpg status bar, 28x21 white glyph, pass 143 re-carve); pack has no standalone status envelope asset (NAMED); toggled on unread>0; sits RIGHT of battery per handset
 - Menu subtitles: Conversations "N unread msgs.", Drafts "N messages", right-aligned [photo d9d099c6]
 - List counter now "pos/total" (e.g. 1/179) [photo 81ddef27 shows 2/200]
 - REMOVED build-only auto-mark-read-on-scroll in Conversations list (contradicted photo: unread persists until opened)
+
+## Pass 143 — status-bar envelope re-carve (HEAD 377bd3a)
+- Pass-141 carve was WRONG: lcd_s141y.png's status bar held signal + battery + profile + time, no envelope - the carve grabbed the LCD BATTERY region and shipped a battery-shaped "envelope" (duplicate-battery look spotted by Moti on the live build).
+- Re-carved from Moti's handset Messaging-menu photo (image-d9d099c6.jpg): its status bar shows signal, battery, white outline envelope, bluetooth rune. Envelope asset now a 28x21 white glyph from that photo.
+- Order corrected to match handset: battery, then envelope (build had envelope left of battery).
+- Pack re-swept (all assets 12-60 x 10-50 px, alpha-shape IoU vs the photo carve): no monochrome status envelope in package_c; only color 30x30 list envelopes (p0536/p0727/p0764/p0766/p0769 + badged p0789/p0544/p0733/p0734). Status envelope stays a NAMED carve from firmware screen evidence.
