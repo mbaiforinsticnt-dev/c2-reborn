@@ -67,7 +67,7 @@ Sheet-index finds (24×24 sheet1 indices, not yet re-keyed to pack numbers): 16 
 - **SYNCrestore** (Restore backup): expected to mirror SYNCcreate (floppy/card + up arrow). Not yet matched.
 - **SYNCpc** (PC sync): PC/monitor glyph not found in 30×30 set (p0506 is a speaker). Check 24×24 and 56×56 sets.
 - **Wallpaper swoosh**: build draws the idle background as SVG. Firmware default wallpaper may be user data rather than an icon; if the pack yields nothing it gets NAMED, not invented.
-- **S40A font**: one firmware font still unmapped (5 genuine Nokia TTFs shipped in pass 125).
+- **S40A font - RESOLVED pass 135**: "Nokia Sans Title SemiBold S40A" (font_7984184.ttf) is the firmware's international companion font, NOT a Latin strike. It has no basic Latin glyphs; it covers Armenian (0531-058A), Hebrew (05D0-05EA), Thai (0E01-0E5B), Georgian (10D0-10FC), Ethiopic (1200-137C), Arabic presentation forms + Indic digit sets. The firmware falls back to it per-glyph for those scripts (verified: idle "Waiting"/"NOKIA"/dialer digits all match the other already-wired strikes, never S40A). Wired into the build as per-glyph fallback after each Nokia family in all four font stacks; live-verified document.fonts.check = true for Armenian/Hebrew/Thai/Georgian/Ethiopic/Arabic-Indic.
 
 ## 4. Traps and red herrings
 
