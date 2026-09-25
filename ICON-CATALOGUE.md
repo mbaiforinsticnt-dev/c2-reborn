@@ -43,7 +43,7 @@ App icons in build (firmware PNGs from early passes; pack numbers not yet record
 | Pack # | Size | Identified as | Potential build slot | Status / blocker |
 |---|---|---|---|---|
 | p0181 | — | Magnifier | rcptMag search glass (currently CSS circle+line) | CANDIDATE — open individually before swap |
-| p1058 / p1061 / p1062 | 56×56 | Green check marks — SQUARE badges | cbOk green check badge (build draws a ROUND badge) | CANDIDATE — need a firmware screen showing the real check shape before swapping |
+| p1058 / p1061 / p1062 | 56×56 | Green check marks — SQUARE badges | cbOk slot CLOSED 25 Sep: the build's cb/cbOk check badge is dead CSS - defined once, never rendered anywhere. No badge on screen to match. If a check badge is ever added, these are the candidates (verify shape against a firmware screen first) |
 | p0456–p0463 | 30×30 | Radio-button states: hollow ring (unselected), ring+dot (selected); white variants for dark highlight rows | radioDot CSS circles | VERIFIED on firmware (Menu→Options→Main menu view); build CSS already structurally identical — swap deferred as low-value chrome |
 | p1043 | 56×56 | Memory card + transfer arrows | future "card busy/transfer" state | VERIFIED family member |
 | p0464–p0467 | 56×56 | Memory card + hourglass / warning / lock / "?" | future card-state icons | VERIFIED family members |
@@ -88,3 +88,19 @@ The two inline SVGs on the physical call/end buttons are the C2-01's hardware gr
 
 ---
 *Created pass 133 (commit 9b723cd22d). Updated with every icon pass.*
+
+
+## Pass 134 - Sync and backup family (firmware evidence 25 Sep, emulator LCD shots)
+| Pack id | Size | Meaning / where the firmware uses it |
+|---|---|---|
+| p0912 | 56x56 | Phone switch (syncbackup row 1) - phone + green-left/blue-right arrows |
+| p0908 | 56x56 | Create backup (syncbackup row 2) - archive box + phone + red LEFT arrow |
+| p0909 | 56x56 | Restore backup (syncbackup row 3) - archive box + phone + red RIGHT arrow. GREYED by firmware when no backup exists |
+| p0916 | 56x56 | Data transfer (syncbackup row 4) - globe + white circular refresh |
+| p0917 | 56x56 | Synchronise (Phone switch page row 1) - phone + blue/green circular arrows |
+| p0914 | 56x56 | Copy to this (Phone switch row 2) - phone + green RIGHT arrow (into this phone) |
+| p0913 | 56x56 | Copy from this (Phone switch row 3) - phone + blue LEFT arrow (out of this phone) |
+| p0641 | 30x30 | Server sync (Data transfer row 1) - blue up-left + green down-right arrows |
+| p0507 | 30x30 | PC synchronisation (Data transfer row 2) - laptop. GREYED by firmware (no PC paired) |
+
+Notes: build previously used fabricated stand-ins for all SYNC* slots plus p0771 for Data transfer and p0641 for phoneswitch Synchronise - both corrected to firmware assets. Phone switch firmware labels are "Synchronise / Copy to this / Copy from this" (build had "Copy from phone / Copy to phone" in the wrong order). Grey rule: firmware greys Restore backup (no backup present) and PC synchronisation; build now greys the same rows visually. Whether greyed rows are also skipped by the selection cursor is UNVERIFIED (needs handset/emulator nav evidence).
