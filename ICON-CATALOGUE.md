@@ -246,3 +246,17 @@ Firmware evidence: lcd_s152opengal2.png — header reads "Gallery" with counter 
 - Gallery page title rendered `a.length` (row count "9") instead of "Gallery". Fixed: title "Gallery" + counter (sel+1). Verified live: title element "Gallery" + counter, raw+live byte-exact.
 - **Gallery folder badges confirmed against firmware** (lcd_s152opengal2): Images = folder+mountain badge (0619) ✓; Video clips = folder+filmstrip badge (0625) ✓; Music files = folder+PINK note badge (0624) ✓; Memory card row icon 1080; Themes = GALth (firmware: folder+palette badge; row below fold in both shots — queued for visual confirm).
 - Open observation (not a defect without more evidence): firmware picker shows "0 files" subtitles (emulator folders empty); build shows sizes (galFolderSizes). Picker-vs-browser context may differ — left as-is pending firmware evidence of the main Gallery view.
+
+## Pass 154 (25 Sep 2026, ~21:25) - Music library icon parity + GT03 badge fix
+Firmware evidence: lcd_s154mp.png (firmware "Media menu" list), lcd_s154media.png (Media submenu).
+Swaps in index.html (vs pass 153):
+- MEDart (Artists row icon) -> p0828 grey bust (family cluster with p0827/p0829; montage confirm_med.png decisive)
+- MEDalb (Albums row icon) -> p0827 page+red note
+- MEDgen (Genres row icon) -> p0829 red+blue double note
+- MEDplay (Playlists row icon) = p0651 doc+red note (UNCHANGED, matches firmware)
+- 'GT03' (Media player row in Media submenu) p0513 -> p0588 note+green play badge (matches firmware lcd_s154media)
+- NEW listIcons.MEDarrow -> p0302 (12x25 green right-pointing triangle); mArrow render on musiclibrary rows 3-5 (Artists/Albums/Genres) changed from text ">" glyph to genuine firmware img
+- noIcon extended to rows 0-1 of musiclibrary ("Go to Media player", "All songs") - firmware shows no row icons there
+INCIDENT (reported honestly): first 154 publish (commit 6cdec6e4) shipped a partial file (edit script never wrote) - broken images on library rows ~21:18-21:22, caught by live render check, corrected (0adb8a99). Second fix commit (~21:26): MEDarrow p0301 -> p0302 after render check showed left-pointing arrow; p0301=LEFT triangle, p0302=RIGHT triangle, firmware shows RIGHT. Lesson: visually verify montage reads at scale; MSE on cropped carves can mislead on direction.
+Render-verified live ~21:28: Media menu rows match firmware lcd_s154mp exactly; Media submenu Media player row shows p0588 badge icon matching lcd_s154media.
+Live: https://mbaiforinsticnt-dev.github.io/c2-reborn/
