@@ -39,7 +39,7 @@ Living document. Moti via WhatsApp, 25 Sep 2026, 2:08 PM: "all along I hope you 
 Build slots already keyed by pack number (firmware PNGs in the build from earlier passes; precise firmware meaning recorded where known — to be enriched as passes touch them):
 `0971 0972 0973(pencil) 0806 0879 0909 0571 0692 0915 0568 0661 0570 0614 0622 0724 0415 1056 1066 0557 0715 0703 0528 0558 0569 0580 0521 0599 0562 0589 0572`
 
-App-icon pack-number backfill: DONE 25 Sep pass-160 (see the backfill section below). 11 listIcons slots pixel-exact, 3 app icons visually confirmed as Photoshop carves of pack assets, the rest NAMED (pack yields nothing). Theme GIFs (black/dark/light/nokia) still pending.
+App-icon pack-number backfill: DONE 25 Sep pass-160 (see the backfill section below). 11 listIcons slots pixel-exact, 3 app icons visually confirmed as Photoshop carves of pack assets, theme GIFs and the rest NAMED (pack yields nothing).
 
 ## 2. Verified in pack — candidates awaiting placement or screen evidence
 
@@ -284,5 +284,7 @@ originalAppIcons (Photoshop carves w/ ICC chunk, confirmed against pack at full 
 
 NAMED - pack yields nothing (build keeps Moti's early-pass assets; games/app-store art lives in JARs/theme resources, not package_c):
 - WARN (red octagon !), Block'd, Flickr, My Nokia, Bounce Tales, Opera Mini, Size converter, Sudoku, Nokia Browser, Snake III, Store, Converter, Brain Champ., Diamond Rush, Web Search (globe+magnifier composite; plain globe = p0639/p0487 but no magnifier variant in pack), Facebook, City Bloxx, World clock (globe+clock; pack globes with wrench p0561 / letter p0871 / upload p0983 / plain p0639 rejected on montage)
+
+Theme GIF addendum (same run): originalThemeThumbs black/dark/light/nokia (60x48 GIFs) - no pack match (best scores 84-218, visual check of the one sub-100 candidate p1129 showed a plain white rectangle = false positive). NAMED: theme previews are theme-content art, not package_c assets. Reminder: firmware Gallery > Themes lists Abstract.nth / Black.nth / Mountains.nth / Simple.nth (lcd_s148files); the build's black/dark/light/nokia naming stays pending Moti's keep/rename/strip decision.
 
 Also verified this pass: contentoptions multi-mark CHECK_OFF/CHECK_ON are byte-identical to p0456/p0457 (catalogue pass-145 question fully closed).
