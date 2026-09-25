@@ -185,3 +185,20 @@ Stale entries corrected this pass: p0771 (was SYNCdata), p0898/p0746 (were copyi
 - Theme picker thumbnails: originalThemeThumbs gained genuine 48x41 PNG thumbs for abstract/mountains/simple/legacyblack (carved from the wallpapers), replacing the drawn CSS gradient swatches (.themePreview.abstract/.mountains/.simple now unused).
 - rcptMag CLOSED between passes (no build change): build's .rcptMag 30x30 PNG is byte-identical to pack p0181_30x30.png; LCD evidence lcd_s148search2.png (Names search bar) shows the same magnifier glyph.
 - Proof: shot148_mtn.png, shot148_smp.png, shot148_abs.png, shot148_blk.png, shot148_picker.png.
+
+## Pass 149 - Go-to shortcut bar icons (GT12, GT60-GT98) restored to genuine firmware art
+
+The 40 shortcut-bar icons carried by GT12 and GT60..GT98 were early-pass 29x29 LCD
+crops with a systematic grey wedge artifact top-right. Replaced with clean LANCZOS
+downscales of genuine firmware pack art:
+
+- 38 icons joined by exact name match between screens.goto positional names and the
+  gtIconFor shortcut ids (each name's twin exists as a clean pack-exact 56x56 among
+  GT00-GT59 / GT17 / GT03 etc.), e.g. GT73 'Media player' -> GT03, GT98 'Sync and
+  backup' -> GT51.
+- GT60 'Application list' -> GT17 (Applications, same semantics).
+- GT12 'Add new contact' -> pack p0921_56x56 (contact book + green plus, visually
+  confirmed against the person-icon family montage).
+
+All 40 assets verified clean in gt149_montage.png and rendering in the Shortcut bar
+links list (shot149_goto.png). Map: /tmp/reborn/gt_map_name.json.
