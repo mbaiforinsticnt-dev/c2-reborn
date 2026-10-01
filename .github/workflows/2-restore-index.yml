@@ -1,0 +1,35 @@
+name: Restore index.html to v6.148
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restore index.html blob from before the mistaken upload
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --filter=blob:none --no-checkout "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" repo
+          cd repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git read-tree HEAD
+          bad="cea286c92aac781adcfa73d6bd33278b6fe6ee75"
+          good="0b3bd2e2f18479d3bcfa2d187bb4a47fdd49f856"
+          current=$(git ls-tree HEAD -- index.html | awk '{print $3}')
+          if [ "$current" = "$good" ]; then
+            echo "index.html already restored; nothing to do"
+            exit 0
+          fi
+          if [ "$current" != "$bad" ]; then
+            echo "HEAD index.html is $current, not the mistaken upload $bad; aborting, state changed" >&2
+            exit 1
+          fi
+          git update-index --cacheinfo "100644,$good,index.html"
+          tree=$(git write-tree)
+          commit=$(git commit-tree "$tree" -p HEAD -m "Revert mistaken index.html upload (restore v6.148 blob 0b3bd2e)")
+          git push origin "$commit:refs/heads/main"
+          echo "restored v6.148 index.html in commit $commit" | tee -a "$GITHUB_STEP_SUMMARY"
