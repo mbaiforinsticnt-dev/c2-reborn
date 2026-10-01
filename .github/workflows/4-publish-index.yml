@@ -1,0 +1,70 @@
+name: Publish index.html (guarded)
+on:
+  workflow_dispatch:
+    inputs:
+      zip_path:
+        description: 'Repo path of the banked ZIP that contains the build'
+        required: true
+      member:
+        description: 'File name inside the ZIP (the upload-ready HTML)'
+        required: true
+      new_blob:
+        description: 'Expected git blob SHA of the new index.html'
+        required: true
+      base_blob:
+        description: 'Expected git blob SHA of the current index.html (abort if different)'
+        required: true
+      message:
+        description: 'Commit message'
+        required: true
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Guarded single-commit publish of index.html
+        env:
+          ZIP_PATH: ${{ inputs.zip_path }}
+          MEMBER: ${{ inputs.member }}
+          NEW_BLOB: ${{ inputs.new_blob }}
+          BASE_BLOB: ${{ inputs.base_blob }}
+          MSG: ${{ inputs.message }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --filter=blob:none --no-checkout "https://x-access-token:${TOKEN}@github.com/${REPO}.git" repo
+          cd repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config core.autocrlf false
+          git read-tree HEAD
+          current=$(git ls-tree HEAD -- index.html | awk '{print $3}')
+          echo "HEAD index.html blob: $current"
+          git cat-file blob "HEAD:${ZIP_PATH}" > /tmp/build.zip
+          unzip -p /tmp/build.zip "$MEMBER" > /tmp/index.html
+          got=$(git hash-object /tmp/index.html)
+          echo "ZIP member blob: $got, size $(stat -c %s /tmp/index.html), sha256 $(sha256sum /tmp/index.html | cut -d' ' -f1)"
+          if [ "$got" != "$NEW_BLOB" ]; then
+            echo "ZIP member blob $got is not the expected $NEW_BLOB; aborting" >&2
+            exit 1
+          fi
+          if [ "$current" = "$NEW_BLOB" ]; then
+            echo "index.html already at $NEW_BLOB; nothing to do"
+            exit 0
+          fi
+          if [ "$current" != "$BASE_BLOB" ]; then
+            echo "HEAD index.html is $current, not the expected base $BASE_BLOB; aborting, state changed" >&2
+            exit 1
+          fi
+          oid=$(git hash-object -w /tmp/index.html)
+          git update-index --cacheinfo "100644,${oid},index.html"
+          tree=$(git write-tree)
+          commit=$(git commit-tree "$tree" -p HEAD -m "$MSG")
+          git push origin "${commit}:refs/heads/main"
+          echo "published index.html $NEW_BLOB (previous $current) in commit $commit" | tee -a "$GITHUB_STEP_SUMMARY"
+          curl -fsS -X POST -H "Authorization: Bearer ${TOKEN}" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/${REPO}/pages/builds" || echo "pages build request failed (non-fatal)"
