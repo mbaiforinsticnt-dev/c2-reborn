@@ -9,28 +9,39 @@ jobs:
   move-zips:
     runs-on: ubuntu-latest
     steps:
-      - name: Move root ZIPs into archive/ via git trees API
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const owner = context.repo.owner, repo = context.repo.repo;
-            const ref = await github.rest.git.getRef({owner, repo, ref: 'heads/main'});
-            const headSha = ref.data.object.sha;
-            const headCommit = await github.rest.git.getCommit({owner, repo, commit_sha: headSha});
-            const tree = await github.rest.git.getTree({owner, repo, tree_sha: headCommit.data.tree.sha, recursive: '1'});
-            const rootZips = tree.data.tree.filter(e => e.type === 'blob' && !e.path.includes('/') && e.path.toLowerCase().endsWith('.zip'));
-            core.info('root zips found: ' + rootZips.length);
-            if (rootZips.length === 0) { core.info('Nothing to move'); return; }
-            const existing = new Set(tree.data.tree.map(e => e.path));
-            const entries = [];
-            for (const z of rootZips) {
-              const target = 'archive/' + z.path;
-              if (existing.has(target)) { core.info('skip, exists: ' + target); continue; }
-              entries.push({path: z.path, mode: z.mode, type: z.type, sha: null});
-              entries.push({path: target, mode: z.mode, type: z.type, sha: z.sha});
-            }
-            if (entries.length === 0) { core.info('All already archived'); return; }
-            const newTree = await github.rest.git.createTree({owner, repo, base_tree: headCommit.data.tree.sha, tree: entries});
-            const newCommit = await github.rest.git.createCommit({owner, repo, message: 'Move historical root ZIPs into archive/ (rename only, no content changes)', tree: newTree.data.sha, parents: [headSha]});
-            await github.rest.git.updateRef({owner, repo, ref: 'heads/main', sha: newCommit.data.sha});
-            core.info('moved ' + (entries.length / 2) + ' files in commit ' + newCommit.data.sha);
+      - name: Clone without blobs and move root ZIPs into archive/
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --filter=blob:none --no-checkout "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" repo
+          cd repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git read-tree HEAD
+          moved=0
+          while IFS=$'\t' read -r meta path; do
+            case "$path" in
+              *.zip|*.ZIP) ;;
+              *) continue ;;
+            esac
+            case "$path" in
+              */*) continue ;;
+            esac
+            sha=$(echo "$meta" | awk '{print $2}')
+            if git ls-files --error-unmatch "archive/$path" >/dev/null 2>&1; then
+              echo "skip, exists: $path"
+              continue
+            fi
+            printf '100644 %s 0\t%s\n' "$sha" "archive/$path" | git update-index --add --index-info
+            git update-index --force-remove "$path"
+            moved=$((moved+1))
+            echo "moved: $path -> archive/$path"
+          done < <(git ls-files -s)
+          echo "moved=$moved" | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ "$moved" -eq 0 ]; then
+            echo "Nothing to move"
+            exit 0
+          fi
+          tree=$(git write-tree)
+          commit=$(git commit-tree "$tree" -p HEAD -m "Move historical root ZIPs into archive/ (rename only, no content changes)")
+          git push origin "$commit:refs/heads/main"
+          echo "pushed commit $commit" | tee -a "$GITHUB_STEP_SUMMARY"
