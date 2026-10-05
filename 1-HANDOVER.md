@@ -5,7 +5,7 @@ Repo: https://github.com/mbaiforinsticnt-dev/c2-reborn  |  Live: https://mbaifor
 Owner: Moti Berger (Europe/London).
 
 ## 1. Publish state (check this first, then verify live)
-- Live now: v6.241 (published 5 Oct 23:08). Blob 8c2d7b8732a4a8dfb16ed6ec1225f6f97dc3dae2, publish HEAD 27e8b4e194c4d669b37ca2df96afc8da5bca1246, archive commit 2230c4e880dee46b82b22c39cece6a4f03563db6 (archive/1-c2-reborn-v6.241.zip, byte-verified), run https://github.com/mbaiforinsticnt-dev/c2-reborn/actions/runs/37380509134 (success). Rollback: v6.240 blob 50609164bc6749462197fe6529a22e1939ec3e98. v6.241 = v6.240 (Find on map removed, plain search) + Use detail shows the Numbers list first (from Moti's 22:58 emulator video).
+- Live now: v6.243 (published 6 Oct 00:36). Blob ff3fd3e7a4c5e0b4726f7b9fede4f57e688164f9, 3,628,589 bytes, publish HEAD a0ee6e06146c73623ca7fd36b080002469d4d597, archive commit ee4d527f9d69757c5966d4f65e34b7164eef21b0 (archive/1-c2-reborn-v6.243.zip, byte-verified), run https://github.com/mbaiforinsticnt-dev/c2-reborn/actions/runs/37389313396 (success). Rollback: v6.242 blob 72ca00c07b3c8c21f3892fceb8d74edd5d713ff9 (v6.241 blob 8c2d7b8732a4a8dfb16ed6ec1225f6f97dc3dae2). v6.241 = Use detail Numbers list first; v6.242/243 = icon-row text sits in the upper part of large rows, scroll thumb one item tall.
 - Rollback: v6.238 blob fa492e1d9d37a14ac8414849ddd329816f993d99. Earlier: v6.237 5462207161c8da389dabe52df65a2c84256a1514, v6.236 29c88c29dc74f62b587b7e83dcd62f8ea012cbcb, v6.235 9d29ed9046525931232300027d2229b6c3405144.
 - If a publish run sits queued 15 min it is cancelled by GitHub; re-run the workflow stage only (the archive step is already done).
 
@@ -40,6 +40,16 @@ Full wording is in BEHAVIOUR-RULES.md and MOTI-RULES-5Oct.txt inside each archiv
 - Options menus: Black theme restyle done; other themes pending.
 - Create message: 4 rows x 34 px, icon 22, text 24 px (handset photo). Messaging root rows 56 px is a fit, not a measurement.
 - Display > Fonts setting exists (user-chosen; default firmware).
+
+## 4b. Row and menu categories from Moti's handset photos (6 Oct 00:21-00:39) - rules to follow
+These are Moti's own handset photos and words. Emulator wins where it disagrees. Do not restyle pages until he says so; log and audit first.
+1. Icon rows (large rows): the label sits in the UPPER part of the row, not centred (Contacts menu photo, 00:21). Emulator Memory card / Display settings frames agree. Done in v6.243 for rows taller than 15% of the screen. Small-row pages (7 per page) keep the label centred with the icon (Create message, Media menu photos).
+2. Row-size categories (rows per page): 4 = largest (Messaging root, Names with number, Contacts menu, Contacts Settings; counter shown). 6 = Names with Contacts view "Name list" (ours already 6). 7 = Media menu, Create message (4 rows then empty tail), Messaging options menus such as Sent Items (New message, Inbox view, Folder details, Message log, SIM messages, Memory status). More categories to come from Moti.
+3. Floating type 1.0 = full-width popup list over the page, 7 rows, slightly smaller rows than plain 7-row (Gallery > Options: Downloads >, Mem. card options >, Details, Type of view, Sort >, Add folder, Memory status; softkeys Select/Back).
+4. Floating type 2.0 = small submenu popup over the dimmed parent, anchored beside the highlighted parent row, dark background, white highlight on first row (Gallery > Mem. card options > Set password / Rename mem. card / Format memory card). 2.0 popups nest sideways: Gallery > Options > Sort > By name / By date / By format / By size > second 2.0 popup Ascending / Descending, stacked beside the previous one with the parent dimmed.
+5. Softkeys seen on handset: Contacts menu Select/Back (ours Options/Select/Back), Messaging root Options/Select/Back, Media menu Options/Open/Exit, Names (Name list) Options/Details/Exit, Create message Select/Back. Handset is secondary: the Contacts menu difference is a possible removal and needs Moti's word.
+6. Scroll thumb is one item tall and moves with the selected item (handset Contacts, emulator Display settings). Done in v6.242.
+7. Audit of ours (v6.243, rows visible per page from row height): about 4 rows: log, settings, gallery, messaging, message folders; about 5: Contacts menu, Media menu and about 60 other pages (handset says Contacts menu = 4, Media menu = 7: MISMATCH, not fixed); about 6-7: Create message, profiles, message settings. Pages with 3 or more handset photos still missing for most categories.
 
 ## 5. Open items
 - Moti emulator frames needed: Messaging root, call-log View screen, Call duration screen.
