@@ -1,14 +1,13 @@
 # C2 Reborn - HANDOVER (not for upload to the site)
 
-Last updated: 5 Oct 2026, 21:30 BST. Keep this file current after every publish (one commit, no change to index.html).
+Last updated: 5 Oct 2026, 22:40 BST. Keep this file current after every publish (one commit, no change to index.html).
 Repo: https://github.com/mbaiforinsticnt-dev/c2-reborn  |  Live: https://mbaiforinsticnt-dev.github.io/c2-reborn/index.html (about 6 min lag)
 Owner: Moti Berger (Europe/London).
 
 ## 1. Publish state (check this first, then verify live)
-- Live now: v6.238. Blob fa492e1d9d37a14ac8414849ddd329816f993d99, publish HEAD ba1d992199b486d6725cdddd00e59b1e18de910a, archive commit acb8d26c00df2333050c8be5e17306f31ebe6bcb.
-- Banked but NOT live: v6.240 (archive commit 5e9c94520e23780010ee0f81252ef76a16f110bc, archive/1-c2-reborn-v6.240.zip, byte-verified). Expected live blob 50609164bc6749462197fe6529a22e1939ec3e98. Contents: Find on map removed from Names > Options; plain search in Conversations (word-start names, start-of-number digits). It carries v6.239 (archive commit 98d8f2952244c1418178dd14bea3476fb2a509cc), whose publish run was cancelled.
-- Why not live: GitHub Actions incident on 5 Oct evening. Guarded publish runs 37364074742 (v6.239) and 37365890134 (v6.240) sat queued 15 min and were cancelled. Retry stage 2 (workflow 4-publish-index.yml only; the archive step is already done) once https://www.githubstatus.com shows Actions healthy. Inputs: zip path archive/1-c2-reborn-v6.240.zip, file index.html, new blob 50609164bc6749462197fe6529a22e1939ec3e98, base blob fa492e1d9d37a14ac8414849ddd329816f993d99.
-- Rollback for v6.240 = v6.238 blob fa492e1d... . Earlier blobs: v6.237 5462207161c8da389dabe52df65a2c84256a1514, v6.236 29c88c29dc74f62b587b7e83dcd62f8ea012cbcb, v6.235 9d29ed9046525931232300027d2229b6c3405144, v6.234 3eca64b8da02bab6ad57ed9f2a5dca61b67bb97b.
+- Live now: v6.240. Blob 50609164bc6749462197fe6529a22e1939ec3e98, publish HEAD d2a99f30bb45b995aeca9707957bd7bfdc63c49e, archive commit 5e9c94520e23780010ee0f81252ef76a16f110bc (archive/1-c2-reborn-v6.240.zip, byte-verified). Published 5 Oct 22:37 after three cancelled runs during a GitHub Actions incident (runs 37364074742, 37365890134, 37369591676); success run 37375106924. v6.240 includes v6.239 (Find on map removed) and plain search.
+- Rollback: v6.238 blob fa492e1d9d37a14ac8414849ddd329816f993d99. Earlier: v6.237 5462207161c8da389dabe52df65a2c84256a1514, v6.236 29c88c29dc74f62b587b7e83dcd62f8ea012cbcb, v6.235 9d29ed9046525931232300027d2229b6c3405144.
+- If a publish run sits queued 15 min it is cancelled by GitHub; re-run the workflow stage only (the archive step is already done).
 
 ## 2. How a build is shipped (do not skip steps)
 1. Make the change in a working copy of index.html (one atomic change, bump the banner "C2 Reborn v6.NNN").
@@ -43,7 +42,6 @@ Full wording is in BEHAVIOUR-RULES.md and MOTI-RULES-5Oct.txt inside each archiv
 - Display > Fonts setting exists (user-chosen; default firmware).
 
 ## 5. Open items
-- Publish v6.240 when GitHub Actions recovers (section 1).
 - Moti emulator frames needed: Messaging root, call-log View screen, Call duration screen.
 - Compose screen vs his handset video (17:41): handset has no Preview or Search in Options, centre key Send, Exit editor last. Our build keeps Preview and Search (emulator side). Waiting for his word before any removal.
 - Remaining SMS attachment items (Wallpapers insert flow, Image thumbnail, Details, "Save message?" on MMS close, Remove submenu).
