@@ -5,7 +5,7 @@ Repo: https://github.com/mbaiforinsticnt-dev/c2-reborn  |  Live: https://mbaifor
 Owner: Moti Berger (Europe/London).
 
 ## 1. Publish state (check this first, then verify live)
-- Live now: v6.243 (published 6 Oct 00:36). Blob ff3fd3e7a4c5e0b4726f7b9fede4f57e688164f9, 3,628,589 bytes, publish HEAD a0ee6e06146c73623ca7fd36b080002469d4d597, archive commit ee4d527f9d69757c5966d4f65e34b7164eef21b0 (archive/1-c2-reborn-v6.243.zip, byte-verified), run https://github.com/mbaiforinsticnt-dev/c2-reborn/actions/runs/37389313396 (success). Rollback: v6.242 blob 72ca00c07b3c8c21f3892fceb8d74edd5d713ff9 (v6.241 blob 8c2d7b8732a4a8dfb16ed6ec1225f6f97dc3dae2). v6.241 = Use detail Numbers list first; v6.242/243 = icon-row text sits in the upper part of large rows, scroll thumb one item tall.
+- Live now: v6.245 (published 6 Oct 00:50). Blob 07f3644377181771ca5e293830d99b8e7e520767, 3,628,667 bytes, publish HEAD f808ec817370b4f855a1586bca9e4da9a1db5d3d, archive commit ecf64e36ee1e2747ccdc88b9b0cb585dcb5623e9 (archive/1-c2-reborn-v6.245.zip, byte-verified), run https://github.com/mbaiforinsticnt-dev/c2-reborn/actions/runs/37390586510. Rollback: v6.243 blob ff3fd3e7a4c5e0b4726f7b9fede4f57e688164f9. v6.245 = v6.243 plus fix: two-line rows keep the label with its sub-line (v6.243 clipped them). v6.241 Use detail Numbers list; v6.242/243 upper-label icon rows and one-item scroll thumb. No v6.244.
 - Rollback: v6.238 blob fa492e1d9d37a14ac8414849ddd329816f993d99. Earlier: v6.237 5462207161c8da389dabe52df65a2c84256a1514, v6.236 29c88c29dc74f62b587b7e83dcd62f8ea012cbcb, v6.235 9d29ed9046525931232300027d2229b6c3405144.
 - If a publish run sits queued 15 min it is cancelled by GitHub; re-run the workflow stage only (the archive step is already done).
 
