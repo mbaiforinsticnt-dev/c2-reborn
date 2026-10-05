@@ -52,6 +52,8 @@ These are Moti's own handset photos and words. Emulator wins where it disagrees.
 7. Audit of ours (v6.243, rows visible per page from row height): about 4 rows: log, settings, gallery, messaging, message folders; about 5: Contacts menu, Media menu and about 60 other pages (handset says Contacts menu = 4, Media menu = 7: MISMATCH, not fixed); about 6-7: Create message, profiles, message settings. Pages with 3 or more handset photos still missing for most categories.
 
 8. Moti 00:42 naming (verbatim): 4 rows = main. 6 rows = Names (name only). 7 rows = generally Options (7.1.0), none floating. 7 floating rows (7.2.0): since floating, they only reach slightly below the regular ceiling. He will soon specify which pages belong to which category. Wait for his page assignments; do not restyle until then.
+9. Moti 00:42: floating type 2 = smallest size (the small submenu popup).
+10. Moti 00:43 standing rule: every question to him comes with a screenshot of the page in question; he replies on it.
 ## 5. Open items
 - Moti emulator frames needed: Messaging root, call-log View screen, Call duration screen.
 - Compose screen vs his handset video (17:41): handset has no Preview or Search in Options, centre key Send, Exit editor last. Our build keeps Preview and Search (emulator side). Waiting for his word before any removal.
