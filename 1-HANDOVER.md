@@ -5,7 +5,7 @@ Repo: https://github.com/mbaiforinsticnt-dev/c2-reborn  |  Live: https://mbaifor
 Owner: Moti Berger (Europe/London).
 
 ## 1. Publish state (check this first, then verify live)
-- Live now: v6.241. Blob 8c2d7b8732a4a8dfb16ed6ec1225f6f97dc3dae2, publish HEAD d2a99f30bb45b995aeca9707957bd7bfdc63c49e, archive commit 5e9c94520e23780010ee0f81252ef76a16f110bc (archive/1-c2-reborn-v6.241.zip, byte-verified). Published 5 Oct 22:37 after three cancelled runs during a GitHub Actions incident (runs 37364074742, 37365890134, 37369591676); success run 37375106924. v6.241 includes v6.239 (Find on map removed) and plain search.
+- Live now: v6.241 (published 5 Oct 23:08). Blob 8c2d7b8732a4a8dfb16ed6ec1225f6f97dc3dae2, publish HEAD 27e8b4e194c4d669b37ca2df96afc8da5bca1246, archive commit 2230c4e880dee46b82b22c39cece6a4f03563db6 (archive/1-c2-reborn-v6.241.zip, byte-verified), run https://github.com/mbaiforinsticnt-dev/c2-reborn/actions/runs/37380509134 (success). Rollback: v6.240 blob 50609164bc6749462197fe6529a22e1939ec3e98. v6.241 = v6.240 (Find on map removed, plain search) + Use detail shows the Numbers list first (from Moti's 22:58 emulator video).
 - Rollback: v6.238 blob fa492e1d9d37a14ac8414849ddd329816f993d99. Earlier: v6.237 5462207161c8da389dabe52df65a2c84256a1514, v6.236 29c88c29dc74f62b587b7e83dcd62f8ea012cbcb, v6.235 9d29ed9046525931232300027d2229b6c3405144.
 - If a publish run sits queued 15 min it is cancelled by GitHub; re-run the workflow stage only (the archive step is already done).
 
