@@ -5,7 +5,7 @@ Repo: https://github.com/mbaiforinsticnt-dev/c2-reborn  |  Live: https://mbaifor
 Owner: Moti Berger (Europe/London).
 
 ## 1. Publish state (check this first, then verify live)
-- Live now: v6.240. Blob 50609164bc6749462197fe6529a22e1939ec3e98, publish HEAD d2a99f30bb45b995aeca9707957bd7bfdc63c49e, archive commit 5e9c94520e23780010ee0f81252ef76a16f110bc (archive/1-c2-reborn-v6.240.zip, byte-verified). Published 5 Oct 22:37 after three cancelled runs during a GitHub Actions incident (runs 37364074742, 37365890134, 37369591676); success run 37375106924. v6.240 includes v6.239 (Find on map removed) and plain search.
+- Live now: v6.241. Blob 8c2d7b8732a4a8dfb16ed6ec1225f6f97dc3dae2, publish HEAD d2a99f30bb45b995aeca9707957bd7bfdc63c49e, archive commit 5e9c94520e23780010ee0f81252ef76a16f110bc (archive/1-c2-reborn-v6.241.zip, byte-verified). Published 5 Oct 22:37 after three cancelled runs during a GitHub Actions incident (runs 37364074742, 37365890134, 37369591676); success run 37375106924. v6.241 includes v6.239 (Find on map removed) and plain search.
 - Rollback: v6.238 blob fa492e1d9d37a14ac8414849ddd329816f993d99. Earlier: v6.237 5462207161c8da389dabe52df65a2c84256a1514, v6.236 29c88c29dc74f62b587b7e83dcd62f8ea012cbcb, v6.235 9d29ed9046525931232300027d2229b6c3405144.
 - If a publish run sits queued 15 min it is cancelled by GitHub; re-run the workflow stage only (the archive step is already done).
 
@@ -51,4 +51,4 @@ Full wording is in BEHAVIOUR-RULES.md and MOTI-RULES-5Oct.txt inside each archiv
 - The SDK emulator could not be run locally (launcher exits after Preferences, "Connection Terminated"; RMI registry starts but no phone window). Verification is against Moti's frames and videos.
 
 ## 6. How to resume
-1. Read this file, BEHAVIOUR-RULES.md and NOTES.md (latest archive zip). 2. Check live state (HEAD, blob). 3. If v6.240 is still not live and Actions is healthy, run stage 2. 4. Re-run the r-tests on any new build. 5. Tell Moti only significant changes (was / becomes) and what is not done.
+1. Read this file, BEHAVIOUR-RULES.md and NOTES.md (latest archive zip). 2. Check live state (HEAD, blob). 3. If v6.241 is still not live and Actions is healthy, run stage 2. 4. Re-run the r-tests on any new build. 5. Tell Moti only significant changes (was / becomes) and what is not done.
