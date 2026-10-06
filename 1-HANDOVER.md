@@ -5,7 +5,7 @@ Repo: https://github.com/mbaiforinsticnt-dev/c2-reborn  |  Live: https://mbaifor
 Owner: Moti Berger (Europe/London).
 
 ## 1. Publish state (check this first, then verify live)
-- Live now: v6.245 (published 6 Oct 00:50). Blob 07f3644377181771ca5e293830d99b8e7e520767, 3,628,667 bytes, publish HEAD f808ec817370b4f855a1586bca9e4da9a1db5d3d, archive commit ecf64e36ee1e2747ccdc88b9b0cb585dcb5623e9 (archive/1-c2-reborn-v6.245.zip, byte-verified), run https://github.com/mbaiforinsticnt-dev/c2-reborn/actions/runs/37390586510. Rollback: v6.243 blob ff3fd3e7a4c5e0b4726f7b9fede4f57e688164f9. v6.245 = v6.243 plus fix: two-line rows keep the label with its sub-line (v6.243 clipped them). v6.241 Use detail Numbers list; v6.242/243 upper-label icon rows and one-item scroll thumb. No v6.244.
+- Live now: v6.250 (published 6 Oct 01:43). Blob 940a276b3756f21dab6964979a5b1839235a090e, 3,635,270 bytes, publish commit 1eb07ca0ac457dcaf9eb0aab9cdcb76f059546e9, archive commit 7703575b80cdaf0c8eb190aff1cf597b77238237 (archive/1-c2-reborn-v6.250.zip, byte-verified), run https://github.com/mbaiforinsticnt-dev/c2-reborn/actions/runs/37395427708 (check it finished). Rollback: v6.249 blob 77d7f5c581555a9e06327c1c75e5f497ec5675d7 (publish d195860979fa, archive fc8c727eebdf). Earlier: v6.246 Maps icon and 4-row pages, v6.247 row categories batch 1 (19 pages 4 rows, 13 pages 7 rows), v6.248 Home screen key radio markers, v6.249 row categories batch 2 (Moti answers on 29 unplaced pages) plus calendar-12 fallback removed, v6.250 Conversation details page per handset footage.
 - Rollback: v6.238 blob fa492e1d9d37a14ac8414849ddd329816f993d99. Earlier: v6.237 5462207161c8da389dabe52df65a2c84256a1514, v6.236 29c88c29dc74f62b587b7e83dcd62f8ea012cbcb, v6.235 9d29ed9046525931232300027d2229b6c3405144.
 - If a publish run sits queued 15 min it is cancelled by GitHub; re-run the workflow stage only (the archive step is already done).
 
@@ -65,3 +65,9 @@ These are Moti's own handset photos and words. Emulator wins where it disagrees.
 
 ## 6. How to resume
 1. Read this file, BEHAVIOUR-RULES.md and NOTES.md (latest archive zip). 2. Check live state (HEAD, blob). 3. If v6.241 is still not live and Actions is healthy, run stage 2. 4. Re-run the r-tests on any new build. 5. Tell Moti only significant changes (was / becomes) and what is not done.
+
+
+## 4c. Icon logic rule (Moti 01:15)
+For wrong placeholder icons (the Calendar "12" fallback), pick per row the firmware icon that fits what the row is. Firmware icons only, never drawn. Where none fits, tell the parent with a screenshot per page. Open: Screen saver "Analogue clock" icon (white circle, handset shows grey-blue clock), memory card icon swap (Moti image not located), messageview floating 7.2.0 geometry, Groups centre key View.
+## 4d. Row categories (Moti answers 01:24-01:35)
+4 rows: accessories appmemory datatransfer graphicdownloads logtimers phonememory phoneswitch saved store templates themes tofolder collection galpicker games generalmsg. 7 rows (7.1.0): appdownloads deletecontacts deletemessages infomessages recipientpicker screensaver wallpaperlist homescreenkey. 6 rows: groups (icon right edge), speeddials. messageview: floating 7 (row count only). Unanswered: mmsconfig.
