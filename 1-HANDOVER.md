@@ -6,12 +6,12 @@ Snapshot: 7 October 2026. Read START-HERE.md and the latest archived BEHAVIOUR-R
 
 Live phone: https://mbaiforinsticnt-dev.github.io/c2-reborn/index.html
 
-- v6.312 root blob: `abcc45c4d9547799481da3a60e353a80a90fb061`.
-- Publish commit: `1df51fc15cb07bdda7984ca3f6445977162f7af9`.
-- Archive commit: `3cc5e77da3bc099fef8764e83e528f3c8db76bd8`.
-- Bundle: `archive/1-c2-reborn-v6.312-candidate.zip`, containing index.html, NOTES.md, BEHAVIOUR-RULES.md and number-rule-check.py.
-- One-step index rollback target: v6.307 blob `c8946a2130890089c0c3021a216d952ae6057a7d`.
-- Replacement sweep (fixed clock: 7 October 2026, 01:12 BST): 204 page entries, 409 lines, MD5 prefix `a798bba3`, no errors or exceptions. v6.312 differs from v6.311 baseline 6b71d572 only by the two new contact Options; no final newline means wc -l prints 408 for 409 content lines.
+- v6.313 root blob: `047c380665053b0cf0823888c134cd53a876f356`.
+- Publish commit: `6c660a57df6a7370d7d971e1ee777341c9a70b8f`.
+- Archive commit: `0b8d2496e0897e7da20c96c4d74576df65bd9148`.
+- Bundle: `archive/1-c2-reborn-v6.313-candidate.zip`, containing index.html, NOTES.md, BEHAVIOUR-RULES.md and number-rule-check.py.
+- One-step index rollback target: v6.312 blob `abcc45c4d9547799481da3a60e353a80a90fb061`.
+- Replacement sweep (fixed clock: 7 October 2026, 01:12 BST): 204 page entries, 409 lines, MD5 prefix `a798bba3`, no errors or exceptions. v6.313 is byte-identical to the v6.312 sweep; that baseline differs from v6.311 6b71d572 only by the two new contact Options; no final newline means wc -l prints 408 for 409 content lines.
 - Old q126/q127/q129/q130 scripts were lost and were not banked in the release ZIPs. Their old MD5s are void. The replacement is narrower, not equivalent behavior coverage.
 
 Verify current repository and Pages bytes before relying on this snapshot. Raw GitHub is not the served Pages build.
@@ -30,7 +30,7 @@ Verify current repository and Pages bytes before relying on this snapshot. Raw G
 
 ## Current rules and changes
 
-BEHAVIOUR-RULES.md in the v6.312 ZIP is the complete rule record. It includes rules 21-39; next unused number is 40. In particular:
+BEHAVIOUR-RULES.md in the v6.313 ZIP preserves the rule record, including historical pre-implementation status. Current implementation and verification status is below. It includes rules 21-39; next unused number is 40. In particular:
 
 - One shared number-to-name lookup. Select / Select all / Deselect wording, except established message read/unread wording.
 - Calling-phase controls deliberately differ from the handset. Do not remove C2-only features just because the emulator lacks them.
@@ -70,11 +70,12 @@ BEHAVIOUR-RULES.md in the v6.312 ZIP is the complete rule record. It includes ru
 - This is a fixed audit snapshot, not full differential parity certification. No third-party audit has been sent. Ground-up untouched; no private evidence included.
 
 
-## Scoped v6.312 evidence and open work
+## Scoped v6.313 evidence and open work
 
-- Current HTML SHA256 `fc795f096508a8eb786d152d7ebec5e79bba9d084f2bd5472fb6d3995c408592`, 3,737,641 bytes. ZIP SHA256 `57acf91d46831c4f26342f8a5bdcf5568322548a15d3bc91b4963c1399e17d51`, 4,667,614 bytes, 81 members. Archive-pinned download byte-matched and served Pages blob matched. Publish run 37595240914 succeeded.
-- 60 focused checks: filter14/core12/actions10/storage5/font19. Sweep 409 content lines/no JS errors; no full form or differential certification.
-- Call filtering is a deliberate custom addition shown on another phone: Off/On/On-until-expiry with validated future date/time, reload-safe expiry, blacklist/whitelist pools with Options > Remove, contact Add to blacklist/Add to whitelist. Demo data only. IMPORTANT: these settings are not yet wired into incoming-call simulation. Incoming-call enforcement remains open and must be tested.
+- Current HTML SHA256 `5e7eb18874bed44996ea7b8ee8c9938f8701531dac7914b3fd064296c35c0b45`, 3,739,345 bytes. ZIP SHA256 `5ce87161946801fe8fa14264c0c48ca0114ab283b7fc3c770582bdf651defd14`, 4,889,528 bytes, 93 members. Archive-pinned download byte-matched and served Pages blob matched. Publish run 37597443719 succeeded.
+- RELEASE-6.312 and RELEASE-6.313 candidate notes inside the frozen ZIP retain their pre-publish status. They are historical preparation records, not current deployment status. This handover and README record the verified release.
+- 73 focused checks: enforcement13/filter14/core12/actions10/storage5/font19. Sweep 409 content lines/no JS errors; no full form or differential certification.
+- Call filtering is a deliberate custom addition shown on another phone: Off/On/On-until-expiry with validated future date/time, reload-safe expiry, blacklist/whitelist pools with Options > Remove, contact Add to blacklist/Add to whitelist. Demo data only. Settled rules now govern incoming-call simulation: active blacklist blocks listed numbers, Off allows them, Timed stops blocking at expiry; whitelist mode allows only listed numbers and an empty whitelist blocks all. A number in both active lists pauses simulation pending the overlap decision. Blocked/pending results invent no missed/received events. Actual live whitelist-reject and filters-Off allow paths visually verified. Other enforcement combinations have focused local tests, not live UI certification.
 - Reject unknown callers is a pending note until the owner defines unknown (withheld, unsaved or both). Black/white overlap rule awaits his answer. Merge contact remains Not implemented pending its open question; auto recording was expressly deferred. Exploratory answer-machine/calendar/extra-number tour does not establish implementation scope.
 - Live font verification: Contacts Settings selects Small; General Font size Contacts reflects the same saved value. Small18/Normal22/Large26px Names screens inspected after navigation/reload. Six-row layout preserved.
 - Live group-red verification: Names > Business opens Business; one red End-call click without active call goes to home. Before/after screenshots inspected.
