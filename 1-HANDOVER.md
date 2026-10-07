@@ -6,12 +6,12 @@ Snapshot: 7 October 2026. Read START-HERE.md and the latest archived BEHAVIOUR-R
 
 Live phone: https://mbaiforinsticnt-dev.github.io/c2-reborn/index.html
 
-- v6.306 root blob: `e314ebcfded0ddf997baab0ed322e6a33ca8da2b`.
-- Publish commit: `ba2c3cf3ca2b6d8493298b82a128f38475f667da`.
-- Archive commit: `e9db6c069f8627e8e37a3e48530eb0ab1be2c31d`.
-- Bundle: `archive/2-c2-reborn-v6.306.zip`, containing index.html, NOTES.md, BEHAVIOUR-RULES.md and number-rule-check.py.
-- One-step index rollback target: v6.305 blob `76edbe198c98d3532ba93e33dd4aa5ef5d35aa45`.
-- Replacement sweep (fixed clock: 7 October 2026, 01:12 BST): 204 page entries, 409 lines, MD5 prefix `4f4a6cb6`, no errors or exceptions. v6.306 differs from the v6.305 sweep baseline 36b87ba9 because call-list text/layout changed.
+- v6.312 root blob: `abcc45c4d9547799481da3a60e353a80a90fb061`.
+- Publish commit: `1df51fc15cb07bdda7984ca3f6445977162f7af9`.
+- Archive commit: `3cc5e77da3bc099fef8764e83e528f3c8db76bd8`.
+- Bundle: `archive/1-c2-reborn-v6.312-candidate.zip`, containing index.html, NOTES.md, BEHAVIOUR-RULES.md and number-rule-check.py.
+- One-step index rollback target: v6.307 blob `c8946a2130890089c0c3021a216d952ae6057a7d`.
+- Replacement sweep (fixed clock: 7 October 2026, 01:12 BST): 204 page entries, 409 lines, MD5 prefix `a798bba3`, no errors or exceptions. v6.312 differs from v6.311 baseline 6b71d572 only by the two new contact Options; no final newline means wc -l prints 408 for 409 content lines.
 - Old q126/q127/q129/q130 scripts were lost and were not banked in the release ZIPs. Their old MD5s are void. The replacement is narrower, not equivalent behavior coverage.
 
 Verify current repository and Pages bytes before relying on this snapshot. Raw GitHub is not the served Pages build.
@@ -30,7 +30,7 @@ Verify current repository and Pages bytes before relying on this snapshot. Raw G
 
 ## Current rules and changes
 
-BEHAVIOUR-RULES.md in the v6.306 ZIP is the complete rule record. It includes rules 21-39; next unused number is 40. In particular:
+BEHAVIOUR-RULES.md in the v6.312 ZIP is the complete rule record. It includes rules 21-39; next unused number is 40. In particular:
 
 - One shared number-to-name lookup. Select / Select all / Deselect wording, except established message read/unread wording.
 - Calling-phase controls deliberately differ from the handset. Do not remove C2-only features just because the emulator lacks them.
@@ -58,7 +58,7 @@ BEHAVIOUR-RULES.md in the v6.306 ZIP is the complete rule record. It includes ru
 - Icon viewer commit: `407b92091684164ac8cade46b9e8c5823aa810a2`; viewer was regenerated from the emoji pool.
 - Do not delete and re-upload a documentation file merely to replace it. Use its editor to keep one undoable commit and its exact filename. Browser uploads may add numeric prefixes when names collide.
 
-## Scoped v6.306 audit evidence
+## Historical v6.306 audit evidence (retained, not current-file hashes)
 
 - Four full two-line call rows; repeated events retain individual times. Combined list is newest-first. This deliberately differs from Nokia aggregation.
 - 13 targeted empty/delete/Back/persistence tests pass. Repeated callers/fifth-row checked in all four lists. Three viewport sizes and eight existing themes visually checked.
@@ -68,3 +68,16 @@ BEHAVIOUR-RULES.md in the v6.306 ZIP is the complete rule record. It includes ru
 - Legacy aggregate histories retain their stored count, but unavailable individual times cannot be reconstructed. No cellular incoming-call pipeline is certified.
 - The repaired number-rule probe reports zero leaks on 13 surfaces, but the in-call positive name assertion is absent; it is not full name-lookup certification.
 - This is a fixed audit snapshot, not full differential parity certification. No third-party audit has been sent. Ground-up untouched; no private evidence included.
+
+
+## Scoped v6.312 evidence and open work
+
+- Current HTML SHA256 `fc795f096508a8eb786d152d7ebec5e79bba9d084f2bd5472fb6d3995c408592`, 3,737,641 bytes. ZIP SHA256 `57acf91d46831c4f26342f8a5bdcf5568322548a15d3bc91b4963c1399e17d51`, 4,667,614 bytes, 81 members. Archive-pinned download byte-matched and served Pages blob matched. Publish run 37595240914 succeeded.
+- 60 focused checks: filter14/core12/actions10/storage5/font19. Sweep 409 content lines/no JS errors; no full form or differential certification.
+- Call filtering is a deliberate custom addition shown on another phone: Off/On/On-until-expiry with validated future date/time, reload-safe expiry, blacklist/whitelist pools with Options > Remove, contact Add to blacklist/Add to whitelist. Demo data only. IMPORTANT: these settings are not yet wired into incoming-call simulation. Incoming-call enforcement remains open and must be tested.
+- Reject unknown callers is a pending note until the owner defines unknown (withheld, unsaved or both). Black/white overlap rule awaits his answer. Merge contact remains Not implemented pending its open question; auto recording was expressly deferred. Exploratory answer-machine/calendar/extra-number tour does not establish implementation scope.
+- Live font verification: Contacts Settings selects Small; General Font size Contacts reflects the same saved value. Small18/Normal22/Large26px Names screens inspected after navigation/reload. Six-row layout preserved.
+- Live group-red verification: Names > Business opens Business; one red End-call click without active call goes to home. Before/after screenshots inspected.
+- Carries event-specific missed-call snooze/calendar reminder, incoming demo call state preservation, Phone/SIM Copy/Move, font and red repairs. No real calls or connected contacts change.
+- Backups and batched verified cleanup are separate from development. Keep current/rollback on GitHub. No per-build full MEGA gate; no removals authorized by this update. Ground-up untouched.
+- Full differential audit, exact upright blue glyph and other unresolved audit leads remain. No third-party audit send, no audit-ready closeout.
