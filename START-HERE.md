@@ -6,7 +6,7 @@
 2. Read current main and its index.html blob. Separately fetch the Pages index with a unique `?cb=` query and hash those served bytes.
 3. Download the release ZIP pinned to its archive commit, not a moving main URL. Compare bytes or a recorded checksum.
 4. Extract index.html, NOTES.md, BEHAVIOUR-RULES.md and number-rule-check.py. Never add real contacts to a release bundle.
-5. v6.306 archive commit: `e9db6c069f8627e8e37a3e48530eb0ab1be2c31d`; path `archive/2-c2-reborn-v6.306.zip`; expected HTML git blob `e314ebcfded0ddf997baab0ed322e6a33ca8da2b`.
+5. v6.312 archive commit: `3cc5e77da3bc099fef8764e83e528f3c8db76bd8`; path `archive/1-c2-reborn-v6.312-candidate.zip`; expected HTML git blob `abcc45c4d9547799481da3a60e353a80a90fb061`. ZIP SHA256 `57acf91d46831c4f26342f8a5bdcf5568322548a15d3bc91b4963c1399e17d51`; HTML SHA256 `fc795f096508a8eb786d152d7ebec5e79bba9d084f2bd5472fb6d3995c408592` (3,737,641 bytes).
 
 ## Replacement regression sweep
 
@@ -17,7 +17,7 @@ mkdir -p /tmp/h
 python3 sweep.py index.html sweep-output.txt
 ```
 
-The test clock is fixed at 7 October 2026, 01:12 BST (epoch 1791331920000) for repeatable computed times. For v6.306 the baseline is 409 lines and MD5 prefix `4f4a6cb6`, with zero JS errors or exceptions. It checks 204 page entries, screen text, Options, softkeys and Down x4 / OK routing. It does not replace form-sequence tests or differential emulator testing. The old q126-q130 scripts and MD5 baselines are not recoverable from the release ZIPs checked so far.
+The test clock is fixed at 7 October 2026, 01:12 BST (epoch 1791331920000) for repeatable computed times. For v6.312 the baseline is 409 content lines and MD5 prefix `a798bba3`, with zero JS errors or exceptions. It checks 204 page entries, screen text, Options, softkeys and Down x4 / OK routing. It does not replace form-sequence tests or differential emulator testing. The old q126-q130 scripts and MD5 baselines are not recoverable from the release ZIPs checked so far.
 
 The replacement code is banked here so it does not depend on a temporary folder:
 
@@ -67,6 +67,11 @@ Temporary upload/publish helpers are conveniences, not the durable procedure. Th
 
 Do not touch ground-up/ during root-build work. Do not prune archive evidence or backups until the owner chooses the exact removals. Do not rewrite Git history.
 
-## v6.306 scope
+## v6.312 scope
 
 See README.md and 1-HANDOVER.md for scoped tests, deliberate individual-event rule, exact-icon gap, legacy history limit and unverified behavior. Archive includes the replacement sweep/helper, focused tests/results and demo-only preview. The sweep is not full differential certification. Do not reuse scratch-dependent historical scripts without inspecting their prerequisites.
+
+
+The 409-content-line sweep has no final newline, so wc -l reports 408. This is a formatting count, not a lost test. The only differences from the v6.311 baseline 6b71d572 are Add to blacklist / Add to whitelist in contact Options. New filter pages have 14 focused tests separate from that sweep.
+
+Rollback is the previous live release, v6.307 blob `c8946a2130890089c0c3021a216d952ae6057a7d`, not unpublished v6.311. Filter settings/pools/contact actions and expiry are implemented; incoming-call enforcement is NOT wired yet. Unknown-caller meaning and black/white overlap remain open. No recording code, Merge unimplemented, no full-parity or audit-ready claim.
