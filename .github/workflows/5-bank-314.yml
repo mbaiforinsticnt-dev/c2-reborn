@@ -1,0 +1,51 @@
+name: Bank exact v6.314 archive (no publish)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  bank:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reconstruct and verify frozen archive before one archive-only commit
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --filter=blob:none --no-checkout "https://x-access-token:${TOKEN}@github.com/${REPO}.git" repo
+          cd repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config core.autocrlf false
+          git read-tree HEAD
+          current=$(git ls-tree HEAD -- index.html | awk '{print $3}')
+          test "$current" = '047c380665053b0cf0823888c134cd53a876f356'
+          dest='archive/1-c2-reborn-v6.314-candidate.zip'
+          if git cat-file -e "HEAD:${dest}" 2>/dev/null; then
+            git cat-file blob "HEAD:${dest}" > /tmp/already314.zip
+            echo 'd25b8c1f8b3fd5f468185b5f66b4d489be6c1657e65f0fc3aedd5069fdfec26c  /tmp/already314.zip' | sha256sum -c -
+            echo 'Exact archive already banked; no changes'
+            exit 0
+          fi
+          for n in 1 2 3 4; do
+            git cat-file blob "HEAD:archive/v6.314-rebuild.part${n}.txt" > "/tmp/part${n}"
+          done
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          lengths=[300000,300000,300000,290855]
+          b=b''.join(Path('/tmp/part'+str(i+1)).read_bytes()[:n] for i,n in enumerate(lengths))
+          assert hashlib.sha256(b).hexdigest()=='4304fadc1ea14f2a51e288813363e2a0401a5c46d9f3a98216d0016bb4fc5e63'
+          Path('/tmp/rebuild314.py').write_bytes(b)
+          PY
+          python3 /tmp/rebuild314.py
+          echo 'd25b8c1f8b3fd5f468185b5f66b4d489be6c1657e65f0fc3aedd5069fdfec26c  archive/1-c2-reborn-v6.314-candidate.zip' | sha256sum -c -
+          oid=$(git hash-object -w "$dest")
+          git update-index --add --cacheinfo "100644,${oid},${dest}"
+          tree=$(git write-tree)
+          commit=$(git commit-tree "$tree" -p HEAD -m 'Bank exact v6.314 SDK-verified Gallery Back archive')
+          git diff-tree --no-commit-id --name-only -r "$commit" | grep -Fx "$dest"
+          test "$(git diff-tree --no-commit-id --name-only -r "$commit" | wc -l)" -eq 1
+          git push origin "${commit}:refs/heads/main"
+          echo "Archive-only commit: $commit; index unchanged at $current" | tee -a "$GITHUB_STEP_SUMMARY"
