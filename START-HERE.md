@@ -6,7 +6,7 @@
 2. Read current main and its index.html blob. Separately fetch the Pages index with a unique `?cb=` query and hash those served bytes.
 3. Download the release ZIP pinned to its archive commit, not a moving main URL. Compare bytes or a recorded checksum.
 4. Extract index.html, NOTES.md, BEHAVIOUR-RULES.md and number-rule-check.py. Never add real contacts to a release bundle.
-5. v6.313 archive commit: `0b8d2496e0897e7da20c96c4d74576df65bd9148`; path `archive/1-c2-reborn-v6.313-candidate.zip`; expected HTML git blob `047c380665053b0cf0823888c134cd53a876f356`. ZIP SHA256 `5ce87161946801fe8fa14264c0c48ca0114ab283b7fc3c770582bdf651defd14`; HTML SHA256 `5e7eb18874bed44996ea7b8ee8c9938f8701531dac7914b3fd064296c35c0b45` (3,739,345 bytes).
+5. v6.314 archive commit: `b4bb3582e2a2b8741358093be54a4ece9c2a85cf`; path `archive/1-c2-reborn-v6.314-candidate.zip`; expected HTML git blob `27216037c33ea273d94429e36526d84ac757840f`. ZIP SHA256 `d25b8c1f8b3fd5f468185b5f66b4d489be6c1657e65f0fc3aedd5069fdfec26c`; HTML SHA256 `9354502623c56eec225153e3ac9d150fdf1d2f77f50c464c375486202383296c` (3,739,396 bytes).
 
 ## Replacement regression sweep
 
@@ -17,7 +17,7 @@ mkdir -p /tmp/h
 python3 sweep.py index.html sweep-output.txt
 ```
 
-The test clock is fixed at 7 October 2026, 01:12 BST (epoch 1791331920000) for repeatable computed times. For v6.313 the baseline is 409 content lines and MD5 prefix `a798bba3`, with zero JS errors or exceptions. It checks 204 page entries, screen text, Options, softkeys and Down x4 / OK routing. It does not replace form-sequence tests or differential emulator testing. The old q126-q130 scripts and MD5 baselines are not recoverable from the release ZIPs checked so far.
+The test clock is fixed at 7 October 2026, 01:12 BST (epoch 1791331920000) for repeatable computed times. For v6.314 the baseline is 409 content lines and MD5 prefix `a798bba3`, with zero JS errors or exceptions. It checks 204 page entries, screen text, Options, softkeys and Down x4 / OK routing. It does not replace form-sequence tests or differential emulator testing. The old q126-q130 scripts and MD5 baselines are not recoverable from the release ZIPs checked so far.
 
 The replacement code is banked here so it does not depend on a temporary folder:
 
@@ -67,11 +67,16 @@ Temporary upload/publish helpers are conveniences, not the durable procedure. Th
 
 Do not touch ground-up/ during root-build work. Do not prune archive evidence or backups until the owner chooses the exact removals. Do not rewrite Git history.
 
-## v6.313 scope
+## v6.314 scope
 
 See README.md and 1-HANDOVER.md for scoped tests, deliberate individual-event rule, exact-icon gap, legacy history limit and unverified behavior. Archive includes the replacement sweep/helper, focused tests/results and demo-only preview. The sweep is not full differential certification. Do not reuse scratch-dependent historical scripts without inspecting their prerequisites.
 
 
-The 409-content-line sweep has no final newline, so wc -l reports 408. This is a formatting count, not a lost test. The v6.313 sweep is byte-identical to v6.312. The earlier v6.312 change from v6.311 baseline 6b71d572 was Add to blacklist / Add to whitelist in contact Options. Enforcement has 13 focused tests separate from the sweep; filter pages have 14.
+The 409-content-line sweep has no final newline, so wc -l reports 408. This is a formatting count, not a lost test. The v6.314 sweep is byte-identical to v6.312. The earlier v6.312 change from v6.311 baseline 6b71d572 was Add to blacklist / Add to whitelist in contact Options. Enforcement has 13 focused tests separate from the sweep; filter pages have 14.
 
-Rollback is the previous live release, v6.312 blob `abcc45c4d9547799481da3a60e353a80a90fb061`, not unpublished v6.311. Filter settings/pools/contact actions and expiry are implemented and settled rules now govern incoming demo calls. Active blacklist rejects listed numbers until expiry; whitelist permits listed numbers only. Both active with a number in both lists pauses simulation rather than guessing precedence. Blocked/pending results do not invent call-log events. Actual live whitelist-reject and filters-Off allow screens verified; other enforcement paths have focused local tests only. Unknown-caller meaning and black/white overlap remain open. No recording code, Merge unimplemented, no full-parity or audit-ready claim.
+Rollback is the previous live release, v6.313 blob `047c380665053b0cf0823888c134cd53a876f356`, not unpublished v6.311. Filter settings/pools/contact actions and expiry are implemented and settled rules now govern incoming demo calls. Active blacklist rejects listed numbers until expiry; whitelist permits listed numbers only. Both active with a number in both lists pauses simulation rather than guessing precedence. Blocked/pending results do not invent call-log events. Actual live whitelist-reject and filters-Off allow screens verified; other enforcement paths have focused local tests only. Unknown-caller meaning and black/white overlap remain open. No recording code, Merge unimplemented, no full-parity or audit-ready claim.
+
+
+## v6.314 Gallery Back evidence
+
+PDF F4 replayed against actual SDK before repair: Gallery root and Memory card view return to Menu with Gallery highlighted; exact v6.313 incorrectly went home. Existing stored-parent Back now restores the Menu selection. Folder/Options/marking returns, introduction dismissal, red-to-home and shortcut/direct-entry fallback pass12 checks. Local and actual live Menu > Gallery > Back screenshots inspected; Menu/Gallery highlight retained. No layout/menu-order parity claim: SDK and owner HTML menu ordering differ. Bank-only workflow5-bank-314 reconstructs the frozen ZIP from four declared-length text members with prior/script/final SHA checks and changes only the ZIP. It does not publish index or remove files.
