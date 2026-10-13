@@ -67,9 +67,18 @@ jobs:
           mkdir -p "$HOME/.android"
           printf '%s' "$KEYSTORE_B64" | base64 -d > "$HOME/.android/debug.keystore"
           chmod 600 "$HOME/.android/debug.keystore"
-      - name: Build test-signed APK
+      - name: Build test-signed APK with explicit persistent key
         working-directory: android/native
-        run: gradle --no-daemon assembleDebug
+        run: |
+          set -euo pipefail
+          cat >> app/build.gradle <<'GRADLE'
+          android.signingConfigs.debug.storeFile = file(System.getenv('HOME') + '/.android/debug.keystore')
+          android.signingConfigs.debug.storePassword = 'android'
+          android.signingConfigs.debug.keyAlias = 'androiddebugkey'
+          android.signingConfigs.debug.keyPassword = 'android'
+          GRADLE
+          keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey
+          gradle --no-daemon assembleDebug
       - name: Verify signature and retain hashes
         run: |
           set -euo pipefail
