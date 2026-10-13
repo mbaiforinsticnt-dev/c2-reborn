@@ -1,0 +1,427 @@
+name: Build GPT c2 from reborn APK
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "GPT-c2-from-reborn/**"
+      - ".github/workflows/build-GPT-c2-from-reborn.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Serialise release publication. Replace superseded runs so a stalled
+# emulator dependency step cannot hold up all newer APKs indefinitely.
+concurrency:
+  group: c2-native-apk-release
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # The old v1.78.0 run remained stuck in apt-get, blocking subsequent
+    # release builds through the concurrency group. Bound the whole job too.
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.7"
+
+      - name: Generate 240x320 Nokia-style grey swirl wallpaper
+        shell: bash
+        run: |
+          set -euo pipefail
+          dst="GPT-c2-from-reborn/app/src/main/res/drawable/screen_wallpaper.png"
+          python3 -m pip install --user --quiet "Pillow==11.3.0"
+          python3 GPT-c2-from-reborn/tools/create_swirl_wallpaper.py "$dst"
+          mkdir -p GPT-c2-from-reborn/app/src/main/assets
+          cp "$dst" GPT-c2-from-reborn/app/src/main/assets/nokia_wallpaper.png
+          python3 - <<'PY'
+          from pathlib import Path
+          import struct
+          data=Path("GPT-c2-from-reborn/app/src/main/assets/nokia_wallpaper.png").read_bytes()
+          assert data[:8] == bytes.fromhex("89504e470d0a1a0a")
+          assert struct.unpack(">II",data[16:24]) == (240,320)
+          print("Valid 240x320 swirl PNG packaged:",len(data),"bytes")
+          PY
+
+      - name: Restore pinned Nokia checkbox/radio PNG assets
+        run: python3 GPT-c2-from-reborn/tools/extract_selection_icons.py
+
+      - name: Restore pinned Nokia Sans font faces
+        run: python3 GPT-c2-from-reborn/tools/extract_nokia_fonts.py
+
+      - name: Test native SMS detail parser
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/parser-smoke
+          javac -d build/parser-smoke \
+            app/src/main/java/com/moshenuch/c2reborn/NativeSmsDetails.java \
+            tools/NativeSmsDetailsSmokeTest.java
+          java -cp build/parser-smoke com.moshenuch.c2reborn.NativeSmsDetailsSmokeTest
+
+      - name: Test Nokia native main menu navigation
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/menu-smoke
+          javac -d build/menu-smoke \
+            app/src/main/java/com/moshenuch/c2reborn/NativeMenuLayout.java \
+            tools/NativeMenuLayoutSmokeTest.java
+          java -cp build/menu-smoke com.moshenuch.c2reborn.NativeMenuLayoutSmokeTest
+
+      - name: Test Go to state, dispatch, Restore defaults and video path
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/goto-smoke
+          javac -d build/goto-smoke \
+            app/src/main/java/com/moshenuch/c2reborn/NativeGoToShortcuts.java \
+            app/src/main/java/com/moshenuch/c2reborn/NativeGoToRouter.java \
+            tools/NativeGoToShortcutsSmokeTest.java
+          {
+            echo "GPT C2 native Go to v1.36.0 build-side audit"
+            echo "Model and dispatch: Java 17, same production serializer and router"
+            java -cp build/goto-smoke com.moshenuch.c2reborn.NativeGoToShortcutsSmokeTest
+            echo "Source-wiring checks:"
+            python3 tools/audit_goto_wiring.py
+            echo "Limitations: these are CI self-tests, NOT proof the emulator camera works."
+          } | tee build/goto-smoke/goto-audit-report.txt
+          {
+            echo "## Native Go to — build-side audit"
+            echo 'All checks below must PASS or the APK workflow fails.'
+            echo '~~~text'
+            cat build/goto-smoke/goto-audit-report.txt
+            echo '~~~'
+            echo
+            echo 'Android Video recorder capability and callback results must still be tested on a device.'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload build-side Go to audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: GPT-c2-from-reborn-GoTo-audit-v1.36.0
+          path: GPT-c2-from-reborn/build/goto-smoke/goto-audit-report.txt
+          if-no-files-found: error
+
+      - name: Test isolated emulator audit fixtures
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/audit-fixtures-smoke
+          javac -d build/audit-fixtures-smoke \
+            app/src/main/java/com/moshenuch/c2reborn/NativeAuditFixtures.java \
+            app/src/main/java/com/moshenuch/c2reborn/NativeSmsDetails.java \
+            tools/NativeAuditFixturesSmokeTest.java
+          java -cp build/audit-fixtures-smoke com.moshenuch.c2reborn.NativeAuditFixturesSmokeTest
+
+      - name: Test bulk SMS marking and production wiring
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/sms-bulk-smoke
+          javac -d build/sms-bulk-smoke \
+            app/src/main/java/com/moshenuch/c2reborn/NativeSmsBulkSelection.java \
+            app/src/main/java/com/moshenuch/c2reborn/NativeAuditFixtures.java \
+            tools/NativeSmsBulkSelectionSmokeTest.java
+          {
+            echo "Native SMS bulk selection — v1.37.0"
+            java -cp build/sms-bulk-smoke com.moshenuch.c2reborn.NativeSmsBulkSelectionSmokeTest
+            python3 tools/audit_sms_bulk_wiring.py
+            echo "These are source/model checks, not proof of real emulator interaction."
+          } | tee build/sms-bulk-smoke/audit.txt
+          {
+            echo "## SMS bulk read/unread — build-side audit"
+            echo '~~~text'
+            cat build/sms-bulk-smoke/audit.txt
+            echo '~~~'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload bulk SMS selection audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: GPT-c2-from-reborn-SMS-bulk-audit-v1.37.0
+          path: GPT-c2-from-reborn/build/sms-bulk-smoke/audit.txt
+          if-no-files-found: error
+
+      - name: Test assignable home-screen shortcut keys and app wiring
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/home-shortcuts-smoke
+          javac -d build/home-shortcuts-smoke \
+            app/src/main/java/com/moshenuch/c2reborn/NativeHomeShortcuts.java \
+            tools/NativeHomeShortcutsSmokeTest.java
+          {
+            echo "Native My shortcuts — v1.38.0"
+            java -cp build/home-shortcuts-smoke com.moshenuch.c2reborn.NativeHomeShortcutsSmokeTest
+            python3 tools/audit_home_shortcuts_wiring.py
+            echo "These tests verify code logic and source wiring, not emulator key presses."
+          } | tee build/home-shortcuts-smoke/audit.txt
+          {
+            echo "## Nokia My shortcuts — build-side audit"
+            echo '~~~text'
+            cat build/home-shortcuts-smoke/audit.txt
+            echo '~~~'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload home shortcut assignment audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: GPT-c2-from-reborn-Home-shortcuts-audit-v1.38.0
+          path: GPT-c2-from-reborn/build/home-shortcuts-smoke/audit.txt
+          if-no-files-found: error
+
+      - name: Test Conversations sender/icon spacing
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/conversation-row-smoke
+          javac -d build/conversation-row-smoke \
+            app/src/main/java/com/moshenuch/c2reborn/NativeConversationRowLayout.java \
+            app/src/main/java/com/moshenuch/c2reborn/NativeAuditFixtures.java \
+            tools/NativeConversationRowLayoutSmokeTest.java
+          {
+            echo "Nokia 240px Conversations row spacing — v1.39.0"
+            java -cp build/conversation-row-smoke com.moshenuch.c2reborn.NativeConversationRowLayoutSmokeTest
+            python3 tools/audit_conversation_row_layout.py
+            echo "Build-side geometry and renderer checks passed; emulator screenshot remains pending."
+          } | tee build/conversation-row-smoke/audit.txt
+          {
+            echo "## Conversations SMS icon/name overlap — build-side audit"
+            echo '~~~text'
+            cat build/conversation-row-smoke/audit.txt
+            echo '~~~'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload Conversations layout audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: GPT-c2-from-reborn-Conversations-layout-audit-v1.39.0
+          path: GPT-c2-from-reborn/build/conversation-row-smoke/audit.txt
+          if-no-files-found: error
+
+      - name: Test Nokia notice wrapping, Calculator and detail-page layout
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/overlay-layout-smoke
+          javac -d build/overlay-layout-smoke \
+            app/src/main/java/com/moshenuch/c2reborn/NativeOverlayLayout.java \
+            app/src/main/java/com/moshenuch/c2reborn/NativeNoticeText.java \
+            tools/NativeOverlayLayoutSmokeTest.java \
+            tools/NativeNoticeTextSmokeTest.java
+          {
+            echo "Nokia measured notice wrapping and Calculator/Phone layout — v1.41.0"
+            java -cp build/overlay-layout-smoke com.moshenuch.c2reborn.NativeOverlayLayoutSmokeTest
+            java -cp build/overlay-layout-smoke com.moshenuch.c2reborn.NativeNoticeTextSmokeTest
+            python3 tools/audit_overlay_layout.py
+            echo "Build-side renderer geometry validated; emulator screenshot still needed."
+          } | tee build/overlay-layout-smoke/audit.txt
+          {
+            echo "## Nokia notification and Phone detail layout audit"
+            echo '~~~text'
+            cat build/overlay-layout-smoke/audit.txt
+            echo '~~~'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload Nokia overlay layout audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: GPT-c2-from-reborn-Overlay-layout-audit-v1.41.0
+          path: GPT-c2-from-reborn/build/overlay-layout-smoke/audit.txt
+          if-no-files-found: error
+
+      - name: Audit embedded video recording source wiring
+        working-directory: GPT-c2-from-reborn
+        run: python3 tools/audit_native_video_wiring.py
+
+      - name: Validate video MP4 audit scripts
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: |
+          bash -n tools/smoke_video_emulator.sh tools/smoke_photo_emulator.sh tools/smoke_gallery_capacity_emulator.sh tools/smoke_video_report_emulator.sh tools/run_emulator_smoke_suite.sh
+          python3 -m py_compile tools/check_recorded_mp4.py
+
+      - name: Audit camera, Gallery and capture failure handling
+        working-directory: GPT-c2-from-reborn
+        run: python3 tools/audit_camera_media_wiring.py
+
+      - name: Build native debug APK
+        working-directory: GPT-c2-from-reborn
+        run: gradle --no-daemon clean assembleDebug
+
+      - name: Verify Gradle APK packaging before publication
+        working-directory: GPT-c2-from-reborn
+        shell: bash
+        run: bash tools/audit_apk_package.sh app/build/outputs/apk/debug/app-debug.apk
+
+      - name: HTML reference
+        id: html
+        run: |
+          REF=$(tr -d '[:space:]' < GPT-c2-from-reborn/HTML-REFERENCE.txt)
+          if ! [[ "$REF" =~ ^[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid pinned HTML reference: $REF" >&2
+            exit 1
+          fi
+          echo "version=$REF" >> "$GITHUB_OUTPUT"
+
+      - name: Read app version
+        id: version
+        run: |
+          VERSION=$(awk -F'"' '/versionName/ {print $2; exit}' GPT-c2-from-reborn/app/build.gradle)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Prepare APK
+        run: cp GPT-c2-from-reborn/app/build/outputs/apk/debug/app-debug.apk "GPT-c2-from-reborn-HTML-v${{ steps.html.outputs.version }}-APK-v${{ steps.version.outputs.version }}.apk"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GPT-c2-from-reborn-HTML-v${{ steps.html.outputs.version }}-APK-v${{ steps.version.outputs.version }}
+          path: GPT-c2-from-reborn-HTML-v${{ steps.html.outputs.version }}-APK-v${{ steps.version.outputs.version }}.apk
+
+      - name: Publish immutable versioned APK release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: c2-native-v${{ steps.version.outputs.version }}
+          name: GPT c2 from reborn | APK v${{ steps.version.outputs.version }}
+          body: |
+            Archived audit APK v${{ steps.version.outputs.version }}.
+            HTML reference v${{ steps.html.outputs.version }}.
+            Native Android application; verify device behaviour separately.
+          artifacts: GPT-c2-from-reborn-HTML-v${{ steps.html.outputs.version }}-APK-v${{ steps.version.outputs.version }}.apk
+          allowUpdates: true
+          removeArtifacts: false
+          replacesArtifacts: true
+          makeLatest: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish/update public APK release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: c2-native-latest
+          name: GPT c2 from reborn | HTML v${{ steps.html.outputs.version }} | APK v${{ steps.version.outputs.version }}
+          body: |
+            APK version: v${{ steps.version.outputs.version }}
+            Pinned HTML reference: v${{ steps.html.outputs.version }}
+            Native Android Java/Canvas application (not a WebView).
+            Working scope and outstanding differences are documented in
+            https://github.com/moshenuch/moshenuch/blob/main/GPT-c2-from-reborn/RELEASE-NOTES.md
+            This release is not a verified pixel-perfect reproduction.
+          artifacts: GPT-c2-from-reborn-HTML-v${{ steps.html.outputs.version }}-APK-v${{ steps.version.outputs.version }}.apk
+          allowUpdates: true
+          removeArtifacts: true
+          replacesArtifacts: true
+          makeLatest: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify published APK assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+          HTML: ${{ steps.html.outputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          apk="GPT-c2-from-reborn-HTML-v${HTML}-APK-v${VERSION}.apk"
+          for tag in "c2-native-v${VERSION}" "c2-native-latest"; do
+            gh api "repos/${GITHUB_REPOSITORY}/releases/tags/${tag}" \
+              --jq '.assets[] | select(.name == "'"$apk"'") | .size' > /tmp/c2-asset-size
+            bytes="$(head -1 /tmp/c2-asset-size)"
+            test -n "$bytes" && test "$bytes" -gt 100000 || {
+              echo "::error::Release ${tag} missing the expected APK or its size is invalid"
+              exit 1
+            }
+            echo "Listed release asset on ${tag}: ${apk} (${bytes} bytes)"
+            dir="$(mktemp -d)"
+            verified=false
+            for attempt in 1 2 3 4; do
+              rm -f "${dir}/${apk}"
+              if gh release download "${tag}" --repo "${GITHUB_REPOSITORY}" \
+                  --pattern "${apk}" --dir "${dir}" &&
+                  cmp -s "${apk}" "${dir}/${apk}"; then
+                verified=true
+                break
+              fi
+              sleep 3
+            done
+            rm -rf "${dir}"
+            if [[ "${verified}" != true ]]; then
+              echo "::error::APK could not be downloaded byte-for-byte from release ${tag}"
+              exit 1
+            fi
+            checksum="$(sha256sum "${apk}" | cut -d' ' -f1)"
+            echo "Verified downloadable APK ${apk} from release ${tag} (SHA-256: ${checksum})"
+            echo "Download verified for ${tag}: ${apk} (SHA-256 ${checksum})" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      # Post-release diagnostic: a transient emulator infrastructure failure
+      # must not hide an APK that already passed build, signature and download
+      # verification. This still fails the workflow and uploads evidence.
+      # Release APKs are already published/byte-verified at this point.
+      # A missing ffprobe previously made the video probe pass without
+      # inspecting the actual video/audio streams or decoding any samples.
+      - name: Prepare bounded MP4 verification tools
+        shell: bash
+        timeout-minutes: 6
+        run: |
+          set -euo pipefail
+          if ! command -v ffprobe >/dev/null || ! command -v ffmpeg >/dev/null; then
+            echo "FFmpeg missing from hosted runner; attempting bounded install"
+            if ! (timeout 90s sudo apt-get update -qq &&
+                  timeout 120s sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg); then
+              echo "::warning::FFmpeg install timed out or failed. The optional video/JPEG decode probes will report FAIL, but the Gallery-capacity probe can still run."
+            fi
+          fi
+          if command -v ffprobe >/dev/null && command -v ffmpeg >/dev/null; then
+            ffprobe -version | sed -n '1p'
+            ffmpeg -version | sed -n '1p'
+          else
+            echo "::warning::ffprobe and ffmpeg unavailable. Audio/video decode cannot be verified in this CI run."
+          fi
+
+      - name: Enable Android emulator hardware acceleration
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Install, launch, and probe native video on Android 11 emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-metrics -camera-back emulated -camera-front emulated
+          script: bash GPT-c2-from-reborn/tools/run_emulator_smoke_suite.sh
+
+      - name: Upload Android 11 install/launch diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: GPT-c2-from-reborn-Android11-install-smoke
+          path: GPT-c2-from-reborn/build/emulator-smoke/
+          if-no-files-found: warn
+

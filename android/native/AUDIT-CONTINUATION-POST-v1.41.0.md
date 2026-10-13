@@ -1,0 +1,250 @@
+## v1.59.0 Camera Options overlay audit / v1.61 source correction
+
+Moti emulator verification of v1.59.0: **FAIL** Camera > Options: live Android SurfaceView preview covers the Options popup; only the top sliver of "Capture" remains visible. **PASS** Back: Options popup to viewfinder, then Media list. **PASS** Video recorder opens a native C2 Video recorder screen with live preview and Capture label. **UNTESTED** Video Capture; do not infer success.
+
+v1.61 fixes popup z-order by hiding the native preview while Options is open and restoring it on dismissal / item selection using the same Android MainActivity preview lifecycle. Review with emulator to verify all popup rows are visible and scrolling/selecting works, preview returns after dismiss, Back remains correct, and Camera/Video parity survives. No on-screen verification yet. Preserve prior v1.59 Camera photo capture success and v1.56 Home Menu/swirl PASS.
+
+## v1.59.0 on-screen Camera acceptance / v1.60.0 corrections
+
+Moti verified in v1.59.0: live viewfinder, in-house Capture and native Photo result screen work; **stock Android camera never opens**; Back is correct. Mark this Camera photo sequence PASS; retain as regression requirement. Outstanding from same audit: Photo result missing Save/Delete/Send; photos stored only in private files/camera_photos rather than shared DCIM/Pictures.
+
+v1.60 source changes: result softkeys Options/Save/Back; Options includes Save, Delete (Yes/No), Send (Android sharesheet). Capture also publishes JPEG to Android MediaStore Pictures/C2 Reborn on Android 10+ (API 29+) with IS_PENDING atomic publish, providing a public content URI for Android Gallery and sharing; private copy retained for fallback. **Not yet emulator verified**. **Remaining gaps:** Android 9 and earlier do not yet receive a shared Pictures copy; if shared MediaStore fails private fallback remains; deleting the shared result leaves a private duplicate, and may leave a stale record in C2 Gallery. Must reconcile private/shared deletion and user notices before declaring Save/Delete parity complete. Save is automatic on shutter, so Save option currently confirms save (not deferred save). Validate source behaviour against HTML spec.
+
+## v1.56.0 ON-SCREEN ACCEPTANCE — Home Menu and swirl wallpaper (2026-10-11)
+
+**Verified by Moti on device/emulator:** the new grey swirl wallpaper renders correctly on Home. **Home centre softkey Menu** responds to a single tap and opens the Menu grid; Exit returns Home. Both longstanding defects are **CLOSED / PASS** as of APK v1.56.0, replacing prior unverified/problem statuses for these two items. Preserve this touch routing and wallpaper rendering in subsequent Camera builds; avoid regressing them. Camera preview, native capture/video recording, and HTML parity remain separate outstanding work.
+
+## v1.59.0 — strict in-house Camera/Video rule (2026-10-11)
+
+Moti expressly requires Camera capture to follow the same strict rule as in-house calls: **never open the stock Android camera or recorder application.** Camera is entirely C2-owned: live preview in Nokia LCD, native JPEG shutter and private save, followed by native C2 photo-result screen. The photo result screen and gallery storage are source-implemented but **not yet emulator validated**. Video recording must likewise be native C2-owned; v1.59 temporarily prevents the existing external Android recorder handoff and displays an in-house under-development message rather than violating the requirement. This means video recording is temporarily unavailable while its native pipeline is built. **Priority is verify actual live viewfinder**, shutter, camera permission, orientation, UI navigation, and background/foreground lifecycle on emulator and device. v1.59 source-wiring test explicitly asserts no external-camera call in C2PhoneView.launchHardwareCapture. This is a source claim, not hardware confirmation.
+
+## APK v1.57.0 — live embedded camera preview (pending CI/on-device)
+
+v1.56 build and release confirmed; Camera and Video native entry screens built but showed a placeholder and invoked external Android capture. v1.57 introduces an Android-native SurfaceView backed by legacy android.hardware.Camera preview, hosted inside the Nokia 240x320 LCD viewfinder region of MainActivity's FrameLayout. CAMERA permission added. MainActivity calculates preview placement using the same 360x780 layout and 214/240 LCD scale as C2PhoneView, and starts/stops on page navigation, activity pause/resume, surface destruction and capture handoff. The underlying photo and video capture still use the existing external Android camera flow for saving; this is **live in-house viewfinder only, not yet full in-house capture/parity**. Need emulator/device verification for actual preview, correct orientation/coordinates, permission rejection, background, absent camera devices, screen touch, and no regression to other pages. Native Camera API is deprecated but still supported; Camera2/CameraX planned for long-term. The current text placeholder drawn behind SurfaceView should be removed after preview reliability is established.
+
+## Camera parity clarification (2026-10-11)
+
+Moti corrected the earlier message: the mentioned video was sent in error. **No reference footage is coming or required.** Camera view is a first-class parity category: implement and audit the native Android Camera screen against the live C2 Reborn HTML specification (https://mbaiforinsticnt-dev.github.io/c2-reborn/index.html), to the same standard as Contacts, SMS and Log. Use HTML screen behaviour, Nokia controls, softkeys, Options, viewfinder and capture flow as source of truth. Do not defer Camera implementation waiting for video footage. Video recorder remains part of Media and should follow HTML where specified.
+
+## New parity category — Camera and Video recorder (requested 2026-10-11)
+
+Moti requests the **Camera view** and **Video recorder** be treated as a first-class Nokia C2-01 parity category, at the same level of scrutiny as Contacts, SMS, Home, and Log. Required: in-house Nokia-style viewfinder UI rather than handing the entire screen to the stock Android camera, faithful status indicators, per-mode Options/submenus and softkey behaviour, image capture/shutter flow, saved-photo preview and gallery integration, video record/stop/save/review flow. Native hardware camera input and permissions must still function; avoid WebView. Verify screen layout, icon style, touch/physical-key mapping, correct camera orientation, lifecycle, and permission denial paths against forthcoming footage from Moti.
+
+Reference footage is not expected. Derive detailed control mapping from the HTML implementation and verify against it. Existing native implementation routes Camera/Video recorder menu choices through startCameraCapture(...); that external capture path should be audited and replaced/extended with an embedded viewfinder as appropriate, without regressing actual camera hardware functionality.
+
+Priority: retain currently verified calling, contacts, SMS and Log behaviour; add Camera/Video recorder to outstanding parity work; begin source-based Camera parity audit now.
+
+## v1.53.0 on-screen audit and v1.54.0 source changes
+
+**Verified in v1.53.0:** Log marked-row tick renders; Names/Log Options popups show Select; Delete selected confirmation now says Nokia "Delete?" with Yes/No; Settings Demo data is accessible and seeds conversations successfully; unread SMS dot clears when entering a conversation.
+
+**Still failing after fresh reinstalls across v1.47/v1.49/v1.53:** Home LCD centre "Menu" text receives no working tap while physical OK opens menu and centre "End" works inside calls. v1.54 expands specifically Home's central LCD hitbox down into the bezel gap (but not into physical OK) and up slightly, preserving central shortcut assignment; requires user on-device verification, no proof of fix yet.
+
+**Wallpaper regression v1.53:** Home is solid mid-grey. The Java drawHome fallback is EXACTLY mid-grey when wallpaper Bitmap is null, which matches symptom, but no runtime log yet establishes whether failure is in resource decode or wrong asset contents. v1.54 makes the build package original HTML Nokia PNG as raw Android asset (with pinned Git blob and PNG dimensions check); native view decodes through AssetManager and logs "C2Wallpaper" success and errors. User must still compare resulting image to reference HTML. Do not redraw. If remains flat, inspect C2Wallpaper logcat and confirm correct HTML source asset is used.
+
+## v1.49 emulator follow-up — 2026-10-11
+
+User confirms Log Delete selected functions end-to-end: mark, Delete selected, Yes, row disappears. However the marked check/tick is invisible in v1.49 (v1.51 source adds an indicator, unverified). Nokia confirm must read exactly "Delete?" not "Hide selected call records in this app?" — corrected in v1.53.0.
+
+Home centre Menu softkey remains fully broken following reinstall (6+ taps); physical OK and call centre End work. Treat as unresolved priority, not an emulator artifact. Further dedicated touch diagnostics or screenshot-coordinate testing required; do not assert fixed.
+
+Demo data toggle appears absent in v1.49 Settings though v1.42 had it. Source shows debug-gated "Demo data (debug)" final Settings row and demoTools page, but user cannot find it. v1.53 makes it also accessible under Settings > Options > Demo data (debug), only in debuggable APK. Explicit debug guard remains in place; this does not add demo tools to release builds.
+
+Settings > Phone and Configuration currently show not implemented notices, tolerated by user for now.
+
+## v1.49.0 verified on-screen; v1.51.0 corrections
+
+User confirmed 17-item Names Options full order and six Log Options Mark/Delete/blacklist entries appear correctly in v1.49.0. Remaining defects: marked Log rows show NO visual check/tick; Home centre LCD Menu tap still does nothing after 5+ clean attempts across builds (physical OK opens menu, centre End works during call); top-level Names and Log Options centre softkey reads Details instead of Select, while nested Mark submenu correctly has Select. Treat Home as genuine application bug rather than emulator artifact.
+
+v1.51.0 source now draws a right-hand outlined checkbox and checkmark for marked call-log rows on All/Missed/Received/Dialled list pages; changes Options popup softkeys globally to blank/Select/Back while overlay visible; removes literal 'Menu' label matching and special branch from Home LCD centre ACTION_UP to run the same physical OK key handler for the assigned Home centre shortcut. Requires emulator on-screen verification of marking, checkbox persistence, unmark/delete, popup Select actions and repeated Home centre taps. The root cause for persistent Home touch failure is still not conclusively established; do not claim fixed without test.
+
+## Further user-screen-verified v1.47.0 audit
+
+- Home screen centre **Menu** softkey: confirmed broken after three clean taps; physical OK opens menu. v1.49.0 direct Home LCD centre handler is committed but not tested on device; do not mark as fixed yet.
+- Home physical keypad dialling: verified end-to-end, enters C2 Dial, stays in-house during call, red End key terminates, returns Home; number-only calls show no contact name, correctly.
+- Log Options in *v1.47.0* show old View/Call/Send message/Save to contacts/Delete/Clear list menu; the requested six-entry Mark suite was committed only for v1.48.0 onwards and remains unverified.
+- Empty Log: left Options key did nothing. Root cause in generic key dispatcher: LSK only handled when itemsFor(page) was non-empty. v1.50.0 explicitly displays "No options" when Log list empty. Needs device test.
+- Wallpaper remains plain black/dark-blue glow, **not** original grey swirl. This is still a confirmed visual mismatch; do not claim fixed.
+
+## v1.47.0 on-screen audit — user verified
+
+Confirmed fixed in v1.47.0: blue calling panel displays contact name; Android default-Phone role dialog successfully grants role; centre End softkey ends call and returns Home; Log shows call durations; real Android contact edit-save works; SMS compose double overlay gone; nested Names submenu titles and Select/Back correct. Preserve every one of these acceptance passes.
+
+**Still broken:** tapping the LCD centre Menu label on Home does nothing, although centre End on call works. v1.49.0 adds a Home-only touch ACTION_UP route for the centre label when it actually displays Menu, directly opening the Nokia menu grid. Physical OK and user-defined Home shortcuts still use normal routing. Must verify on screen, particularly if Home centre shortcut is remapped.
+
+**Unverified:** conversation unread dot clearing after opening a thread, authentic swirl wallpaper, all 17 Names Options, Log Options marking and deleting, Home keypad dialling. Do not count these as failed or passed without testing.
+
+## APK v1.48.0 — Log Options six-entry implementation
+
+C2 native Log list pages (All calls, Missed, Received, Dialled) now use the six reference Options entries: Mark >; Mark all; Unmark all; Delete selected; Add to blacklist; Add to whitelist. Mark > opens Mark/Unmark submenu. Mark all marks records in the current call-log list, with keys retained across navigation; Delete selected asks for Yes confirmation and only hides those entries locally in C2, preserving the real Android call-log records. Blacklist and whitelist use existing app-local number-filter actions, not system network call blocking. Full emulator test required: exact popup styling and page applicability, marks, deletion confirmation and persistence, filter results, and empty list. Bumped to v1.48.0. Caller-name matching fixes from v1.47.0 remain awaiting the user's on-screen audit.
+
+## User-verified v1.44.0 Phone success and v1.46.0 follow-ups
+
+**Confirmed on emulator, demo off:** C2 fully owns ordinary outgoing call UI with blue Nokia panel, Calling/In call status, timer and progress bar; Google Dialer never appeared; OK/red-key termination returns to C2 Home; call-log entry appears and shows contact name, date and time. Duration is unverified. User reports v1.43 direct release link returned 404; v1.44 is the actual audited build. Do not regress this major acceptance pass.
+
+**Reported remaining bugs:** Call panel shows raw number despite Log resolving name; Android request to set as default Phone app did not apply via the dialog's Set as default button (emulator system tools required); centre LCD softkey touch unresponsive across builds even though hardware OK works; Names nested submenu erroneously inherits Options title and Options/Details/Back labels. New source v1.46.0 broadens the LCD softkey hitboxes across pages; refreshes contacts on Telecom call update, uses PhoneNumberUtils to compare cached call-log names; labels submenu with its own title and Select/Back softkeys; adds fallback Telecom default-dialler role request if RoleManager request unavailable/throws. These are unverified until emulator retest; particularly the role dialog's non-applying Set path may be OS/emulator configuration and fallback does not guarantee granting permission.
+
+**User-confirmed working:** My shortcuts No cancel, manual add/sort; Log name/date/time; full Names Options list with submenus (apart from chrome).
+
+## APK v1.45.0 Phone follow-up
+
+v1.44.0 workflow passed and public release file is confirmed available. Native call-handling source audit revealed the global CALL-key dispatcher consumed green-key input before the per-call handler, so ringing calls were never answered by that key. v1.45.0 source fixes the priority order and exposes Answer on the centre softkey while ringing, End once active; the centre key answers a ringing call rather than disconnecting it. Android Back on an active call now shows "Press End to finish call" instead of leaving the call screen. The end call action still waits for Telecom's call removal callback before returning to C2 Home. New APK is pending CI and device-level verification.
+
+**Required tests:** grant ROLE_DIALER, incoming CALL key and centre Answer, outgoing and incoming End, caller-name resolution, system dialler handoff absence, back key, active-to-disconnected state, speaker, and unexpected call disconnect. No full functional pass claimed yet.
+
+## APK v1.44.0 — Nokia native calling screen follow-up
+
+v1.43.0 CI and GitHub release were confirmed successful. v1.44.0 source introduces Nokia-like blue calling panel showing Telecom state (Calling., Connecting., Incoming call, In call, On hold), resolved contact name, number, connected timer, progress indicator, and handset/loudspeaker. C2InCallService has an incoming-call answer action bound to the green CALL hardware key; OK/End remains call termination. Requires emulator/on-device verification. The user must grant Android default Phone role; real calls still run through Telecom. Do not advertise that Google screens can never appear (OS controls role, emergency UI and device-level policies).
+
+**Pending:** Test default-role prompt/return, first/second dial, actual outgoing and incoming calls, background re-entry, end/hangup, user-rejected role, device without Telecom capability, speaker, Bluetooth and emergency. Verify graphical pixel fidelity against HTML v6.343. Also fix the six exact Log Options actions previously requested.
+
+## APK v1.43.0 default-dialer integration — source committed, real-device test REQUIRED
+
+New native `C2InCallService` with Telecom Call callbacks; manifest registers BIND_INCALL_SERVICE and ACTION_DIAL default-dialer eligibility. `MainActivity` requests Android ROLE_DIALER upon first outgoing call if role not granted. The user must accept; after approval they must dial again. The role restriction prevents claiming stock-free calling without OS approval, and emergency calls may still be handled by the system.
+
+C2 view now takes Telecom onCallAdded/onCallRemoved updates, displays in-house call panel, resolves contact name, times connected calls using Telecom connectTime, uses Telecom Call.disconnect() for End, sets speaker routing through InCallService, and returns to Home only on Telecom removal. Calls no longer fall back to ACTION_DIAL when role/permission unavailable. C2's UI remains unverified in emulator, including backgrounding, multi-call, answering, disconnections, role revocation, incoming calls and platform call screens. **Do not advertise complete native calling until on-device verified.**
+
+This architecture replaces the top-priority ACTION_CALL handoff, while the existing `AndroidBackend.placeCall` still dispatches ACTION_CALL once C2 is default Phone app. Android Telecom routes its in-call UI through C2 InCallService; placing calls is OS-mediated, not direct telephony.
+
+## Critical correction — real Android contact Edit Save (v1.42.0)
+
+The failed Edit Save test was on a **real Android contact "Ab" created manually through the C2 app, with demo data OFF**, not a seeded fixture. The previous demo-only explanation was incorrect. This is a genuine provider/edit failure and top Contacts priority. Code now handles name-only changes with a direct StructuredName row update rather than the two-operation phone+name batch when the selected phone number is unchanged; failures display Contact save failed instead of incorrectly asserting a permission failure. The existing save-success path refreshes and returns to details. **Requires emulator retest**; this code-level hypothesis is not yet verified, and editing name-plus-number still follows the batch update path.
+
+## Phone top priority (v1.42.0 user audit)
+
+Real outgoing calls leak to stock Google Dialer, including the Google call screen and post-hangup dialer main screen. ACTION_CALL in AndroidBackend causes this. A genuine in-app real-call flow requires default phone role + InCallService with Telecom.Call lifecycle and a C2 activity, including call state/end/timer and return to C2. No claims of full in-app calling until role/manifest/service, on-device test and system behaviour are verified; emergency calls remain under Android system control. My shortcuts No cancellation, manual adding and sorting are verified.
+
+## v1.42.0 on-screen regression findings
+
+User-confirmed passes: demo-contact deletion gives explanatory notice, contact details avatar/blue handset row/Number 1 of 1 footer and Options/Call/Back match HTML; Home light softkey bar, new-contact automatic capitalisation, Names name-only rows.
+
+Failures: (1) Edit contact Save stays on editor without confirmation and name does not update. Source reveals demoMode short-circuits saves as read-only, so tests must distinguish seeded demo from real writable Android contacts. Fix should support safe app-local fixture editing if demo edits are required without altering phone contacts; live provider errors need accurate failure notices. (2) Editing name typing 'xy' displays lowercase although Abc; verify multi-tap first-letter cycle and replace semantics. (3) Opening SMS thread leaves unread dot; source now marks entire active thread read on entry and persists local read-state, requiring retest. (4) Compose from contact details appears to show doubled Write message input; current Canvas contains only one composer panel, while sendMessage can show a 'Write message' notice on empty body. Reproduce physical touch/key path before modifying editor. (5) Tapping Home's centre softkey label did not open Menu, while physical OK did. Screen-centre touch hit region now maps to OK, requiring retest. (6) Grey swirl wallpaper still missing; current packaged bitmap must be compared with HTML artwork.
+
+No claims of overall v1.42.0 completion. Preserve the above verified graphics.
+
+## Names Options reference correction — 17 entries
+
+User established exact Nokia HTML Names Options order: Search; Call >; Send message >; View conversations; Add new >; Edit >; Delete contact; Add to group; Selecting options >; Details; Add to contact; Edit contact; Copy contact; Move contact; Merge contact; Add to blacklist; Add to whitelist. Popup title Options only, no counter, solid dark list, white selection bar, softkeys Options / Details / Back.
+
+Native source list is now exactly these 17 strings in this order. Existing Search, Call, SMS, Add new, Edit, Delete, Add to group, Details, View conversations, blacklist/whitelist are routed; Selecting options > displays Mark/Mark all/Unmark all/Delete selected. **Limitations:** Call >, Send message >, Add new >, Edit > still dispatch directly rather than opening reference-style submenus. Add to contact, Copy contact, Move contact, Merge contact presently show explicit not-implemented notices rather than silently mutating data. Selection submenu and 17-item list require emulator verification. Do not claim full functional parity yet.
+
+## 2026-10-11 Options popup screenshot parity
+
+Names Options screenshot shows black 28px title strip with only **Options**, six rows visible (Search, Call >, Send message >, Add new >, Edit >, Delete contact) and the underlying softbar Options / Details / Back. Names option strings already match these six in order within the twelve total. Suppressed numeric options counter in native overlay (now applies to all Options popups). Call-log list pages now show Details centre softkey, retaining existing open-details action.
+
+**Evidence limitation:** The second attached screenshot appears to be the GitHub APK release page, not a Log Options popup. The user specified Log options text Mark >, Mark all, Unmark all, Delete selected, Add to blacklist, Add to whitelist, and matching softkeys; the current native call-log option list is *different*. Do not substitute those options without validating the specific Log screen/functionality, because existing Log Actions have separate semantics. Obtain the intended Log reference frame to confirm this before changing call-log menu actions.
+
+## v1.41.0 multi-number Contacts and SMS audit follow-up
+
+- **Multi-number edit:** user observed editor always targeted number 1. Native provider now carries raw-contact and phone-data IDs alongside each phone number. Editing from Contact details uses the selected number, labels the field Selected number and targets that specific Android Data row. Requires emulator validation with contacts linked across different raw-contact accounts; existing demo data remains read-only.
+- **Edit title:** the earlier y=48 header-clearance fix applies to New/Edit contact alike; retest on v1.42.0.
+- **Save:** code now returns to contactDetail for edits, selects the edited number and displays Contact saved. Failures still stay in the editor and display an error; verify using real writable Android contacts.
+- **SMS Use detail:** removed explanatory/developer placeholder text; detail page displays extracted value.
+- **SMS counter:** replaced total/160 with remaining/segment count, e.g. six over 160 -> -6/2 needs verification against implementation: current calculation for 166 characters is 140/2 under the concatenated-segment rule, not -6/2. Exact Nokia reference convention is still an open parity detail.
+- **Demo label:** status DEMO glyph now gated by debuggable flag, as are demo tools. Home debug footer previously removed. Ensure release APK build/type and actual demo fixture exposure do not leak into production.
+- **Verified:** current Names list styling (bold selected name, subordinate number and scrollbar), and empty-number contact-save validation.
+
+# C2 Reborn native APK continuation after v1.41.0
+
+**Baseline:** APK v1.41.0; HTML reference v6.343 (read-only).  
+**Source commit:** 08adce5e9372471ef9fec82d82359733a3896928.  
+**CI:** GitHub Actions run 38131421649 succeeded; this proves build/tests, not emulator-screen parity.
+
+## Reconfirmed v1.41.0 Menu/Names/Log audit; follow-up native changes
+
+User reiterated the 3×3 menu icon artwork pass, Nokia condensed label/font mismatch, grey swirl vs black vignette, and dark rounded selection tile; Names must show name-only and Details softkey with Business/Family/Friends group rows; Names Options must omit '1-12'; deletion must show result and refresh; All calls '(empty)' is accepted. Previously committed fixes for name-only, Details, count suppression and delete refresh/notice remain in source.
+
+**New source changes:** Names now appends actual app-local contact groups to its list and opens group members for a selected group rather than treating its row as a contact. New installations seed Business, Family and Friends; preferences with an existing group list (even intentionally empty) are respected. Existing group membership implementation remains app-local, not Android Contacts provider group membership. Group icon artwork, Home/Voicemail entries and precise screenshot row order remain open. Requires emulator verification before declaring fixed.
+
+## v1.41.0 side-by-side graphics audit (HTML v6.343)
+
+User-verified gaps: Home should show grey swirl wallpaper, Demo network, date like Sun 11-10-2026, small clock top-right, My style 1, light Nokia-font Go to/Menu/Names softkey bar. APK had near-black wallpaper, large centred time, abbreviated date, General, white text on black and intrusive build/debug footer. Status and list/menu fonts and signal/battery art do not match condensed Nokia font/reference. Go to uses large white selection rather than dark glossy highlight. Call reference displays Calling. on blue panel with contact NAME and progress bar, softkeys Options / Menu / Loudsp. (the separate report asking for centre End conflicts with this visual reference and should be reconciled explicitly). Names requires Business/Family/Friends plus Home/Voicemail rows, contact detail silhouette and blue handset glossy bar. Lock keypad Unlock -> Now press * is user-verified.
+
+**Source changes:** Home now displays compact top-right clock, Demo network, numeric day-month-year date, no visible build/debug footer, with a light softkey bar. Existing wallpaper bitmap is used without darkening overlay; **its exact swirl artwork is not yet verified**. Existing saved profile value is preserved to avoid silently rewriting user preferences; default/profile parity still pending. Remaining art, condensed font diagnostics, 3×3 selection, Go to glossy highlight, contact avatar, group rows and reference call panel remain open. Require screenshot retest; do not claim pixel parity.
+
+## User v1.41.0 Phone/Log/SMS emulator audit (seeded data)
+
+**Defects:** call screen shows raw number rather than matching contact name; centre End did not end call despite repeated presses; stock Android white Calling screen appears above C2; Log recorded 00:11 for call observed 00:52+; contact's saved 555-5 becomes 5555 in Log.
+
+**Visual/interaction mismatches:** speaker softkey stays Loudsp. after enabling rather than changing to Handset; Conversations unread red dot appears on icon AND at right edge; conversation messages are chat bubbles rather than HTML/Nokia list rows.
+
+**Verified:** Log menu arrow icons; Thread Options has 15 entries; Conversations Options has 11 entries. Contact edit/delete, multi-number, Use detail remain in testing.
+
+**Source fixes started:** call screen resolves display name via contactNameFor(activeCall); centre OK calls endCall instead of toggleSpeaker; RSK toggle shows Handset when speaker enabled. **Important limitation:** AndroidBackend.endCall() can fail or be unavailable, while local endCall() currently clears the visual call state regardless; on-device termination is not yet proven. Likewise ACTION_CALL launching platform UI is an Android integration limitation—not solved by changing Canvas. A fully custom in-call experience may require default-dialer/InCallService integration and user-granted role, not merely suppressing the system app. Timer is elapsed time since intent dispatch rather than actual connection duration; compare Android call-log duration before changing source. Number formatting should be preserved in presentation while comparisons use normalized forms. Unread-dot and conversation-list rendering require screenshot/reference confirmation before choosing the correct single indicator and layout.
+
+**Release gate:** Verify physical call termination (not only on-screen timer), actual connection state, permission handling, log duration against provider, and contact formatting. Do not mark the five uncorrected issues as resolved.
+
+## Further v1.41.0 Contacts editor audit
+
+- **Confirmed defect:** OK after entering the contact Name failed to advance to Number; subsequent number-key presses were interpreted as alphabetic multi-tap. Production key handler called saveEdit() on OK for any field. Corrected source so first OK on Name resets multi-tap state, focuses Number and selects 123 mode; OK on Number and Save softkey invoke validation/save. Up/Down field changes also switch alphabetic/numeric modes.
+- **Punctuation report:** typing `bob q.` produced saved display name `bob q`. The Contacts save path uses Java `String.trim()` which removes surrounding whitespace, **not periods**. Thus the source currently has no explicit punctuation stripping at save; test whether the dot was truly committed before Save, and inspect Android Contacts provider after round-trip. Preserve user-entered punctuation in names; do not claim resolved without emulator confirmation.
+- **Verified:** Empty number is rejected with `Enter name and number`; retain this validation.
+- **Still requires emulator retest:** OK focus change, number digits, punctuation persistence in detail view/provider and Name display.
+
+## User v1.41.0 Contacts editor and search audit (on emulator)
+
+**Verified:** contact Save workflow and success notice; case-insensitive alphabetical sort; 12-item Names Options menu. Do not regress these.
+
+**Observed defects:** New contact title clipped by form panel overlapping Nokia status/title area; name entry starts lowercase rather than Abc; search characters show inconsistent capitalisation; consecutive search space presses do not visibly advance.
+
+**Source correction committed in 1.42.0 development:** contact editor panels moved from y=28/92 to y=48/112 to clear status/title baseline y=37; new/edit contact begins in Abc, with initial letter after empty field or space capitalised but later letters lowercase (ABC, abc, 123 still selectable); repeated 0 in alphabetic contact search now inserts independent spaces instead of replacing the previous space in a multi-tap cycle. **Needs emulator verification**, especially capitalisation across repeated key presses, spacing display and search matching.
+
+**Further Contacts, SMS and Phone audit findings pending.**
+
+## User v1.41.0 screen audit — Contacts and visual parity
+
+- Menu 3×3 icons: existing icon set matches reference reasonably well (user verified). Gaps: plain sans labels rather than Nokia condensed type; black vignette rather than grey swirl wallpaper; light selection outline rather than dark rounded tile.
+- Names: reference shows name-only contact rows plus Business, Family, Friends group rows with group icons and center softkey **Details**; APK had name+number and **Select**. Source corrected name-only rows and Details center softkey; **group rows in Names are still pending** (existing Groups screen is separate).
+- Names Options overlay: source corrected to hide the right-hand '1-12' item count on that page.
+- Contact deletion: user observed confirmed deletion left contact visible with no toast. Source now refreshes after either provider result, checks that deleted contact ID is absent, clamps selection, and displays explicit success/failure notice. **Requires device retest**; external sync/restoration can make a contact reappear, and current backend uses provider raw-contact deletion.
+- Log > All calls '(empty)' accepted by user.
+- Unrelated pending tests: Mark subset, templates/Saved, Organise.
+
+## User emulator audit: APK v1.40.0 (historical, not v1.41.0 confirmation)
+
+**Verified on screen:** shortcut assignment/rejection notices readable; Settings > Phone stub has no overlap; My shortcuts Restore defaults confirmation offers Yes and resets Left to Go to.
+
+**Still failing in v1.40.0:** Calculator title upper half clipped. **Later source fix in v1.41.0** moved content below header, but on-device retest is still pending.
+
+**UI parity mismatch:** My shortcuts root displays Options / Select / Back but Nokia reference expects Select / Back only. In current source, the left Options binding is used for Restore defaults; do not simply hide it without specifying an alternative accessible reset path. Defer this non-core correction until Contacts/SMS/Phone priorities are covered, unless parity testing discovers a safe fix.
+
+**Pending emulator tests:** conversation Mark subset; Messaging templates and Saved; Menu/Go to Organise. Do not mark these verified without user results.
+
+## Current mandatory scope: Contacts, SMS and Phone — function AND graphics
+
+Prioritize Contacts, Messaging/SMS and Phone over all unrelated features. **Visual parity is an acceptance criterion, not deferred polish.** Match the read-only HTML v6.343 and Nokia C2-01 reference in both behavior and rendering.
+
+For **each** of the three core feature areas, verify:
+- Real Android provider integration and safe create/read/update/delete operations (where supported), permissions and failures, realistic data and persistence.
+- Correct screen transitions, softkeys, Options actions, selection/mark state, prompts and edge cases.
+- Exact/closest-possible Nokia icon artwork and every state variation (especially SMS unread/closed envelope, read/open envelope, sent and status bar icons, and contact/phone call-type icons).
+- Fonts, text weight, glyphs, truncation, baselines, line height, colours, backgrounds, header/footer/softkey positioning, margins and list row dimensions.
+- 240x320 Nokia composition with screenshot-side comparisons to the HTML rendered at matching viewport, including selected/empty/long-name/multinumber/unread/mark/error states.
+
+Do not treat passing Java smoke tests or successful APK compilation as evidence of graphic parity. Require screenshot-based emulator comparisons and documented deviations. Avoid unrelated app/Settings/Calculator polish until the core three are dependable and visually faithful.
+
+## Confirmed implementation baseline
+- Native Java/Canvas, not WebView.
+- v1.41.0: measured, two-line bounded Nokia notices; Calculator and Loan title-safe panel start.
+- v1.39.0: user-verified uncut conversation names with mark indicators and unread dots.
+- v1.38.0: user-verified Home softkeys, four navigation directions, persistence after force-stop, and Menu-reachability protection.
+- Unassigned navigation picker intentionally starts at None.
+- v1.37.0: bulk SMS read/unread selection restricts actions to marked received messages in active thread; static/fixture tests pass.
+
+## Priority emulator acceptance matrix (not yet verified)
+1. On Pixel 4 Android 11 check full text of *Keep Menu on at least one home key*, no clipping at 240px or bleed-through, including long Assignment notices.
+2. Check full Calculator and Loan calculator titles above panel.
+3. My shortcuts > Restore defaults: No retains assignments; Yes restores all defaults; ensure persistence over force-stop and relaunch.
+4. In Conversations, mark only a subset of incoming SMS, then execute Mark as read / unread; verify only chosen incoming rows change, unread status indicators are correct and sent/out-of-thread rows remain unchanged.
+5. Test Messaging templates and Saved: view/create/select/delete/back with confirm prompts and compare exact HTML v6.343 actions.
+6. Test Menu > Options > Organise and Go to > Options > Organise, check order, hidden items and persistence on cold start.
+7. Check icon fidelity and menu positions against HTML v6.343.
+
+## Release criteria for v1.42.0
+- Correct demonstrated parity gaps in production Java, not just audit documents.
+- Add a regression test for each fix, confirm source-to-screen wiring, run GitHub Actions and install on emulator.
+- Publish versioned APK with distinct HTML reference in filename.
+- Do not claim emulator confirmation from CI-only tests.
+- Address stable APK signing separately; debug signing may change between builds and force uninstall.
+
+This checklist documents the continuation point; it is not a v1.42.0 release.
