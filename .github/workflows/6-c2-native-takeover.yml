@@ -20,27 +20,17 @@ jobs:
           set -euo pipefail
           branch=android/takeover-v1.96.0
           before=$(git hash-object index.html)
-          git clone --depth 1 --branch c2-native-v1.96.0 https://github.com/moshenuch/moshenuch.git /tmp/upstream
-          test "$(git -C /tmp/upstream rev-parse HEAD)" = 030d33b0f1fc30f56054c8b03f37ac4c17d1cddf
-          git switch -c "$branch"
-          mkdir -p android
-          cp -a /tmp/upstream/GPT-c2-from-reborn android/native
-          cp /tmp/upstream/.github/workflows/build-GPT-c2-from-reborn.yml android/UPSTREAM-WORKFLOW.yml
+          git fetch origin "$branch"
+          git switch --detach FETCH_HEAD
           python3 - <<'PY'
           from pathlib import Path
-          import hashlib,json
-          root=Path('android/native')
-          rows={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(root.rglob('*')) if p.is_file()}
-          Path('android/UPSTREAM.json').write_text(json.dumps({'repo':'https://github.com/moshenuch/moshenuch','tag':'c2-native-v1.96.0','commit':'030d33b0f1fc30f56054c8b03f37ac4c17d1cddf','files_sha256':rows},indent=2)+'\n')
+          import json,hashlib
+          data=json.loads(Path('android/UPSTREAM.json').read_text())
+          for rel,want in data['files_sha256'].items():
+              assert hashlib.sha256((Path('android/native')/rel).read_bytes()).hexdigest()==want,rel
           PY
-          printf '%s\n' '# Native APK takeover baseline' '' 'Frozen import of moshenuch v1.96.0. Native source is unchanged.' 'HTML remains read-only. No release is published by this workflow.' 'Test CI applies a .takeovertest application-ID suffix and matching provider authority only in the build workspace.' 'Debug-signed for testing only; not production and not an upgrade to the upstream APK.' > android/README.md
           test "$(git hash-object index.html)" = "$before"
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add android
-          git commit -m 'Import unchanged C2 native v1.96.0 baseline with provenance'
-          git push origin "HEAD:refs/heads/$branch"
-          echo "Baseline commit: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
+          echo "Frozen baseline commit: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -52,6 +42,7 @@ jobs:
         run: |
           python3 -m pip install --quiet Pillow==11.3.0
           python3 android/native/tools/create_swirl_wallpaper.py android/native/app/src/main/res/drawable/screen_wallpaper.png
+          mkdir -p android/native/app/src/main/assets
           cp android/native/app/src/main/res/drawable/screen_wallpaper.png android/native/app/src/main/assets/nokia_wallpaper.png
           python3 android/native/tools/extract_selection_icons.py
           python3 android/native/tools/extract_nokia_fonts.py
